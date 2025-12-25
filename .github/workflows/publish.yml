@@ -28,9 +28,6 @@ jobs:
       - name: Check npm version
         run: npm -v
       - name: OIDC env check
-        run: node -e "console.log('OIDC URL set:', !!process.env.ACTIONS_ID_TOKEN_REQUEST_URL)"
+        run: node -e "console.log('OIDC URL set:', !!process.env.ACTIONS_ID_TOKEN_REQUEST_URL); console.log('OIDC token set:', !!process.env.ACTIONS_ID_TOKEN_REQUEST_TOKEN)"
       - name: Publish
-        env:
-          NODE_AUTH_TOKEN: ""
-          NPM_CONFIG_USERCONFIG: /dev/null
         run: npm publish ./dist/ngx-mat-facet-toolkit --access public --provenance
