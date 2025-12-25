@@ -1,3 +1,7 @@
+# 1.0.8
+* Fixed:
+  * Publish step now relies on setup-node OIDC config
+
 # 1.0.7
 * Added:
   * Publish diagnostics for npm version and OIDC env check
