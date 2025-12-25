@@ -26,6 +26,12 @@ jobs:
       - name: Build
         run: npm run build
       - name: Verify npm identity (OIDC)
+        env:
+          NODE_AUTH_TOKEN: ""
+          NPM_CONFIG_USERCONFIG: /dev/null
         run: npm whoami
       - name: Publish
+        env:
+          NODE_AUTH_TOKEN: ""
+          NPM_CONFIG_USERCONFIG: /dev/null
         run: npm publish ./dist/ngx-mat-facet-toolkit --access public --provenance
