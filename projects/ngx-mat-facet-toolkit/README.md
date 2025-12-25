@@ -54,4 +54,9 @@ $theme: mat.m2-define-light-theme((
 - This package is standalone-only (no module wrapper).
 - Be sure to include the toolkit theme mixins in your global theme.
 
+## Release Notes (v1)
+- New package name and selector for the standalone Angular 19 version.
+- Config provider: `provideFacetToolkitConfig`.
+- Expanded docs with API reference, theming guidance, and cookbook examples.
+
 See the repository README for the full API reference, theming variants, and facet type cookbook.
