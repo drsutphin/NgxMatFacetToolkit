@@ -25,12 +25,6 @@ jobs:
         run: npm ci
       - name: Build
         run: npm run build
-      - name: Verify npm identity (OIDC)
-        continue-on-error: true
-        env:
-          NODE_AUTH_TOKEN: ""
-          NPM_CONFIG_USERCONFIG: /dev/null
-        run: npm whoami
       - name: Publish
         env:
           NODE_AUTH_TOKEN: ""
