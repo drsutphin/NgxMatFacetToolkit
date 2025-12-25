@@ -1,3 +1,7 @@
+# 1.0.3
+* Fixed:
+  * Trusted Publisher configuration corrected to allow npm publish
+
 # 1.0.2
 * Fixed:
   * GitHub Pages deployment switched to Actions-based deployment
