@@ -1,3 +1,7 @@
+# 1.0.16
+* Fixed:
+  * Publish workflow now uses read/write npm token
+
 # 1.0.15
 * Fixed:
   * Publish workflow now uses npm token
