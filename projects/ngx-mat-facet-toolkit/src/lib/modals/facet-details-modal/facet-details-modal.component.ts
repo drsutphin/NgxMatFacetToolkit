@@ -103,6 +103,11 @@ export class FacetDetailsModalComponent implements OnInit, AfterViewInit {
         this.data.values = this.data.values?.length ? this.data.values : [{value: ''}];
         this.data.filterType = this.data.filterType || this.data.fixedFilterType || FacetFilterType.contains;
         break;
+      case FacetDataType.Numeric:
+        this.data.values = this.data.values?.length ? this.data.values : [{value: null}];
+        this.data.filterType = this.data.filterType || this.data.fixedFilterType || FacetFilterType.equal;
+        this.ensureNumericValues(this.data.filterType);
+        break;
 
       default:
         this.data.values = this.data.values?.length ? this.data.values : [{value: null}];
@@ -204,8 +209,17 @@ export class FacetDetailsModalComponent implements OnInit, AfterViewInit {
       case FacetDataType.CategorySingle:
       case FacetDataType.Date:
       case FacetDataType.Text:
+      case FacetDataType.Numeric:
       case FacetDataType.Typeahead:
       case FacetDataType.TypeaheadSingle:
+        if (this.data.type === FacetDataType.Numeric) {
+          const firstValue = this.getRawValue(this.data);
+          const secondValue = this.getRawValue(this.data, 1);
+          if (this.data.filterType === FacetFilterType.between) {
+            return firstValue === null || firstValue === undefined || secondValue === null || secondValue === undefined;
+          }
+          return firstValue === null || firstValue === undefined || firstValue === '';
+        }
         return !(this.data.values || []).some(v => !!v?.value);
       case FacetDataType.DateRange:
         return !(this.getRawValue(this.data)) || !(this.getRawValue(this.data, 1));
@@ -240,10 +254,26 @@ export class FacetDetailsModalComponent implements OnInit, AfterViewInit {
 
   setType(newType: FacetFilterType) {
     this.data.filterType = newType;
+    if (this.data.type === FacetDataType.Numeric) {
+      this.ensureNumericValues(newType);
+    }
   }
 
   private normalizeOptions(options: FacetValue[] | Observable<FacetValue[]>): Observable<FacetValue[]> {
     return Array.isArray(options) ? of(options) : options;
+  }
+
+  private ensureNumericValues(filterType: FacetFilterType) {
+    const firstValue = this.getRawValue(this.data);
+    if (filterType === FacetFilterType.between) {
+      this.data.values = [
+        {value: firstValue ?? null},
+        {value: this.getRawValue(this.data, 1)}
+      ];
+      return;
+    }
+
+    this.data.values = [{value: firstValue ?? null}];
   }
 
   selectionChange(selection: MatSelectionListChange, facet: FacetEditorState, options?: FacetValue[]) {

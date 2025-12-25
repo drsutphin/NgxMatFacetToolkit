@@ -2,6 +2,12 @@
   flex: 1;
 }
 
+.settings-content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
 .mat-mdc-form-field {
   margin-top: 1em;
 }

@@ -162,6 +162,47 @@
 
         </div>
       }
+      @case (data.type === FacetDataType.Numeric) {
+        <div class="numeric-wrapper">
+
+          <mat-form-field class="criteria-field" appearance="outline">
+            <mat-label>Criteria Type</mat-label>
+            <mat-select [value]="data.fixedFilterType || data.filterType"
+                        (valueChange)="setType($event)" placeholder="Criteria Type">
+              <mat-option [value]="FacetFilterType.equal">Equals</mat-option>
+              <mat-option [value]="FacetFilterType.greaterThan">Greater Than</mat-option>
+              <mat-option [value]="FacetFilterType.greaterThanOrEqual">Greater Than Or Equal</mat-option>
+              <mat-option [value]="FacetFilterType.lessThan">Less Than</mat-option>
+              <mat-option [value]="FacetFilterType.lessThanOrEqual">Less Than Or Equal</mat-option>
+              <mat-option [value]="FacetFilterType.between">Between</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          @if (data.filterType === FacetFilterType.between) {
+            <mat-form-field class="search-field" appearance="outline">
+              <mat-label>Minimum</mat-label>
+              <input matInput type="number" focusOnShow autocomplete="off"
+                     [ngModel]="getRawValue(data)" (ngModelChange)="setValue(data, $event)"
+                     placeholder="{{data.placeholder || data.label }}"/>
+            </mat-form-field>
+
+            <mat-form-field class="search-field" appearance="outline">
+              <mat-label>Maximum</mat-label>
+              <input matInput type="number" autocomplete="off"
+                     [ngModel]="getRawValue(data, 1)" (ngModelChange)="setValue(data, $event, 1)"
+                     placeholder="{{data.placeholder || data.label }}"/>
+            </mat-form-field>
+          } @else {
+            <mat-form-field class="search-field" appearance="outline">
+              <mat-label>Value</mat-label>
+              <input matInput type="number" focusOnShow autocomplete="off"
+                     [ngModel]="getRawValue(data)" (ngModelChange)="setValue(data, $event)"
+                     placeholder="{{data.placeholder || data.label }}"/>
+            </mat-form-field>
+          }
+
+        </div>
+      }
       @case (data.type === FacetDataType.Boolean) {
         <div class="boolean-wrapper">
           <mat-checkbox [ngModel]="getRawValue(data)" (ngModelChange)="setValue(data, $event)">{{data.placeholder || data.label}}</mat-checkbox>

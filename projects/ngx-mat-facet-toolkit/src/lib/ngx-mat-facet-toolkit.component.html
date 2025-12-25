@@ -14,6 +14,31 @@
 
     <mat-chip-grid #chipList>
 
+      <mat-chip-row class="filter-input-container" disableRipple="true" disabled="true" @chipAnimation>
+
+        <span class="flex-facet-autocomplete">
+
+          <mat-icon class="add-icon" (click)="focus($event)">add</mat-icon>
+
+          <input #filterInput [matChipInputFor]="chipList" class="filter-input" [placeholder]="placeholder()"
+                 [matChipInputAddOnBlur]="false" [matAutocomplete]="auto">
+
+          <mat-autocomplete #auto="matAutocomplete" class="mat-facet-autocomplete" (optionSelected)="autoCompleteSelected($event)"
+                            [displayWith]="autoCompleteDisplay" panelWidth="250px">
+            @for (facet of filteredFacets(); track facet.id) {
+              <mat-option [value]="facet">
+                @if (facet.icon) {
+                  <mat-icon>{{facet.icon}}</mat-icon>
+                }
+                <span>{{ facet.label }}</span>
+              </mat-option>
+            }
+          </mat-autocomplete>
+
+        </span>
+
+      </mat-chip-row>
+
       @for (facet of selectedFacetViews(); track facet.id) {
         <mat-chip-option @chipAnimation [color]="facet.readonly ? 'accent' : undefined"
                          class="facet-chip"
@@ -71,6 +96,28 @@
                   }
                 }
               }
+              @case (FacetDataType.Numeric) {
+                @switch (facet.filterType) {
+                  @case (FacetFilterType.equal) {
+                    “={{getRawValue(facet)}}”
+                  }
+                  @case (FacetFilterType.greaterThan) {
+                    “>{{getRawValue(facet)}}”
+                  }
+                  @case (FacetFilterType.greaterThanOrEqual) {
+                    “≥{{getRawValue(facet)}}”
+                  }
+                  @case (FacetFilterType.lessThan) {
+                    “<{{getRawValue(facet)}}”
+                  }
+                  @case (FacetFilterType.lessThanOrEqual) {
+                    “≤{{getRawValue(facet)}}”
+                  }
+                  @case (FacetFilterType.between) {
+                    “{{getRawValue(facet)}} - {{getRawValue(facet, 1)}}”
+                  }
+                }
+              }
             }
 
             @if (!facet.readonly) {
@@ -81,31 +128,6 @@
 
         </mat-chip-option>
       }
-
-      <mat-chip-row class="filter-input-container" disableRipple="true" disabled="true" @chipAnimation>
-
-        <span class="flex-facet-autocomplete">
-
-          <mat-icon class="add-icon" (click)="focus($event)">add</mat-icon>
-
-          <input #filterInput [matChipInputFor]="chipList" class="filter-input" [placeholder]="placeholder()"
-                 [matChipInputAddOnBlur]="false" [matAutocomplete]="auto">
-
-          <mat-autocomplete #auto="matAutocomplete" class="mat-facet-autocomplete" (optionSelected)="autoCompleteSelected($event)"
-                            [displayWith]="autoCompleteDisplay" panelWidth="250px">
-            @for (facet of filteredFacets(); track facet.id) {
-              <mat-option [value]="facet">
-                @if (facet.icon) {
-                  <mat-icon>{{facet.icon}}</mat-icon>
-                }
-                <span>{{ facet.label }}</span>
-              </mat-option>
-            }
-          </mat-autocomplete>
-
-        </span>
-
-      </mat-chip-row>
 
     </mat-chip-grid>
 

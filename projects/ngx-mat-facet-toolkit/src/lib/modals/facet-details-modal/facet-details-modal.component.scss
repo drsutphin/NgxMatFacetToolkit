@@ -104,6 +104,15 @@ p.description {
   margin-top: 1rem;
 }
 
+.numeric-wrapper {
+  padding-left: 15px;
+  padding-right: 15px;
+  display: flex;
+  flex-direction: column;
+  flex: 2;
+  margin-top: 1rem;
+}
+
 .date-wrapper {
   padding-left: 15px;
   padding-right: 15px;

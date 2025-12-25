@@ -440,6 +440,7 @@ export class NgxMatFacetToolkitComponent implements AfterViewInit {
     switch (facet.type) {
       case FacetDataType.Date:
       case FacetDataType.Boolean:
+      case FacetDataType.Numeric:
         return FacetFilterType.equal;
       case FacetDataType.DateRange:
         return FacetFilterType.between;

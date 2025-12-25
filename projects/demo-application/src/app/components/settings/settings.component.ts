@@ -80,6 +80,15 @@ export class SettingsComponent implements AfterViewInit {
       type: FacetDataType.Date,
     },
     {
+      id: 'score',
+      label: 'Score',
+      icon: 'speed',
+      description: 'Numeric filter with comparison operators.',
+      type: FacetDataType.Numeric,
+      dataType: 'number',
+      placeholder: 'Enter a score'
+    },
+    {
       id: 'event-days',
       label: 'Event Days',
       icon: 'event_available',

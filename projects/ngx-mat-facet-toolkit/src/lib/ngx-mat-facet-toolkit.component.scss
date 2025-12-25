@@ -6,6 +6,7 @@
   background-color: transparent!important;
   opacity: 1!important;
   box-shadow: none !important;
+  order: 0;
 
   .filter-input {
     border: none!important;
@@ -15,7 +16,7 @@
     font-weight: normal;
     //flex: 0;
     //caret-color: transparent;
-    text-align: right;
+    text-align: left;
 
     position: relative;
     top: -7px;
@@ -72,7 +73,15 @@
 }
 
 ::ng-deep .mat-chip-list-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
   transition: width 300ms ease-in-out;
+}
+
+.facet-chip {
+  order: 1;
 }
 
 .content-wrapper {
