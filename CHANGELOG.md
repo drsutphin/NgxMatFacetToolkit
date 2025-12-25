@@ -1,3 +1,7 @@
+# 1.0.9
+* Fixed:
+  * Publish workflow now enforces npm registry and scope config
+
 # 1.0.8
 * Fixed:
   * Publish step now relies on setup-node OIDC config
