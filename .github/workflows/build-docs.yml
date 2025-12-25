@@ -3,7 +3,7 @@ name: Build Documents
 on:
   push:
     branches:
-      - 'master'
+      - 'main'
 
 jobs:
   build:
@@ -11,26 +11,25 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
-      - name: Use Node 14.x
-        uses: actions/setup-node@v1
+        uses: actions/checkout@v4
+      - name: Use Node 20.x
+        uses: actions/setup-node@v4
         with:
-          node-version: '14.x'
+          node-version: '20.x'
+          cache: 'npm'
       - name: Install dependencies
-        run: npm i
+        run: npm ci
       - name: Build Library
         run: npm run build
       - name: Link Library
-        run: cd dist/ngx-mat-facet-search && npm link
+        run: cd dist/ngx-mat-facet-toolkit && npm link
       - name: Link Library to root
-        run: npm link ngx-mat-facet-search
+        run: npm link @drsutphin/ngx-mat-facet-toolkit
       - name: Build Demo 1
-        run: npm run build-demo
-      - name: Build Demo 2
         run: npm run build-demo
       - name: Archive build
         if: success()
-        uses: actions/upload-artifact@v1
+        uses: actions/upload-artifact@v4
         with:
           name: deploy_docs
           path: docs
@@ -39,13 +38,13 @@ jobs:
     needs: build
     steps:
       - name: Checkout
-        uses: actions/checkout@v1
+        uses: actions/checkout@v4
       - name: Download build
-        uses: actions/download-artifact@v1
+        uses: actions/download-artifact@v4
         with:
           name: deploy_docs
       - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@releases/v3
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: gh-pages
