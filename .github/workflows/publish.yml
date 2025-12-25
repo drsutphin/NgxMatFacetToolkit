@@ -44,6 +44,4 @@ jobs:
       - name: Auth env check
         run: node -e "console.log('NODE_AUTH_TOKEN set:', !!process.env.NODE_AUTH_TOKEN)"
       - name: Publish
-        env:
-          NODE_AUTH_TOKEN: ""
-        run: npm publish ./dist/ngx-mat-facet-toolkit --access public --provenance --registry=https://registry.npmjs.org/
+        run: env -u NODE_AUTH_TOKEN -u NPM_TOKEN npm publish ./dist/ngx-mat-facet-toolkit --access public --provenance --registry=https://registry.npmjs.org/
