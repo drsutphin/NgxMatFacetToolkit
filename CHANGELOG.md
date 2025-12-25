@@ -1,3 +1,7 @@
+# 1.0.15
+* Fixed:
+  * Publish workflow now uses npm token
+
 # 1.0.14
 * Fixed:
   * Ignore injected npm token during publish step
