@@ -1,3 +1,7 @@
+# 1.0.5
+* Fixed:
+  * Force OIDC auth in publish workflow by ignoring npm token config
+
 # 1.0.4
 * Added:
   * npm OIDC diagnostic in publish workflow
