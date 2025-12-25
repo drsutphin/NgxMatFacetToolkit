@@ -5,6 +5,13 @@ on:
     branches:
       - 'main'
 
+permissions:
+  contents: write
+
+concurrency:
+  group: build-docs-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   build:
     name: Build and Generate Documentation
@@ -21,11 +28,7 @@ jobs:
         run: npm ci
       - name: Build Library
         run: npm run build
-      - name: Link Library
-        run: cd dist/ngx-mat-facet-toolkit && npm link
-      - name: Link Library to root
-        run: npm link @drsutphin/ngx-mat-facet-toolkit
-      - name: Build Demo 1
+      - name: Build Demo
         run: npm run build-demo
       - name: Archive build
         if: success()
