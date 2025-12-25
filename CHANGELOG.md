@@ -1,3 +1,7 @@
+# 1.0.10
+* Fixed:
+  * Unset NODE_AUTH_TOKEN before publish to force OIDC auth
+
 # 1.0.9
 * Fixed:
   * Publish workflow now enforces npm registry and scope config
