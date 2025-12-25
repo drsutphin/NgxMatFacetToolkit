@@ -1,3 +1,7 @@
+# 1.0.12
+* Fixed:
+  * Clear npm auth token after setup-node to allow OIDC publish
+
 # 1.0.11
 * Fixed:
   * Clear NODE_AUTH_TOKEN at job level to prevent token injection
