@@ -6,7 +6,9 @@ on:
       - 'main'
 
 permissions:
-  contents: write
+  contents: read
+  pages: write
+  id-token: write
 
 concurrency:
   group: build-docs-${{ github.ref }}
@@ -30,26 +32,17 @@ jobs:
         run: npm run build
       - name: Build Demo
         run: npm run build-demo
-      - name: Archive build
-        if: success()
-        uses: actions/upload-artifact@v4
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          name: deploy_docs
           path: docs
   deploy:
     runs-on: ubuntu-latest
     needs: build
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Download build
-        uses: actions/download-artifact@v4
-        with:
-          name: deploy_docs
-          path: deploy_docs
       - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH: gh-pages
-          FOLDER: deploy_docs
+        id: deployment
+        uses: actions/deploy-pages@v4
