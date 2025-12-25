@@ -1,3 +1,7 @@
+# 1.0.11
+* Fixed:
+  * Clear NODE_AUTH_TOKEN at job level to prevent token injection
+
 # 1.0.10
 * Fixed:
   * Unset NODE_AUTH_TOKEN before publish to force OIDC auth
