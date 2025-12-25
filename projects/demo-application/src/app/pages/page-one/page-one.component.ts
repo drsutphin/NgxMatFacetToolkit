@@ -1,29 +1,49 @@
-import {Component, ViewChild} from '@angular/core';
-import {Facet, FacetIdentifierStrategy, NgxMatFacetSearchComponent} from 'ngx-mat-facet-search';
+import {Component} from '@angular/core';
+import {
+  FacetDefinition,
+  FacetIdentifierStrategy,
+  FacetToolkitConfig
+} from '@drsutphin/ngx-mat-facet-toolkit';
+import {SettingsComponent} from '../../components/settings/settings.component';
+import {OutputComponent} from '../../components/output/output.component';
+import {NgxMatFacetToolkitComponent} from '@drsutphin/ngx-mat-facet-toolkit';
+import {MatCardModule} from '@angular/material/card';
+import {MatDividerModule} from '@angular/material/divider';
 
 @Component({
   selector: 'app-page-one',
   templateUrl: './page-one.component.html',
-  styleUrls: ['./page-one.component.scss']
+  styleUrls: ['./page-one.component.scss'],
+  standalone: true,
+  imports: [
+    MatCardModule,
+    MatDividerModule,
+    NgxMatFacetToolkitComponent,
+    SettingsComponent,
+    OutputComponent
+  ]
 })
 export class PageOneComponent {
-
-  @ViewChild(NgxMatFacetSearchComponent)
-  facetSearch: NgxMatFacetSearchComponent;
-
-  facets: Array<Facet> = [];
+  facets: Array<FacetDefinition> = [];
+  identifier: string | null = null;
+  strategy: FacetIdentifierStrategy = FacetIdentifierStrategy.ParentID;
+  config: Partial<FacetToolkitConfig> = {
+    identifierStrategy: FacetIdentifierStrategy.ParentID
+  };
 
   strategyUpdated(newStrategy: FacetIdentifierStrategy) {
-    this.facetSearch.reconfigure({
+    this.strategy = newStrategy;
+    this.config = {
+      ...this.config,
       identifierStrategy: newStrategy
-    });
+    };
   }
 
   manualIdentifierUpdated(identifier: string) {
-    this.facetSearch.reconfigure(null, identifier);
+    this.identifier = identifier;
   }
 
-  facetsUpdated(facets: Facet[]) {
+  facetsUpdated(facets: FacetDefinition[]) {
     this.facets = facets;
   }
 }

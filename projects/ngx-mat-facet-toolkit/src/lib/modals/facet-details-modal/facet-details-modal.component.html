@@ -1,0 +1,186 @@
+<div class="mat-typography details">
+
+  <mat-toolbar color="primary" class="modal-header">
+    <h2 class="modal-title">{{data.label}}</h2>
+    <button class="modal-close" mat-icon-button (click)="onCancel()">
+      <mat-icon>clear</mat-icon>
+    </button>
+  </mat-toolbar>
+
+  <div class="content">
+
+    @if (data.description) {
+      <p class="description">{{data.description}}</p>
+    }
+
+    <ng-template #loading>
+      <mat-spinner diameter="20"></mat-spinner>
+    </ng-template>
+
+    <ng-template #noResults>
+      <span class="facet-no-results" @fadeIn>No Results</span>
+    </ng-template>
+
+    @switch (true) {
+      @case (data.type === FacetDataType.Category || data.type === FacetDataType.CategorySingle) {
+        <div class="category-wrapper">
+          @if (resolvedOptions$ | async; as options) {
+            <mat-divider></mat-divider>
+            @if (options.length > 0) {
+              <mat-selection-list (selectionChange)="selectionChange($event, data, options)">
+                @for (item of options; track item.value) {
+                  <mat-list-option [value]="item.value" [selected]="isItemSelected(item)"
+                                   @fadeIn
+                                   focusOnShow
+                                   [firstElement]="$first">
+                    <span>
+                      {{ item.label ? truncateText(item.label) : "- empty -" }}
+                      @if (item.count) {
+                        <small><i>({{item.count}})</i></small>
+                      }
+                    </span>
+                  </mat-list-option>
+                }
+              </mat-selection-list>
+            } @else {
+              <ng-container *ngTemplateOutlet="noResults"></ng-container>
+            }
+            <mat-divider></mat-divider>
+          } @else {
+            <ng-container *ngTemplateOutlet="loading"></ng-container>
+          }
+        </div>
+      }
+      @case (data.type === FacetDataType.Typeahead || data.type === FacetDataType.TypeaheadSingle) {
+        <div class="typeahead-wrapper">
+
+          <mat-form-field class="typeahead-form-field" appearance="outline" floatLabel="auto">
+            <mat-label>Search...</mat-label>
+            <input matInput #typeAheadInput
+                   autocomplete="off"
+                   focusOnShow="100"
+                   [(ngModel)]="typeaheadText"
+                   placeholder="{{(data.typeahead || {placeholder: ''}).placeholder}}"
+                   (ngModelChange)="typeaheadValueChanged($event)"/>
+
+            @if (!clearButtonDisabled) {
+              <button matSuffix mat-icon-button aria-label="Clear" (click)="clearInput()">
+                <mat-icon>clear</mat-icon>
+              </button>
+            }
+          </mat-form-field>
+
+          @if (resolvedOptions$ | async; as options) {
+            <mat-divider></mat-divider>
+            @if (options.length > 0) {
+              <mat-selection-list (selectionChange)="selectionChange($event, data, options)">
+                @for (item of options; track item.value) {
+                  <mat-list-option [value]="item.value"
+                                   @fadeIn
+                                   focusOnShow
+                                   [firstElement]="$first"
+                                   [selected]="isItemSelected(item)">
+                    <span>
+                      {{ item.label ? truncateText(item.label) : "- empty -" }}
+                      @if (item.count) {
+                        <small><i>({{item.count}})</i></small>
+                      }
+                    </span>
+                  </mat-list-option>
+                }
+              </mat-selection-list>
+            } @else {
+              <ng-container *ngTemplateOutlet="noResults"></ng-container>
+            }
+            <mat-divider></mat-divider>
+          } @else {
+            <ng-container *ngTemplateOutlet="loading"></ng-container>
+          }
+
+        </div>
+      }
+      @case (data.type === FacetDataType.Date) {
+        <div class="date-wrapper">
+
+          <mat-form-field appearance="outline" floatLabel="always" class="date-field">
+            <mat-label>{{data.label}}</mat-label>
+            <input matInput autocomplete="off" focusOnShow="100" [matDatepicker]="picker" [ngModel]="getRawValue(data)" (ngModelChange)="setValue(data, $event)"
+                   placeholder="Choose a date" (focus)="isUpdate ? emptyFunction() : picker.open()"/>
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          </mat-form-field>
+          <mat-datepicker #picker></mat-datepicker>
+
+        </div>
+      }
+      @case (data.type === FacetDataType.DateRange) {
+        <div class="date-range-wrapper">
+
+          <mat-form-field appearance="outline" floatLabel="always">
+            <mat-label>{{data.label}} - Start</mat-label>
+            <input matInput focusOnShow="100" autocomplete="off" [matDatepicker]="startDatePicker"
+                   [ngModel]="getRawValue(data)" (ngModelChange)="setValue(data, $event)" placeholder="Choose a starting date"
+                   (focus)="isUpdate ? emptyFunction() : startDatePicker.open()"/>
+            <mat-datepicker-toggle matSuffix [for]="startDatePicker"></mat-datepicker-toggle>
+          </mat-form-field>
+          <mat-datepicker #startDatePicker></mat-datepicker>
+
+          <mat-form-field appearance="outline" floatLabel="always">
+            <mat-label>{{data.label}} - End</mat-label>
+            <input matInput autocomplete="off" [matDatepicker]="endDatePicker"
+                   [ngModel]="getRawValue(data, 1)" (ngModelChange)="setValue(data, $event, 1)" placeholder="Choose an end date"/>
+            <mat-datepicker-toggle matSuffix [for]="endDatePicker"></mat-datepicker-toggle>
+          </mat-form-field>
+          <mat-datepicker #endDatePicker></mat-datepicker>
+
+        </div>
+      }
+      @case (data.type === FacetDataType.Text) {
+        <div class="text-wrapper">
+
+          <mat-form-field class="criteria-field" appearance="outline">
+            <mat-label>Criteria Type</mat-label>
+            <mat-select [value]="data.fixedFilterType || data.filterType"
+                        (valueChange)="setType($event)" placeholder="Criteria Type">
+              <mat-option [value]="FacetFilterType.contains">Contains</mat-option>
+              <mat-option [value]="FacetFilterType.endsWith">Ends With</mat-option>
+              <mat-option [value]="FacetFilterType.equal">Equals</mat-option>
+              <mat-option [value]="FacetFilterType.startsWith">Starts With</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field class="search-field" appearance="outline">
+            <mat-label>Search Text</mat-label>
+            <input matInput focusOnShow (keydown.enter)="validateAndSubmit()" autocomplete="off"
+                   [ngModel]="getRawValue(data)" (ngModelChange)="setValue(data, $event)"
+                   placeholder="{{data.placeholder || data.label }}" autofocus/>
+            @if (data.values) {
+              <button matSuffix mat-icon-button aria-label="Clear" (click)="data.values = []">
+                <mat-icon>close</mat-icon>
+              </button>
+            }
+          </mat-form-field>
+
+        </div>
+      }
+      @case (data.type === FacetDataType.Boolean) {
+        <div class="boolean-wrapper">
+          <mat-checkbox [ngModel]="getRawValue(data)" (ngModelChange)="setValue(data, $event)">{{data.placeholder || data.label}}</mat-checkbox>
+        </div>
+      }
+    }
+
+  </div>
+
+  <div class="actions">
+
+    <button mat-flat-button class="add-update-button" [color]="isUpdate ? 'accent' : 'primary'" (click)="onOk()"
+            [disabled]="isUpdateButtonDisabled()">{{isUpdate ? 'Update' : 'Add'}}</button>
+
+    @if (isUpdate) {
+      <button mat-icon-button class="remove-button" color="warn" (click)="onRemove()" matTooltip="Delete Filter" matTooltipPosition="after">
+        <mat-icon>delete</mat-icon>
+      </button>
+    }
+
+  </div>
+</div>

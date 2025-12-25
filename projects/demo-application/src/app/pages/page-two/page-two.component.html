@@ -1,8 +1,17 @@
 <mat-card appearance="outlined">
   <mat-card-content>
-    <ngx-mat-facet-search #search [source]="facets" (searchUpdated)="output.filterUpdated($event)" [chipLabelsEnabled]="settings.chipLabelsEnabled"
-                          [confirmOnRemove]="settings.confirmOnRemove" [clearButtonEnabled]="settings.clearButtonEnabled" placeholder="Add a filter..." clearButtonText="CLEAR FILTERS">
-    </ngx-mat-facet-search>
+
+    <ngx-mat-facet-toolkit
+      [facets]="facets"
+      [config]="config"
+      [identifier]="identifier"
+      (facetChange)="output.filterUpdated($event)"
+      [chipLabelsEnabled]="settings.chipLabelsEnabled"
+      [confirmOnRemove]="settings.confirmOnRemove"
+      [clearButtonEnabled]="settings.clearButtonEnabled"
+      placeholder="Add a filter..."
+      clearButtonText="CLEAR FILTERS">
+    </ngx-mat-facet-toolkit>
 
   </mat-card-content>
 </mat-card>
@@ -11,7 +20,14 @@
 
 <div fxLayout="row" fxLayoutAlign="space-between start" fxLayoutGap="15px" class="content">
 
-  <app-settings #settings (facetsUpdated)="facetsUpdated($event)" [currentIdentifier]="search.identifier" [strategy]="search.getIdentifierStrategy()" (strategyUpdated)="strategyUpdated($event)" (manualIdentifierUpdated)="manualIdentifierUpdated($event)"></app-settings>
+  <app-settings
+    #settings
+    (facetsUpdated)="facetsUpdated($event)"
+    [currentIdentifier]="identifier"
+    [strategy]="strategy"
+    (strategyUpdated)="strategyUpdated($event)"
+    (manualIdentifierUpdated)="manualIdentifierUpdated($event)">
+  </app-settings>
   <mat-divider [vertical]="true"></mat-divider>
   <app-output #output></app-output>
 

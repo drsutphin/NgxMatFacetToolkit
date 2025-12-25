@@ -9,18 +9,21 @@
       "parserOptions": {
         "project": [
           "tsconfig.json",
-          "e2e/tsconfig.json"
+          "projects/ngx-mat-facet-toolkit/tsconfig.lib.json",
+          "projects/ngx-mat-facet-toolkit/tsconfig.spec.json",
+          "projects/demo-application/tsconfig.app.json",
+          "projects/demo-application/tsconfig.spec.json"
         ],
         "createDefaultProgram": true
       },
       "extends": [
-//        "plugin:@angular-eslint/ng-cli-compat",
-//        "plugin:@angular-eslint/ng-cli-compat--formatting-add-on",
+        "plugin:@angular-eslint/recommended",
         "plugin:@angular-eslint/template/process-inline-templates"
       ],
       "rules": {
         "@angular-eslint/component-selector": "off",
         "@angular-eslint/directive-selector": "off",
+        "@angular-eslint/prefer-standalone": "off",
         "no-underscore-dangle": "off",
         "@typescript-eslint/naming-convention": "off"
       }

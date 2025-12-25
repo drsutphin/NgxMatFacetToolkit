@@ -1,12 +1,25 @@
-import { enableProdMode } from '@angular/core';
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-
-import { AppModule } from './app/app.module';
-import { environment } from './environments/environment';
+import {enableProdMode} from '@angular/core';
+import {bootstrapApplication} from '@angular/platform-browser';
+import {provideAnimations} from '@angular/platform-browser/animations';
+import {provideRouter} from '@angular/router';
+import {AppComponent} from './app/app.component';
+import {APP_ROUTES} from './app/app.routes';
+import {environment} from './environments/environment';
+import {FacetIdentifierStrategy, provideFacetToolkitConfig} from '@drsutphin/ngx-mat-facet-toolkit';
 
 if (environment.production) {
   enableProdMode();
 }
 
-platformBrowserDynamic().bootstrapModule(AppModule)
-  .catch(err => console.error(err));
+bootstrapApplication(AppComponent, {
+  providers: [
+    provideAnimations(),
+    provideRouter(APP_ROUTES),
+    provideFacetToolkitConfig({
+      loggingCallback: (...args) => {
+        console.log(...args);
+      },
+      identifierStrategy: FacetIdentifierStrategy.ParentID
+    })
+  ]
+}).catch(err => console.error(err));

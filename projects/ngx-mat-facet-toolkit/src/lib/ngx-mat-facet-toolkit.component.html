@@ -1,0 +1,121 @@
+<div class="main-facet-wrapper">
+
+  @if (displayFilterIcon()) {
+    <div class="icon-wrapper">
+      @if (tooltip() !== null) {
+        <mat-icon class="filter-list-icon" (mousedown)="clickStarted()" (mouseup)="clickEnded()" (mouseleave)="clickEnded()" [matTooltip]="tooltip()">filter_list</mat-icon>
+      } @else {
+        <mat-icon class="filter-list-icon" (mousedown)="clickStarted()" (mouseup)="clickEnded()" (mouseleave)="clickEnded()">filter_list</mat-icon>
+      }
+    </div>
+  }
+
+  <div class="content-wrapper">
+
+    <mat-chip-grid #chipList>
+
+      @for (facet of selectedFacetViews(); track facet.id) {
+        <mat-chip-option @chipAnimation [color]="facet.readonly ? 'accent' : undefined"
+                         class="facet-chip"
+                         (selectionChange)="chipSelected($event, facet)" (click)="selectedFacetId.set(facet.id)"
+                         [selected]="facet.id === selectedFacetId()"
+                         matTooltip="{{facet.label + (facet.description ? ': ' + facet.description : '')}}"
+                         matTooltipShowDelay="1000">
+          <span class="flex-facet">
+
+            @if (facet.icon) {
+              <mat-icon class="inline-chip-icon">{{facet.icon}}</mat-icon>
+            }
+
+            @if (chipLabelsEnabled()) {
+              <span>{{ facet.label + ': &nbsp;'}}</span>
+            }
+
+            @switch (facet.type) {
+              @case (FacetDataType.Category) {
+                {{facet.values | csv:'label':' / '}}
+              }
+              @case (FacetDataType.CategorySingle) {
+                {{facet.values | csv:'label':' / '}}
+              }
+              @case (FacetDataType.Typeahead) {
+                {{facet.values | csv:'label':' / '}}
+              }
+              @case (FacetDataType.TypeaheadSingle) {
+                {{facet.values | csv:'label':' / '}}
+              }
+              @case (FacetDataType.Date) {
+                “{{getDateValue(facet) | date:dateFormat()}}”
+              }
+              @case (FacetDataType.DateRange) {
+                “{{getDateValue(facet) | date:dateFormat()}}” ~ “{{getDateValue(facet, 1) | date:dateFormat()}}”
+              }
+              @case (FacetDataType.Boolean) {
+                <mat-checkbox [disabled]="true" class="inline-chip-checkbox" [ngModel]="getRawValue(facet)" (ngModelChange)="setValue(facet, $event)">
+                  {{facet.label}}
+                </mat-checkbox>
+              }
+              @case (FacetDataType.Text) {
+                @switch (facet.filterType) {
+                  @case (FacetFilterType.contains) {
+                    “..{{getRawValue(facet)}}..”
+                  }
+                  @case (FacetFilterType.equal) {
+                    “{{getRawValue(facet)}}”
+                  }
+                  @case (FacetFilterType.startsWith) {
+                    “{{getRawValue(facet)}}...”
+                  }
+                  @case (FacetFilterType.endsWith) {
+                    “...{{getRawValue(facet)}}”
+                  }
+                }
+              }
+            }
+
+            @if (!facet.readonly) {
+              <mat-icon matChipRemove (click)="removeFacet(facet)">cancel</mat-icon>
+            }
+
+          </span>
+
+        </mat-chip-option>
+      }
+
+      <mat-chip-row class="filter-input-container" disableRipple="true" disabled="true" @chipAnimation>
+
+        <span class="flex-facet-autocomplete">
+
+          <mat-icon class="add-icon" (click)="focus($event)">add</mat-icon>
+
+          <input #filterInput [matChipInputFor]="chipList" class="filter-input" [placeholder]="placeholder()"
+                 [matChipInputAddOnBlur]="false" [matAutocomplete]="auto">
+
+          <mat-autocomplete #auto="matAutocomplete" class="mat-facet-autocomplete" (optionSelected)="autoCompleteSelected($event)"
+                            [displayWith]="autoCompleteDisplay" panelWidth="250px">
+            @for (facet of filteredFacets(); track facet.id) {
+              <mat-option [value]="facet">
+                @if (facet.icon) {
+                  <mat-icon>{{facet.icon}}</mat-icon>
+                }
+                <span>{{ facet.label }}</span>
+              </mat-option>
+            }
+          </mat-autocomplete>
+
+        </span>
+
+      </mat-chip-row>
+
+    </mat-chip-grid>
+
+  </div>
+
+
+  @if (clearButtonEnabled() && selectedFacets().length > 0) {
+    <button mat-flat-button (click)="reset()" color="accent">
+      {{clearButtonText()}}
+    </button>
+  }
+
+</div>

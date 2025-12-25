@@ -1,0 +1,19 @@
+{
+  "name": "@drsutphin/ngx-mat-facet-toolkit",
+  "version": "1.0.0",
+  "author": "Derek Sutphin",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/drsutphin/NgxMatFacetToolkit.git"
+  },
+  "peerDependencies": {
+    "@angular/common": "^19.0.0",
+    "@angular/core": "^19.0.0",
+    "@angular/forms": "^19.0.0",
+    "@angular/material": "^19.0.0",
+    "uuid": "^9.0.1"
+  },
+  "dependencies": {
+    "tslib": "^2.6.2"
+  }
+}

@@ -1,21 +1,23 @@
-import { Component, OnInit } from '@angular/core';
-import {Facet} from 'ngx-mat-facet-search';
+import {Component} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {MatCardModule} from '@angular/material/card';
+import {FacetSelection} from '@drsutphin/ngx-mat-facet-toolkit';
 
 @Component({
   selector: 'app-output',
   templateUrl: './output.component.html',
-  styleUrls: ['./output.component.scss']
+  styleUrls: ['./output.component.scss'],
+  standalone: true,
+  imports: [
+    CommonModule,
+    MatCardModule
+  ]
 })
-export class OutputComponent implements OnInit {
+export class OutputComponent {
 
-  public selectedFacets: Facet[] = [];
+  public selectedFacets: FacetSelection[] = [];
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
-  filterUpdated(facetFilters: Facet[]): void {
+  filterUpdated(facetFilters: FacetSelection[]): void {
     this.selectedFacets = facetFilters;
     console.log('filter', facetFilters);
   }

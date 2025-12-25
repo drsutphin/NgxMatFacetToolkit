@@ -1,22 +1,21 @@
 import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
-import {NavigationEnd, Router} from '@angular/router';
-import {FACET_CONFIG, FacetConfig, FacetIdentifierStrategy} from 'ngx-mat-facet-search';
-import packageData from '../../../ngx-mat-facet-search/package.json';
+import {NavigationEnd, Router, RouterLink, RouterOutlet} from '@angular/router';
+import {MatButtonModule} from '@angular/material/button';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {FacetIdentifierStrategy} from '@drsutphin/ngx-mat-facet-toolkit';
+import packageData from '../../../ngx-mat-facet-toolkit/package.json';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  providers: [
-    {
-      provide: FACET_CONFIG, useFactory: () => new FacetConfig({
-          loggingCallback: (...args) => {
-            console.log(...args);
-          },
-          identifierStrategy: FacetIdentifierStrategy.ParentID
-        })
-    }
+  standalone: true,
+  imports: [
+    MatToolbarModule,
+    MatButtonModule,
+    RouterLink,
+    RouterOutlet
   ]
 })
 export class AppComponent implements OnInit {
@@ -24,7 +23,7 @@ export class AppComponent implements OnInit {
   showPageOne = true;
   showPageTwo = true;
   version = packageData.version;
-  repo = packageData.repository;
+  repo = typeof packageData.repository === 'string' ? packageData.repository : packageData.repository?.url;
 
   constructor(private router: Router) {
   }
@@ -36,11 +35,9 @@ export class AppComponent implements OnInit {
         if (currentURL.includes('two')) {
           this.showPageTwo = false;
           this.showPageOne = true;
-          console.log('Page Two');
         } else {
           this.showPageOne = false;
           this.showPageTwo = true;
-          console.log('Page One');
         }
       }
     });

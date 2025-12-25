@@ -1,92 +1,94 @@
-# NgxMaterialFacetSearch [![npm version](https://badge.fury.io/js/@drsutphin%2Fngx-mat-facet-search.svg)](https://badge.fury.io/js/@drsutphin%2Fngx-mat-facet-search)
-An Angular 17 port of [ng-material2-facet-search](https://github.com/fdeniz/ng-material2-facet-search).
+# NgxMatFacetToolkit [![npm version](https://badge.fury.io/js/@drsutphin%2Fngx-mat-facet-toolkit.svg)](https://badge.fury.io/js/@drsutphin%2Fngx-mat-facet-toolkit)
+Angular 19 standalone facet filtering toolkit with Material UI.
 
-[Demo](https://128keaton.github.io/NgxMatFacetSearch/)
+[Demo](https://128keaton.github.io/NgxMatFacetToolkit/)
 
 ## Usage
 
 ### Getting Started
-1. Import `NgxMatFacetSearchModule` into your application:
+1. Import the standalone component and optional provider:
 ```typescript
-import {NgxMatFacetSearchModule} from 'ngx-mat-facet-search';
+import {NgxMatFacetToolkitComponent, provideFacetToolkitConfig} from '@drsutphin/ngx-mat-facet-toolkit';
 
-@NgModule({
-  imports: [
-    NgxMatFacetSearchModule
-  ],
-})
+bootstrapApplication(AppComponent, {
+  providers: [
+    provideFacetToolkitConfig({
+      identifierStrategy: FacetIdentifierStrategy.ParentID
+    })
+  ]
+});
 ```
 
-2. Provide an array of `Facet` type:
+2. Provide an array of `FacetDefinition` type:
 ```typescript
   // Facet Definitions
   // You can either define and configure your facets as static object array,
   // or you can generate dynamically based on your data from back end.
-  public facets: Array<Facet> = [
+  public facets: Array<FacetDefinition> = [
     {
-      name: 'userName',
-      labelText: 'User Name',
+      id: 'user-name',
+      label: 'User Name',
       type: FacetDataType.Text,
       description: 'Please enter your user name (simple text input example)',
       icon: 'person_outline'
     }, {
-      name: 'birthday',
-      labelText: 'Birthday',
+      id: 'birthday',
+      label: 'Birthday',
       icon: 'date_range',
       description: 'Please select your birthday (date select example)',
       type: FacetDataType.Date,
     },
     {
-      name: 'eventDays',
-      labelText: 'Event Days',
+      id: 'event-days',
+      label: 'Event Days',
       icon: 'event_available',
       description: 'Please select start and end dates (date range select example)',
       type: FacetDataType.DateRange,
     },
     {
-      name: 'isParticipant',
-      labelText: 'Is a Participant?',
+      id: 'is-participant',
+      label: 'Is a Participant?',
       icon: 'live_help',
       description: 'This is a test field, you can test boolean data type.',
       type: FacetDataType.Boolean,
     },
     {
-      name: 'state',
-      labelText: 'State',
+      id: 'state',
+      label: 'State',
       description: 'Please select something (single select, http example)',
       type: FacetDataType.CategorySingle,
       icon: 'folder_open',
       /* mock http service call  */
       options: of([
-        {value: 'open', text: 'Open', count: 49},
-        {value: 'closed', text: 'Closed', count: 23}
+        {value: 'open', label: 'Open', count: 49},
+        {value: 'closed', label: 'Closed', count: 23}
       ]).pipe(delay(700))
     },
     {
-      name: 'license',
-      labelText: 'License(s)',
+      id: 'license',
+      label: 'License(s)',
       description: 'Please select your licenses (multi select, http example)',
       type: FacetDataType.Category,
       icon: 'drive_eta',
       /* mock http service call  */
       options: of([
-        {value: 'a', text: 'Class A'},
-        {value: 'b', text: 'Class B'},
-        {value: 'c', text: 'Class C'}
+        {value: 'a', label: 'Class A'},
+        {value: 'b', label: 'Class B'},
+        {value: 'c', label: 'Class C'}
       ]).pipe(delay(1200))
     },
     {
-      name: 'city',
-      labelText: 'Cities',
+      id: 'city',
+      label: 'Cities',
       description: 'Please select from cities.',
       type: FacetDataType.Typeahead,
       icon: 'location_city',
       typeahead: {
-       function: (txt) => {
+       provider: (txt) => {
          return  of([
-           {value: txt + '-a', text: txt + ' A'},
-           {value: txt + '-b', text: txt + ' B'},
-           {value: txt + '-c', text: txt + ' C'}
+           {value: txt + '-a', label: txt + ' A'},
+           {value: txt + '-b', label: txt + ' B'},
+           {value: txt + '-c', label: txt + ' C'}
          ]).pipe(delay(1200));
        },
       }
@@ -94,15 +96,26 @@ import {NgxMatFacetSearchModule} from 'ngx-mat-facet-search';
   ];
 ```
 
-### Cookies/Identities
-By default, NgxMatFacetSearch will save the selected facets in the browser's cookies using the parent component's selector as a base identifier.
+3. Render the component and listen for outputs:
+```html
+<ngx-mat-facet-toolkit
+  [facets]="facets"
+  [config]="{ storage: 'session' }"
+  (facetChange)="onFacetChange($event)"
+  (facetRemoved)="onFacetRemoved($event)"
+  (facetReset)="onFacetReset()">
+</ngx-mat-facet-toolkit>
+```
+
+### Storage/Identities
+By default, NgxMatFacetToolkit will save selected facets in `sessionStorage` using the parent component's selector as a base identifier.
 For example, a component with the selector `app-home-page` results in the facet's identifier being `app-home-page-facet`.
 
 #### Generation Strategies:
 * Parent ID _(default)_ - Uses the parent component's selector for identity generation
 * Random - Uses `uuidv4` (if installed) to generate an identifier. This is useful for if you want very fine control over what is saved or not.
 * Window URL _(not recommended)_* - Uses the current URL to generate an identifier. `/app/home/base` becomes `app-home-base-facet`. 
-* None - Completely disables saving in cookies
+* None - Disables saving in storage
 
 You can override this setting in the configuration (see below).
 
@@ -114,7 +127,7 @@ the same ID per component might not be used. This is why I moved to the `Parent 
 #### Basic
 Most of the simple options can be configured directly through the component itself in the template:
 
-* `source` - `Facet[]` - An array of Facets to provide. Default: `[]`
+* `facets` - `FacetDefinition[]` - An array of Facets to provide. Default: `[]`
 * `placeholder` - `string` - A string value for the empty/new Facet button. Default: `Filter Table`
 * `clearButtonText` - `string` - A string value for the clear Facets button. Default: `Clear Filters`
 * `clearButtonEnabled` - `boolean` - A true/false value to indicate whether to show or hide the clear Facets Button. Default: `true`
@@ -126,10 +139,16 @@ Most of the simple options can be configured directly through the component itse
 * `confirmOnRemove` - `boolean` - A true/false value which corresponds to prompting the user when they delete a Facet. Default: `true`
 * `chipLabelsEnabled` - `boolean` - A true/false value to indicate whether the Facet button shows its label. Default: `true`
 * `identifier` - `string` - A string value that contains a unique but persistent ID for the Facet Search component. Default: `null` (see above).
+* `config` - `Partial<FacetToolkitConfig>` - Per-instance config overrides (see below).
+
+Outputs:
+* `facetChange` - `FacetSelection[]` - Emits normalized selections whenever state changes.
+* `facetRemoved` - `FacetSelection` - Emits when a facet is removed.
+* `facetReset` - `void` - Emits when filters are cleared.
 
 #### Advanced
 
-You can also inject some more options into the component on creation, either from the parent module or containing component.
+You can also inject defaults via provider:
 
 * `allowDebugClick` - `boolean` - A true/false value that, when enabled, allows the user to long click on the filter icon, which results in
 the component's identifier being printed in the console. Default: `true`
@@ -141,31 +160,20 @@ Inside your module/component providers, you can easily pass configuration to the
 
 ```typescript
 providers: [
-    {
-      provide: FACET_CONFIG, useFactory: () => new FacetConfig({
-          loggingCallback: (...args) => {
-            console.log(...args) // Log output to the console
-          },
-          identifierStrategy: FacetIdentifierStrategy.ParentID // Use the parent ID strategy
-        }),
-    }
-  ]
-```
-
-You can also call the `reconfigure(config: Partial<FacetConfig> | FacetConfig, identifier?: string)` function on the component directly
-if you need to change things on the fly:
-```typescript
-  @ViewChild(NgxMatFacetSearchComponent)
-  facetSearch: NgxMatFacetSearchComponent;
-
-// ....
-  const newConfig = new FacetConfig({
+  provideFacetToolkitConfig({
     loggingCallback: (...args) => {
       console.log(...args) // Log output to the console
     },
-    identifierStrategy: FacetIdentifierStrategy.Random // Use the Random strategy
-  });
-  
-  this.facetSearch.reconfigure(newConfig); // Reconfigure directly
+    identifierStrategy: FacetIdentifierStrategy.ParentID, // Use the parent ID strategy
+    storage: 'session'
+  })
+]
+```
 
+You can also override config per instance:
+```typescript
+<ngx-mat-facet-toolkit
+  [facets]="facets"
+  [config]="{ identifierStrategy: FacetIdentifierStrategy.Random }">
+</ngx-mat-facet-toolkit>
 ```

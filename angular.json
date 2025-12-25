@@ -3,10 +3,10 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ngx-mat-facet-search": {
+    "ngx-mat-facet-toolkit": {
       "projectType": "library",
-      "root": "projects/ngx-mat-facet-search",
-      "sourceRoot": "projects/ngx-mat-facet-search/src",
+      "root": "projects/ngx-mat-facet-toolkit",
+      "sourceRoot": "projects/ngx-mat-facet-toolkit/src",
       "prefix": "lib",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,14 +17,14 @@
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
-            "project": "projects/ngx-mat-facet-search/ng-package.json"
+            "project": "projects/ngx-mat-facet-toolkit/ng-package.json"
           },
           "configurations": {
             "development": {
-              "tsConfig": "projects/ngx-mat-facet-search/tsconfig.lib.json"
+              "tsConfig": "projects/ngx-mat-facet-toolkit/tsconfig.lib.json"
             },
             "production": {
-              "tsConfig": "projects/ngx-mat-facet-search/tsconfig.lib.prod.json"
+              "tsConfig": "projects/ngx-mat-facet-toolkit/tsconfig.lib.prod.json"
             }
           },
           "defaultConfiguration": "production"
@@ -33,14 +33,11 @@
           "builder": "@angular-builders/jest:run"
         },
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@angular-eslint/builder:lint",
           "options": {
-            "tsConfig": [
-              "projects/ngx-mat-facet-search/tsconfig.lib.json",
-              "projects/ngx-mat-facet-search/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
+            "lintFilePatterns": [
+              "projects/ngx-mat-facet-toolkit/**/*.ts",
+              "projects/ngx-mat-facet-toolkit/**/*.html"
             ]
           }
         }
@@ -159,28 +156,12 @@
           }
         },
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@angular-eslint/builder:lint",
           "options": {
-            "tsConfig": [
-              "projects/demo-application/tsconfig.app.json",
-              "projects/demo-application/tsconfig.spec.json",
-              "projects/demo-application/e2e/tsconfig.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
+            "lintFilePatterns": [
+              "projects/demo-application/**/*.ts",
+              "projects/demo-application/**/*.html"
             ]
-          }
-        },
-        "e2e": {
-          "builder": "@angular-devkit/build-angular:protractor",
-          "options": {
-            "protractorConfig": "projects/demo-application/e2e/protractor.conf.js",
-            "devServerTarget": "demo-application:serve"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "demo-application:serve:production"
-            }
           }
         }
       }

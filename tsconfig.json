@@ -18,9 +18,9 @@
     "moduleResolution": "node",
     "importHelpers": true,
     "paths": {
-      "ngx-mat-facet-search": [
-        "dist/ngx-mat-facet-search/ngx-mat-facet-search",
-        "dist/ngx-mat-facet-search"
+      "@drsutphin/ngx-mat-facet-toolkit": [
+        "dist/ngx-mat-facet-toolkit/ngx-mat-facet-toolkit",
+        "dist/ngx-mat-facet-toolkit"
       ]
     },
     "target": "es2022",
