@@ -26,4 +26,4 @@ jobs:
       - name: Build
         run: npm run build
       - name: Publish
-        run: npm publish dist/ngx-mat-facet-toolkit --access public --provenance
+        run: npm publish ./dist/ngx-mat-facet-toolkit --access public --provenance
