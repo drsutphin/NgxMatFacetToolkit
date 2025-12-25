@@ -1,3 +1,7 @@
+# 1.0.2
+* Fixed:
+  * GitHub Pages deployment switched to Actions-based deployment
+
 # 1.0.1
 * Improved:
   * GitHub Actions workflows updated for docs, CI, and npm Trusted Publisher publishing
