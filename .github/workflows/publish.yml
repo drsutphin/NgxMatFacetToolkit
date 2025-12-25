@@ -25,5 +25,7 @@ jobs:
         run: npm ci
       - name: Build
         run: npm run build
+      - name: Verify npm identity (OIDC)
+        run: npm whoami
       - name: Publish
         run: npm publish ./dist/ngx-mat-facet-toolkit --access public --provenance
