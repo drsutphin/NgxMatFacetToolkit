@@ -1,6 +1,20 @@
 {
   "name": "@drsutphin/ngx-mat-facet-toolkit",
   "version": "1.0.0",
+  "description": "Angular 19 standalone facet filtering toolkit built on Angular Material.",
+  "keywords": [
+    "angular",
+    "angular-material",
+    "material",
+    "facet",
+    "facet-search",
+    "filters",
+    "filtering",
+    "chips",
+    "autocomplete",
+    "standalone",
+    "ui"
+  ],
   "author": "Derek Sutphin",
   "repository": {
     "type": "git",

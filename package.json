@@ -1,6 +1,20 @@
 {
   "name": "ngx-mat-facet-toolkit-workspace",
   "version": "1.0.0",
+  "description": "Workspace for the NgxMatFacetToolkit Angular 19 standalone facet filtering library and demo.",
+  "keywords": [
+    "angular",
+    "workspace",
+    "library",
+    "demo",
+    "facet",
+    "facet-search",
+    "angular-material"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/drsutphin/NgxMatFacetToolkit.git"
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve demo-application --port 4201",
