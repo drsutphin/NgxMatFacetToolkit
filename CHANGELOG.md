@@ -1,3 +1,7 @@
+# 1.0.7
+* Added:
+  * Publish diagnostics for npm version and OIDC env check
+
 # 1.0.6
 * Fixed:
   * Removed OIDC diagnostic step from publish workflow
