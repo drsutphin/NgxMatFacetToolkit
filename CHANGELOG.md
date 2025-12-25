@@ -1,3 +1,7 @@
+# 1.0.13
+* Fixed:
+  * Added repo to npm Trusted Publishing allowlist
+
 # 1.0.12
 * Fixed:
   * Clear npm auth token after setup-node to allow OIDC publish
