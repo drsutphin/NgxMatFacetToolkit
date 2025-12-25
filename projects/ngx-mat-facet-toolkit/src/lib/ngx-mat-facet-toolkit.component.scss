@@ -7,19 +7,17 @@
   opacity: 1!important;
   box-shadow: none !important;
   order: 0;
-  border: 1px solid rgba(46, 72, 144, 0.25);
-  border-radius: 999px;
-  padding: 6px 12px;
-  background: linear-gradient(140deg, #f7f9ff, #e6edff) !important;
+  background-color: rgba(46, 72, 144, 0.08)!important;
+  box-shadow: 0 0 0 1px rgba(46, 72, 144, 0.35) !important;
   color: #1c2b46;
-  transition: transform 120ms ease, box-shadow 120ms ease, border-color 120ms ease;
+  transition: box-shadow 120ms ease, background-color 120ms ease;
 
   .filter-input {
     border: none!important;
     background: none!important;
-    width: 140px;
+    width: 85px;
     font-size: 14px!important;
-    font-weight: 600;
+    font-weight: normal;
     //flex: 0;
     //caret-color: transparent;
     text-align: left;
@@ -33,7 +31,7 @@
 
 .filter-input::placeholder {
   color: #1c2b46;
-  opacity: 0.85;
+  opacity: 0.9;
 }
 
 .inline-chip-icon {
@@ -62,19 +60,12 @@
 }
 
 .filter-input-container:hover {
-  border-color: rgba(46, 72, 144, 0.45);
-  box-shadow: 0 6px 14px rgba(46, 72, 144, 0.18);
-  transform: translateY(-1px);
-}
-
-.filter-input-container:active {
-  box-shadow: 0 3px 8px rgba(46, 72, 144, 0.18);
-  transform: translateY(0);
+  background-color: rgba(46, 72, 144, 0.12)!important;
+  box-shadow: 0 0 0 1px rgba(46, 72, 144, 0.55) !important;
 }
 
 .filter-input-container:focus-within {
-  border-color: rgba(46, 72, 144, 0.7);
-  box-shadow: 0 0 0 3px rgba(70, 110, 200, 0.18);
+  box-shadow: 0 0 0 2px rgba(70, 110, 200, 0.35) !important;
 }
 
 .main-facet-wrapper {
@@ -109,8 +100,8 @@
 }
 
 :host-context(.dark-theme) .filter-input-container {
-  border-color: rgba(148, 163, 184, 0.35);
-  background: linear-gradient(140deg, #111827, #1f2937) !important;
+  background-color: rgba(148, 163, 184, 0.12)!important;
+  box-shadow: 0 0 0 1px rgba(148, 163, 184, 0.4) !important;
   color: #e2e8f0;
 }
 
