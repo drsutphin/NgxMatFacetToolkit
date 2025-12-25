@@ -26,12 +26,6 @@ jobs:
         run: npm ci
       - name: Build
         run: npm run build
-      - name: Check npm version
-        run: npm -v
-      - name: Check npm registry config
-        run: |
-          npm config get registry
-          npm config get @drsutphin:registry
       - name: Publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
