@@ -1,3 +1,7 @@
+# 1.0.1
+* Improved:
+  * GitHub Actions workflows updated for docs, CI, and npm Trusted Publisher publishing
+
 # 1.0.0
 * Breaking:
   * New package name: @drsutphin/ngx-mat-facet-toolkit
