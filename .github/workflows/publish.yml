@@ -34,5 +34,9 @@ jobs:
           npm config get @drsutphin:registry
       - name: OIDC env check
         run: node -e "console.log('OIDC URL set:', !!process.env.ACTIONS_ID_TOKEN_REQUEST_URL); console.log('OIDC token set:', !!process.env.ACTIONS_ID_TOKEN_REQUEST_TOKEN)"
+      - name: Auth env check
+        run: node -e "console.log('NODE_AUTH_TOKEN set:', !!process.env.NODE_AUTH_TOKEN)"
       - name: Publish
+        env:
+          NODE_AUTH_TOKEN: ""
         run: npm publish ./dist/ngx-mat-facet-toolkit --access public --provenance --registry=https://registry.npmjs.org/
