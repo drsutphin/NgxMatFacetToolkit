@@ -358,6 +358,12 @@ $dense-theme: mat.m2-define-light-theme((
 
 ## Migration Notes (v1)
 
+## What's New in v1
+- Standalone-only Angular 19 library built for modern control flow.
+- New package name and selector (`@drsutphin/ngx-mat-facet-toolkit`, `ngx-mat-facet-toolkit`).
+- Updated config/provider pattern with `provideFacetToolkitConfig`.
+- Expanded API docs, theming guidance, and facet cookbook.
+
 ### v1 Breaking Changes
 - New package name: `@drsutphin/ngx-mat-facet-toolkit`.
 - New selector: `ngx-mat-facet-toolkit`.

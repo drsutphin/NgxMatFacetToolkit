@@ -1,3 +1,12 @@
+# 1.0.0
+* Breaking:
+  * New package name: @drsutphin/ngx-mat-facet-toolkit
+  * New selector: ngx-mat-facet-toolkit
+  * Standalone-only Angular 19 version (no module wrapper)
+* Added:
+  * New configuration provider: provideFacetToolkitConfig
+  * Expanded API reference, theming guidance, and facet cookbook docs
+
 # 0.6.1
 * Fixed:
   * Multi-select/typeahead facets only allowing options to be selected once and not de-selected
