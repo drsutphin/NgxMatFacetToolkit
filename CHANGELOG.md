@@ -1,3 +1,7 @@
+# 1.0.14
+* Fixed:
+  * Ignore injected npm token during publish step
+
 # 1.0.13
 * Fixed:
   * Added repo to npm Trusted Publishing allowlist
