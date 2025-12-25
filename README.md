@@ -3,100 +3,105 @@ Angular 19 standalone facet filtering toolkit with Material UI.
 
 [Demo](https://128keaton.github.io/NgxMatFacetToolkit/)
 
-## Usage
+## Install
+```bash
+npm install @drsutphin/ngx-mat-facet-toolkit @angular/material @angular/cdk
+```
 
-### Getting Started
-1. Import the standalone component and optional provider:
-```typescript
-import {NgxMatFacetToolkitComponent, provideFacetToolkitConfig} from '@drsutphin/ngx-mat-facet-toolkit';
+Peer dependencies:
+- Angular 19
+- Angular Material 19
+- RxJS 7
+
+## Theme Setup
+Add the toolkit theme mixins alongside your Material theme.
+
+```scss
+@use '@angular/material' as mat;
+@use '@drsutphin/ngx-mat-facet-toolkit/facet-toolkit-theme' as facetToolkit;
+
+@include mat.all-component-typographies();
+@include mat.core();
+
+$primary: mat.m2-define-palette(mat.$m2-indigo-palette, 500);
+$accent: mat.m2-define-palette(mat.$m2-pink-palette, A200, A100, A400);
+$theme: mat.m2-define-light-theme((
+  color: (
+    primary: $primary,
+    accent: $accent
+  )
+));
+
+@include mat.all-component-themes($theme);
+@include facetToolkit.theme($theme);
+```
+
+## Quick Start
+1. Provide an optional config during bootstrap.
+
+```ts
+import {bootstrapApplication} from '@angular/platform-browser';
+import {
+  FacetIdentifierStrategy,
+  NgxMatFacetToolkitComponent,
+  provideFacetToolkitConfig
+} from '@drsutphin/ngx-mat-facet-toolkit';
 
 bootstrapApplication(AppComponent, {
   providers: [
     provideFacetToolkitConfig({
-      identifierStrategy: FacetIdentifierStrategy.ParentID
+      identifierStrategy: FacetIdentifierStrategy.ParentID,
+      storage: 'session'
     })
   ]
 });
 ```
 
-2. Provide an array of `FacetDefinition` type:
-```typescript
-  // Facet Definitions
-  // You can either define and configure your facets as static object array,
-  // or you can generate dynamically based on your data from back end.
-  public facets: Array<FacetDefinition> = [
-    {
-      id: 'user-name',
-      label: 'User Name',
-      type: FacetDataType.Text,
-      description: 'Please enter your user name (simple text input example)',
-      icon: 'person_outline'
-    }, {
-      id: 'birthday',
-      label: 'Birthday',
-      icon: 'date_range',
-      description: 'Please select your birthday (date select example)',
-      type: FacetDataType.Date,
-    },
-    {
-      id: 'event-days',
-      label: 'Event Days',
-      icon: 'event_available',
-      description: 'Please select start and end dates (date range select example)',
-      type: FacetDataType.DateRange,
-    },
-    {
-      id: 'is-participant',
-      label: 'Is a Participant?',
-      icon: 'live_help',
-      description: 'This is a test field, you can test boolean data type.',
-      type: FacetDataType.Boolean,
-    },
-    {
-      id: 'state',
-      label: 'State',
-      description: 'Please select something (single select, http example)',
-      type: FacetDataType.CategorySingle,
-      icon: 'folder_open',
-      /* mock http service call  */
-      options: of([
-        {value: 'open', label: 'Open', count: 49},
-        {value: 'closed', label: 'Closed', count: 23}
-      ]).pipe(delay(700))
-    },
-    {
-      id: 'license',
-      label: 'License(s)',
-      description: 'Please select your licenses (multi select, http example)',
-      type: FacetDataType.Category,
-      icon: 'drive_eta',
-      /* mock http service call  */
-      options: of([
-        {value: 'a', label: 'Class A'},
-        {value: 'b', label: 'Class B'},
-        {value: 'c', label: 'Class C'}
-      ]).pipe(delay(1200))
-    },
-    {
-      id: 'city',
-      label: 'Cities',
-      description: 'Please select from cities.',
-      type: FacetDataType.Typeahead,
-      icon: 'location_city',
-      typeahead: {
-       provider: (txt) => {
-         return  of([
-           {value: txt + '-a', label: txt + ' A'},
-           {value: txt + '-b', label: txt + ' B'},
-           {value: txt + '-c', label: txt + ' C'}
-         ]).pipe(delay(1200));
-       },
-      }
+2. Supply facet definitions from your component.
+
+```ts
+import {FacetDataType, FacetDefinition, FacetFilterType} from '@drsutphin/ngx-mat-facet-toolkit';
+import {delay, of} from 'rxjs';
+
+public facets: FacetDefinition[] = [
+  {
+    id: 'user-name',
+    label: 'User Name',
+    type: FacetDataType.Text,
+    description: 'Plain text filter',
+    fixedFilterType: FacetFilterType.Contains
+  },
+  {
+    id: 'birthday',
+    label: 'Birthday',
+    type: FacetDataType.Date
+  },
+  {
+    id: 'license',
+    label: 'License(s)',
+    type: FacetDataType.Category,
+    options: of([
+      {value: 'a', label: 'Class A'},
+      {value: 'b', label: 'Class B'}
+    ]).pipe(delay(300))
+  },
+  {
+    id: 'city',
+    label: 'City',
+    type: FacetDataType.Typeahead,
+    typeahead: {
+      provider: (searchText) => of([
+        {value: `${searchText}-a`, label: `${searchText} A`},
+        {value: `${searchText}-b`, label: `${searchText} B`}
+      ]).pipe(delay(250)),
+      placeholder: 'Search cities'
     }
-  ];
+  }
+];
 ```
 
-3. Render the component and listen for outputs:
+3. Render the component.
+
 ```html
 <ngx-mat-facet-toolkit
   [facets]="facets"
@@ -107,73 +112,333 @@ bootstrapApplication(AppComponent, {
 </ngx-mat-facet-toolkit>
 ```
 
-### Storage/Identities
-By default, NgxMatFacetToolkit will save selected facets in `sessionStorage` using the parent component's selector as a base identifier.
-For example, a component with the selector `app-home-page` results in the facet's identifier being `app-home-page-facet`.
+## Facet Types
+- Text
+- Boolean
+- Category (multi-select)
+- CategorySingle
+- Typeahead
+- TypeaheadSingle
+- Date
+- DateRange
 
-#### Generation Strategies:
-* Parent ID _(default)_ - Uses the parent component's selector for identity generation
-* Random - Uses `uuidv4` (if installed) to generate an identifier. This is useful for if you want very fine control over what is saved or not.
-* Window URL _(not recommended)_* - Uses the current URL to generate an identifier. `/app/home/base` becomes `app-home-base-facet`. 
-* None - Disables saving in storage
+Use `FacetDataType` to pick a type and supply `options` or `typeahead` when needed.
 
-You can override this setting in the configuration (see below).
+## Configuration
+Component inputs:
+- `facets`: `FacetDefinition[]`
+- `config`: `Partial<FacetToolkitConfig>` for per-instance overrides
+- `placeholder`: `string` (default `Filter Table...`)
+- `clearButtonText`: `string`
+- `clearButtonEnabled`: `boolean`
+- `dateFormat`: `string`
+- `tooltip`: `string | null`
+- `displayFilterIcon`: `boolean`
+- `facetWidth`: `string` (use `px` or `rem`)
+- `facetHasBackdrop`: `boolean`
+- `confirmOnRemove`: `boolean`
+- `chipLabelsEnabled`: `boolean`
+- `identifier`: `string | null`
 
-\* Note on Window URL: If the component tries to load before the route is fully resolved, or you have some weird URL thing going on, 
-the same ID per component might not be used. This is why I moved to the `Parent ID` strategy by default.
+Provider config (`provideFacetToolkitConfig`):
+- `allowDebugClick`: `boolean`
+- `identifierStrategy`: `FacetIdentifierStrategy`
+- `loggingCallback`: `(...args) => void`
+- `storage`: `FacetStorageStrategy` (`session`, `local`, `none`)
 
-### Configuration
+## Outputs
+- `facetChange`: emits `FacetSelection[]` whenever the selection state changes.
+- `facetRemoved`: emits the `FacetSelection` that was removed.
+- `facetReset`: emits when all facets are cleared.
 
-#### Basic
-Most of the simple options can be configured directly through the component itself in the template:
+A `FacetSelection` includes the facet definition plus active values and filter types.
 
-* `facets` - `FacetDefinition[]` - An array of Facets to provide. Default: `[]`
-* `placeholder` - `string` - A string value for the empty/new Facet button. Default: `Filter Table`
-* `clearButtonText` - `string` - A string value for the clear Facets button. Default: `Clear Filters`
-* `clearButtonEnabled` - `boolean` - A true/false value to indicate whether to show or hide the clear Facets Button. Default: `true`
-* `dateFormat` - `string` - A string value notating the date format in date-specific Facets. Default: `M/d/yyyy`
-* `tooltip` - `string` - A string value containing tooltip text that appears when you over the filter icon. Default: `null`
-* `displayFilterIcon` - `boolean` - A true/false value to indicate whether to show or hide the filter icon. Default: `true`
-* `facetWidth` - `string` - A pixel value (notated with `px` at the end) that refers to the width of the Facet panel. Default: `400px`
-* `facetHasBackdrop` - `boolean` - A true/false value to indicate whether the Facet panel has a backdrop. Default: `true`
-* `confirmOnRemove` - `boolean` - A true/false value which corresponds to prompting the user when they delete a Facet. Default: `true`
-* `chipLabelsEnabled` - `boolean` - A true/false value to indicate whether the Facet button shows its label. Default: `true`
-* `identifier` - `string` - A string value that contains a unique but persistent ID for the Facet Search component. Default: `null` (see above).
-* `config` - `Partial<FacetToolkitConfig>` - Per-instance config overrides (see below).
+## Storage and Identity
+Selections are stored by default in `sessionStorage`. You can switch to `localStorage` or disable storage.
 
-Outputs:
-* `facetChange` - `FacetSelection[]` - Emits normalized selections whenever state changes.
-* `facetRemoved` - `FacetSelection` - Emits when a facet is removed.
-* `facetReset` - `void` - Emits when filters are cleared.
+Identity strategies:
+- `ParentID` (default) uses the parent component selector.
+- `WindowURL` uses `window.location.pathname`.
+- `Random` generates a UUID.
+- `Manual` expects `identifier` input.
 
-#### Advanced
+## Roadmap
+- Start with a single main component export.
+- Expand to multiple exports as new facet tooling features land.
 
-You can also inject defaults via provider:
+## Repository Docs
+- `CODEBASE.md` for architecture, services, and data flow.
+- `V1_MIGRATION_PLAN.md` for upgrade notes and constraints.
 
-* `allowDebugClick` - `boolean` - A true/false value that, when enabled, allows the user to long click on the filter icon, which results in
-the component's identifier being printed in the console. Default: `true`
-* `cookieExpiresOn` - `number` - A number which refers to the number of days before the cookie expires. Default: `1`
-* `identifierStrategy` - `FacetIdentifierStrategy` - A value which contains the FacetIdentifierStrategy value being used. Default: `FacetIdentifierStrategy.ParentID` (see above)
-* `loggingCallback` - `(...args) => void` - A value which contains a function callback for logging. Default: `() => {}`
+## Docs Map
+- Start here: `README.md` (usage, API reference, theming, cookbook, migration/FAQ).
+- Architecture: `CODEBASE.md` (data flow, extension points, services).
+- Migration details: `V1_MIGRATION_PLAN.md` (upgrade plan and dependency notes).
 
-Inside your module/component providers, you can easily pass configuration to the child Facet Search Components:
+## API Reference
 
-```typescript
+### Core Models
+
+`FacetDefinition`
+| Field | Type | Notes |
+| --- | --- | --- |
+| `id` | `string` | Unique, stable identifier for the facet. |
+| `label` | `string` | Display label shown in the UI. |
+| `description` | `string` | Optional helper text shown in the modal. |
+| `readonly` | `boolean` | Prevents editing/removal when true. |
+| `type` | `FacetDataType` | Defines the editor and chip rendering. |
+| `dataType` | `'boolean' | 'number' | 'string' | 'date'` | Optional type hint for downstream consumers. |
+| `options` | `FacetValue[] \| Observable<FacetValue[]>` | Static or async options for category facets. |
+| `defaultValues` | `FacetValue[]` | Pre-selected values on first load. |
+| `typeahead` | `{ provider, debounce?, placeholder? }` | Required for typeahead facets. |
+| `fixedFilterType` | `FacetFilterType` | Locks the filter type. |
+| `icon` | `string` | Material icon name for the chip. |
+| `iconClass` | `string` | Additional class for the icon. |
+| `cssClass` | `string` | Adds a class to the facet editor. |
+| `placeholder` | `string` | Overrides the input placeholder. |
+
+`FacetValue`
+| Field | Type | Notes |
+| --- | --- | --- |
+| `value` | `string \| number \| boolean \| Date` | Raw value. |
+| `label` | `string` | UI label for the value. |
+| `count` | `number` | Optional count shown in lists. |
+
+`FacetSelection`
+| Field | Type | Notes |
+| --- | --- | --- |
+| `id` | `string` | Matches the facet definition id. |
+| `label` | `string` | Facet label (copied from definition). |
+| `type` | `FacetDataType` | Facet type. |
+| `filterType` | `FacetFilterType` | Active filter type. |
+| `values` | `FacetValue[]` | Active selections or typed values. |
+| `definition` | `FacetDefinition` | Original definition for reference. |
+
+`FacetToolkitConfig`
+| Field | Type | Notes |
+| --- | --- | --- |
+| `allowDebugClick` | `boolean` | Enables long-click identity logging. |
+| `identifierStrategy` | `FacetIdentifierStrategy` | How storage identity is generated. |
+| `loggingCallback` | `(...args) => void` | Logging hook for storage debug. |
+| `storage` | `FacetStorageStrategy` | `session`, `local`, or `none`. |
+
+### Enums
+`FacetDataType`: `Text`, `Boolean`, `Category`, `CategorySingle`, `Typeahead`, `TypeaheadSingle`, `Date`, `DateRange`  
+`FacetFilterType`: `Contains`, `Equals`, `StartsWith`, `EndsWith`, `Between`, `Before`, `After`, `Exact`, `NotContains`, `NotEquals`
+
+## Theming Variants
+
+### Dark Theme Example
+```scss
+.dark-theme {
+  @include mat.all-component-colors($dark-theme);
+  @include facetToolkit.color($dark-theme);
+}
+```
+
+### Custom Typography
+```scss
+$typography: mat.define-typography-config(
+  $font-family: 'IBM Plex Sans',
+  $headline-1: mat.define-typography-level(96px, 96px, 300),
+  $body-1: mat.define-typography-level(14px, 20px, 400)
+);
+
+@include mat.all-component-typographies($typography);
+```
+
+### Density Control
+```scss
+$dense-theme: mat.m2-define-light-theme((
+  color: (primary: $primary, accent: $accent),
+  density: -1
+));
+
+@include mat.all-component-themes($dense-theme);
+@include facetToolkit.theme($dense-theme);
+```
+
+## Facet Type Cookbook
+
+### Text
+```ts
+{
+  id: 'name',
+  label: 'Name',
+  type: FacetDataType.Text,
+  fixedFilterType: FacetFilterType.Contains,
+  placeholder: 'Enter a name'
+}
+```
+
+### Boolean
+```ts
+{
+  id: 'active',
+  label: 'Active',
+  type: FacetDataType.Boolean
+}
+```
+
+### Category (Multi-Select)
+```ts
+{
+  id: 'status',
+  label: 'Status',
+  type: FacetDataType.Category,
+  options: of([
+    {value: 'open', label: 'Open', count: 12},
+    {value: 'closed', label: 'Closed', count: 3}
+  ])
+}
+```
+
+### Category (Single)
+```ts
+{
+  id: 'priority',
+  label: 'Priority',
+  type: FacetDataType.CategorySingle,
+  options: [
+    {value: 'p1', label: 'P1'},
+    {value: 'p2', label: 'P2'}
+  ]
+}
+```
+
+### Typeahead
+```ts
+{
+  id: 'city',
+  label: 'City',
+  type: FacetDataType.Typeahead,
+  typeahead: {
+    provider: (searchText) => of([
+      {value: `${searchText}-a`, label: `${searchText} A`},
+      {value: `${searchText}-b`, label: `${searchText} B`}
+    ]).pipe(delay(250)),
+    placeholder: 'Search cities',
+    debounce: 200
+  }
+}
+```
+
+### Typeahead (Single)
+```ts
+{
+  id: 'owner',
+  label: 'Owner',
+  type: FacetDataType.TypeaheadSingle,
+  typeahead: {
+    provider: (searchText) => of([
+      {value: 'derek', label: 'Derek'},
+      {value: 'alex', label: 'Alex'}
+    ])
+  }
+}
+```
+
+### Date
+```ts
+{
+  id: 'created',
+  label: 'Created Date',
+  type: FacetDataType.Date
+}
+```
+
+### Date Range
+```ts
+{
+  id: 'range',
+  label: 'Date Range',
+  type: FacetDataType.DateRange
+}
+```
+
+## Migration Notes (v1)
+
+### v1 Breaking Changes
+- New package name: `@drsutphin/ngx-mat-facet-toolkit`.
+- New selector: `ngx-mat-facet-toolkit`.
+- Standalone-only: remove `NgxMatFacetSearchModule` usage.
+- Updated configuration model names (`FacetToolkitConfig`, `FacetIdentifierStrategy`).
+- Control flow uses Angular 19 syntax (`@if`, `@for`, `@switch`).
+
+### Upgrade Checklist
+1. Update imports to the new package name.
+2. Replace `<ngx-mat-facet-search>` with `<ngx-mat-facet-toolkit>`.
+3. Switch to standalone bootstrapping and providers.
+4. Move any module-scoped config to `provideFacetToolkitConfig`.
+5. Update any custom theming to include the toolkit theme mixins.
+
+### Common Upgrade Recipes
+
+Old module import:
+```ts
+import {NgxMatFacetSearchModule} from 'ngx-mat-facet-search';
+
+@NgModule({
+  imports: [NgxMatFacetSearchModule]
+})
+export class AppModule {}
+```
+
+New standalone import:
+```ts
+import {NgxMatFacetToolkitComponent} from '@drsutphin/ngx-mat-facet-toolkit';
+
+@Component({
+  standalone: true,
+  imports: [NgxMatFacetToolkitComponent]
+})
+export class AppComponent {}
+```
+
+Old selector:
+```html
+<ngx-mat-facet-search></ngx-mat-facet-search>
+```
+
+New selector:
+```html
+<ngx-mat-facet-toolkit></ngx-mat-facet-toolkit>
+```
+
+Old provider pattern:
+```ts
 providers: [
-  provideFacetToolkitConfig({
-    loggingCallback: (...args) => {
-      console.log(...args) // Log output to the console
-    },
-    identifierStrategy: FacetIdentifierStrategy.ParentID, // Use the parent ID strategy
-    storage: 'session'
-  })
+  {provide: FACET_SEARCH_CONFIG, useValue: {storage: 'session'}}
 ]
 ```
 
-You can also override config per instance:
-```typescript
-<ngx-mat-facet-toolkit
-  [facets]="facets"
-  [config]="{ identifierStrategy: FacetIdentifierStrategy.Random }">
-</ngx-mat-facet-toolkit>
+New provider:
+```ts
+providers: [
+  provideFacetToolkitConfig({storage: 'session'})
+]
 ```
+
+## Troubleshooting & FAQ
+
+### The component does not persist filters.
+- Ensure `storage` is not set to `none`.
+- Make sure a stable identifier is used (default `ParentID` requires a stable parent selector).
+- Verify that `identifier` is only set when `FacetIdentifierStrategy.Manual` is used.
+
+### Typeahead results never show.
+- The `typeahead.provider` must return an `Observable<FacetValue[]>`.
+- Ensure the provider returns an array (not `null`).
+- If using a debounce, confirm the value matches expected search timing.
+
+### Date values render as text.
+- The date inputs expect `Date` objects (not strings).
+- If you hydrate from JSON, convert to `Date` before passing to the toolkit.
+
+### Facet chips show empty labels.
+- Provide `label` on each `FacetValue`.
+- Ensure `FacetSelection.values` are set for text/date facets.
+
+### I see “duplicate theming” warnings.
+- Ensure the toolkit theme mixins are only included once per theme.
+- If you import the toolkit theme in multiple bundles, centralize it in a global theme file.

@@ -66,6 +66,13 @@ Key inputs (component):
 Key outputs:
 - `facetChange`: emits a normalized list of facets with active values.
 
+### Data Flow
+1. `facets` input is normalized into `facetDefinitions`.
+2. The selection state is loaded from storage (if enabled) and merged with definitions.
+3. `selectedFacets` drives the chip list and modal editor state.
+4. `facetChange` emits `FacetSelection[]` on every selection update.
+5. The storage service persists selections based on the resolved identifier.
+
 ### Modal System
 Files:
 - `projects/ngx-mat-facet-toolkit/src/lib/modals/facet-modal.service.ts`
@@ -79,6 +86,20 @@ How it works:
 - `FacetModalComponent` hosts portal content with open/close animation.
 - `FacetDetailsModalComponent` renders the actual facet editor UI.
 - `FacetModalRef` provides `afterClosed()` and `beforeClosed()` observables.
+
+### Extending the Toolkit
+Common extension points for new facet types:
+- `FacetDataType` enum in `projects/ngx-mat-facet-toolkit/src/lib/models/facet-data-type.model.ts`
+- `FacetDefinition` model for new inputs (filter type, placeholder, options)
+- `FacetDetailsModalComponent` template logic for new controls
+- `FacetDetailsModalComponent` helpers for default values and input parsing
+- `NgxMatFacetToolkitComponent` for display formatting and chip rendering
+
+When adding a new facet type, update:
+- The modal editor UI and value normalization.
+- Selection serialization in `FacetStorageService` if new value shapes are introduced.
+- Demo data in `projects/demo-application/src/app/data/` to showcase the new behavior.
+  - Tests in `projects/ngx-mat-facet-toolkit/src/lib/ngx-mat-facet-toolkit.component.spec.ts` for outputs.
 
 ### Models
 Files: `projects/ngx-mat-facet-toolkit/src/lib/models/*`
@@ -148,3 +169,8 @@ Common commands:
 - The library is standalone-only and uses Angular control flow (`@if`, `@for`, `@switch`).
 - Playwright may require OS browser dependencies; see Playwright install warnings.
 - Demo theme uses M2 theming APIs to remain compatible with Material v19.
+ - Roadmap item: expand beyond a single main component export as new facet tooling features land.
+
+## Docs Navigation
+- `README.md` contains the v1 migration notes, upgrade recipes, and troubleshooting FAQ.
+- `projects/ngx-mat-facet-toolkit/README.md` is the package-facing quick start and gotchas.
