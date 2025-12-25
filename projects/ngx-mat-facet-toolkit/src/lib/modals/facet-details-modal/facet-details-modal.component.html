@@ -106,7 +106,7 @@
             <mat-label>{{data.label}}</mat-label>
             <input matInput autocomplete="off" focusOnShow="100" [matDatepicker]="picker" [ngModel]="getRawValue(data)" (ngModelChange)="setValue(data, $event)"
                    placeholder="Choose a date" (focus)="isUpdate ? emptyFunction() : picker.open()"/>
-            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker-toggle matSuffix [for]="picker" (click)="picker.open()"></mat-datepicker-toggle>
           </mat-form-field>
           <mat-datepicker #picker></mat-datepicker>
 
@@ -120,7 +120,7 @@
             <input matInput focusOnShow="100" autocomplete="off" [matDatepicker]="startDatePicker"
                    [ngModel]="getRawValue(data)" (ngModelChange)="setValue(data, $event)" placeholder="Choose a starting date"
                    (focus)="isUpdate ? emptyFunction() : startDatePicker.open()"/>
-            <mat-datepicker-toggle matSuffix [for]="startDatePicker"></mat-datepicker-toggle>
+            <mat-datepicker-toggle matSuffix [for]="startDatePicker" (click)="startDatePicker.open()"></mat-datepicker-toggle>
           </mat-form-field>
           <mat-datepicker #startDatePicker></mat-datepicker>
 
@@ -128,7 +128,7 @@
             <mat-label>{{data.label}} - End</mat-label>
             <input matInput autocomplete="off" [matDatepicker]="endDatePicker"
                    [ngModel]="getRawValue(data, 1)" (ngModelChange)="setValue(data, $event, 1)" placeholder="Choose an end date"/>
-            <mat-datepicker-toggle matSuffix [for]="endDatePicker"></mat-datepicker-toggle>
+            <mat-datepicker-toggle matSuffix [for]="endDatePicker" (click)="endDatePicker.open()"></mat-datepicker-toggle>
           </mat-form-field>
           <mat-datepicker #endDatePicker></mat-datepicker>
 
