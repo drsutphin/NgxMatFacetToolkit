@@ -1,3 +1,7 @@
+# 1.0.4
+* Added:
+  * npm OIDC diagnostic in publish workflow
+
 # 1.0.3
 * Fixed:
   * Trusted Publisher configuration corrected to allow npm publish
