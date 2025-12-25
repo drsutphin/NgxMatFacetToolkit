@@ -25,6 +25,10 @@ jobs:
         run: npm ci
       - name: Build
         run: npm run build
+      - name: Check npm version
+        run: npm -v
+      - name: OIDC env check
+        run: node -e "console.log('OIDC URL set:', !!process.env.ACTIONS_ID_TOKEN_REQUEST_URL)"
       - name: Publish
         env:
           NODE_AUTH_TOKEN: ""
