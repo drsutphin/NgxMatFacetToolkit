@@ -2,66 +2,6 @@
 * Fixed:
   * Publish workflow now uses read/write npm token
 
-# 1.0.15
-* Fixed:
-  * Publish workflow now uses npm token
-
-# 1.0.14
-* Fixed:
-  * Ignore injected npm token during publish step
-
-# 1.0.13
-* Fixed:
-  * Added repo to npm Trusted Publishing allowlist
-
-# 1.0.12
-* Fixed:
-  * Clear npm auth token after setup-node to allow OIDC publish
-
-# 1.0.11
-* Fixed:
-  * Clear NODE_AUTH_TOKEN at job level to prevent token injection
-
-# 1.0.10
-* Fixed:
-  * Unset NODE_AUTH_TOKEN before publish to force OIDC auth
-
-# 1.0.9
-* Fixed:
-  * Publish workflow now enforces npm registry and scope config
-
-# 1.0.8
-* Fixed:
-  * Publish step now relies on setup-node OIDC config
-
-# 1.0.7
-* Added:
-  * Publish diagnostics for npm version and OIDC env check
-
-# 1.0.6
-* Fixed:
-  * Removed OIDC diagnostic step from publish workflow
-
-# 1.0.5
-* Fixed:
-  * Force OIDC auth in publish workflow by ignoring npm token config
-
-# 1.0.4
-* Added:
-  * npm OIDC diagnostic in publish workflow
-
-# 1.0.3
-* Fixed:
-  * Trusted Publisher configuration corrected to allow npm publish
-
-# 1.0.2
-* Fixed:
-  * GitHub Pages deployment switched to Actions-based deployment
-
-# 1.0.1
-* Improved:
-  * GitHub Actions workflows updated for docs, CI, and npm Trusted Publisher publishing
-
 # 1.0.0
 * Breaking:
   * New package name: @drsutphin/ngx-mat-facet-toolkit
