@@ -15,10 +15,10 @@
   align-items: center;
   gap: 4px;
   flex: 0 0 auto;
-  padding-right: 4px;
-  padding-left: 6px;
+  padding: 0 8px;
+  border-radius: 999px;
 
-.filter-input {
+  .filter-input {
     border: none!important;
     background: none!important;
     width: 85px;
@@ -166,6 +166,8 @@
 }
 
 .chip-scroll-container {
+  display: flex;
+  align-items: center;
   overflow-x: auto;
   overflow-y: hidden;
   height: 36px;
@@ -204,17 +206,22 @@
 }
 
 .content-wrapper.chip-scrollable ::ng-deep .mat-chip-grid {
-  display: block;
+  display: inline-flex;
+  flex-wrap: nowrap;
+  align-items: center;
   width: max-content;
 }
 
 .content-wrapper.chip-scrollable ::ng-deep .mat-chip-list-wrapper {
   align-items: center;
+  display: inline-flex !important;
+  flex-wrap: nowrap !important;
 }
 
 .content-wrapper.chip-scrollable ::ng-deep .mat-chip-row,
 .content-wrapper.chip-scrollable ::ng-deep .mat-chip-option {
   max-height: 28px;
+  white-space: nowrap;
 }
 
 .content-wrapper.chip-scrollable ::ng-deep .mat-chip-option {
