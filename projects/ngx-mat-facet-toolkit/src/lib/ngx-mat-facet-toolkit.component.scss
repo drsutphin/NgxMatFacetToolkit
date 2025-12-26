@@ -11,6 +11,10 @@
   box-shadow: 0 0 0 1px rgba(46, 72, 144, 0.35) !important;
   color: #1c2b46;
   transition: box-shadow 120ms ease, background-color 120ms ease;
+  display: inline-flex;
+  align-items: center;
+  height: 32px;
+  padding: 0 8px;
 
   .filter-input {
     border: none!important;
@@ -24,7 +28,7 @@
     color: inherit;
 
     position: relative;
-    top: -7px;
+    top: 0;
     margin-left: 2px;
   }
 }
@@ -51,7 +55,7 @@
 }
 
 .add-icon {
-  margin-top: 8px;
+  margin-top: 0;
   color: #1c2b46;
 }
 
@@ -124,5 +128,8 @@
 }
 
 .flex-facet-autocomplete {
+  display: flex;
+  align-items: center;
+  gap: 4px;
   justify-content: center;
 }
