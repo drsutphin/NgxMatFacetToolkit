@@ -1,3 +1,14 @@
+# 1.0.17
+* Fixed:
+  * Add filter pill sizing and contrast tuned to match chips
+  * Backspace/delete works in filter input
+  * Enter submits facets for non-text types
+  * Datepicker uses native adapter provider
+* Added:
+  * Numeric facet type with comparison filters and demo example
+* Changed:
+  * Demo layout restored to side-by-side Settings/Output
+
 # 1.0.16
 * Fixed:
   * Publish workflow now uses read/write npm token
