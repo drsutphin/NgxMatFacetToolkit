@@ -2,6 +2,11 @@
   flex: 3;
 }
 
+mat-card-content {
+  max-height: 320px;
+  overflow: auto;
+}
+
 pre {
   background: black;
   color: white;
@@ -9,6 +14,7 @@ pre {
   border-radius: 5px;
   font-family:monospace;
   font-size:small;
+  margin: 0;
 }
 
 .mat-mdc-card-title {
