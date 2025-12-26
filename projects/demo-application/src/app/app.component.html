@@ -7,6 +7,10 @@
   <a mat-button routerLink="/two" [color]="showPageOne ? 'primary' : ''">
     Page Two
   </a>
+  <button mat-button (click)="toggleTheme()">
+    <mat-icon>{{ isDarkMode ? 'light_mode' : 'dark_mode' }}</mat-icon>
+    {{ isDarkMode ? 'Light mode' : 'Dark mode' }}
+  </button>
   <span class="spacer"></span>
   <a [href]="repo" target="_blank" mat-stroked-button>View on GitHub</a>
 </mat-toolbar>
