@@ -27,6 +27,7 @@
     height: 28px;
     line-height: 28px;
     padding: 0;
+    vertical-align: middle;
     //flex: 0;
     //caret-color: transparent;
     text-align: left;
@@ -60,7 +61,7 @@
 }
 
 .add-icon {
-  margin-top: 8px;
+  margin-top: 0;
   color: #1c2b46;
 }
 
@@ -168,13 +169,15 @@
 .chip-scroll-container {
   display: flex;
   align-items: center;
-  overflow-x: auto;
+  overflow-x: scroll;
   overflow-y: hidden;
   height: 36px;
   scrollbar-gutter: stable;
   width: 100%;
   flex: 1 1 auto;
   min-width: 0;
+  white-space: nowrap;
+  scrollbar-width: thin;
 }
 
 .content-wrapper.chip-scrollable ::ng-deep .mat-chip-list-wrapper {
@@ -206,7 +209,7 @@
 }
 
 .content-wrapper.chip-scrollable ::ng-deep .mat-chip-grid {
-  display: inline-flex;
+  display: inline-flex !important;
   flex-wrap: nowrap;
   align-items: center;
   width: max-content;
@@ -234,5 +237,8 @@
 }
 
 .flex-facet-autocomplete {
+  display: inline-flex;
+  align-items: center;
   justify-content: center;
+  height: 28px;
 }
