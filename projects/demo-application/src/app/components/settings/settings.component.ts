@@ -140,6 +140,13 @@ export class SettingsComponent implements AfterViewInit {
       }
     },
     {
+      id: 'department',
+      label: 'Department',
+      description: 'Department filter.',
+      type: FacetDataType.Text,
+      icon: 'apartment'
+    },
+    {
       id: 'birthday-two',
       label: 'Birthday 2',
       icon: 'date_range',
