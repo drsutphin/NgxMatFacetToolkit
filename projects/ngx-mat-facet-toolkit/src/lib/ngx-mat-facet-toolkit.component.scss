@@ -12,6 +12,10 @@
   color: #1c2b46;
   transition: box-shadow 120ms ease, background-color 120ms ease;
   height: 28px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  flex: 0 0 auto;
 
   .filter-input {
     border: none!important;
@@ -70,10 +74,11 @@
 }
 
 .filter-count-divider {
+  display: inline-block;
   width: 1px;
-  height: 16px;
-  margin: 0 6px;
-  background: rgba(46, 72, 144, 0.45);
+  height: 14px;
+  margin: 0 4px;
+  background: rgba(46, 72, 144, 0.6);
 }
 
 .filter-count {
@@ -138,6 +143,7 @@
 
 .content-wrapper {
   flex: 1;
+  min-width: 0;
 }
 
 .content-wrapper.chip-scrollable ::ng-deep .mat-chip-list-wrapper {
@@ -146,6 +152,7 @@
   overflow-y: hidden;
   height: 36px;
   scrollbar-gutter: stable;
+  white-space: nowrap;
 }
 
 .content-wrapper.chip-scrollable ::ng-deep .mat-chip-list-wrapper::-webkit-scrollbar {
@@ -159,6 +166,11 @@
 
 .content-wrapper.chip-scrollable ::ng-deep .mat-chip-list-wrapper::-webkit-scrollbar-track {
   background: transparent;
+}
+
+.content-wrapper.chip-scrollable ::ng-deep .mat-chip-option,
+.content-wrapper.chip-scrollable ::ng-deep .mat-chip-row {
+  flex: 0 0 auto;
 }
 
 .flex-facet {
