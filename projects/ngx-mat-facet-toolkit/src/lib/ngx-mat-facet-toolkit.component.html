@@ -10,7 +10,7 @@
         <mat-icon>bookmark</mat-icon>
       </button>
       <mat-menu #presetMenu="matMenu" class="preset-menu">
-        <button mat-menu-item (click)="promptSavePreset()">
+        <button mat-menu-item (click)="promptSavePreset()" [disabled]="selectedFacets().length === 0">
           <mat-icon>bookmark_add</mat-icon>
           <span>Save current filters</span>
         </button>

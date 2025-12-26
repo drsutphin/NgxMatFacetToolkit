@@ -24,21 +24,23 @@ export class FacetModalService {
     const offsetY = facetModalConfig.offsetY || 0;
     const offsetX = facetModalConfig.offsetX || 0;
 
-    const positionStrategy = this.overlay
-      .position()
-      .flexibleConnectedTo(target)
-      .withPush(false)
-      .withFlexibleDimensions(true)
-      .withPositions([
-        {
-          overlayX: 'start',
-          overlayY: 'top',
-          originX: 'start',
-          originY: 'center',
-          offsetX,
-          offsetY,
-        },
-      ]);
+    const positionStrategy = facetModalConfig.centered
+      ? this.overlay.position().global().centerHorizontally().centerVertically()
+      : this.overlay
+        .position()
+        .flexibleConnectedTo(target)
+        .withPush(false)
+        .withFlexibleDimensions(true)
+        .withPositions([
+          {
+            overlayX: 'start',
+            overlayY: 'top',
+            originX: 'start',
+            originY: 'center',
+            offsetX,
+            offsetY,
+          },
+        ]);
 
     const overlayRef = this.overlay.create({
       hasBackdrop: facetModalConfig.hasBackdrop ?? true,

@@ -1,4 +1,9 @@
-import {ConnectedOverlayPositionChange, FlexibleConnectedPositionStrategy, OverlayRef} from '@angular/cdk/overlay';
+import {
+  ConnectedOverlayPositionChange,
+  FlexibleConnectedPositionStrategy,
+  GlobalPositionStrategy,
+  OverlayRef
+} from '@angular/cdk/overlay';
 import {Observable, Subject} from 'rxjs';
 import {filter} from 'rxjs/operators';
 import {FacetModalConfig} from './facet-modal.config';
@@ -13,7 +18,7 @@ export class FacetModalRef<T = FacetEditorState> {
   private _result: FacetResult<T> = {type: FacetResultType.CANCEL};
 
   constructor(private overlayRef: OverlayRef,
-              private positionStrategy: FlexibleConnectedPositionStrategy,
+              private positionStrategy: FlexibleConnectedPositionStrategy | GlobalPositionStrategy,
               public config: FacetModalConfig) {
     if (!config.disableClose) {
       this.overlayRef.backdropClick().subscribe(() => {
@@ -55,7 +60,10 @@ export class FacetModalRef<T = FacetEditorState> {
     return this.beforeClosedSubject.asObservable();
   }
 
-  positionChanges(): Observable<ConnectedOverlayPositionChange> {
-    return this.positionStrategy.positionChanges;
+  positionChanges(): Observable<ConnectedOverlayPositionChange> | null {
+    if ('positionChanges' in this.positionStrategy) {
+      return this.positionStrategy.positionChanges;
+    }
+    return null;
   }
 }

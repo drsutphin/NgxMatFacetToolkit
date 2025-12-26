@@ -4,6 +4,7 @@ export interface FacetModalConfig<T = any> {
   disableClose: boolean;
   hasBackdrop?: boolean;
   panelClass: string | string[];
+  centered?: boolean;
   offsetX?: number;
   offsetY?: number;
   isUpdate: boolean;

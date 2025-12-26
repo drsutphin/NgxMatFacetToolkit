@@ -360,8 +360,7 @@ export class NgxMatFacetToolkitComponent implements AfterViewInit {
         onRename: (preset: FacetPreset, name: string) => this.renamePreset(preset, name),
         onDelete: (preset: FacetPreset) => this.deletePreset(preset)
       },
-      offsetY: 20,
-      offsetX: -10,
+      centered: true,
       width: '380px'
     });
   }

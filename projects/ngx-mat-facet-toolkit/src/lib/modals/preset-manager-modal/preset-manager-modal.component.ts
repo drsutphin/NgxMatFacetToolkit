@@ -62,6 +62,7 @@ export class PresetManagerModalComponent {
 
   loadPreset(preset: FacetPreset): void {
     this.data.onLoad(preset);
+    this.modalRef.close({type: FacetResultType.CANCEL});
   }
 
   startRename(preset: FacetPreset): void {
