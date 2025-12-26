@@ -76,15 +76,20 @@
 .filter-count-divider {
   display: inline-block;
   width: 1px;
-  height: 14px;
-  margin: 0 4px;
-  background: rgba(46, 72, 144, 0.6);
+  height: 16px;
+  margin: 0 6px;
+  background: linear-gradient(180deg, rgba(46, 72, 144, 0.1), rgba(46, 72, 144, 0.7), rgba(46, 72, 144, 0.1));
 }
 
 .filter-count {
-  font-size: 12px;
-  font-weight: 600;
+  font-size: 11px;
+  font-weight: 700;
   line-height: 1;
+  padding: 2px 6px;
+  border-radius: 999px;
+  background: rgba(46, 72, 144, 0.16);
+  color: #1c2b46;
+  letter-spacing: 0.02em;
 }
 
 .main-facet-wrapper {
@@ -134,11 +139,12 @@
 }
 
 :host-context(.dark-theme) .filter-count-divider {
-  background: rgba(226, 232, 240, 0.45);
+  background: linear-gradient(180deg, rgba(226, 232, 240, 0.1), rgba(226, 232, 240, 0.7), rgba(226, 232, 240, 0.1));
 }
 
 :host-context(.dark-theme) .filter-count {
   color: #e2e8f0;
+  background: rgba(226, 232, 240, 0.16);
 }
 
 .content-wrapper {
@@ -146,31 +152,45 @@
   min-width: 0;
 }
 
-.content-wrapper.chip-scrollable ::ng-deep .mat-chip-list-wrapper {
-  flex-wrap: nowrap;
+.chip-scroll-container {
   overflow-x: auto;
   overflow-y: hidden;
   height: 36px;
   scrollbar-gutter: stable;
+}
+
+.content-wrapper.chip-scrollable ::ng-deep .mat-chip-list-wrapper {
+  flex-wrap: nowrap !important;
   white-space: nowrap;
 }
 
-.content-wrapper.chip-scrollable ::ng-deep .mat-chip-list-wrapper::-webkit-scrollbar {
+.content-wrapper.chip-scrollable ::ng-deep .mat-chip-list-wrapper::-webkit-scrollbar,
+.chip-scroll-container::-webkit-scrollbar {
   height: 6px;
 }
 
-.content-wrapper.chip-scrollable ::ng-deep .mat-chip-list-wrapper::-webkit-scrollbar-thumb {
+.content-wrapper.chip-scrollable ::ng-deep .mat-chip-list-wrapper::-webkit-scrollbar-thumb,
+.chip-scroll-container::-webkit-scrollbar-thumb {
   background-color: rgba(46, 72, 144, 0.35);
   border-radius: 999px;
 }
 
-.content-wrapper.chip-scrollable ::ng-deep .mat-chip-list-wrapper::-webkit-scrollbar-track {
+.content-wrapper.chip-scrollable ::ng-deep .mat-chip-list-wrapper::-webkit-scrollbar-track,
+.chip-scroll-container::-webkit-scrollbar-track {
   background: transparent;
 }
 
 .content-wrapper.chip-scrollable ::ng-deep .mat-chip-option,
 .content-wrapper.chip-scrollable ::ng-deep .mat-chip-row {
   flex: 0 0 auto;
+}
+
+.content-wrapper.chip-scrollable ::ng-deep .mat-chip-grid {
+  display: block;
+}
+
+.content-wrapper.chip-scrollable ::ng-deep .mat-chip-option {
+  white-space: nowrap;
 }
 
 .flex-facet {
