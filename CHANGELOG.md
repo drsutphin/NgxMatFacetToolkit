@@ -1,3 +1,13 @@
+# 1.0.19
+* Added:
+  * Preset system with save/load/manage flows and storage callbacks
+  * Preset delete confirmation modal
+* Fixed:
+  * Preset menu behavior and centered modal arrow handling
+  * Chip row scrollbar visibility and spacing
+  * Dark mode styling improvements and demo background
+  * Demo toolbar height and output overflow stability
+
 # 1.0.18
 * Added:
   * Dark mode toggle in demo toolbar
