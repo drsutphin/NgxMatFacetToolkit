@@ -1,7 +1,9 @@
 import {Component, ComponentRef, ViewChild, EventEmitter, HostBinding, HostListener, EmbeddedViewRef} from '@angular/core';
+import {CommonModule} from '@angular/common';
 import {BasePortalOutlet, CdkPortalOutlet, ComponentPortal, TemplatePortal, PortalModule} from '@angular/cdk/portal';
 import {AnimationEvent} from '@angular/animations';
 import {facetModalAnimations} from './facet-modal.animations';
+import {FacetModalRef} from '../facet-modal.ref';
 
 interface FacetModalAnimationEvent {
   state: 'opened' | 'opening' | 'closing' | 'closed';
@@ -13,13 +15,16 @@ interface FacetModalAnimationEvent {
   templateUrl: './facet-modal.component.html',
   styleUrls: ['./facet-modal.component.scss'],
   standalone: true,
-  imports: [PortalModule],
+  imports: [CommonModule, PortalModule],
   animations: [facetModalAnimations.modalContainer],
 })
 export class FacetModalComponent extends BasePortalOutlet {
   @ViewChild(CdkPortalOutlet, {static: true}) portalOutlet: CdkPortalOutlet;
   @HostBinding('class') hostClass = 'facet-modal-component';
 
+  constructor(public modalRef: FacetModalRef) {
+    super();
+  }
 
   state: 'void' | 'enter' | 'exit' = 'enter';
   animationStateChanged = new EventEmitter<FacetModalAnimationEvent>();

@@ -1,2 +1,4 @@
 <ng-template cdkPortalOutlet></ng-template>
-<div class="arrow"></div>
+@if (!modalRef.config.centered) {
+  <div class="arrow"></div>
+}

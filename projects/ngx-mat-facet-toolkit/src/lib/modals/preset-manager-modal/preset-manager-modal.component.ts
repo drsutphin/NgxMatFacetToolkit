@@ -1,4 +1,4 @@
-import {Component, Inject} from '@angular/core';
+import {Component, ElementRef, Inject} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {FormsModule} from '@angular/forms';
 import {MatButtonModule} from '@angular/material/button';
@@ -11,6 +11,8 @@ import {FacetModalRef} from '../facet-modal.ref';
 import {FACET_MODAL_DATA} from '../facet-modal.data';
 import {FacetPreset} from '../../models';
 import {FacetResultType} from '../../models/facet-result.model';
+import {FacetModalService} from '../facet-modal.service';
+import {PresetDeleteModalComponent} from '../preset-delete-modal/preset-delete-modal.component';
 
 export interface PresetManagerModalData {
   presets: FacetPreset[];
@@ -43,7 +45,9 @@ export class PresetManagerModalComponent {
 
   constructor(
     @Inject(FACET_MODAL_DATA) public data: PresetManagerModalData,
-    public modalRef: FacetModalRef
+    public modalRef: FacetModalRef,
+    private modalService: FacetModalService,
+    private elementRef: ElementRef<HTMLElement>
   ) {
     this.presets = [...(data.presets || [])];
   }
@@ -89,10 +93,18 @@ export class PresetManagerModalComponent {
   }
 
   deletePreset(preset: FacetPreset): void {
-    if (!confirm(`Delete preset "${preset.name}"?`)) {
-      return;
-    }
-    this.data.onDelete(preset);
-    this.presets = this.presets.filter(item => item.id !== preset.id);
+    const modalRef = this.modalService.open<boolean>(PresetDeleteModalComponent, this.elementRef.nativeElement, {
+      centered: true,
+      data: {name: preset.name},
+      width: '320px'
+    });
+
+    modalRef.afterClosed().subscribe(result => {
+      if (result.type !== FacetResultType.ADD) {
+        return;
+      }
+      this.data.onDelete(preset);
+      this.presets = this.presets.filter(item => item.id !== preset.id);
+    });
   }
 }
