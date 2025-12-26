@@ -1,3 +1,10 @@
+# 1.0.18
+* Added:
+  * Dark mode toggle in demo toolbar
+  * Roadmap document with theming override note
+* Fixed:
+  * Filter count badge styling and chip row scrolling
+
 # 1.0.17
 * Fixed:
   * Add filter pill sizing and contrast tuned to match chips
