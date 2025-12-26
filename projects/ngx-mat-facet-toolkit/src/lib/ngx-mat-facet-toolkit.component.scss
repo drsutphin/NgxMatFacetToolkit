@@ -147,6 +147,15 @@
   color: #e2e8f0;
 }
 
+:host-context(.dark-theme) .filter-input-container:hover {
+  background-color: rgba(148, 163, 184, 0.18)!important;
+  box-shadow: 0 0 0 1px rgba(226, 232, 240, 0.45) !important;
+}
+
+:host-context(.dark-theme) .filter-input-container:focus-within {
+  box-shadow: 0 0 0 2px rgba(125, 166, 255, 0.35) !important;
+}
+
 :host-context(.dark-theme) .filter-input::placeholder {
   color: #e2e8f0;
   opacity: 0.8;
@@ -180,10 +189,9 @@
 .chip-scroll-container {
   display: flex;
   align-items: center;
-  overflow-x: scroll;
+  overflow-x: auto;
   overflow-y: hidden;
   height: 40px;
-  scrollbar-gutter: stable;
   width: 100%;
   flex: 1 1 auto;
   min-width: 0;
@@ -212,6 +220,11 @@
 .content-wrapper.chip-scrollable ::ng-deep .mat-chip-list-wrapper::-webkit-scrollbar-track,
 .chip-scroll-container::-webkit-scrollbar-track {
   background: transparent;
+}
+
+:host-context(.dark-theme) .content-wrapper.chip-scrollable ::ng-deep .mat-chip-list-wrapper::-webkit-scrollbar-thumb,
+:host-context(.dark-theme) .chip-scroll-container::-webkit-scrollbar-thumb {
+  background-color: rgba(148, 163, 184, 0.45);
 }
 
 .content-wrapper.chip-scrollable ::ng-deep .mat-chip-option,

@@ -67,3 +67,12 @@
   padding: 16px;
   opacity: 0.7;
 }
+
+:host-context(.dark-theme) .preset-row {
+  background: rgba(148, 163, 184, 0.12);
+}
+
+:host-context(.dark-theme) .preset-meta,
+:host-context(.dark-theme) .empty-state {
+  opacity: 0.8;
+}
