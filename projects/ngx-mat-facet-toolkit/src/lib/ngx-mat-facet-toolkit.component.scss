@@ -24,13 +24,16 @@
     width: 85px;
     font-size: 14px!important;
     font-weight: normal;
+    height: 28px;
+    line-height: 28px;
+    padding: 0;
     //flex: 0;
     //caret-color: transparent;
     text-align: left;
     color: inherit;
 
     position: relative;
-    top: -7px;
+    top: 0;
     margin-left: 2px;
   }
 }
@@ -164,7 +167,9 @@
 }
 
 .content-wrapper.chip-scrollable ::ng-deep .mat-chip-list-wrapper {
+  display: inline-flex !important;
   flex-wrap: nowrap !important;
+  width: max-content;
   white-space: nowrap;
 }
 
@@ -190,9 +195,8 @@
 }
 
 .content-wrapper.chip-scrollable ::ng-deep .mat-chip-grid {
-  display: flex;
-  flex-wrap: nowrap;
-  min-width: max-content;
+  display: block;
+  width: max-content;
 }
 
 .content-wrapper.chip-scrollable ::ng-deep .mat-chip-option {
