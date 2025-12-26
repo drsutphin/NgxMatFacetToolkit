@@ -11,12 +11,8 @@
   }
 
   <div class="content-wrapper" [class.chip-scrollable]="chipRowScrollableEnabled()">
-    <div class="chip-scroll-container">
-
-    <mat-chip-grid #chipList>
-
-      <mat-chip-row class="filter-input-container" disableRipple="true" @chipAnimation>
-
+    <div class="chip-row">
+      <div class="filter-input-container">
         <span class="flex-facet-autocomplete">
 
           <mat-icon class="add-icon" (click)="focus($event)">add</mat-icon>
@@ -44,103 +40,102 @@
           </mat-autocomplete>
 
         </span>
+      </div>
 
-      </mat-chip-row>
+      <div class="chip-scroll-container">
+        <mat-chip-grid #chipList>
+          @for (facet of selectedFacetViews(); track facet.id) {
+            <mat-chip-option @chipAnimation [color]="facet.readonly ? 'accent' : undefined"
+                             class="facet-chip"
+                             (selectionChange)="chipSelected($event, facet)" (click)="selectedFacetId.set(facet.id)"
+                             [selected]="facet.id === selectedFacetId()"
+                             matTooltip="{{facet.label + (facet.description ? ': ' + facet.description : '')}}"
+                             matTooltipShowDelay="1000">
+              <span class="flex-facet">
 
-      @for (facet of selectedFacetViews(); track facet.id) {
-        <mat-chip-option @chipAnimation [color]="facet.readonly ? 'accent' : undefined"
-                         class="facet-chip"
-                         (selectionChange)="chipSelected($event, facet)" (click)="selectedFacetId.set(facet.id)"
-                         [selected]="facet.id === selectedFacetId()"
-                         matTooltip="{{facet.label + (facet.description ? ': ' + facet.description : '')}}"
-                         matTooltipShowDelay="1000">
-          <span class="flex-facet">
+                @if (facet.icon) {
+                  <mat-icon class="inline-chip-icon">{{facet.icon}}</mat-icon>
+                }
 
-            @if (facet.icon) {
-              <mat-icon class="inline-chip-icon">{{facet.icon}}</mat-icon>
-            }
+                @if (chipLabelsEnabled()) {
+                  <span>{{ facet.label + ': &nbsp;'}}</span>
+                }
 
-            @if (chipLabelsEnabled()) {
-              <span>{{ facet.label + ': &nbsp;'}}</span>
-            }
-
-            @switch (facet.type) {
-              @case (FacetDataType.Category) {
-                {{facet.values | csv:'label':' / '}}
-              }
-              @case (FacetDataType.CategorySingle) {
-                {{facet.values | csv:'label':' / '}}
-              }
-              @case (FacetDataType.Typeahead) {
-                {{facet.values | csv:'label':' / '}}
-              }
-              @case (FacetDataType.TypeaheadSingle) {
-                {{facet.values | csv:'label':' / '}}
-              }
-              @case (FacetDataType.Date) {
-                “{{getDateValue(facet) | date:dateFormat()}}”
-              }
-              @case (FacetDataType.DateRange) {
-                “{{getDateValue(facet) | date:dateFormat()}}” ~ “{{getDateValue(facet, 1) | date:dateFormat()}}”
-              }
-              @case (FacetDataType.Boolean) {
-                <mat-checkbox [disabled]="true" class="inline-chip-checkbox" [ngModel]="getRawValue(facet)" (ngModelChange)="setValue(facet, $event)">
-                  {{facet.label}}
-                </mat-checkbox>
-              }
-              @case (FacetDataType.Text) {
-                @switch (facet.filterType) {
-                  @case (FacetFilterType.contains) {
-                    “..{{getRawValue(facet)}}..”
+                @switch (facet.type) {
+                  @case (FacetDataType.Category) {
+                    {{facet.values | csv:'label':' / '}}
                   }
-                  @case (FacetFilterType.equal) {
-                    “{{getRawValue(facet)}}”
+                  @case (FacetDataType.CategorySingle) {
+                    {{facet.values | csv:'label':' / '}}
                   }
-                  @case (FacetFilterType.startsWith) {
-                    “{{getRawValue(facet)}}...”
+                  @case (FacetDataType.Typeahead) {
+                    {{facet.values | csv:'label':' / '}}
                   }
-                  @case (FacetFilterType.endsWith) {
-                    “...{{getRawValue(facet)}}”
+                  @case (FacetDataType.TypeaheadSingle) {
+                    {{facet.values | csv:'label':' / '}}
+                  }
+                  @case (FacetDataType.Date) {
+                    “{{getDateValue(facet) | date:dateFormat()}}”
+                  }
+                  @case (FacetDataType.DateRange) {
+                    “{{getDateValue(facet) | date:dateFormat()}}” ~ “{{getDateValue(facet, 1) | date:dateFormat()}}”
+                  }
+                  @case (FacetDataType.Boolean) {
+                    <mat-checkbox [disabled]="true" class="inline-chip-checkbox" [ngModel]="getRawValue(facet)" (ngModelChange)="setValue(facet, $event)">
+                      {{facet.label}}
+                    </mat-checkbox>
+                  }
+                  @case (FacetDataType.Text) {
+                    @switch (facet.filterType) {
+                      @case (FacetFilterType.contains) {
+                        “..{{getRawValue(facet)}}..”
+                      }
+                      @case (FacetFilterType.equal) {
+                        “{{getRawValue(facet)}}”
+                      }
+                      @case (FacetFilterType.startsWith) {
+                        “{{getRawValue(facet)}}...”
+                      }
+                      @case (FacetFilterType.endsWith) {
+                        “...{{getRawValue(facet)}}”
+                      }
+                    }
+                  }
+                  @case (FacetDataType.Numeric) {
+                    @switch (facet.filterType) {
+                      @case (FacetFilterType.equal) {
+                        “={{getRawValue(facet)}}”
+                      }
+                      @case (FacetFilterType.greaterThan) {
+                        “>{{getRawValue(facet)}}”
+                      }
+                      @case (FacetFilterType.greaterThanOrEqual) {
+                        “≥{{getRawValue(facet)}}”
+                      }
+                      @case (FacetFilterType.lessThan) {
+                        “<{{getRawValue(facet)}}”
+                      }
+                      @case (FacetFilterType.lessThanOrEqual) {
+                        “≤{{getRawValue(facet)}}”
+                      }
+                      @case (FacetFilterType.between) {
+                        “{{getRawValue(facet)}} - {{getRawValue(facet, 1)}}”
+                      }
+                    }
                   }
                 }
-              }
-              @case (FacetDataType.Numeric) {
-                @switch (facet.filterType) {
-                  @case (FacetFilterType.equal) {
-                    “={{getRawValue(facet)}}”
-                  }
-                  @case (FacetFilterType.greaterThan) {
-                    “>{{getRawValue(facet)}}”
-                  }
-                  @case (FacetFilterType.greaterThanOrEqual) {
-                    “≥{{getRawValue(facet)}}”
-                  }
-                  @case (FacetFilterType.lessThan) {
-                    “<{{getRawValue(facet)}}”
-                  }
-                  @case (FacetFilterType.lessThanOrEqual) {
-                    “≤{{getRawValue(facet)}}”
-                  }
-                  @case (FacetFilterType.between) {
-                    “{{getRawValue(facet)}} - {{getRawValue(facet, 1)}}”
-                  }
+
+                @if (!facet.readonly) {
+                  <mat-icon matChipRemove (click)="removeFacet(facet)">cancel</mat-icon>
                 }
-              }
-            }
 
-            @if (!facet.readonly) {
-              <mat-icon matChipRemove (click)="removeFacet(facet)">cancel</mat-icon>
-            }
+              </span>
 
-          </span>
-
-        </mat-chip-option>
-      }
-
-    </mat-chip-grid>
-
+            </mat-chip-option>
+          }
+        </mat-chip-grid>
+      </div>
     </div>
-
   </div>
 
 
