@@ -28,7 +28,9 @@ export class PageTwoComponent {
   identifier: string | null = null;
   strategy: FacetIdentifierStrategy = FacetIdentifierStrategy.ParentID;
   config: Partial<FacetToolkitConfig> = {
-    identifierStrategy: FacetIdentifierStrategy.ParentID
+    identifierStrategy: FacetIdentifierStrategy.ParentID,
+    chipRowScrollable: true,
+    showFilterCount: true
   };
 
   strategyUpdated(newStrategy: FacetIdentifierStrategy) {

@@ -69,6 +69,19 @@
   box-shadow: 0 0 0 2px rgba(70, 110, 200, 0.35) !important;
 }
 
+.filter-count-divider {
+  width: 1px;
+  height: 16px;
+  margin: 0 6px;
+  background: rgba(46, 72, 144, 0.45);
+}
+
+.filter-count {
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1;
+}
+
 .main-facet-wrapper {
   min-height: 36px;
   display: flex;
@@ -115,8 +128,37 @@
   color: #e2e8f0;
 }
 
+:host-context(.dark-theme) .filter-count-divider {
+  background: rgba(226, 232, 240, 0.45);
+}
+
+:host-context(.dark-theme) .filter-count {
+  color: #e2e8f0;
+}
+
 .content-wrapper {
   flex: 1;
+}
+
+.content-wrapper.chip-scrollable ::ng-deep .mat-chip-list-wrapper {
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  height: 36px;
+  scrollbar-gutter: stable;
+}
+
+.content-wrapper.chip-scrollable ::ng-deep .mat-chip-list-wrapper::-webkit-scrollbar {
+  height: 6px;
+}
+
+.content-wrapper.chip-scrollable ::ng-deep .mat-chip-list-wrapper::-webkit-scrollbar-thumb {
+  background-color: rgba(46, 72, 144, 0.35);
+  border-radius: 999px;
+}
+
+.content-wrapper.chip-scrollable ::ng-deep .mat-chip-list-wrapper::-webkit-scrollbar-track {
+  background: transparent;
 }
 
 .flex-facet {

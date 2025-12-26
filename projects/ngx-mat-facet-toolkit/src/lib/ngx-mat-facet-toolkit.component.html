@@ -10,7 +10,7 @@
     </div>
   }
 
-  <div class="content-wrapper">
+  <div class="content-wrapper" [class.chip-scrollable]="chipRowScrollableEnabled()">
 
     <mat-chip-grid #chipList>
 
@@ -24,6 +24,11 @@
                  [matChipInputAddOnBlur]="false" [matAutocomplete]="auto"
                  (keydown.backspace)="$event.stopPropagation()"
                  (keydown.delete)="$event.stopPropagation()">
+
+          @if (showFilterCountEnabled()) {
+            <span class="filter-count-divider" aria-hidden="true"></span>
+            <span class="filter-count">{{activeFilterCount()}}</span>
+          }
 
           <mat-autocomplete #auto="matAutocomplete" class="mat-facet-autocomplete" (optionSelected)="autoCompleteSelected($event)"
                             [displayWith]="autoCompleteDisplay" panelWidth="250px">

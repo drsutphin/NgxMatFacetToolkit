@@ -129,12 +129,17 @@ export class NgxMatFacetToolkitComponent implements AfterViewInit {
   private readonly identifierStrategy = signal<FacetIdentifierStrategy>(FacetIdentifierStrategy.ParentID);
   private readonly resolvedIdentifier = signal<string | null>(null);
   private readonly allowDebugClick = signal(false);
+  private readonly chipRowScrollable = signal(false);
   private readonly loggingCallback = signal<(...args: any[]) => void>(() => {});
+  private readonly showFilterCount = signal(false);
   private timeoutHandler: ReturnType<typeof setTimeout> | null = null;
 
   private readonly injectorRef = new VCRefInjector(this.vcRef.injector);
 
   readonly selectedFacets = signal<FacetSelection[]>([]);
+  readonly activeFilterCount = computed(() => this.selectedFacets().length);
+  readonly chipRowScrollableEnabled = computed(() => this.chipRowScrollable());
+  readonly showFilterCountEnabled = computed(() => this.showFilterCount());
 
   readonly facetDefinitions = computed(() => this.facets() || []);
 
@@ -166,8 +171,10 @@ export class NgxMatFacetToolkitComponent implements AfterViewInit {
         ...this.config()
       };
       this.allowDebugClick.set(config.allowDebugClick);
+      this.chipRowScrollable.set(config.chipRowScrollable);
       this.identifierStrategy.set(config.identifierStrategy);
       this.loggingCallback.set(config.loggingCallback);
+      this.showFilterCount.set(config.showFilterCount);
       this.storageService.updateLoggingCallback(config.loggingCallback);
       this.storageService.updateStorageStrategy(config.storage);
       this.resolveIdentity();
