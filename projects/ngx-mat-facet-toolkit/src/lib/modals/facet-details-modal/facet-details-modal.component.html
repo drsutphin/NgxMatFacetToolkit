@@ -27,7 +27,8 @@
           @if (resolvedOptions$ | async; as options) {
             <mat-divider></mat-divider>
             @if (options.length > 0) {
-              <mat-selection-list (selectionChange)="selectionChange($event, data, options)">
+              <mat-selection-list (selectionChange)="selectionChange($event, data, options)"
+                                  (keydown.enter)="validateAndSubmit()">
                 @for (item of options; track item.value) {
                   <mat-list-option [value]="item.value" [selected]="isItemSelected(item)"
                                    @fadeIn
@@ -61,7 +62,8 @@
                    focusOnShow="100"
                    [(ngModel)]="typeaheadText"
                    placeholder="{{(data.typeahead || {placeholder: ''}).placeholder}}"
-                   (ngModelChange)="typeaheadValueChanged($event)"/>
+                   (ngModelChange)="typeaheadValueChanged($event)"
+                   (keydown.enter)="validateAndSubmit()"/>
 
             @if (!clearButtonDisabled) {
               <button matSuffix mat-icon-button aria-label="Clear" (click)="clearInput()">
@@ -73,7 +75,8 @@
           @if (resolvedOptions$ | async; as options) {
             <mat-divider></mat-divider>
             @if (options.length > 0) {
-              <mat-selection-list (selectionChange)="selectionChange($event, data, options)">
+              <mat-selection-list (selectionChange)="selectionChange($event, data, options)"
+                                  (keydown.enter)="validateAndSubmit()">
                 @for (item of options; track item.value) {
                   <mat-list-option [value]="item.value"
                                    @fadeIn
@@ -105,7 +108,8 @@
           <mat-form-field appearance="outline" floatLabel="always" class="date-field">
             <mat-label>{{data.label}}</mat-label>
             <input matInput autocomplete="off" focusOnShow="100" [matDatepicker]="picker" [ngModel]="getRawValue(data)" (ngModelChange)="setValue(data, $event)"
-                   placeholder="Choose a date" (focus)="isUpdate ? emptyFunction() : picker.open()"/>
+                   placeholder="Choose a date" (focus)="isUpdate ? emptyFunction() : picker.open()"
+                   (keydown.enter)="validateAndSubmit()"/>
             <mat-datepicker-toggle matSuffix [for]="picker" (click)="picker.open()"></mat-datepicker-toggle>
           </mat-form-field>
           <mat-datepicker #picker></mat-datepicker>
@@ -119,7 +123,8 @@
             <mat-label>{{data.label}} - Start</mat-label>
             <input matInput focusOnShow="100" autocomplete="off" [matDatepicker]="startDatePicker"
                    [ngModel]="getRawValue(data)" (ngModelChange)="setValue(data, $event)" placeholder="Choose a starting date"
-                   (focus)="isUpdate ? emptyFunction() : startDatePicker.open()"/>
+                   (focus)="isUpdate ? emptyFunction() : startDatePicker.open()"
+                   (keydown.enter)="validateAndSubmit()"/>
             <mat-datepicker-toggle matSuffix [for]="startDatePicker" (click)="startDatePicker.open()"></mat-datepicker-toggle>
           </mat-form-field>
           <mat-datepicker #startDatePicker></mat-datepicker>
@@ -127,7 +132,8 @@
           <mat-form-field appearance="outline" floatLabel="always">
             <mat-label>{{data.label}} - End</mat-label>
             <input matInput autocomplete="off" [matDatepicker]="endDatePicker"
-                   [ngModel]="getRawValue(data, 1)" (ngModelChange)="setValue(data, $event, 1)" placeholder="Choose an end date"/>
+                   [ngModel]="getRawValue(data, 1)" (ngModelChange)="setValue(data, $event, 1)" placeholder="Choose an end date"
+                   (keydown.enter)="validateAndSubmit()"/>
             <mat-datepicker-toggle matSuffix [for]="endDatePicker" (click)="endDatePicker.open()"></mat-datepicker-toggle>
           </mat-form-field>
           <mat-datepicker #endDatePicker></mat-datepicker>
@@ -183,21 +189,24 @@
               <mat-label>Minimum</mat-label>
               <input matInput type="number" focusOnShow autocomplete="off"
                      [ngModel]="getRawValue(data)" (ngModelChange)="setValue(data, $event)"
-                     placeholder="{{data.placeholder || data.label }}"/>
+                     placeholder="{{data.placeholder || data.label }}"
+                     (keydown.enter)="validateAndSubmit()"/>
             </mat-form-field>
 
             <mat-form-field class="search-field" appearance="outline">
               <mat-label>Maximum</mat-label>
               <input matInput type="number" autocomplete="off"
                      [ngModel]="getRawValue(data, 1)" (ngModelChange)="setValue(data, $event, 1)"
-                     placeholder="{{data.placeholder || data.label }}"/>
+                     placeholder="{{data.placeholder || data.label }}"
+                     (keydown.enter)="validateAndSubmit()"/>
             </mat-form-field>
           } @else {
             <mat-form-field class="search-field" appearance="outline">
               <mat-label>Value</mat-label>
               <input matInput type="number" focusOnShow autocomplete="off"
                      [ngModel]="getRawValue(data)" (ngModelChange)="setValue(data, $event)"
-                     placeholder="{{data.placeholder || data.label }}"/>
+                     placeholder="{{data.placeholder || data.label }}"
+                     (keydown.enter)="validateAndSubmit()"/>
             </mat-form-field>
           }
 
@@ -205,7 +214,8 @@
       }
       @case (data.type === FacetDataType.Boolean) {
         <div class="boolean-wrapper">
-          <mat-checkbox [ngModel]="getRawValue(data)" (ngModelChange)="setValue(data, $event)">{{data.placeholder || data.label}}</mat-checkbox>
+          <mat-checkbox [ngModel]="getRawValue(data)" (ngModelChange)="setValue(data, $event)"
+                        (keydown.enter)="validateAndSubmit()">{{data.placeholder || data.label}}</mat-checkbox>
         </div>
       }
     }
