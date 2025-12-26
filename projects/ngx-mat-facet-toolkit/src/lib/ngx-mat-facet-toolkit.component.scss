@@ -15,13 +15,13 @@
   align-items: center;
   gap: 2px;
   flex: 0 0 auto;
-  padding: 0 4px 0 6px;
+  padding: 0 4px 0 4px;
   border-radius: 999px;
 
   .filter-input {
     border: none!important;
     background: none!important;
-    width: 64px;
+    width: 56px;
     font-size: 14px!important;
     font-weight: normal;
     height: 28px;
@@ -92,7 +92,7 @@
   font-size: 11px;
   font-weight: 700;
   line-height: 16px;
-  padding: 2px 4px;
+  padding: 2px 6px;
   border-radius: 999px;
   background: rgba(46, 72, 144, 0.16);
   color: #1c2b46;
@@ -172,7 +172,7 @@
   align-items: center;
   overflow-x: scroll;
   overflow-y: hidden;
-  height: 32px;
+  height: 40px;
   scrollbar-gutter: stable;
   width: 100%;
   flex: 1 1 auto;
