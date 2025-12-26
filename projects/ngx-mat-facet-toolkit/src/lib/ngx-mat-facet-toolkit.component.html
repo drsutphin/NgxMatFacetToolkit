@@ -21,7 +21,9 @@
           <mat-icon class="add-icon" (click)="focus($event)">add</mat-icon>
 
           <input #filterInput [matChipInputFor]="chipList" class="filter-input" [placeholder]="placeholder()"
-                 [matChipInputAddOnBlur]="false" [matAutocomplete]="auto">
+                 [matChipInputAddOnBlur]="false" [matAutocomplete]="auto"
+                 (keydown.backspace)="$event.stopPropagation()"
+                 (keydown.delete)="$event.stopPropagation()">
 
           <mat-autocomplete #auto="matAutocomplete" class="mat-facet-autocomplete" (optionSelected)="autoCompleteSelected($event)"
                             [displayWith]="autoCompleteDisplay" panelWidth="250px">
