@@ -16,6 +16,7 @@
   align-items: center;
   gap: 4px;
   flex: 0 0 auto;
+  padding-right: 4px;
 
   .filter-input {
     border: none!important;
@@ -79,6 +80,7 @@
   height: 16px;
   margin: 0 6px;
   background: linear-gradient(180deg, rgba(46, 72, 144, 0.1), rgba(46, 72, 144, 0.7), rgba(46, 72, 144, 0.1));
+  align-self: center;
 }
 
 .filter-count {
@@ -90,6 +92,7 @@
   background: rgba(46, 72, 144, 0.16);
   color: #1c2b46;
   letter-spacing: 0.02em;
+  align-self: center;
 }
 
 .main-facet-wrapper {
@@ -157,6 +160,7 @@
   overflow-y: hidden;
   height: 36px;
   scrollbar-gutter: stable;
+  width: 100%;
 }
 
 .content-wrapper.chip-scrollable ::ng-deep .mat-chip-list-wrapper {
@@ -186,7 +190,9 @@
 }
 
 .content-wrapper.chip-scrollable ::ng-deep .mat-chip-grid {
-  display: block;
+  display: flex;
+  flex-wrap: nowrap;
+  min-width: max-content;
 }
 
 .content-wrapper.chip-scrollable ::ng-deep .mat-chip-option {
