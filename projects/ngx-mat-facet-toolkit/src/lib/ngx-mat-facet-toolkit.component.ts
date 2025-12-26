@@ -2,6 +2,7 @@ import {
   AfterViewInit,
   Component,
   ElementRef,
+  OnDestroy,
   ViewChild,
   ViewContainerRef,
   computed,
@@ -100,7 +101,7 @@ import {FocusOnShowDirective} from './directives/focus-on-show.directive';
     chipAnimation
   ]
 })
-export class NgxMatFacetToolkitComponent implements AfterViewInit {
+export class NgxMatFacetToolkitComponent implements AfterViewInit, OnDestroy {
   readonly facets = input<FacetDefinition[]>([]);
   readonly config = input<Partial<FacetToolkitConfig>>({});
 
@@ -123,6 +124,7 @@ export class NgxMatFacetToolkitComponent implements AfterViewInit {
   @ViewChild('filterInput') filterInput!: ElementRef<HTMLInputElement>;
   @ViewChild(MatAutocompleteTrigger, {read: MatAutocompleteTrigger}) inputAutoComplete!: MatAutocompleteTrigger;
   @ViewChild('presetMenuButton', {read: ElementRef}) presetMenuButton?: ElementRef<HTMLButtonElement>;
+  @ViewChild('chipScrollContainer', {read: ElementRef}) chipScrollContainer?: ElementRef<HTMLDivElement>;
 
   readonly FacetDataType = FacetDataType;
   readonly FacetFilterType = FacetFilterType;
@@ -143,6 +145,8 @@ export class NgxMatFacetToolkitComponent implements AfterViewInit {
   private readonly loggingCallback = signal<(...args: any[]) => void>(() => {});
   private readonly showFilterCount = signal(false);
   private timeoutHandler: ReturnType<typeof setTimeout> | null = null;
+  private chipRowResizeObserver: ResizeObserver | null = null;
+  private chipRowUpdateHandle: number | null = null;
 
   private readonly injectorRef = new VCRefInjector(this.vcRef.injector);
 
@@ -163,6 +167,7 @@ export class NgxMatFacetToolkitComponent implements AfterViewInit {
   readonly presetsForMenu = computed(() =>
     [...this.presets()].sort((a, b) => a.name.localeCompare(b.name))
   );
+  readonly chipRowHasOverflow = signal(false);
 
   readonly availableFacets = computed(() => {
     const selectedIds = new Set(this.selectedFacets().map(selection => selection.id));
@@ -213,6 +218,11 @@ export class NgxMatFacetToolkitComponent implements AfterViewInit {
       const selections = this.selectedFacets();
       this.facetChange.emit(selections);
     });
+
+    effect(() => {
+      this.selectedFacetViews();
+      this.scheduleChipRowUpdate();
+    });
   }
 
   private static getFixedURL(): string {
@@ -234,6 +244,25 @@ export class NgxMatFacetToolkitComponent implements AfterViewInit {
       .subscribe((text) => {
         this.filterText.set(text || '');
       });
+
+    if (this.chipScrollContainer?.nativeElement) {
+      this.chipRowResizeObserver = new ResizeObserver(() => {
+        this.updateChipRowOverflow();
+      });
+      this.chipRowResizeObserver.observe(this.chipScrollContainer.nativeElement);
+      this.scheduleChipRowUpdate();
+    }
+  }
+
+  ngOnDestroy(): void {
+    if (this.chipRowResizeObserver) {
+      this.chipRowResizeObserver.disconnect();
+      this.chipRowResizeObserver = null;
+    }
+    if (this.chipRowUpdateHandle !== null) {
+      cancelAnimationFrame(this.chipRowUpdateHandle);
+      this.chipRowUpdateHandle = null;
+    }
   }
 
   chipSelected(event: MatChipSelectionChange, facet: FacetEditorState): void {
@@ -435,6 +464,27 @@ export class NgxMatFacetToolkitComponent implements AfterViewInit {
       ...selection,
       values: (selection.values || []).map(value => ({...value}))
     }));
+  }
+
+  private scheduleChipRowUpdate(): void {
+    if (!this.chipScrollContainer?.nativeElement) {
+      return;
+    }
+    if (this.chipRowUpdateHandle !== null) {
+      return;
+    }
+    this.chipRowUpdateHandle = requestAnimationFrame(() => {
+      this.chipRowUpdateHandle = null;
+      this.updateChipRowOverflow();
+    });
+  }
+
+  private updateChipRowOverflow(): void {
+    const container = this.chipScrollContainer?.nativeElement;
+    if (!container) {
+      return;
+    }
+    this.chipRowHasOverflow.set(container.scrollWidth > container.clientWidth);
   }
 
   focus(event: MouseEvent) {

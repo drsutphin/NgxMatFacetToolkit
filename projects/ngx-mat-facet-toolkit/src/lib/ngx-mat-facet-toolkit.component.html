@@ -68,7 +68,7 @@
         </span>
       </div>
 
-      <div class="chip-scroll-container">
+      <div class="chip-scroll-container" #chipScrollContainer [class.has-scroll]="chipRowHasOverflow()">
         <mat-chip-grid #chipList>
           @for (facet of selectedFacetViews(); track facet.id) {
             <mat-chip-option @chipAnimation [color]="facet.readonly ? 'accent' : undefined"
