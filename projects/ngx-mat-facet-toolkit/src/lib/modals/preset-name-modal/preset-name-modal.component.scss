@@ -1,0 +1,25 @@
+.preset-name-modal {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 300px;
+}
+
+.spacer {
+  flex: 1;
+}
+
+.content {
+  padding: 0 16px;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  padding: 0 16px 16px;
+}

@@ -6,7 +6,7 @@ export enum FacetResultType {
   ADD
 }
 
-export interface FacetResult {
+export interface FacetResult<T = FacetEditorState> {
   type: FacetResultType;
-  data?: FacetEditorState;
+  data?: T;
 }

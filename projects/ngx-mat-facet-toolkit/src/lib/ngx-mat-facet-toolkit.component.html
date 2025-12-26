@@ -2,11 +2,37 @@
 
   @if (displayFilterIcon()) {
     <div class="icon-wrapper">
-      @if (tooltip() !== null) {
-        <mat-icon class="filter-list-icon" (mousedown)="clickStarted()" (mouseup)="clickEnded()" (mouseleave)="clickEnded()" [matTooltip]="tooltip()">filter_list</mat-icon>
-      } @else {
-        <mat-icon class="filter-list-icon" (mousedown)="clickStarted()" (mouseup)="clickEnded()" (mouseleave)="clickEnded()">filter_list</mat-icon>
-      }
+      <button #presetMenuButton mat-icon-button [matMenuTriggerFor]="presetMenu"
+              class="preset-menu-trigger"
+              (mousedown)="clickStarted()" (mouseup)="clickEnded()" (mouseleave)="clickEnded()"
+              [matTooltip]="tooltip() !== null ? tooltip() : ''"
+              [matTooltipDisabled]="tooltip() === null">
+        <mat-icon>bookmark</mat-icon>
+      </button>
+      <mat-menu #presetMenu="matMenu" class="preset-menu">
+        <button mat-menu-item (click)="promptSavePreset()">
+          <mat-icon>bookmark_add</mat-icon>
+          <span>Save current filters</span>
+        </button>
+        <button mat-menu-item (click)="openPresetManager()">
+          <mat-icon>tune</mat-icon>
+          <span>Manage presets</span>
+        </button>
+        <mat-divider></mat-divider>
+        @if (presetsForMenu().length > 0) {
+          @for (preset of presetsForMenu(); track preset.id) {
+            <button mat-menu-item (click)="applyPreset(preset)">
+              <mat-icon>bookmark</mat-icon>
+              <span>{{preset.name}}</span>
+            </button>
+          }
+        } @else {
+          <button mat-menu-item disabled>
+            <mat-icon>bookmark_border</mat-icon>
+            <span>No presets yet</span>
+          </button>
+        }
+      </mat-menu>
     </div>
   }
 

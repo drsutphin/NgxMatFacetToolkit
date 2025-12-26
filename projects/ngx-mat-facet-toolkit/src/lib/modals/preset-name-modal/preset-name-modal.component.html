@@ -1,0 +1,23 @@
+<div class="preset-name-modal">
+  <mat-toolbar>
+    <span>{{data.title}}</span>
+    <span class="spacer"></span>
+    <button mat-icon-button (click)="close()" aria-label="Close preset name dialog">
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-toolbar>
+
+  <div class="content">
+    <mat-form-field appearance="outline">
+      <mat-label>{{data.placeholder || 'Preset name'}}</mat-label>
+      <input matInput [(ngModel)]="name" (keydown.enter)="save()" focusOnShow>
+    </mat-form-field>
+  </div>
+
+  <div class="actions">
+    <button mat-stroked-button (click)="close()">Cancel</button>
+    <button mat-flat-button color="primary" [disabled]="!name.trim()" (click)="save()">
+      {{data.confirmLabel || 'Save'}}
+    </button>
+  </div>
+</div>

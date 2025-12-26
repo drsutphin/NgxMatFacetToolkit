@@ -1,0 +1,68 @@
+<div class="preset-manager-modal">
+  <mat-toolbar>
+    <span>Manage Presets</span>
+    <span class="spacer"></span>
+    <button mat-icon-button (click)="close()" aria-label="Close preset manager">
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-toolbar>
+
+  <div class="search-row">
+    <mat-form-field appearance="outline">
+      <mat-label>Search presets</mat-label>
+      <input matInput [(ngModel)]="filterText">
+      <button matSuffix mat-icon-button aria-label="Clear search" *ngIf="filterText" (click)="filterText = ''">
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
+  </div>
+
+  <div class="preset-list">
+    @if (filteredPresets.length === 0) {
+      <div class="empty-state">No presets found.</div>
+    }
+
+    @for (preset of filteredPresets; track preset.id) {
+      <div class="preset-row">
+        <div class="preset-info">
+          <div class="preset-name">{{preset.name}}</div>
+          <div class="preset-meta">{{preset.selections.length}} filters</div>
+        </div>
+        <div class="preset-actions">
+          <button mat-icon-button [matMenuTriggerFor]="presetMenu" aria-label="Preset actions">
+            <mat-icon>more_vert</mat-icon>
+          </button>
+          <mat-menu #presetMenu="matMenu">
+            <button mat-menu-item (click)="loadPreset(preset)">
+              <mat-icon>upload</mat-icon>
+              <span>Load</span>
+            </button>
+            <button mat-menu-item (click)="startRename(preset)">
+              <mat-icon>edit</mat-icon>
+              <span>Rename</span>
+            </button>
+            <button mat-menu-item (click)="deletePreset(preset)">
+              <mat-icon>delete</mat-icon>
+              <span>Delete</span>
+            </button>
+          </mat-menu>
+        </div>
+      </div>
+
+      @if (editingPresetId === preset.id) {
+        <div class="rename-row">
+          <mat-form-field appearance="outline">
+            <mat-label>Preset name</mat-label>
+            <input matInput [(ngModel)]="editingName" (keydown.enter)="confirmRename(preset)">
+          </mat-form-field>
+          <button mat-icon-button (click)="confirmRename(preset)" [disabled]="!editingName.trim()" aria-label="Confirm rename">
+            <mat-icon>check</mat-icon>
+          </button>
+          <button mat-icon-button (click)="cancelRename()" aria-label="Cancel rename">
+            <mat-icon>close</mat-icon>
+          </button>
+        </div>
+      }
+    }
+  </div>
+</div>

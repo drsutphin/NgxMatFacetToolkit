@@ -19,10 +19,12 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatChipsModule, MatChipSelectionChange} from '@angular/material/chips';
 import {MatNativeDateModule, MatOptionModule} from '@angular/material/core';
 import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatDividerModule} from '@angular/material/divider';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatIconModule} from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input';
 import {MatListModule} from '@angular/material/list';
+import {MatMenuModule} from '@angular/material/menu';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatSelectModule} from '@angular/material/select';
@@ -39,6 +41,7 @@ import {
   FacetDefinition,
   FacetFilterType,
   FacetIdentifierStrategy,
+  FacetPreset,
   FacetSelection,
   FacetToolkitConfig,
   FacetValue
@@ -46,10 +49,13 @@ import {
 import {FacetEditorState} from './models/facet-editor-state.model';
 import {FacetDetailsModalComponent} from './modals/facet-details-modal/facet-details-modal.component';
 import {FacetModalService} from './modals/facet-modal.service';
+import {PresetManagerModalComponent} from './modals/preset-manager-modal/preset-manager-modal.component';
+import {PresetNameModalComponent} from './modals/preset-name-modal/preset-name-modal.component';
 import {VCRefInjector} from './misc/parent.helper';
 import {v4 as uuidv4} from 'uuid';
 import {chipAnimation} from './ngx-mat-facet-toolkit.animations';
 import {FacetStorageService} from './services/facet-storage.service';
+import {FacetPresetStorageService} from './services/facet-preset-storage.service';
 import {FACET_TOOLKIT_CONFIG} from './facet-toolkit.config';
 import {FacetResultType} from './models/facet-result.model';
 import {CSVPipe, FilterPipe, KeysPipe} from './pipes';
@@ -69,6 +75,7 @@ import {FocusOnShowDirective} from './directives/focus-on-show.directive';
     MatListModule,
     MatFormFieldModule,
     MatDatepickerModule,
+    MatDividerModule,
     MatOptionModule,
     MatSelectModule,
     MatButtonModule,
@@ -81,6 +88,7 @@ import {FocusOnShowDirective} from './directives/focus-on-show.directive';
     MatProgressSpinnerModule,
     OverlayModule,
     PortalModule,
+    MatMenuModule,
     CSVPipe,
     FilterPipe,
     KeysPipe,
@@ -114,6 +122,7 @@ export class NgxMatFacetToolkitComponent implements AfterViewInit {
 
   @ViewChild('filterInput') filterInput!: ElementRef<HTMLInputElement>;
   @ViewChild(MatAutocompleteTrigger, {read: MatAutocompleteTrigger}) inputAutoComplete!: MatAutocompleteTrigger;
+  @ViewChild('presetMenuButton', {read: ElementRef}) presetMenuButton?: ElementRef<HTMLButtonElement>;
 
   readonly FacetDataType = FacetDataType;
   readonly FacetFilterType = FacetFilterType;
@@ -123,6 +132,7 @@ export class NgxMatFacetToolkitComponent implements AfterViewInit {
 
   private readonly injectedConfig = inject(FACET_TOOLKIT_CONFIG);
   private readonly storageService = inject(FacetStorageService);
+  private readonly presetStorageService = inject(FacetPresetStorageService);
   private readonly modal = inject(FacetModalService);
   private readonly vcRef = inject(ViewContainerRef);
 
@@ -147,6 +157,11 @@ export class NgxMatFacetToolkitComponent implements AfterViewInit {
     this.selectedFacets()
       .map(selection => this.toEditorState(selection))
       .filter((facet): facet is FacetEditorState => !!facet)
+  );
+
+  readonly presets = signal<FacetPreset[]>([]);
+  readonly presetsForMenu = computed(() =>
+    [...this.presets()].sort((a, b) => a.name.localeCompare(b.name))
   );
 
   readonly availableFacets = computed(() => {
@@ -177,7 +192,15 @@ export class NgxMatFacetToolkitComponent implements AfterViewInit {
       this.showFilterCount.set(config.showFilterCount);
       this.storageService.updateLoggingCallback(config.loggingCallback);
       this.storageService.updateStorageStrategy(config.storage);
+      this.presetStorageService.updateLoggingCallback(config.loggingCallback);
+      this.presetStorageService.updateStorageConfig(config.presetStorage);
       this.resolveIdentity();
+    });
+
+    effect(() => {
+      this.config();
+      const identifier = this.resolvedIdentifier();
+      this.refreshPresets(identifier);
     });
 
     effect(() => {
@@ -254,7 +277,7 @@ export class NgxMatFacetToolkitComponent implements AfterViewInit {
   }
 
   promptFacet(facet: FacetEditorState, position: { top: number; left: number | undefined }, isUpdate: boolean, target: unknown): void {
-    const facetDetailsModal = this.modal.open(FacetDetailsModalComponent, target as ElementRef | HTMLElement, {
+    const facetDetailsModal = this.modal.open<FacetEditorState>(FacetDetailsModalComponent, target as ElementRef | HTMLElement, {
       data: facet,
       offsetY: position.top,
       offsetX: position.left,
@@ -305,6 +328,114 @@ export class NgxMatFacetToolkitComponent implements AfterViewInit {
     this.selectedFacets.set(readonlySelections);
     this.storageService.clearStorage(this.resolvedIdentifier());
     this.facetReset.emit();
+  }
+
+  promptSavePreset(): void {
+    const target = this.presetMenuButton?.nativeElement || this.filterInput?.nativeElement;
+    const modalRef = this.modal.open<string>(PresetNameModalComponent, target, {
+      data: {
+        title: 'Save current filters',
+        confirmLabel: 'Save preset',
+        placeholder: 'Preset name'
+      },
+      offsetY: 20,
+      offsetX: -10,
+      width: '320px'
+    });
+
+    modalRef.afterClosed().subscribe(result => {
+      if (result.type !== FacetResultType.ADD || !result.data) {
+        return;
+      }
+      this.savePreset(result.data);
+    });
+  }
+
+  openPresetManager(): void {
+    const target = this.presetMenuButton?.nativeElement || this.filterInput?.nativeElement;
+    this.modal.open(PresetManagerModalComponent, target, {
+      data: {
+        presets: this.presetsForMenu(),
+        onLoad: (preset: FacetPreset) => this.applyPreset(preset),
+        onRename: (preset: FacetPreset, name: string) => this.renamePreset(preset, name),
+        onDelete: (preset: FacetPreset) => this.deletePreset(preset)
+      },
+      offsetY: 20,
+      offsetX: -10,
+      width: '380px'
+    });
+  }
+
+  applyPreset(preset: FacetPreset): void {
+    const facetDefinitions = this.facetDefinitions();
+    const presetById = new Map(preset.selections.map(selection => [selection.id, selection]));
+    const nextSelections = facetDefinitions
+      .map(facet => {
+        const stored = presetById.get(facet.id);
+        if (stored) {
+          return stored;
+        }
+        if (facet.readonly && facet.defaultValues && facet.defaultValues.length > 0) {
+          return this.toSelection(facet, facet.defaultValues);
+        }
+        return null;
+      })
+      .filter((selection): selection is FacetSelection => !!selection);
+
+    this.selectedFacets.set(nextSelections);
+    this.storageService.updateSavedFacets(this.resolvedIdentifier(), nextSelections);
+  }
+
+  private savePreset(name: string): void {
+    const identifier = this.resolvedIdentifier();
+    if (!identifier) {
+      this.loggingCallback()('Cannot save preset, no identifier resolved');
+      return;
+    }
+
+    const selections = this.cloneSelections(this.selectedFacets());
+    const preset: FacetPreset = {
+      id: uuidv4(),
+      name,
+      identifier,
+      selections,
+      createdAt: new Date().toISOString()
+    };
+
+    const nextPresets = this.presets().concat(preset);
+    this.persistPresets(nextPresets);
+  }
+
+  private renamePreset(preset: FacetPreset, name: string): void {
+    const nextPresets = this.presets().map(item =>
+      item.id === preset.id ? {...item, name, updatedAt: new Date().toISOString()} : item
+    );
+    this.persistPresets(nextPresets);
+  }
+
+  private deletePreset(preset: FacetPreset): void {
+    const nextPresets = this.presets().filter(item => item.id !== preset.id);
+    this.persistPresets(nextPresets);
+  }
+
+  private persistPresets(presets: FacetPreset[]): void {
+    this.presets.set(presets);
+    this.presetStorageService.savePresets(this.resolvedIdentifier(), presets);
+  }
+
+  private refreshPresets(identifier: string | null): void {
+    if (!identifier) {
+      this.presets.set([]);
+      return;
+    }
+    this.presets.set(this.presetStorageService.loadPresets(identifier));
+  }
+
+  private cloneSelections(selections: FacetSelection[]): FacetSelection[] {
+    return (selections || []).map(selection => ({
+      ...selection,
+      values: (selection.values || []).map(value => ({...value}))
+    }));
   }
 
   focus(event: MouseEvent) {

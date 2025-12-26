@@ -3,7 +3,6 @@ import {ComponentPortal} from '@angular/cdk/portal';
 import {Injectable, ElementRef, Injector} from '@angular/core';
 import {DefaultFacetModalConfig, FacetModalConfig} from './facet-modal.config';
 import {FacetModalRef} from './facet-modal.ref';
-import {FacetDetailsModalComponent} from './facet-details-modal/facet-details-modal.component';
 import {FacetModalComponent} from './facet-modal/facet-modal.component';
 import {FACET_MODAL_DATA} from './facet-modal.data';
 
@@ -16,9 +15,9 @@ export class FacetModalService {
               private injector: Injector) {
   }
 
-  open(component: ComponentType<FacetDetailsModalComponent>,
+  open<T = unknown>(component: ComponentType<any>,
        target: ElementRef | HTMLElement,
-       config: Partial<FacetModalConfig> = {}): FacetModalRef {
+       config: Partial<FacetModalConfig> = {}): FacetModalRef<T> {
 
     const facetModalConfig: FacetModalConfig = Object.assign({}, DefaultFacetModalConfig, config);
 
@@ -54,7 +53,7 @@ export class FacetModalService {
     }
 
 
-    const modalRef = new FacetModalRef(overlayRef, positionStrategy, facetModalConfig);
+    const modalRef = new FacetModalRef<T>(overlayRef, positionStrategy, facetModalConfig);
 
     const injector = Injector.create({
       providers: [

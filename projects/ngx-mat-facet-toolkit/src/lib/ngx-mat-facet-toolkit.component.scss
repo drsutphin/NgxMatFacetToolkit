@@ -115,8 +115,13 @@
   }
 }
 
-.filter-list-icon {
+.preset-menu-trigger {
   margin-bottom: 10px;
+  color: #1c2b46;
+}
+
+:host-context(.dark-theme) .preset-menu-trigger {
+  color: #e2e8f0;
 }
 
 ::ng-deep .mat-autocomplete-panel.mat-autocomplete-visible {

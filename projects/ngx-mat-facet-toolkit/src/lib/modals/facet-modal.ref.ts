@@ -2,14 +2,15 @@ import {ConnectedOverlayPositionChange, FlexibleConnectedPositionStrategy, Overl
 import {Observable, Subject} from 'rxjs';
 import {filter} from 'rxjs/operators';
 import {FacetModalConfig} from './facet-modal.config';
+import {FacetEditorState} from '../models/facet-editor-state.model';
 import {FacetResult, FacetResultType} from '../models/facet-result.model';
 
 
-export class FacetModalRef {
-  private afterClosedSubject = new Subject<FacetResult>();
-  private beforeClosedSubject = new Subject<FacetResult>();
+export class FacetModalRef<T = FacetEditorState> {
+  private afterClosedSubject = new Subject<FacetResult<T>>();
+  private beforeClosedSubject = new Subject<FacetResult<T>>();
 
-  private _result: FacetResult = {type: FacetResultType.CANCEL};
+  private _result: FacetResult<T> = {type: FacetResultType.CANCEL};
 
   constructor(private overlayRef: OverlayRef,
               private positionStrategy: FlexibleConnectedPositionStrategy,
@@ -32,7 +33,7 @@ export class FacetModalRef {
     }
   }
 
-  close(dialogResult?: FacetResult): void {
+  close(dialogResult?: FacetResult<T>): void {
     if (!!dialogResult) {
       this._result = dialogResult;
     }
@@ -46,11 +47,11 @@ export class FacetModalRef {
     this.overlayRef.dispose();
   }
 
-  afterClosed(): Observable<FacetResult> {
+  afterClosed(): Observable<FacetResult<T>> {
     return this.afterClosedSubject.asObservable();
   }
 
-  beforeClosed(): Observable<FacetResult> {
+  beforeClosed(): Observable<FacetResult<T>> {
     return this.beforeClosedSubject.asObservable();
   }
 

@@ -1,3 +1,5 @@
+import {DEFAULT_FACET_PRESET_STORAGE_CONFIG, FacetPresetStorageConfig} from './facet-preset-storage.model';
+
 export enum FacetIdentifierStrategy {
   WindowURL = 'windowURL',
   ParentID = 'parentID',
@@ -12,6 +14,7 @@ export interface FacetToolkitConfig {
   chipRowScrollable: boolean;
   identifierStrategy: FacetIdentifierStrategy;
   loggingCallback: (...args: any[]) => void;
+  presetStorage?: FacetPresetStorageConfig;
   showFilterCount: boolean;
   storage: FacetStorageStrategy;
 }
@@ -21,6 +24,7 @@ export const DEFAULT_FACET_TOOLKIT_CONFIG: FacetToolkitConfig = {
   chipRowScrollable: false,
   identifierStrategy: FacetIdentifierStrategy.ParentID,
   loggingCallback: () => {},
+  presetStorage: DEFAULT_FACET_PRESET_STORAGE_CONFIG,
   showFilterCount: false,
   storage: 'session'
 };
