@@ -13,15 +13,15 @@
   height: 28px;
   display: inline-flex;
   align-items: center;
-  gap: 4px;
+  gap: 2px;
   flex: 0 0 auto;
-  padding: 0 8px;
+  padding: 0 4px 0 6px;
   border-radius: 999px;
 
   .filter-input {
     border: none!important;
     background: none!important;
-    width: 85px;
+    width: 64px;
     font-size: 14px!important;
     font-weight: normal;
     height: 28px;
@@ -36,6 +36,7 @@
     position: relative;
     top: 0;
     margin-left: 2px;
+    vertical-align: middle;
   }
 }
 
@@ -82,7 +83,7 @@
   display: inline-block;
   width: 1px;
   height: 18px;
-  margin: 0 6px;
+  margin: 0 3px;
   background: linear-gradient(180deg, rgba(46, 72, 144, 0.1), rgba(46, 72, 144, 0.7), rgba(46, 72, 144, 0.1));
   align-self: center;
 }
@@ -91,7 +92,7 @@
   font-size: 11px;
   font-weight: 700;
   line-height: 16px;
-  padding: 2px 6px;
+  padding: 2px 4px;
   border-radius: 999px;
   background: rgba(46, 72, 144, 0.16);
   color: #1c2b46;
@@ -171,7 +172,7 @@
   align-items: center;
   overflow-x: scroll;
   overflow-y: hidden;
-  height: 36px;
+  height: 32px;
   scrollbar-gutter: stable;
   width: 100%;
   flex: 1 1 auto;
@@ -213,6 +214,14 @@
   flex-wrap: nowrap;
   align-items: center;
   width: max-content;
+}
+
+.content-wrapper.chip-scrollable ::ng-deep .mat-mdc-chip-set,
+.content-wrapper.chip-scrollable ::ng-deep .mdc-evolution-chip-set__chips {
+  display: inline-flex !important;
+  flex-wrap: nowrap !important;
+  width: max-content;
+  white-space: nowrap;
 }
 
 .content-wrapper.chip-scrollable ::ng-deep .mat-chip-list-wrapper {
