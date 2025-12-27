@@ -18,6 +18,52 @@ interface ThemeField {
   placeholder: string;
 }
 
+interface ThemePreset {
+  id: string;
+  label: string;
+  light: FacetToolkitThemeOverrides;
+  dark: FacetToolkitThemeOverrides;
+}
+
+const hexToRgb = (hex: string): {r: number; g: number; b: number} | null => {
+  const normalized = hex.replace('#', '').trim();
+  const value = normalized.length === 3
+    ? normalized.split('').map(char => char + char).join('')
+    : normalized;
+  if (value.length !== 6) {
+    return null;
+  }
+  const r = Number.parseInt(value.slice(0, 2), 16);
+  const g = Number.parseInt(value.slice(2, 4), 16);
+  const b = Number.parseInt(value.slice(4, 6), 16);
+  return Number.isNaN(r) || Number.isNaN(g) || Number.isNaN(b) ? null : {r, g, b};
+};
+
+const rgbaFromHex = (hex: string, alpha: number): string => {
+  const rgb = hexToRgb(hex);
+  if (!rgb) {
+    return hex;
+  }
+  return `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, ${alpha})`;
+};
+
+const buildOverrides = (primaryHex: string, textHex: string): FacetToolkitThemeOverrides => ({
+  inputBg: rgbaFromHex(primaryHex, 0.08),
+  inputShadow: `0 0 0 1px ${rgbaFromHex(primaryHex, 0.35)}`,
+  inputHoverBg: rgbaFromHex(primaryHex, 0.12),
+  inputHoverShadow: `0 0 0 1px ${rgbaFromHex(primaryHex, 0.55)}`,
+  inputFocusShadow: `0 0 0 2px ${rgbaFromHex(primaryHex, 0.35)}`,
+  inputText: textHex,
+  inputPlaceholder: textHex,
+  addIcon: textHex,
+  presetTrigger: textHex,
+  countDivider: `linear-gradient(180deg, ${rgbaFromHex(primaryHex, 0.1)}, ${rgbaFromHex(primaryHex, 0.7)}, ${rgbaFromHex(primaryHex, 0.1)})`,
+  countBg: rgbaFromHex(primaryHex, 0.16),
+  countText: textHex,
+  scrollbarThumb: rgbaFromHex(primaryHex, 0.35),
+  presetRowBg: rgbaFromHex(primaryHex, 0.08)
+});
+
 @Component({
   selector: 'app-theme-settings',
   templateUrl: './theme-settings.component.html',
@@ -38,6 +84,7 @@ export class ThemeSettingsComponent implements OnInit {
   themeConfigUpdated = new EventEmitter<Partial<FacetToolkitConfig>>(true);
 
   themeMode: FacetToolkitThemeMode = 'auto';
+  themePresetId = 'material-indigo-pink';
 
   themeFields: ThemeField[] = [
     {key: 'inputBg', label: 'Input background', placeholder: 'rgba(46, 72, 144, 0.08)'},
@@ -54,6 +101,27 @@ export class ThemeSettingsComponent implements OnInit {
     {key: 'countText', label: 'Count text', placeholder: '#1c2b46'},
     {key: 'scrollbarThumb', label: 'Scrollbar thumb', placeholder: 'rgba(46, 72, 144, 0.35)'},
     {key: 'presetRowBg', label: 'Preset row background', placeholder: 'rgba(46, 72, 144, 0.08)'}
+  ];
+
+  themePresets: ThemePreset[] = [
+    {
+      id: 'material-indigo-pink',
+      label: 'Material Indigo/Pink (Light) + Blue Gray/Amber (Dark)',
+      light: buildOverrides('#3f51b5', '#1c2b46'),
+      dark: buildOverrides('#607d8b', '#e2e8f0')
+    },
+    {
+      id: 'material-teal-amber',
+      label: 'Material Teal/Amber (Light) + Blue Gray/Amber (Dark)',
+      light: buildOverrides('#009688', '#0f172a'),
+      dark: buildOverrides('#455a64', '#e2e8f0')
+    },
+    {
+      id: 'material-deep-purple-amber',
+      label: 'Material Deep Purple/Amber (Light) + Blue Gray/Amber (Dark)',
+      light: buildOverrides('#673ab7', '#1e1b4b'),
+      dark: buildOverrides('#546e7a', '#e2e8f0')
+    }
   ];
 
   lightOverrides: FacetToolkitThemeOverrides = {
@@ -91,6 +159,23 @@ export class ThemeSettingsComponent implements OnInit {
   };
 
   ngOnInit(): void {
+    this.applyPreset(this.themePresetId);
+    this.emitConfig();
+  }
+
+  applyPreset(presetId: string): void {
+    const preset = this.themePresets.find(item => item.id === presetId);
+    if (!preset) {
+      return;
+    }
+    this.themePresetId = preset.id;
+    this.lightOverrides = {...preset.light};
+    this.darkOverrides = {...preset.dark};
+    this.emitConfig();
+  }
+
+  onFieldChange(): void {
+    this.themePresetId = 'custom';
     this.emitConfig();
   }
 

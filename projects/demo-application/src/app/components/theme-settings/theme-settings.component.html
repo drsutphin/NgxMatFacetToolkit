@@ -10,6 +10,16 @@
       </mat-select>
     </mat-form-field>
 
+    <mat-form-field appearance="outline">
+      <mat-label>Theme preset</mat-label>
+      <mat-select [(value)]="themePresetId" (selectionChange)="applyPreset($event.value)">
+        <mat-option value="custom">Custom</mat-option>
+        @for (preset of themePresets; track preset.id) {
+          <mat-option [value]="preset.id">{{preset.label}}</mat-option>
+        }
+      </mat-select>
+    </mat-form-field>
+
     <mat-divider></mat-divider>
 
     <h3>Light overrides</h3>
@@ -17,7 +27,7 @@
       @for (field of themeFields; track field.key) {
         <mat-form-field appearance="outline">
           <mat-label>{{field.label}}</mat-label>
-          <input matInput [(ngModel)]="lightOverrides[field.key]" (ngModelChange)="emitConfig()"
+          <input matInput [(ngModel)]="lightOverrides[field.key]" (ngModelChange)="onFieldChange()"
                  [placeholder]="field.placeholder">
         </mat-form-field>
       }
@@ -30,7 +40,7 @@
       @for (field of themeFields; track field.key) {
         <mat-form-field appearance="outline">
           <mat-label>{{field.label}}</mat-label>
-          <input matInput [(ngModel)]="darkOverrides[field.key]" (ngModelChange)="emitConfig()"
+          <input matInput [(ngModel)]="darkOverrides[field.key]" (ngModelChange)="onFieldChange()"
                  [placeholder]="field.placeholder">
         </mat-form-field>
       }
