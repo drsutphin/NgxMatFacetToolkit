@@ -15,32 +15,24 @@
   --facet-toolkit-modal-header-bg-dark: #111827;
   --facet-toolkit-modal-header-text-light: #ffffff;
   --facet-toolkit-modal-header-text-dark: #e2e8f0;
-  --facet-toolkit-modal-header-bg: var(--facet-toolkit-modal-header-bg-light);
-  --facet-toolkit-modal-header-text: var(--facet-toolkit-modal-header-text-light);
 }
 
 :host-context(.dark-theme) {
   --facet-toolkit-preset-row-bg: var(--facet-toolkit-preset-row-bg-dark);
   --facet-toolkit-modal-surface: var(--facet-toolkit-modal-surface-dark);
   --facet-toolkit-modal-text: var(--facet-toolkit-modal-text-dark);
-  --facet-toolkit-modal-header-bg: var(--facet-toolkit-modal-header-bg-dark);
-  --facet-toolkit-modal-header-text: var(--facet-toolkit-modal-header-text-dark);
 }
 
 :host-context(.facet-theme-light) {
   --facet-toolkit-preset-row-bg: var(--facet-toolkit-preset-row-bg-light);
   --facet-toolkit-modal-surface: var(--facet-toolkit-modal-surface-light);
   --facet-toolkit-modal-text: var(--facet-toolkit-modal-text-light);
-  --facet-toolkit-modal-header-bg: var(--facet-toolkit-modal-header-bg-light);
-  --facet-toolkit-modal-header-text: var(--facet-toolkit-modal-header-text-light);
 }
 
 :host-context(.facet-theme-dark) {
   --facet-toolkit-preset-row-bg: var(--facet-toolkit-preset-row-bg-dark);
   --facet-toolkit-modal-surface: var(--facet-toolkit-modal-surface-dark);
   --facet-toolkit-modal-text: var(--facet-toolkit-modal-text-dark);
-  --facet-toolkit-modal-header-bg: var(--facet-toolkit-modal-header-bg-dark);
-  --facet-toolkit-modal-header-text: var(--facet-toolkit-modal-header-text-dark);
 }
 
 .arrow {
