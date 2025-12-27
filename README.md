@@ -1,7 +1,7 @@
 # NgxMatFacetToolkit [![npm version](https://badge.fury.io/js/@drsutphin%2Fngx-mat-facet-toolkit.svg)](https://badge.fury.io/js/@drsutphin%2Fngx-mat-facet-toolkit)
 Angular 19 standalone facet filtering toolkit with Material UI.
 
-[Demo](https://128keaton.github.io/NgxMatFacetToolkit/)
+[Demo](https://drsutphin.github.io/NgxMatFacetToolkit/)
 
 ## Install
 ```bash
@@ -142,8 +142,11 @@ Component inputs:
 
 Provider config (`provideFacetToolkitConfig`):
 - `allowDebugClick`: `boolean`
+- `chipRowScrollable`: `boolean`
 - `identifierStrategy`: `FacetIdentifierStrategy`
 - `loggingCallback`: `(...args) => void`
+- `presetStorage`: `FacetPresetStorageConfig`
+- `showFilterCount`: `boolean`
 - `storage`: `FacetStorageStrategy` (`session`, `local`, `none`)
 
 ## Outputs
@@ -161,6 +164,24 @@ Identity strategies:
 - `WindowURL` uses `window.location.pathname`.
 - `Random` generates a UUID.
 - `Manual` expects `identifier` input.
+
+## Presets
+Presets are keyed by the resolved facet identifier. Storage defaults to `localStorage`, but you can override with callbacks.
+
+Preset storage config:
+```ts
+provideFacetToolkitConfig({
+  presetStorage: {
+    strategy: 'local',
+    keyPrefix: 'ngx-mat-facet-presets',
+    callbacks: {
+      loadPresets: (identifier) => [],
+      savePresets: (identifier, presets) => {},
+      clearPresets: (identifier) => {}
+    }
+  }
+});
+```
 
 ## Roadmap
 - Start with a single main component export.
@@ -208,22 +229,40 @@ Identity strategies:
 | Field | Type | Notes |
 | --- | --- | --- |
 | `id` | `string` | Matches the facet definition id. |
-| `label` | `string` | Facet label (copied from definition). |
 | `type` | `FacetDataType` | Facet type. |
-| `filterType` | `FacetFilterType` | Active filter type. |
+| `filterType` | `FacetFilterType` | Active filter type (optional). |
 | `values` | `FacetValue[]` | Active selections or typed values. |
-| `definition` | `FacetDefinition` | Original definition for reference. |
 
 `FacetToolkitConfig`
 | Field | Type | Notes |
 | --- | --- | --- |
 | `allowDebugClick` | `boolean` | Enables long-click identity logging. |
+| `chipRowScrollable` | `boolean` | Enables chip row horizontal scrolling. |
 | `identifierStrategy` | `FacetIdentifierStrategy` | How storage identity is generated. |
 | `loggingCallback` | `(...args) => void` | Logging hook for storage debug. |
+| `presetStorage` | `FacetPresetStorageConfig` | Preset storage config. |
+| `showFilterCount` | `boolean` | Shows active filter count badge. |
 | `storage` | `FacetStorageStrategy` | `session`, `local`, or `none`. |
 
+`FacetPreset`
+| Field | Type | Notes |
+| --- | --- | --- |
+| `id` | `string` | Preset identifier. |
+| `name` | `string` | Display name. |
+| `identifier` | `string` | Facet identifier scope. |
+| `selections` | `FacetSelection[]` | Stored selections. |
+| `createdAt` | `string` | ISO timestamp. |
+| `updatedAt` | `string` | ISO timestamp (optional). |
+
+`FacetPresetStorageConfig`
+| Field | Type | Notes |
+| --- | --- | --- |
+| `strategy` | `FacetPresetStorageStrategy` | `local`, `session`, or `none`. |
+| `keyPrefix` | `string` | Storage key prefix. |
+| `callbacks` | `FacetPresetStorageCallbacks` | Optional storage overrides. |
+
 ### Enums
-`FacetDataType`: `Text`, `Boolean`, `Category`, `CategorySingle`, `Typeahead`, `TypeaheadSingle`, `Date`, `DateRange`  
+`FacetDataType`: `Text`, `Boolean`, `Category`, `CategorySingle`, `Typeahead`, `TypeaheadSingle`, `Date`, `DateRange`, `Numeric`  
 `FacetFilterType`: `Contains`, `Equals`, `StartsWith`, `EndsWith`, `Between`, `Before`, `After`, `Exact`, `NotContains`, `NotEquals`
 
 ## Theming Variants
@@ -353,6 +392,17 @@ $dense-theme: mat.m2-define-light-theme((
   id: 'range',
   label: 'Date Range',
   type: FacetDataType.DateRange
+}
+```
+
+### Numeric
+```ts
+{
+  id: 'score',
+  label: 'Score',
+  type: FacetDataType.Numeric,
+  dataType: 'number',
+  placeholder: 'Enter a score'
 }
 ```
 
