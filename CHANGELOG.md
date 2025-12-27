@@ -1,3 +1,10 @@
+# 1.0.22
+* Added:
+  * Release notes for v1.0.19-v1.0.21
+* Fixed:
+  * README demo link and cookbook updates
+  * Preset configuration docs and model references
+
 # 1.0.21
 * Fixed:
   * Guard ResizeObserver usage for test environments
