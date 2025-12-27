@@ -96,6 +96,8 @@ export class PresetManagerModalComponent {
     const modalRef = this.modalService.open<boolean>(PresetDeleteModalComponent, this.elementRef.nativeElement, {
       centered: true,
       data: {name: preset.name},
+      panelClass: this.modalRef.config.panelClass,
+      themeVariables: this.modalRef.config.themeVariables,
       width: '320px'
     });
 

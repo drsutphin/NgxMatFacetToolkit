@@ -20,6 +20,10 @@
   $foreground: map.get($theme, foreground);
   $background: map.get($theme, background);
   $text-secondary: map.get($foreground, secondary-text);
+  $primary-color: mat.m2-get-color-from-palette($primary-palette);
+  $primary-strong: mat.m2-get-color-from-palette($primary-palette, 600);
+  $text-color: mat.m2-get-color-from-palette($foreground, text);
+  $theme-suffix: if($is-dark-theme, 'dark', 'light');
 
   .arrow {
     @include _palette-styles($primary-palette);
@@ -45,6 +49,23 @@
   .facet-modal-component {
     background: mat.m2-get-color-from-palette($background, card)!important;
     color: mat.m2-get-color-from-palette($foreground, text) !important;
+  }
+
+  ngx-mat-facet-toolkit {
+    --facet-toolkit-input-bg-#{$theme-suffix}: #{rgba($primary-color, 0.08)};
+    --facet-toolkit-input-shadow-#{$theme-suffix}: #{'0 0 0 1px ' + rgba($primary-color, 0.35)};
+    --facet-toolkit-input-hover-bg-#{$theme-suffix}: #{rgba($primary-color, 0.12)};
+    --facet-toolkit-input-hover-shadow-#{$theme-suffix}: #{'0 0 0 1px ' + rgba($primary-color, 0.55)};
+    --facet-toolkit-input-focus-shadow-#{$theme-suffix}: #{'0 0 0 2px ' + rgba($primary-strong, 0.35)};
+    --facet-toolkit-input-text-#{$theme-suffix}: #{$text-color};
+    --facet-toolkit-input-placeholder-#{$theme-suffix}: #{$text-color};
+    --facet-toolkit-add-icon-#{$theme-suffix}: #{$text-color};
+    --facet-toolkit-preset-trigger-#{$theme-suffix}: #{$text-color};
+    --facet-toolkit-count-divider-#{$theme-suffix}: #{'linear-gradient(180deg, ' + rgba($primary-color, 0.1) + ', ' + rgba($primary-color, 0.7) + ', ' + rgba($primary-color, 0.1) + ')'};
+    --facet-toolkit-count-bg-#{$theme-suffix}: #{rgba($primary-color, 0.16)};
+    --facet-toolkit-count-text-#{$theme-suffix}: #{$text-color};
+    --facet-toolkit-scrollbar-thumb-#{$theme-suffix}: #{rgba($primary-color, 0.35)};
+    --facet-toolkit-preset-row-bg-#{$theme-suffix}: #{rgba($primary-color, 0.08)};
   }
 }
 

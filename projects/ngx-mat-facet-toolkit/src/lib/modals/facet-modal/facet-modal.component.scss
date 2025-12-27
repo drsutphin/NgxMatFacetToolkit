@@ -3,6 +3,21 @@
   background: white;
   border-radius: 8px;
   min-width: 300px;
+  --facet-toolkit-preset-row-bg-light: rgba(46, 72, 144, 0.08);
+  --facet-toolkit-preset-row-bg-dark: rgba(148, 163, 184, 0.12);
+  --facet-toolkit-preset-row-bg: var(--facet-toolkit-preset-row-bg-light);
+}
+
+:host-context(.dark-theme) {
+  --facet-toolkit-preset-row-bg: var(--facet-toolkit-preset-row-bg-dark);
+}
+
+:host-context(.facet-theme-light) {
+  --facet-toolkit-preset-row-bg: var(--facet-toolkit-preset-row-bg-light);
+}
+
+:host-context(.facet-theme-dark) {
+  --facet-toolkit-preset-row-bg: var(--facet-toolkit-preset-row-bg-dark);
 }
 
 .arrow {

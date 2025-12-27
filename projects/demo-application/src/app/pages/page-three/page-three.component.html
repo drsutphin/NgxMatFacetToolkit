@@ -1,0 +1,21 @@
+<mat-card appearance="outlined">
+  <mat-card-content>
+    <ngx-mat-facet-toolkit
+      [facets]="facets"
+      [config]="config"
+      (facetChange)="output.filterUpdated($event)"
+      placeholder="Add a filter..."
+      clearButtonText="CLEAR FILTERS">
+    </ngx-mat-facet-toolkit>
+  </mat-card-content>
+</mat-card>
+
+<mat-divider></mat-divider>
+
+<div class="content">
+  <app-theme-settings
+    (themeConfigUpdated)="themeConfigUpdated($event)">
+  </app-theme-settings>
+  <mat-divider [vertical]="true"></mat-divider>
+  <app-output #output></app-output>
+</div>

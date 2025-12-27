@@ -4,7 +4,6 @@ import {NavigationEnd, Router, RouterLink, RouterOutlet} from '@angular/router';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {MatToolbarModule} from '@angular/material/toolbar';
-import {FacetIdentifierStrategy} from '@drsutphin/ngx-mat-facet-toolkit';
 import packageData from '../../../ngx-mat-facet-toolkit/package.json';
 
 @Component({
@@ -23,8 +22,7 @@ import packageData from '../../../ngx-mat-facet-toolkit/package.json';
 })
 export class AppComponent implements OnInit {
 
-  showPageOne = true;
-  showPageTwo = true;
+  activePage: 'one' | 'two' | 'three' = 'one';
   isDarkMode = false;
   version = packageData.version;
   repo = typeof packageData.repository === 'string' ? packageData.repository : packageData.repository?.url;
@@ -35,13 +33,13 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
-        const currentURL = event.url;
-        if (currentURL.includes('two')) {
-          this.showPageTwo = false;
-          this.showPageOne = true;
+        const currentURL = event.urlAfterRedirects;
+        if (currentURL.includes('/theme')) {
+          this.activePage = 'three';
+        } else if (currentURL.includes('/two')) {
+          this.activePage = 'two';
         } else {
-          this.showPageOne = false;
-          this.showPageTwo = true;
+          this.activePage = 'one';
         }
       }
     });

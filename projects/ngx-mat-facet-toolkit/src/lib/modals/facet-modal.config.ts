@@ -9,6 +9,7 @@ export interface FacetModalConfig<T = any> {
   offsetY?: number;
   isUpdate: boolean;
   width?: string;
+  themeVariables?: Record<string, string>;
 }
 
 

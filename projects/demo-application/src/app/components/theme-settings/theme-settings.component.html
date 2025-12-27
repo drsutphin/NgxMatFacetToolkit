@@ -1,0 +1,39 @@
+<mat-card appearance="outlined" class="settings-card">
+  <mat-card-title>Theme Settings</mat-card-title>
+  <mat-card-content class="settings-content">
+    <mat-form-field appearance="outline">
+      <mat-label>Theme mode</mat-label>
+      <mat-select [(value)]="themeMode" (selectionChange)="emitConfig()">
+        <mat-option value="auto">Auto (follow body)</mat-option>
+        <mat-option value="light">Light</mat-option>
+        <mat-option value="dark">Dark</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-divider></mat-divider>
+
+    <h3>Light overrides</h3>
+    <div class="field-grid">
+      @for (field of themeFields; track field.key) {
+        <mat-form-field appearance="outline">
+          <mat-label>{{field.label}}</mat-label>
+          <input matInput [(ngModel)]="lightOverrides[field.key]" (ngModelChange)="emitConfig()"
+                 [placeholder]="field.placeholder">
+        </mat-form-field>
+      }
+    </div>
+
+    <mat-divider></mat-divider>
+
+    <h3>Dark overrides</h3>
+    <div class="field-grid">
+      @for (field of themeFields; track field.key) {
+        <mat-form-field appearance="outline">
+          <mat-label>{{field.label}}</mat-label>
+          <input matInput [(ngModel)]="darkOverrides[field.key]" (ngModelChange)="emitConfig()"
+                 [placeholder]="field.placeholder">
+        </mat-form-field>
+      }
+    </div>
+  </mat-card-content>
+</mat-card>

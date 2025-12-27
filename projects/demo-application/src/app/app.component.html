@@ -1,11 +1,14 @@
 <mat-toolbar>
   <span>Angular Material Facet Toolkit: v{{version}}</span>
   <span class="spacer"></span>
-  <a mat-button routerLink="" [color]="showPageTwo ? 'primary' : ''">
+  <a mat-button routerLink="" [color]="activePage === 'one' ? 'primary' : ''">
     Page One
   </a>
-  <a mat-button routerLink="/two" [color]="showPageOne ? 'primary' : ''">
+  <a mat-button routerLink="/two" [color]="activePage === 'two' ? 'primary' : ''">
     Page Two
+  </a>
+  <a mat-button routerLink="/theme" [color]="activePage === 'three' ? 'primary' : ''">
+    Theme Lab
   </a>
   <button mat-button (click)="toggleTheme()">
     <mat-icon>{{ isDarkMode ? 'light_mode' : 'dark_mode' }}</mat-icon>

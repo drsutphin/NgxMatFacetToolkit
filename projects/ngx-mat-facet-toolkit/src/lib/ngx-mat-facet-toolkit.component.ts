@@ -2,6 +2,7 @@ import {
   AfterViewInit,
   Component,
   ElementRef,
+  HostBinding,
   OnDestroy,
   ViewChild,
   ViewContainerRef,
@@ -45,6 +46,9 @@ import {
   FacetPreset,
   FacetSelection,
   FacetToolkitConfig,
+  FacetToolkitThemeMode,
+  FacetToolkitThemeOverrides,
+  FacetToolkitThemeVariables,
   FacetValue
 } from './models';
 import {FacetEditorState} from './models/facet-editor-state.model';
@@ -53,6 +57,7 @@ import {FacetModalService} from './modals/facet-modal.service';
 import {FacetRemoveConfirmModalComponent} from './modals/facet-remove-confirm-modal/facet-remove-confirm-modal.component';
 import {PresetManagerModalComponent} from './modals/preset-manager-modal/preset-manager-modal.component';
 import {PresetNameModalComponent} from './modals/preset-name-modal/preset-name-modal.component';
+import {FacetModalConfig} from './modals/facet-modal.config';
 import {VCRefInjector} from './misc/parent.helper';
 import {v4 as uuidv4} from 'uuid';
 import {chipAnimation} from './ngx-mat-facet-toolkit.animations';
@@ -62,6 +67,52 @@ import {FACET_TOOLKIT_CONFIG} from './facet-toolkit.config';
 import {FacetResultType} from './models/facet-result.model';
 import {CSVPipe, FilterPipe, KeysPipe} from './pipes';
 import {FocusOnShowDirective} from './directives/focus-on-show.directive';
+
+const THEME_VAR_MAP: Record<keyof FacetToolkitThemeOverrides, string> = {
+  inputBg: '--facet-toolkit-input-bg',
+  inputShadow: '--facet-toolkit-input-shadow',
+  inputHoverBg: '--facet-toolkit-input-hover-bg',
+  inputHoverShadow: '--facet-toolkit-input-hover-shadow',
+  inputFocusShadow: '--facet-toolkit-input-focus-shadow',
+  inputText: '--facet-toolkit-input-text',
+  inputPlaceholder: '--facet-toolkit-input-placeholder',
+  addIcon: '--facet-toolkit-add-icon',
+  presetTrigger: '--facet-toolkit-preset-trigger',
+  countDivider: '--facet-toolkit-count-divider',
+  countBg: '--facet-toolkit-count-bg',
+  countText: '--facet-toolkit-count-text',
+  scrollbarThumb: '--facet-toolkit-scrollbar-thumb',
+  presetRowBg: '--facet-toolkit-preset-row-bg'
+};
+
+const mergeThemeVariables = (
+  base: FacetToolkitThemeVariables | null | undefined,
+  override: FacetToolkitThemeVariables | null | undefined
+): FacetToolkitThemeVariables => ({
+  ...(base || {}),
+  ...(override || {})
+});
+
+const mapThemeOverrides = (
+  overrides: FacetToolkitThemeOverrides | null | undefined,
+  suffix: 'light' | 'dark'
+): FacetToolkitThemeVariables => {
+  if (!overrides) {
+    return {};
+  }
+
+  return Object.entries(overrides).reduce((acc, [key, value]) => {
+    if (!value) {
+      return acc;
+    }
+    const varName = THEME_VAR_MAP[key as keyof FacetToolkitThemeOverrides];
+    if (!varName) {
+      return acc;
+    }
+    acc[`${varName}-${suffix}`] = value;
+    return acc;
+  }, {} as FacetToolkitThemeVariables);
+};
 
 @Component({
   selector: 'ngx-mat-facet-toolkit',
@@ -117,6 +168,15 @@ export class NgxMatFacetToolkitComponent implements AfterViewInit, OnDestroy {
   readonly confirmOnRemove = input(true);
   readonly chipLabelsEnabled = input(true);
   readonly identifier = input<string | null>(null);
+  readonly themeMode = input<FacetToolkitThemeMode | null>(null);
+  readonly themeOverrides = input<FacetToolkitThemeOverrides | null>(null);
+  readonly darkThemeOverrides = input<FacetToolkitThemeOverrides | null>(null);
+  readonly themeVariables = input<FacetToolkitThemeVariables | null>(null);
+  readonly darkThemeVariables = input<FacetToolkitThemeVariables | null>(null);
+
+  @HostBinding('style') hostStyles: FacetToolkitThemeVariables = {};
+  @HostBinding('class.facet-theme-dark') isThemeDark = false;
+  @HostBinding('class.facet-theme-light') isThemeLight = false;
 
   readonly facetChange = output<FacetSelection[]>();
   readonly facetRemoved = output<FacetSelection>();
@@ -145,6 +205,8 @@ export class NgxMatFacetToolkitComponent implements AfterViewInit, OnDestroy {
   private readonly chipRowScrollable = signal(false);
   private readonly loggingCallback = signal<(...args: any[]) => void>(() => {});
   private readonly showFilterCount = signal(false);
+  private readonly resolvedThemeMode = signal<FacetToolkitThemeMode>('auto');
+  private readonly resolvedThemeVariables = signal<FacetToolkitThemeVariables>({});
   private timeoutHandler: ReturnType<typeof setTimeout> | null = null;
   private chipRowResizeObserver: ResizeObserver | null = null;
   private chipRowUpdateHandle: number | null = null;
@@ -186,6 +248,11 @@ export class NgxMatFacetToolkitComponent implements AfterViewInit, OnDestroy {
   constructor() {
     effect(() => {
       this.identifier();
+      this.themeMode();
+      this.themeOverrides();
+      this.darkThemeOverrides();
+      this.themeVariables();
+      this.darkThemeVariables();
       const config = {
         ...DEFAULT_FACET_TOOLKIT_CONFIG,
         ...this.injectedConfig,
@@ -200,6 +267,7 @@ export class NgxMatFacetToolkitComponent implements AfterViewInit, OnDestroy {
       this.storageService.updateStorageStrategy(config.storage);
       this.presetStorageService.updateLoggingCallback(config.loggingCallback);
       this.presetStorageService.updateStorageConfig(config.presetStorage);
+      this.applyThemeConfig(config);
       this.resolveIdentity();
     });
 
@@ -345,11 +413,15 @@ export class NgxMatFacetToolkitComponent implements AfterViewInit, OnDestroy {
     }
 
     const target = this.filterInput?.nativeElement;
-    const modalRef = this.modal.open<boolean>(FacetRemoveConfirmModalComponent, target, {
+    const modalRef = this.modal.open<boolean>(
+      FacetRemoveConfirmModalComponent,
+      target,
+      this.applyModalThemeConfig({
       centered: true,
       data: {label: facet.label},
       width: '320px'
-    });
+      })
+    );
 
     modalRef.afterClosed().subscribe(result => {
       if (result.type !== FacetResultType.ADD) {
@@ -373,7 +445,10 @@ export class NgxMatFacetToolkitComponent implements AfterViewInit, OnDestroy {
 
   promptSavePreset(): void {
     const target = this.presetMenuButton?.nativeElement || this.filterInput?.nativeElement;
-    const modalRef = this.modal.open<string>(PresetNameModalComponent, target, {
+    const modalRef = this.modal.open<string>(
+      PresetNameModalComponent,
+      target,
+      this.applyModalThemeConfig({
       data: {
         title: 'Save current filters',
         confirmLabel: 'Save preset',
@@ -382,7 +457,8 @@ export class NgxMatFacetToolkitComponent implements AfterViewInit, OnDestroy {
       offsetY: 20,
       offsetX: -10,
       width: '320px'
-    });
+      })
+    );
 
     modalRef.afterClosed().subscribe(result => {
       if (result.type !== FacetResultType.ADD || !result.data) {
@@ -394,7 +470,10 @@ export class NgxMatFacetToolkitComponent implements AfterViewInit, OnDestroy {
 
   openPresetManager(): void {
     const target = this.presetMenuButton?.nativeElement || this.filterInput?.nativeElement;
-    this.modal.open(PresetManagerModalComponent, target, {
+    this.modal.open(
+      PresetManagerModalComponent,
+      target,
+      this.applyModalThemeConfig({
       data: {
         presets: this.presetsForMenu(),
         onLoad: (preset: FacetPreset) => this.applyPreset(preset),
@@ -403,7 +482,69 @@ export class NgxMatFacetToolkitComponent implements AfterViewInit, OnDestroy {
       },
       centered: true,
       width: '380px'
-    });
+      })
+    );
+  }
+
+  private applyThemeConfig(config: FacetToolkitConfig): void {
+    const resolvedMode = this.themeMode() ?? config.themeMode;
+    const resolvedOverrides = {
+      ...(config.themeOverrides || {}),
+      ...(this.themeOverrides() || {})
+    };
+    const resolvedDarkOverrides = {
+      ...(config.darkThemeOverrides || {}),
+      ...(this.darkThemeOverrides() || {})
+    };
+    const resolvedThemeVars = mergeThemeVariables(config.themeVariables, this.themeVariables());
+    const resolvedDarkThemeVars = mergeThemeVariables(config.darkThemeVariables, this.darkThemeVariables());
+
+    this.resolvedThemeMode.set(resolvedMode);
+    this.isThemeDark = resolvedMode === 'dark';
+    this.isThemeLight = resolvedMode === 'light';
+
+    const mergedVariables: FacetToolkitThemeVariables = {
+      ...mapThemeOverrides(resolvedOverrides, 'light'),
+      ...mapThemeOverrides(resolvedDarkOverrides, 'dark'),
+      ...resolvedThemeVars,
+      ...resolvedDarkThemeVars
+    };
+
+    this.resolvedThemeVariables.set(mergedVariables);
+    this.hostStyles = mergedVariables;
+  }
+
+  private applyModalThemeConfig(config: Partial<FacetModalConfig>): Partial<FacetModalConfig> {
+    const themeMode = this.resolvedThemeMode();
+    const themeVariables = this.resolvedThemeVariables();
+    const themeClass = themeMode === 'dark'
+      ? 'facet-theme-dark'
+      : themeMode === 'light'
+        ? 'facet-theme-light'
+        : null;
+
+    const panelClass = this.mergePanelClass(config.panelClass, themeClass);
+    return {
+      ...config,
+      panelClass,
+      themeVariables
+    };
+  }
+
+  private mergePanelClass(
+    panelClass: string | string[] | undefined,
+    themeClass: string | null
+  ): string | string[] | undefined {
+    if (!themeClass) {
+      return panelClass;
+    }
+    if (!panelClass) {
+      return themeClass;
+    }
+    if (Array.isArray(panelClass)) {
+      return [...panelClass, themeClass];
+    }
+    return [panelClass, themeClass];
   }
 
   applyPreset(preset: FacetPreset): void {

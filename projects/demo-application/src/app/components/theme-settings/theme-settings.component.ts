@@ -1,0 +1,104 @@
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {FormsModule} from '@angular/forms';
+import {MatCardModule} from '@angular/material/card';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {MatSelectModule} from '@angular/material/select';
+import {
+  FacetToolkitConfig,
+  FacetToolkitThemeMode,
+  FacetToolkitThemeOverrides
+} from '@drsutphin/ngx-mat-facet-toolkit';
+
+interface ThemeField {
+  key: keyof FacetToolkitThemeOverrides;
+  label: string;
+  placeholder: string;
+}
+
+@Component({
+  selector: 'app-theme-settings',
+  templateUrl: './theme-settings.component.html',
+  styleUrls: ['./theme-settings.component.scss'],
+  standalone: true,
+  imports: [
+    CommonModule,
+    FormsModule,
+    MatCardModule,
+    MatDividerModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule
+  ]
+})
+export class ThemeSettingsComponent implements OnInit {
+  @Output()
+  themeConfigUpdated = new EventEmitter<Partial<FacetToolkitConfig>>(true);
+
+  themeMode: FacetToolkitThemeMode = 'auto';
+
+  themeFields: ThemeField[] = [
+    {key: 'inputBg', label: 'Input background', placeholder: 'rgba(46, 72, 144, 0.08)'},
+    {key: 'inputShadow', label: 'Input shadow', placeholder: '0 0 0 1px rgba(46, 72, 144, 0.35)'},
+    {key: 'inputHoverBg', label: 'Input hover background', placeholder: 'rgba(46, 72, 144, 0.12)'},
+    {key: 'inputHoverShadow', label: 'Input hover shadow', placeholder: '0 0 0 1px rgba(46, 72, 144, 0.55)'},
+    {key: 'inputFocusShadow', label: 'Input focus shadow', placeholder: '0 0 0 2px rgba(70, 110, 200, 0.35)'},
+    {key: 'inputText', label: 'Input text', placeholder: '#1c2b46'},
+    {key: 'inputPlaceholder', label: 'Input placeholder', placeholder: '#1c2b46'},
+    {key: 'addIcon', label: 'Add icon', placeholder: '#1c2b46'},
+    {key: 'presetTrigger', label: 'Preset trigger', placeholder: '#1c2b46'},
+    {key: 'countDivider', label: 'Count divider', placeholder: 'linear-gradient(...)'},
+    {key: 'countBg', label: 'Count background', placeholder: 'rgba(46, 72, 144, 0.16)'},
+    {key: 'countText', label: 'Count text', placeholder: '#1c2b46'},
+    {key: 'scrollbarThumb', label: 'Scrollbar thumb', placeholder: 'rgba(46, 72, 144, 0.35)'},
+    {key: 'presetRowBg', label: 'Preset row background', placeholder: 'rgba(46, 72, 144, 0.08)'}
+  ];
+
+  lightOverrides: FacetToolkitThemeOverrides = {
+    inputBg: 'rgba(46, 72, 144, 0.08)',
+    inputShadow: '0 0 0 1px rgba(46, 72, 144, 0.35)',
+    inputHoverBg: 'rgba(46, 72, 144, 0.12)',
+    inputHoverShadow: '0 0 0 1px rgba(46, 72, 144, 0.55)',
+    inputFocusShadow: '0 0 0 2px rgba(70, 110, 200, 0.35)',
+    inputText: '#1c2b46',
+    inputPlaceholder: '#1c2b46',
+    addIcon: '#1c2b46',
+    presetTrigger: '#1c2b46',
+    countDivider: 'linear-gradient(180deg, rgba(46, 72, 144, 0.1), rgba(46, 72, 144, 0.7), rgba(46, 72, 144, 0.1))',
+    countBg: 'rgba(46, 72, 144, 0.16)',
+    countText: '#1c2b46',
+    scrollbarThumb: 'rgba(46, 72, 144, 0.35)',
+    presetRowBg: 'rgba(46, 72, 144, 0.08)'
+  };
+
+  darkOverrides: FacetToolkitThemeOverrides = {
+    inputBg: 'rgba(148, 163, 184, 0.12)',
+    inputShadow: '0 0 0 1px rgba(148, 163, 184, 0.4)',
+    inputHoverBg: 'rgba(148, 163, 184, 0.18)',
+    inputHoverShadow: '0 0 0 1px rgba(226, 232, 240, 0.45)',
+    inputFocusShadow: '0 0 0 2px rgba(125, 166, 255, 0.35)',
+    inputText: '#e2e8f0',
+    inputPlaceholder: '#e2e8f0',
+    addIcon: '#e2e8f0',
+    presetTrigger: '#e2e8f0',
+    countDivider: 'linear-gradient(180deg, rgba(226, 232, 240, 0.1), rgba(226, 232, 240, 0.7), rgba(226, 232, 240, 0.1))',
+    countBg: 'rgba(226, 232, 240, 0.16)',
+    countText: '#e2e8f0',
+    scrollbarThumb: 'rgba(148, 163, 184, 0.45)',
+    presetRowBg: 'rgba(148, 163, 184, 0.12)'
+  };
+
+  ngOnInit(): void {
+    this.emitConfig();
+  }
+
+  emitConfig(): void {
+    this.themeConfigUpdated.emit({
+      themeMode: this.themeMode,
+      themeOverrides: {...this.lightOverrides},
+      darkThemeOverrides: {...this.darkOverrides}
+    });
+  }
+}

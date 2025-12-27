@@ -1,3 +1,101 @@
+:host {
+  --facet-toolkit-input-bg-light: rgba(46, 72, 144, 0.08);
+  --facet-toolkit-input-shadow-light: 0 0 0 1px rgba(46, 72, 144, 0.35);
+  --facet-toolkit-input-hover-bg-light: rgba(46, 72, 144, 0.12);
+  --facet-toolkit-input-hover-shadow-light: 0 0 0 1px rgba(46, 72, 144, 0.55);
+  --facet-toolkit-input-focus-shadow-light: 0 0 0 2px rgba(70, 110, 200, 0.35);
+  --facet-toolkit-input-text-light: #1c2b46;
+  --facet-toolkit-input-placeholder-light: #1c2b46;
+  --facet-toolkit-add-icon-light: #1c2b46;
+  --facet-toolkit-preset-trigger-light: #1c2b46;
+  --facet-toolkit-count-divider-light: linear-gradient(180deg, rgba(46, 72, 144, 0.1), rgba(46, 72, 144, 0.7), rgba(46, 72, 144, 0.1));
+  --facet-toolkit-count-bg-light: rgba(46, 72, 144, 0.16);
+  --facet-toolkit-count-text-light: #1c2b46;
+  --facet-toolkit-scrollbar-thumb-light: rgba(46, 72, 144, 0.35);
+  --facet-toolkit-preset-row-bg-light: rgba(46, 72, 144, 0.08);
+
+  --facet-toolkit-input-bg-dark: rgba(148, 163, 184, 0.12);
+  --facet-toolkit-input-shadow-dark: 0 0 0 1px rgba(148, 163, 184, 0.4);
+  --facet-toolkit-input-hover-bg-dark: rgba(148, 163, 184, 0.18);
+  --facet-toolkit-input-hover-shadow-dark: 0 0 0 1px rgba(226, 232, 240, 0.45);
+  --facet-toolkit-input-focus-shadow-dark: 0 0 0 2px rgba(125, 166, 255, 0.35);
+  --facet-toolkit-input-text-dark: #e2e8f0;
+  --facet-toolkit-input-placeholder-dark: #e2e8f0;
+  --facet-toolkit-add-icon-dark: #e2e8f0;
+  --facet-toolkit-preset-trigger-dark: #e2e8f0;
+  --facet-toolkit-count-divider-dark: linear-gradient(180deg, rgba(226, 232, 240, 0.1), rgba(226, 232, 240, 0.7), rgba(226, 232, 240, 0.1));
+  --facet-toolkit-count-bg-dark: rgba(226, 232, 240, 0.16);
+  --facet-toolkit-count-text-dark: #e2e8f0;
+  --facet-toolkit-scrollbar-thumb-dark: rgba(148, 163, 184, 0.45);
+  --facet-toolkit-preset-row-bg-dark: rgba(148, 163, 184, 0.12);
+
+  --facet-toolkit-input-bg: var(--facet-toolkit-input-bg-light);
+  --facet-toolkit-input-shadow: var(--facet-toolkit-input-shadow-light);
+  --facet-toolkit-input-hover-bg: var(--facet-toolkit-input-hover-bg-light);
+  --facet-toolkit-input-hover-shadow: var(--facet-toolkit-input-hover-shadow-light);
+  --facet-toolkit-input-focus-shadow: var(--facet-toolkit-input-focus-shadow-light);
+  --facet-toolkit-input-text: var(--facet-toolkit-input-text-light);
+  --facet-toolkit-input-placeholder: var(--facet-toolkit-input-placeholder-light);
+  --facet-toolkit-add-icon: var(--facet-toolkit-add-icon-light);
+  --facet-toolkit-preset-trigger: var(--facet-toolkit-preset-trigger-light);
+  --facet-toolkit-count-divider: var(--facet-toolkit-count-divider-light);
+  --facet-toolkit-count-bg: var(--facet-toolkit-count-bg-light);
+  --facet-toolkit-count-text: var(--facet-toolkit-count-text-light);
+  --facet-toolkit-scrollbar-thumb: var(--facet-toolkit-scrollbar-thumb-light);
+  --facet-toolkit-preset-row-bg: var(--facet-toolkit-preset-row-bg-light);
+}
+
+:host-context(.dark-theme) {
+  --facet-toolkit-input-bg: var(--facet-toolkit-input-bg-dark);
+  --facet-toolkit-input-shadow: var(--facet-toolkit-input-shadow-dark);
+  --facet-toolkit-input-hover-bg: var(--facet-toolkit-input-hover-bg-dark);
+  --facet-toolkit-input-hover-shadow: var(--facet-toolkit-input-hover-shadow-dark);
+  --facet-toolkit-input-focus-shadow: var(--facet-toolkit-input-focus-shadow-dark);
+  --facet-toolkit-input-text: var(--facet-toolkit-input-text-dark);
+  --facet-toolkit-input-placeholder: var(--facet-toolkit-input-placeholder-dark);
+  --facet-toolkit-add-icon: var(--facet-toolkit-add-icon-dark);
+  --facet-toolkit-preset-trigger: var(--facet-toolkit-preset-trigger-dark);
+  --facet-toolkit-count-divider: var(--facet-toolkit-count-divider-dark);
+  --facet-toolkit-count-bg: var(--facet-toolkit-count-bg-dark);
+  --facet-toolkit-count-text: var(--facet-toolkit-count-text-dark);
+  --facet-toolkit-scrollbar-thumb: var(--facet-toolkit-scrollbar-thumb-dark);
+  --facet-toolkit-preset-row-bg: var(--facet-toolkit-preset-row-bg-dark);
+}
+
+:host(.facet-theme-light) {
+  --facet-toolkit-input-bg: var(--facet-toolkit-input-bg-light);
+  --facet-toolkit-input-shadow: var(--facet-toolkit-input-shadow-light);
+  --facet-toolkit-input-hover-bg: var(--facet-toolkit-input-hover-bg-light);
+  --facet-toolkit-input-hover-shadow: var(--facet-toolkit-input-hover-shadow-light);
+  --facet-toolkit-input-focus-shadow: var(--facet-toolkit-input-focus-shadow-light);
+  --facet-toolkit-input-text: var(--facet-toolkit-input-text-light);
+  --facet-toolkit-input-placeholder: var(--facet-toolkit-input-placeholder-light);
+  --facet-toolkit-add-icon: var(--facet-toolkit-add-icon-light);
+  --facet-toolkit-preset-trigger: var(--facet-toolkit-preset-trigger-light);
+  --facet-toolkit-count-divider: var(--facet-toolkit-count-divider-light);
+  --facet-toolkit-count-bg: var(--facet-toolkit-count-bg-light);
+  --facet-toolkit-count-text: var(--facet-toolkit-count-text-light);
+  --facet-toolkit-scrollbar-thumb: var(--facet-toolkit-scrollbar-thumb-light);
+  --facet-toolkit-preset-row-bg: var(--facet-toolkit-preset-row-bg-light);
+}
+
+:host(.facet-theme-dark) {
+  --facet-toolkit-input-bg: var(--facet-toolkit-input-bg-dark);
+  --facet-toolkit-input-shadow: var(--facet-toolkit-input-shadow-dark);
+  --facet-toolkit-input-hover-bg: var(--facet-toolkit-input-hover-bg-dark);
+  --facet-toolkit-input-hover-shadow: var(--facet-toolkit-input-hover-shadow-dark);
+  --facet-toolkit-input-focus-shadow: var(--facet-toolkit-input-focus-shadow-dark);
+  --facet-toolkit-input-text: var(--facet-toolkit-input-text-dark);
+  --facet-toolkit-input-placeholder: var(--facet-toolkit-input-placeholder-dark);
+  --facet-toolkit-add-icon: var(--facet-toolkit-add-icon-dark);
+  --facet-toolkit-preset-trigger: var(--facet-toolkit-preset-trigger-dark);
+  --facet-toolkit-count-divider: var(--facet-toolkit-count-divider-dark);
+  --facet-toolkit-count-bg: var(--facet-toolkit-count-bg-dark);
+  --facet-toolkit-count-text: var(--facet-toolkit-count-text-dark);
+  --facet-toolkit-scrollbar-thumb: var(--facet-toolkit-scrollbar-thumb-dark);
+  --facet-toolkit-preset-row-bg: var(--facet-toolkit-preset-row-bg-dark);
+}
+
 * {
   outline: 0;
 }
@@ -6,9 +104,9 @@
   background-color: transparent!important;
   opacity: 1!important;
   box-shadow: none !important;
-  background-color: rgba(46, 72, 144, 0.08)!important;
-  box-shadow: 0 0 0 1px rgba(46, 72, 144, 0.35) !important;
-  color: #1c2b46;
+  background-color: var(--facet-toolkit-input-bg) !important;
+  box-shadow: var(--facet-toolkit-input-shadow) !important;
+  color: var(--facet-toolkit-input-text);
   transition: box-shadow 120ms ease, background-color 120ms ease;
   height: 28px;
   display: inline-flex;
@@ -42,7 +140,7 @@
 }
 
 .filter-input::placeholder {
-  color: #1c2b46;
+  color: var(--facet-toolkit-input-placeholder);
   opacity: 0.9;
 }
 
@@ -64,7 +162,7 @@
 
 .add-icon {
   margin-top: 0;
-  color: #1c2b46;
+  color: var(--facet-toolkit-add-icon);
 }
 
 .add-icon:hover, .filter-input-container:hover {
@@ -72,12 +170,12 @@
 }
 
 .filter-input-container:hover {
-  background-color: rgba(46, 72, 144, 0.12)!important;
-  box-shadow: 0 0 0 1px rgba(46, 72, 144, 0.55) !important;
+  background-color: var(--facet-toolkit-input-hover-bg) !important;
+  box-shadow: var(--facet-toolkit-input-hover-shadow) !important;
 }
 
 .filter-input-container:focus-within {
-  box-shadow: 0 0 0 2px rgba(70, 110, 200, 0.35) !important;
+  box-shadow: var(--facet-toolkit-input-focus-shadow) !important;
 }
 
 .filter-count-divider {
@@ -85,7 +183,7 @@
   width: 1px;
   height: 18px;
   margin: 0 3px;
-  background: linear-gradient(180deg, rgba(46, 72, 144, 0.1), rgba(46, 72, 144, 0.7), rgba(46, 72, 144, 0.1));
+  background: var(--facet-toolkit-count-divider);
   align-self: center;
 }
 
@@ -95,8 +193,8 @@
   line-height: 16px;
   padding: 2px 6px;
   border-radius: 999px;
-  background: rgba(46, 72, 144, 0.16);
-  color: #1c2b46;
+  background: var(--facet-toolkit-count-bg);
+  color: var(--facet-toolkit-count-text);
   letter-spacing: 0.02em;
   align-self: center;
 }
@@ -117,11 +215,7 @@
 
 .preset-menu-trigger {
   margin-bottom: 10px;
-  color: #1c2b46;
-}
-
-:host-context(.dark-theme) .preset-menu-trigger {
-  color: #e2e8f0;
+  color: var(--facet-toolkit-preset-trigger);
 }
 
 ::ng-deep .mat-autocomplete-panel.mat-autocomplete-visible {
@@ -139,39 +233,6 @@
 
 .facet-chip {
   order: 1;
-}
-
-:host-context(.dark-theme) .filter-input-container {
-  background-color: rgba(148, 163, 184, 0.12)!important;
-  box-shadow: 0 0 0 1px rgba(148, 163, 184, 0.4) !important;
-  color: #e2e8f0;
-}
-
-:host-context(.dark-theme) .filter-input-container:hover {
-  background-color: rgba(148, 163, 184, 0.18)!important;
-  box-shadow: 0 0 0 1px rgba(226, 232, 240, 0.45) !important;
-}
-
-:host-context(.dark-theme) .filter-input-container:focus-within {
-  box-shadow: 0 0 0 2px rgba(125, 166, 255, 0.35) !important;
-}
-
-:host-context(.dark-theme) .filter-input::placeholder {
-  color: #e2e8f0;
-  opacity: 0.8;
-}
-
-:host-context(.dark-theme) .add-icon {
-  color: #e2e8f0;
-}
-
-:host-context(.dark-theme) .filter-count-divider {
-  background: linear-gradient(180deg, rgba(226, 232, 240, 0.1), rgba(226, 232, 240, 0.7), rgba(226, 232, 240, 0.1));
-}
-
-:host-context(.dark-theme) .filter-count {
-  color: #e2e8f0;
-  background: rgba(226, 232, 240, 0.16);
 }
 
 .content-wrapper {
@@ -218,7 +279,7 @@
 
 .content-wrapper.chip-scrollable ::ng-deep .mat-chip-list-wrapper::-webkit-scrollbar-thumb,
 .chip-scroll-container::-webkit-scrollbar-thumb {
-  background-color: rgba(46, 72, 144, 0.35);
+  background-color: var(--facet-toolkit-scrollbar-thumb);
   border-radius: 999px;
 }
 
@@ -227,10 +288,6 @@
   background: transparent;
 }
 
-:host-context(.dark-theme) .content-wrapper.chip-scrollable ::ng-deep .mat-chip-list-wrapper::-webkit-scrollbar-thumb,
-:host-context(.dark-theme) .chip-scroll-container::-webkit-scrollbar-thumb {
-  background-color: rgba(148, 163, 184, 0.45);
-}
 
 .content-wrapper.chip-scrollable ::ng-deep .mat-chip-option,
 .content-wrapper.chip-scrollable ::ng-deep .mat-chip-row {

@@ -29,7 +29,7 @@
   gap: 12px;
   padding: 8px 10px;
   border-radius: 10px;
-  background: rgba(46, 72, 144, 0.08);
+  background: var(--facet-toolkit-preset-row-bg, rgba(46, 72, 144, 0.08));
 }
 
 .preset-info {
@@ -68,11 +68,9 @@
   opacity: 0.7;
 }
 
-:host-context(.dark-theme) .preset-row {
-  background: rgba(148, 163, 184, 0.12);
-}
-
 :host-context(.dark-theme) .preset-meta,
-:host-context(.dark-theme) .empty-state {
+:host-context(.facet-theme-dark) .preset-meta,
+:host-context(.dark-theme) .empty-state,
+:host-context(.facet-theme-dark) .empty-state {
   opacity: 0.8;
 }

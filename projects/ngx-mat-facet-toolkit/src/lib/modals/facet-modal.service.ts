@@ -50,6 +50,12 @@ export class FacetModalService {
       scrollStrategy: this.overlay.scrollStrategies.block()
     });
 
+    if (facetModalConfig.themeVariables) {
+      Object.entries(facetModalConfig.themeVariables).forEach(([key, value]) => {
+        overlayRef.overlayElement.style.setProperty(key, value);
+      });
+    }
+
     if (facetModalConfig.width) {
       overlayRef.updateSize({width: facetModalConfig.width});
     }

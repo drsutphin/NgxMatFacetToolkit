@@ -1,0 +1,26 @@
+:host {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  flex: 1 1 auto;
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+
+  .mat-divider {
+    height: 100%;
+  }
+}
+
+@media (max-width: 900px) {
+  .content {
+    flex-direction: column;
+
+    .mat-divider {
+      display: none;
+    }
+  }
+}

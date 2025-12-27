@@ -6,6 +6,6 @@
 - Bug fix: Dark mode styling needs refinement (inconsistent dark palette between background and components).
 - Bug fix: Demo padding shifts when applying the final filter (resolved).
 - Enhancement: Hide horizontal scrollbar until chip list exceeds container width.
+- Theme overrides for non-Angular Material implementations via config inputs (light/dark + color control).
 
 ## Future Enhancements
-- Theme overrides for non-Angular Material implementations via config inputs (light/dark + color control) while retaining Material defaults.

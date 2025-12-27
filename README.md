@@ -148,6 +148,13 @@ Provider config (`provideFacetToolkitConfig`):
 - `presetStorage`: `FacetPresetStorageConfig`
 - `showFilterCount`: `boolean`
 - `storage`: `FacetStorageStrategy` (`session`, `local`, `none`)
+- `themeMode`: `'auto' | 'light' | 'dark'`
+- `themeOverrides`: `FacetToolkitThemeOverrides`
+- `darkThemeOverrides`: `FacetToolkitThemeOverrides`
+- `themeVariables`: `Record<string, string>`
+- `darkThemeVariables`: `Record<string, string>`
+
+Theme overrides can be supplied via provider config or the component `config` input. Dark overrides apply when the theme mode is `dark` or the `dark-theme` body class is active.
 
 ## Outputs
 - `facetChange`: emits `FacetSelection[]` whenever the selection state changes.

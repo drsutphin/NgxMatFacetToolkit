@@ -1,4 +1,9 @@
 import {DEFAULT_FACET_PRESET_STORAGE_CONFIG, FacetPresetStorageConfig} from './facet-preset-storage.model';
+import {
+  FacetToolkitThemeMode,
+  FacetToolkitThemeOverrides,
+  FacetToolkitThemeVariables
+} from './facet-toolkit-theme.model';
 
 export enum FacetIdentifierStrategy {
   WindowURL = 'windowURL',
@@ -17,6 +22,11 @@ export interface FacetToolkitConfig {
   presetStorage?: FacetPresetStorageConfig;
   showFilterCount: boolean;
   storage: FacetStorageStrategy;
+  themeMode: FacetToolkitThemeMode;
+  themeOverrides?: FacetToolkitThemeOverrides;
+  darkThemeOverrides?: FacetToolkitThemeOverrides;
+  themeVariables?: FacetToolkitThemeVariables;
+  darkThemeVariables?: FacetToolkitThemeVariables;
 }
 
 export const DEFAULT_FACET_TOOLKIT_CONFIG: FacetToolkitConfig = {
@@ -26,5 +36,10 @@ export const DEFAULT_FACET_TOOLKIT_CONFIG: FacetToolkitConfig = {
   loggingCallback: () => {},
   presetStorage: DEFAULT_FACET_PRESET_STORAGE_CONFIG,
   showFilterCount: false,
-  storage: 'session'
+  storage: 'session',
+  themeMode: 'auto',
+  themeOverrides: {},
+  darkThemeOverrides: {},
+  themeVariables: {},
+  darkThemeVariables: {}
 };
