@@ -22,6 +22,8 @@ export interface FacetToolkitThemeOverrides {
   menuSurface?: string;
   menuText?: string;
   menuHoverBg?: string;
+  clearButtonBg?: string;
+  clearButtonText?: string;
 }
 
 export type FacetToolkitThemeVariables = Record<string, string>;

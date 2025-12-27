@@ -20,6 +20,8 @@
   --facet-toolkit-menu-surface-light: #ffffff;
   --facet-toolkit-menu-text-light: #1c2b46;
   --facet-toolkit-menu-hover-bg-light: rgba(46, 72, 144, 0.08);
+  --facet-toolkit-clear-button-bg-light: #e91e63;
+  --facet-toolkit-clear-button-text-light: #ffffff;
 
   --facet-toolkit-input-bg-dark: rgba(148, 163, 184, 0.12);
   --facet-toolkit-input-shadow-dark: 0 0 0 1px rgba(148, 163, 184, 0.4);
@@ -42,6 +44,8 @@
   --facet-toolkit-menu-surface-dark: #111827;
   --facet-toolkit-menu-text-dark: #e2e8f0;
   --facet-toolkit-menu-hover-bg-dark: rgba(148, 163, 184, 0.18);
+  --facet-toolkit-clear-button-bg-dark: #f43f5e;
+  --facet-toolkit-clear-button-text-dark: #111827;
 
   --facet-toolkit-input-bg: var(--facet-toolkit-input-bg-light);
   --facet-toolkit-input-shadow: var(--facet-toolkit-input-shadow-light);
@@ -64,6 +68,8 @@
   --facet-toolkit-menu-surface: var(--facet-toolkit-menu-surface-light);
   --facet-toolkit-menu-text: var(--facet-toolkit-menu-text-light);
   --facet-toolkit-menu-hover-bg: var(--facet-toolkit-menu-hover-bg-light);
+  --facet-toolkit-clear-button-bg: var(--facet-toolkit-clear-button-bg-light);
+  --facet-toolkit-clear-button-text: var(--facet-toolkit-clear-button-text-light);
 }
 
 :host-context(.dark-theme) {
@@ -88,6 +94,8 @@
   --facet-toolkit-menu-surface: var(--facet-toolkit-menu-surface-dark);
   --facet-toolkit-menu-text: var(--facet-toolkit-menu-text-dark);
   --facet-toolkit-menu-hover-bg: var(--facet-toolkit-menu-hover-bg-dark);
+  --facet-toolkit-clear-button-bg: var(--facet-toolkit-clear-button-bg-dark);
+  --facet-toolkit-clear-button-text: var(--facet-toolkit-clear-button-text-dark);
 }
 
 :host(.facet-theme-light) {
@@ -112,6 +120,8 @@
   --facet-toolkit-menu-surface: var(--facet-toolkit-menu-surface-light);
   --facet-toolkit-menu-text: var(--facet-toolkit-menu-text-light);
   --facet-toolkit-menu-hover-bg: var(--facet-toolkit-menu-hover-bg-light);
+  --facet-toolkit-clear-button-bg: var(--facet-toolkit-clear-button-bg-light);
+  --facet-toolkit-clear-button-text: var(--facet-toolkit-clear-button-text-light);
 }
 
 :host(.facet-theme-dark) {
@@ -136,32 +146,14 @@
   --facet-toolkit-menu-surface: var(--facet-toolkit-menu-surface-dark);
   --facet-toolkit-menu-text: var(--facet-toolkit-menu-text-dark);
   --facet-toolkit-menu-hover-bg: var(--facet-toolkit-menu-hover-bg-dark);
+  --facet-toolkit-clear-button-bg: var(--facet-toolkit-clear-button-bg-dark);
+  --facet-toolkit-clear-button-text: var(--facet-toolkit-clear-button-text-dark);
 }
 
-::ng-deep .facet-theme-panel {
-  --facet-toolkit-menu-surface-light: #ffffff;
-  --facet-toolkit-menu-text-light: #1c2b46;
-  --facet-toolkit-menu-hover-bg-light: rgba(46, 72, 144, 0.08);
-  --facet-toolkit-menu-surface-dark: #111827;
-  --facet-toolkit-menu-text-dark: #e2e8f0;
-  --facet-toolkit-menu-hover-bg-dark: rgba(148, 163, 184, 0.18);
-  --facet-toolkit-menu-surface: var(--facet-toolkit-menu-surface-light);
-  --facet-toolkit-menu-text: var(--facet-toolkit-menu-text-light);
-  --facet-toolkit-menu-hover-bg: var(--facet-toolkit-menu-hover-bg-light);
+::ng-deep .facet-theme-panel .mat-mdc-menu-panel,
+::ng-deep .facet-theme-panel .mat-mdc-autocomplete-panel {
   background: var(--facet-toolkit-menu-surface);
   color: var(--facet-toolkit-menu-text);
-}
-
-::ng-deep .facet-theme-panel.facet-theme-dark {
-  --facet-toolkit-menu-surface: var(--facet-toolkit-menu-surface-dark);
-  --facet-toolkit-menu-text: var(--facet-toolkit-menu-text-dark);
-  --facet-toolkit-menu-hover-bg: var(--facet-toolkit-menu-hover-bg-dark);
-}
-
-::ng-deep .facet-theme-panel.facet-theme-light {
-  --facet-toolkit-menu-surface: var(--facet-toolkit-menu-surface-light);
-  --facet-toolkit-menu-text: var(--facet-toolkit-menu-text-light);
-  --facet-toolkit-menu-hover-bg: var(--facet-toolkit-menu-hover-bg-light);
 }
 
 ::ng-deep .facet-theme-panel .mat-mdc-menu-item,
@@ -276,6 +268,11 @@
   color: var(--facet-toolkit-count-text);
   letter-spacing: 0.02em;
   align-self: center;
+}
+
+.facet-clear-button {
+  background: var(--facet-toolkit-clear-button-bg, var(--mdc-filled-button-container-color)) !important;
+  color: var(--facet-toolkit-clear-button-text, var(--mdc-filled-button-label-text-color)) !important;
 }
 
 .main-facet-wrapper {

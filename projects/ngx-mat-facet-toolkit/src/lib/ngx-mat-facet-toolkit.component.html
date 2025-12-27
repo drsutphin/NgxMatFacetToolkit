@@ -166,7 +166,7 @@
 
 
   @if (clearButtonEnabled() && selectedFacets().length > 0) {
-    <button mat-flat-button (click)="reset()" color="accent">
+    <button mat-flat-button (click)="reset()" color="accent" class="facet-clear-button">
       {{clearButtonText()}}
     </button>
   }

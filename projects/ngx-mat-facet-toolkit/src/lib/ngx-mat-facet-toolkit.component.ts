@@ -89,7 +89,9 @@ const THEME_VAR_MAP: Record<keyof FacetToolkitThemeOverrides, string> = {
   modalHeaderText: '--facet-toolkit-modal-header-text',
   menuSurface: '--facet-toolkit-menu-surface',
   menuText: '--facet-toolkit-menu-text',
-  menuHoverBg: '--facet-toolkit-menu-hover-bg'
+  menuHoverBg: '--facet-toolkit-menu-hover-bg',
+  clearButtonBg: '--facet-toolkit-clear-button-bg',
+  clearButtonText: '--facet-toolkit-clear-button-text'
 };
 
 const mergeThemeVariables = (

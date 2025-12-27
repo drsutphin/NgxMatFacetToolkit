@@ -52,7 +52,9 @@ const buildOverrides = (
   primaryHex: string,
   textHex: string,
   surfaceHex: string,
-  headerTextHex: string
+  headerTextHex: string,
+  clearButtonBg: string,
+  clearButtonText: string
 ): FacetToolkitThemeOverrides => ({
   inputBg: rgbaFromHex(primaryHex, 0.08),
   inputShadow: `0 0 0 1px ${rgbaFromHex(primaryHex, 0.35)}`,
@@ -74,7 +76,9 @@ const buildOverrides = (
   modalHeaderText: headerTextHex,
   menuSurface: surfaceHex,
   menuText: textHex,
-  menuHoverBg: rgbaFromHex(primaryHex, 0.12)
+  menuHoverBg: rgbaFromHex(primaryHex, 0.12),
+  clearButtonBg,
+  clearButtonText
 });
 
 @Component({
@@ -120,27 +124,29 @@ export class ThemeSettingsComponent implements OnInit {
     {key: 'modalHeaderText', label: 'Modal header text', placeholder: '#ffffff', isColor: true},
     {key: 'menuSurface', label: 'Menu surface', placeholder: '#ffffff', isColor: true},
     {key: 'menuText', label: 'Menu text', placeholder: '#1c2b46', isColor: true},
-    {key: 'menuHoverBg', label: 'Menu hover background', placeholder: 'rgba(46, 72, 144, 0.08)'}
+    {key: 'menuHoverBg', label: 'Menu hover background', placeholder: 'rgba(46, 72, 144, 0.08)'},
+    {key: 'clearButtonBg', label: 'Clear button background', placeholder: '#e91e63', isColor: true},
+    {key: 'clearButtonText', label: 'Clear button text', placeholder: '#ffffff', isColor: true}
   ];
 
   themePresets: ThemePreset[] = [
     {
       id: 'material-indigo-pink',
       label: 'Material Indigo/Pink (Light) + Blue Gray/Amber (Dark)',
-      light: buildOverrides('#3f51b5', '#1c2b46', '#ffffff', '#ffffff'),
-      dark: buildOverrides('#607d8b', '#e2e8f0', '#111827', '#e2e8f0')
+      light: buildOverrides('#3f51b5', '#1c2b46', '#ffffff', '#ffffff', '#e91e63', '#ffffff'),
+      dark: buildOverrides('#607d8b', '#e2e8f0', '#111827', '#e2e8f0', '#f59e0b', '#111827')
     },
     {
       id: 'material-teal-amber',
       label: 'Material Teal/Amber (Light) + Blue Gray/Amber (Dark)',
-      light: buildOverrides('#009688', '#0f172a', '#ffffff', '#ffffff'),
-      dark: buildOverrides('#455a64', '#e2e8f0', '#0f172a', '#e2e8f0')
+      light: buildOverrides('#009688', '#0f172a', '#ffffff', '#ffffff', '#ffc107', '#111827'),
+      dark: buildOverrides('#455a64', '#e2e8f0', '#0f172a', '#e2e8f0', '#f59e0b', '#111827')
     },
     {
       id: 'material-deep-purple-amber',
       label: 'Material Deep Purple/Amber (Light) + Blue Gray/Amber (Dark)',
-      light: buildOverrides('#673ab7', '#1e1b4b', '#ffffff', '#ffffff'),
-      dark: buildOverrides('#546e7a', '#e2e8f0', '#0f172a', '#e2e8f0')
+      light: buildOverrides('#673ab7', '#1e1b4b', '#ffffff', '#ffffff', '#ffc107', '#111827'),
+      dark: buildOverrides('#546e7a', '#e2e8f0', '#0f172a', '#e2e8f0', '#f59e0b', '#111827')
     }
   ];
 
@@ -165,7 +171,9 @@ export class ThemeSettingsComponent implements OnInit {
     modalHeaderText: '#ffffff',
     menuSurface: '#ffffff',
     menuText: '#1c2b46',
-    menuHoverBg: 'rgba(46, 72, 144, 0.08)'
+    menuHoverBg: 'rgba(46, 72, 144, 0.08)',
+    clearButtonBg: '#e91e63',
+    clearButtonText: '#ffffff'
   };
 
   darkOverrides: FacetToolkitThemeOverrides = {
@@ -189,7 +197,9 @@ export class ThemeSettingsComponent implements OnInit {
     modalHeaderText: '#e2e8f0',
     menuSurface: '#111827',
     menuText: '#e2e8f0',
-    menuHoverBg: 'rgba(148, 163, 184, 0.18)'
+    menuHoverBg: 'rgba(148, 163, 184, 0.18)',
+    clearButtonBg: '#f59e0b',
+    clearButtonText: '#111827'
   };
 
   ngOnInit(): void {

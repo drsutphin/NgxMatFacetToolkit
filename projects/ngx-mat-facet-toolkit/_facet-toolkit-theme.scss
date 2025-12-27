@@ -22,6 +22,8 @@
   $text-secondary: map.get($foreground, secondary-text);
   $primary-color: mat.m2-get-color-from-palette($primary-palette);
   $primary-strong: mat.m2-get-color-from-palette($primary-palette, 600);
+  $accent-color: mat.m2-get-color-from-palette($accent-palette);
+  $accent-contrast: mat.m2-get-color-from-palette($accent-palette, default-contrast);
   $text-color: mat.m2-get-color-from-palette($foreground, text);
   $header-text: mat.m2-get-color-from-palette($primary-palette, default-contrast);
   $menu-hover: mat.m2-get-color-from-palette($background, hover);
@@ -76,6 +78,8 @@
     --facet-toolkit-menu-surface-#{$theme-suffix}: #{$surface-color};
     --facet-toolkit-menu-text-#{$theme-suffix}: #{$text-color};
     --facet-toolkit-menu-hover-bg-#{$theme-suffix}: #{$menu-hover};
+    --facet-toolkit-clear-button-bg-#{$theme-suffix}: #{$accent-color};
+    --facet-toolkit-clear-button-text-#{$theme-suffix}: #{$accent-contrast};
   }
 }
 
