@@ -4,3 +4,4 @@ dist/
 coverage/
 .angular/
 test-results/
+AGENTS.md
