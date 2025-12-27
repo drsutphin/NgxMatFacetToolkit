@@ -2708,6 +2708,91 @@ class FacetModalService {
     type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Injector
   }], null);
 })();
+class FacetRemoveConfirmModalComponent {
+  data;
+  modalRef;
+  constructor(data, modalRef) {
+    this.data = data;
+    this.modalRef = modalRef;
+  }
+  close() {
+    this.modalRef.close({
+      type: FacetResultType.CANCEL
+    });
+  }
+  confirm() {
+    this.modalRef.close({
+      type: FacetResultType.ADD,
+      data: true
+    });
+  }
+  static ɵfac = function FacetRemoveConfirmModalComponent_Factory(__ngFactoryType__) {
+    return new (__ngFactoryType__ || FacetRemoveConfirmModalComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](FACET_MODAL_DATA), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](FacetModalRef));
+  };
+  static ɵcmp = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
+    type: FacetRemoveConfirmModalComponent,
+    selectors: [["ngx-mat-facet-remove-confirm-modal"]],
+    decls: 16,
+    vars: 1,
+    consts: [[1, "facet-remove-confirm-modal"], [1, "spacer"], ["mat-icon-button", "", "aria-label", "Close remove filter dialog", 3, "click"], [1, "content"], [1, "actions"], ["mat-stroked-button", "", 3, "click"], ["mat-flat-button", "", "color", "warn", 3, "click"]],
+    template: function FacetRemoveConfirmModalComponent_Template(rf, ctx) {
+      if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0)(1, "mat-toolbar")(2, "span");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3, "Remove filter");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](4, "span", 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "button", 2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function FacetRemoveConfirmModalComponent_Template_button_click_5_listener() {
+          return ctx.close();
+        });
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "mat-icon");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](7, "close");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()()();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "div", 3)(9, "p");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](10);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](11, "div", 4)(12, "button", 5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function FacetRemoveConfirmModalComponent_Template_button_click_12_listener() {
+          return ctx.close();
+        });
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](13, "Cancel");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](14, "button", 6);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function FacetRemoveConfirmModalComponent_Template_button_click_14_listener() {
+          return ctx.confirm();
+        });
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](15, "Remove");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()()();
+      }
+      if (rf & 2) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](10);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("Remove the \"", ctx.data.label, "\" filter?");
+      }
+    },
+    dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_7__.CommonModule, _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_9__.MatToolbarModule, _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_9__.MatToolbar, _angular_material_icon__WEBPACK_IMPORTED_MODULE_10__.MatIconModule, _angular_material_icon__WEBPACK_IMPORTED_MODULE_10__.MatIcon, _angular_material_button__WEBPACK_IMPORTED_MODULE_11__.MatButtonModule, _angular_material_button__WEBPACK_IMPORTED_MODULE_11__.MatButton, _angular_material_button__WEBPACK_IMPORTED_MODULE_12__.M],
+    styles: [".facet-remove-confirm-modal[_ngcontent-%COMP%]{display:flex;flex-direction:column;gap:12px;min-width:320px}.spacer[_ngcontent-%COMP%]{flex:1}.content[_ngcontent-%COMP%]{padding:0 16px}.actions[_ngcontent-%COMP%]{display:flex;justify-content:flex-end;gap:8px;padding:0 16px 16px}"]
+  });
+}
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](FacetRemoveConfirmModalComponent, [{
+    type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Component,
+    args: [{
+      selector: 'ngx-mat-facet-remove-confirm-modal',
+      standalone: true,
+      imports: [_angular_common__WEBPACK_IMPORTED_MODULE_7__.CommonModule, _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_9__.MatToolbarModule, _angular_material_icon__WEBPACK_IMPORTED_MODULE_10__.MatIconModule, _angular_material_button__WEBPACK_IMPORTED_MODULE_11__.MatButtonModule],
+      template: "<div class=\"facet-remove-confirm-modal\">\n  <mat-toolbar>\n    <span>Remove filter</span>\n    <span class=\"spacer\"></span>\n    <button mat-icon-button (click)=\"close()\" aria-label=\"Close remove filter dialog\">\n      <mat-icon>close</mat-icon>\n    </button>\n  </mat-toolbar>\n\n  <div class=\"content\">\n    <p>Remove the \"{{data.label}}\" filter?</p>\n  </div>\n\n  <div class=\"actions\">\n    <button mat-stroked-button (click)=\"close()\">Cancel</button>\n    <button mat-flat-button color=\"warn\" (click)=\"confirm()\">Remove</button>\n  </div>\n</div>\n",
+      styles: [".facet-remove-confirm-modal{display:flex;flex-direction:column;gap:12px;min-width:320px}.spacer{flex:1}.content{padding:0 16px}.actions{display:flex;justify-content:flex-end;gap:8px;padding:0 16px 16px}\n"]
+    }]
+  }], () => [{
+    type: undefined,
+    decorators: [{
+      type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Inject,
+      args: [FACET_MODAL_DATA]
+    }]
+  }, {
+    type: FacetModalRef
+  }], null);
+})();
 class PresetDeleteModalComponent {
   data;
   modalRef;
@@ -3560,13 +3645,23 @@ class NgxMatFacetToolkitComponent {
     this.storageService.updateSavedFacets(this.resolvedIdentifier(), nextSelections);
   }
   removeFacet(facet) {
-    if (!this.confirmOnRemove() || this.confirmOnRemove() && confirm(`Do you really want to remove "${facet.label}" filter?`)) {
-      const updatedSelections = this.selectedFacets().filter(selection => selection.id !== facet.id);
-      this.selectedFacets.set(updatedSelections);
-      this.storageService.updateSavedFacets(this.resolvedIdentifier(), updatedSelections);
-      this.facetRemoved.emit(this.toSelection(facet, facet.values, facet.filterType));
-      return true;
+    if (!this.confirmOnRemove()) {
+      return this.commitFacetRemoval(facet);
     }
+    const target = this.filterInput?.nativeElement;
+    const modalRef = this.modal.open(FacetRemoveConfirmModalComponent, target, {
+      centered: true,
+      data: {
+        label: facet.label
+      },
+      width: '320px'
+    });
+    modalRef.afterClosed().subscribe(result => {
+      if (result.type !== FacetResultType.ADD) {
+        return;
+      }
+      this.commitFacetRemoval(facet);
+    });
     return false;
   }
   reset() {
@@ -3670,6 +3765,13 @@ class NgxMatFacetToolkitComponent {
         ...value
       }))
     }));
+  }
+  commitFacetRemoval(facet) {
+    const updatedSelections = this.selectedFacets().filter(selection => selection.id !== facet.id);
+    this.selectedFacets.set(updatedSelections);
+    this.storageService.updateSavedFacets(this.resolvedIdentifier(), updatedSelections);
+    this.facetRemoved.emit(this.toSelection(facet, facet.values, facet.filterType));
+    return true;
   }
   scheduleChipRowUpdate() {
     if (!this.chipScrollContainer?.nativeElement) {
@@ -4001,7 +4103,7 @@ class NgxMatFacetToolkitComponent {
   \*****************************************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"name":"@drsutphin/ngx-mat-facet-toolkit","version":"1.0.21","description":"Angular 19 standalone facet filtering toolkit built on Angular Material.","keywords":["angular","angular-material","material","facet","facet-search","filters","filtering","chips","autocomplete","standalone","ui"],"author":"Derek Sutphin","repository":{"type":"git","url":"git+https://github.com/drsutphin/NgxMatFacetToolkit.git"},"peerDependencies":{"@angular/common":"^19.0.0","@angular/core":"^19.0.0","@angular/forms":"^19.0.0","@angular/material":"^19.0.0","uuid":"^9.0.1"},"dependencies":{"tslib":"^2.6.2"}}');
+module.exports = /*#__PURE__*/JSON.parse('{"name":"@drsutphin/ngx-mat-facet-toolkit","version":"1.0.23","description":"Angular 19 standalone facet filtering toolkit built on Angular Material.","keywords":["angular","angular-material","material","facet","facet-search","filters","filtering","chips","autocomplete","standalone","ui"],"author":"Derek Sutphin","repository":{"type":"git","url":"git+https://github.com/drsutphin/NgxMatFacetToolkit.git"},"peerDependencies":{"@angular/common":"^19.0.0","@angular/core":"^19.0.0","@angular/forms":"^19.0.0","@angular/material":"^19.0.0","uuid":"^9.0.1"},"dependencies":{"tslib":"^2.6.2"}}');
 
 /***/ }),
 
