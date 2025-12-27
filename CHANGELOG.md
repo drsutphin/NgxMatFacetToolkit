@@ -1,3 +1,7 @@
+# 1.0.23
+* Added:
+  * Angular-styled remove filter confirmation modal
+
 # 1.0.22
 * Added:
   * Release notes for v1.0.19-v1.0.21
