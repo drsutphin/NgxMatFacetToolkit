@@ -23,6 +23,9 @@
   $primary-color: mat.m2-get-color-from-palette($primary-palette);
   $primary-strong: mat.m2-get-color-from-palette($primary-palette, 600);
   $text-color: mat.m2-get-color-from-palette($foreground, text);
+  $header-text: mat.m2-get-color-from-palette($primary-palette, default-contrast);
+  $menu-hover: mat.m2-get-color-from-palette($background, hover);
+  $surface-color: mat.m2-get-color-from-palette($background, card);
   $theme-suffix: if($is-dark-theme, 'dark', 'light');
 
   .arrow {
@@ -47,8 +50,8 @@
   }
 
   .facet-modal-component {
-    background: mat.m2-get-color-from-palette($background, card)!important;
-    color: mat.m2-get-color-from-palette($foreground, text) !important;
+    background: $surface-color !important;
+    color: $text-color !important;
   }
 
   ngx-mat-facet-toolkit {
@@ -66,6 +69,13 @@
     --facet-toolkit-count-text-#{$theme-suffix}: #{$text-color};
     --facet-toolkit-scrollbar-thumb-#{$theme-suffix}: #{rgba($primary-color, 0.35)};
     --facet-toolkit-preset-row-bg-#{$theme-suffix}: #{rgba($primary-color, 0.08)};
+    --facet-toolkit-modal-surface-#{$theme-suffix}: #{$surface-color};
+    --facet-toolkit-modal-text-#{$theme-suffix}: #{$text-color};
+    --facet-toolkit-modal-header-bg-#{$theme-suffix}: #{$primary-color};
+    --facet-toolkit-modal-header-text-#{$theme-suffix}: #{$header-text};
+    --facet-toolkit-menu-surface-#{$theme-suffix}: #{$surface-color};
+    --facet-toolkit-menu-text-#{$theme-suffix}: #{$text-color};
+    --facet-toolkit-menu-hover-bg-#{$theme-suffix}: #{$menu-hover};
   }
 }
 

@@ -47,7 +47,12 @@ const rgbaFromHex = (hex: string, alpha: number): string => {
   return `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, ${alpha})`;
 };
 
-const buildOverrides = (primaryHex: string, textHex: string): FacetToolkitThemeOverrides => ({
+const buildOverrides = (
+  primaryHex: string,
+  textHex: string,
+  surfaceHex: string,
+  headerTextHex: string
+): FacetToolkitThemeOverrides => ({
   inputBg: rgbaFromHex(primaryHex, 0.08),
   inputShadow: `0 0 0 1px ${rgbaFromHex(primaryHex, 0.35)}`,
   inputHoverBg: rgbaFromHex(primaryHex, 0.12),
@@ -61,7 +66,14 @@ const buildOverrides = (primaryHex: string, textHex: string): FacetToolkitThemeO
   countBg: rgbaFromHex(primaryHex, 0.16),
   countText: textHex,
   scrollbarThumb: rgbaFromHex(primaryHex, 0.35),
-  presetRowBg: rgbaFromHex(primaryHex, 0.08)
+  presetRowBg: rgbaFromHex(primaryHex, 0.08),
+  modalSurface: surfaceHex,
+  modalText: textHex,
+  modalHeaderBg: primaryHex,
+  modalHeaderText: headerTextHex,
+  menuSurface: surfaceHex,
+  menuText: textHex,
+  menuHoverBg: rgbaFromHex(primaryHex, 0.12)
 });
 
 @Component({
@@ -100,27 +112,34 @@ export class ThemeSettingsComponent implements OnInit {
     {key: 'countBg', label: 'Count background', placeholder: 'rgba(46, 72, 144, 0.16)'},
     {key: 'countText', label: 'Count text', placeholder: '#1c2b46'},
     {key: 'scrollbarThumb', label: 'Scrollbar thumb', placeholder: 'rgba(46, 72, 144, 0.35)'},
-    {key: 'presetRowBg', label: 'Preset row background', placeholder: 'rgba(46, 72, 144, 0.08)'}
+    {key: 'presetRowBg', label: 'Preset row background', placeholder: 'rgba(46, 72, 144, 0.08)'},
+    {key: 'modalSurface', label: 'Modal surface', placeholder: '#ffffff'},
+    {key: 'modalText', label: 'Modal text', placeholder: '#1c2b46'},
+    {key: 'modalHeaderBg', label: 'Modal header background', placeholder: '#3f51b5'},
+    {key: 'modalHeaderText', label: 'Modal header text', placeholder: '#ffffff'},
+    {key: 'menuSurface', label: 'Menu surface', placeholder: '#ffffff'},
+    {key: 'menuText', label: 'Menu text', placeholder: '#1c2b46'},
+    {key: 'menuHoverBg', label: 'Menu hover background', placeholder: 'rgba(46, 72, 144, 0.08)'}
   ];
 
   themePresets: ThemePreset[] = [
     {
       id: 'material-indigo-pink',
       label: 'Material Indigo/Pink (Light) + Blue Gray/Amber (Dark)',
-      light: buildOverrides('#3f51b5', '#1c2b46'),
-      dark: buildOverrides('#607d8b', '#e2e8f0')
+      light: buildOverrides('#3f51b5', '#1c2b46', '#ffffff', '#ffffff'),
+      dark: buildOverrides('#607d8b', '#e2e8f0', '#111827', '#e2e8f0')
     },
     {
       id: 'material-teal-amber',
       label: 'Material Teal/Amber (Light) + Blue Gray/Amber (Dark)',
-      light: buildOverrides('#009688', '#0f172a'),
-      dark: buildOverrides('#455a64', '#e2e8f0')
+      light: buildOverrides('#009688', '#0f172a', '#ffffff', '#ffffff'),
+      dark: buildOverrides('#455a64', '#e2e8f0', '#0f172a', '#e2e8f0')
     },
     {
       id: 'material-deep-purple-amber',
       label: 'Material Deep Purple/Amber (Light) + Blue Gray/Amber (Dark)',
-      light: buildOverrides('#673ab7', '#1e1b4b'),
-      dark: buildOverrides('#546e7a', '#e2e8f0')
+      light: buildOverrides('#673ab7', '#1e1b4b', '#ffffff', '#ffffff'),
+      dark: buildOverrides('#546e7a', '#e2e8f0', '#0f172a', '#e2e8f0')
     }
   ];
 
@@ -138,7 +157,14 @@ export class ThemeSettingsComponent implements OnInit {
     countBg: 'rgba(46, 72, 144, 0.16)',
     countText: '#1c2b46',
     scrollbarThumb: 'rgba(46, 72, 144, 0.35)',
-    presetRowBg: 'rgba(46, 72, 144, 0.08)'
+    presetRowBg: 'rgba(46, 72, 144, 0.08)',
+    modalSurface: '#ffffff',
+    modalText: '#1c2b46',
+    modalHeaderBg: '#3f51b5',
+    modalHeaderText: '#ffffff',
+    menuSurface: '#ffffff',
+    menuText: '#1c2b46',
+    menuHoverBg: 'rgba(46, 72, 144, 0.08)'
   };
 
   darkOverrides: FacetToolkitThemeOverrides = {
@@ -155,7 +181,14 @@ export class ThemeSettingsComponent implements OnInit {
     countBg: 'rgba(226, 232, 240, 0.16)',
     countText: '#e2e8f0',
     scrollbarThumb: 'rgba(148, 163, 184, 0.45)',
-    presetRowBg: 'rgba(148, 163, 184, 0.12)'
+    presetRowBg: 'rgba(148, 163, 184, 0.12)',
+    modalSurface: '#111827',
+    modalText: '#e2e8f0',
+    modalHeaderBg: '#111827',
+    modalHeaderText: '#e2e8f0',
+    menuSurface: '#111827',
+    menuText: '#e2e8f0',
+    menuHoverBg: 'rgba(148, 163, 184, 0.18)'
   };
 
   ngOnInit(): void {

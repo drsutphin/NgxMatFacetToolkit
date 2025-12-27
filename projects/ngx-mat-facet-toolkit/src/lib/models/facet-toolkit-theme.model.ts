@@ -15,6 +15,13 @@ export interface FacetToolkitThemeOverrides {
   countText?: string;
   scrollbarThumb?: string;
   presetRowBg?: string;
+  modalSurface?: string;
+  modalText?: string;
+  modalHeaderBg?: string;
+  modalHeaderText?: string;
+  menuSurface?: string;
+  menuText?: string;
+  menuHoverBg?: string;
 }
 
 export type FacetToolkitThemeVariables = Record<string, string>;

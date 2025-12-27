@@ -5,6 +5,11 @@
   min-width: 360px;
 }
 
+mat-toolbar {
+  background: var(--facet-toolkit-modal-header-bg, #3f51b5);
+  color: var(--facet-toolkit-modal-header-text, #ffffff);
+}
+
 .spacer {
   flex: 1;
 }

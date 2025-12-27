@@ -13,7 +13,7 @@ import {
   output,
   signal
 } from '@angular/core';
-import {CommonModule} from '@angular/common';
+import {CommonModule, DOCUMENT} from '@angular/common';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatAutocompleteModule, MatAutocompleteSelectedEvent, MatAutocompleteTrigger} from '@angular/material/autocomplete';
 import {MatButtonModule} from '@angular/material/button';
@@ -82,7 +82,14 @@ const THEME_VAR_MAP: Record<keyof FacetToolkitThemeOverrides, string> = {
   countBg: '--facet-toolkit-count-bg',
   countText: '--facet-toolkit-count-text',
   scrollbarThumb: '--facet-toolkit-scrollbar-thumb',
-  presetRowBg: '--facet-toolkit-preset-row-bg'
+  presetRowBg: '--facet-toolkit-preset-row-bg',
+  modalSurface: '--facet-toolkit-modal-surface',
+  modalText: '--facet-toolkit-modal-text',
+  modalHeaderBg: '--facet-toolkit-modal-header-bg',
+  modalHeaderText: '--facet-toolkit-modal-header-text',
+  menuSurface: '--facet-toolkit-menu-surface',
+  menuText: '--facet-toolkit-menu-text',
+  menuHoverBg: '--facet-toolkit-menu-hover-bg'
 };
 
 const mergeThemeVariables = (
@@ -227,6 +234,7 @@ export class NgxMatFacetToolkitComponent implements AfterViewInit, OnDestroy {
   private readonly presetStorageService = inject(FacetPresetStorageService);
   private readonly modal = inject(FacetModalService);
   private readonly vcRef = inject(ViewContainerRef);
+  private readonly documentRef = inject(DOCUMENT);
 
   private readonly identifierStrategy = signal<FacetIdentifierStrategy>(FacetIdentifierStrategy.ParentID);
   private readonly resolvedIdentifier = signal<string | null>(null);
@@ -236,6 +244,8 @@ export class NgxMatFacetToolkitComponent implements AfterViewInit, OnDestroy {
   private readonly showFilterCount = signal(false);
   private readonly resolvedThemeMode = signal<FacetToolkitThemeMode>('auto');
   private readonly resolvedThemeVariables = signal<FacetToolkitThemeVariables>({});
+  private readonly appliedRootVariables = new Set<string>();
+  private readonly appliedRootClasses = new Set<string>();
   private timeoutHandler: ReturnType<typeof setTimeout> | null = null;
   private chipRowResizeObserver: ResizeObserver | null = null;
   private chipRowUpdateHandle: number | null = null;
@@ -541,6 +551,7 @@ export class NgxMatFacetToolkitComponent implements AfterViewInit, OnDestroy {
 
     this.resolvedThemeVariables.set(mergedVariables);
     this.hostStyles = mergedVariables;
+    this.applyRootThemeVariables(mergedVariables, resolvedMode);
   }
 
   private applyModalThemeConfig(config: Partial<FacetModalConfig>): Partial<FacetModalConfig> {
@@ -574,6 +585,41 @@ export class NgxMatFacetToolkitComponent implements AfterViewInit, OnDestroy {
       return [...panelClass, themeClass];
     }
     return [panelClass, themeClass];
+  }
+
+  private applyRootThemeVariables(
+    variables: FacetToolkitThemeVariables,
+    themeMode: FacetToolkitThemeMode
+  ): void {
+    const root = this.documentRef?.documentElement;
+    const rootStyle = root?.style;
+    if (!rootStyle || !root) {
+      return;
+    }
+
+    this.appliedRootVariables.forEach(key => rootStyle.removeProperty(key));
+    this.appliedRootVariables.clear();
+
+    Object.entries(variables).forEach(([key, value]) => {
+      if (!key || !value) {
+        return;
+      }
+      rootStyle.setProperty(key, value);
+      this.appliedRootVariables.add(key);
+    });
+
+    this.appliedRootClasses.forEach(className => root.classList.remove(className));
+    this.appliedRootClasses.clear();
+
+    root.classList.add('facet-theme-panel');
+    this.appliedRootClasses.add('facet-theme-panel');
+    if (themeMode === 'dark') {
+      root.classList.add('facet-theme-dark');
+      this.appliedRootClasses.add('facet-theme-dark');
+    } else if (themeMode === 'light') {
+      root.classList.add('facet-theme-light');
+      this.appliedRootClasses.add('facet-theme-light');
+    }
   }
 
   applyPreset(preset: FacetPreset): void {
