@@ -50,6 +50,7 @@ import {
 import {FacetEditorState} from './models/facet-editor-state.model';
 import {FacetDetailsModalComponent} from './modals/facet-details-modal/facet-details-modal.component';
 import {FacetModalService} from './modals/facet-modal.service';
+import {FacetRemoveConfirmModalComponent} from './modals/facet-remove-confirm-modal/facet-remove-confirm-modal.component';
 import {PresetManagerModalComponent} from './modals/preset-manager-modal/preset-manager-modal.component';
 import {PresetNameModalComponent} from './modals/preset-name-modal/preset-name-modal.component';
 import {VCRefInjector} from './misc/parent.helper';
@@ -339,13 +340,24 @@ export class NgxMatFacetToolkitComponent implements AfterViewInit, OnDestroy {
   }
 
   removeFacet(facet: FacetEditorState): boolean {
-    if (!this.confirmOnRemove() || (this.confirmOnRemove() && confirm(`Do you really want to remove "${facet.label}" filter?`))) {
-      const updatedSelections = this.selectedFacets().filter(selection => selection.id !== facet.id);
-      this.selectedFacets.set(updatedSelections);
-      this.storageService.updateSavedFacets(this.resolvedIdentifier(), updatedSelections);
-      this.facetRemoved.emit(this.toSelection(facet, facet.values, facet.filterType));
-      return true;
+    if (!this.confirmOnRemove()) {
+      return this.commitFacetRemoval(facet);
     }
+
+    const target = this.filterInput?.nativeElement;
+    const modalRef = this.modal.open<boolean>(FacetRemoveConfirmModalComponent, target, {
+      centered: true,
+      data: {label: facet.label},
+      width: '320px'
+    });
+
+    modalRef.afterClosed().subscribe(result => {
+      if (result.type !== FacetResultType.ADD) {
+        return;
+      }
+      this.commitFacetRemoval(facet);
+    });
+
     return false;
   }
 
@@ -464,6 +476,14 @@ export class NgxMatFacetToolkitComponent implements AfterViewInit, OnDestroy {
       ...selection,
       values: (selection.values || []).map(value => ({...value}))
     }));
+  }
+
+  private commitFacetRemoval(facet: FacetEditorState): boolean {
+    const updatedSelections = this.selectedFacets().filter(selection => selection.id !== facet.id);
+    this.selectedFacets.set(updatedSelections);
+    this.storageService.updateSavedFacets(this.resolvedIdentifier(), updatedSelections);
+    this.facetRemoved.emit(this.toSelection(facet, facet.values, facet.filterType));
+    return true;
   }
 
   private scheduleChipRowUpdate(): void {

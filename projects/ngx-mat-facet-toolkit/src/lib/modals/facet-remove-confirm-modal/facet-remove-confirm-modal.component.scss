@@ -1,0 +1,21 @@
+.facet-remove-confirm-modal {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 320px;
+}
+
+.spacer {
+  flex: 1;
+}
+
+.content {
+  padding: 0 16px;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  padding: 0 16px 16px;
+}

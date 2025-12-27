@@ -1,0 +1,18 @@
+<div class="facet-remove-confirm-modal">
+  <mat-toolbar>
+    <span>Remove filter</span>
+    <span class="spacer"></span>
+    <button mat-icon-button (click)="close()" aria-label="Close remove filter dialog">
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-toolbar>
+
+  <div class="content">
+    <p>Remove the "{{data.label}}" filter?</p>
+  </div>
+
+  <div class="actions">
+    <button mat-stroked-button (click)="close()">Cancel</button>
+    <button mat-flat-button color="warn" (click)="confirm()">Remove</button>
+  </div>
+</div>
