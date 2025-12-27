@@ -16,6 +16,7 @@ interface ThemeField {
   key: keyof FacetToolkitThemeOverrides;
   label: string;
   placeholder: string;
+  isColor?: boolean;
 }
 
 interface ThemePreset {
@@ -104,21 +105,21 @@ export class ThemeSettingsComponent implements OnInit {
     {key: 'inputHoverBg', label: 'Input hover background', placeholder: 'rgba(46, 72, 144, 0.12)'},
     {key: 'inputHoverShadow', label: 'Input hover shadow', placeholder: '0 0 0 1px rgba(46, 72, 144, 0.55)'},
     {key: 'inputFocusShadow', label: 'Input focus shadow', placeholder: '0 0 0 2px rgba(70, 110, 200, 0.35)'},
-    {key: 'inputText', label: 'Input text', placeholder: '#1c2b46'},
-    {key: 'inputPlaceholder', label: 'Input placeholder', placeholder: '#1c2b46'},
-    {key: 'addIcon', label: 'Add icon', placeholder: '#1c2b46'},
-    {key: 'presetTrigger', label: 'Preset trigger', placeholder: '#1c2b46'},
+    {key: 'inputText', label: 'Input text', placeholder: '#1c2b46', isColor: true},
+    {key: 'inputPlaceholder', label: 'Input placeholder', placeholder: '#1c2b46', isColor: true},
+    {key: 'addIcon', label: 'Add icon', placeholder: '#1c2b46', isColor: true},
+    {key: 'presetTrigger', label: 'Preset trigger', placeholder: '#1c2b46', isColor: true},
     {key: 'countDivider', label: 'Count divider', placeholder: 'linear-gradient(...)'},
     {key: 'countBg', label: 'Count background', placeholder: 'rgba(46, 72, 144, 0.16)'},
-    {key: 'countText', label: 'Count text', placeholder: '#1c2b46'},
+    {key: 'countText', label: 'Count text', placeholder: '#1c2b46', isColor: true},
     {key: 'scrollbarThumb', label: 'Scrollbar thumb', placeholder: 'rgba(46, 72, 144, 0.35)'},
     {key: 'presetRowBg', label: 'Preset row background', placeholder: 'rgba(46, 72, 144, 0.08)'},
-    {key: 'modalSurface', label: 'Modal surface', placeholder: '#ffffff'},
-    {key: 'modalText', label: 'Modal text', placeholder: '#1c2b46'},
-    {key: 'modalHeaderBg', label: 'Modal header background', placeholder: '#3f51b5'},
-    {key: 'modalHeaderText', label: 'Modal header text', placeholder: '#ffffff'},
-    {key: 'menuSurface', label: 'Menu surface', placeholder: '#ffffff'},
-    {key: 'menuText', label: 'Menu text', placeholder: '#1c2b46'},
+    {key: 'modalSurface', label: 'Modal surface', placeholder: '#ffffff', isColor: true},
+    {key: 'modalText', label: 'Modal text', placeholder: '#1c2b46', isColor: true},
+    {key: 'modalHeaderBg', label: 'Modal header background', placeholder: '#3f51b5', isColor: true},
+    {key: 'modalHeaderText', label: 'Modal header text', placeholder: '#ffffff', isColor: true},
+    {key: 'menuSurface', label: 'Menu surface', placeholder: '#ffffff', isColor: true},
+    {key: 'menuText', label: 'Menu text', placeholder: '#1c2b46', isColor: true},
     {key: 'menuHoverBg', label: 'Menu hover background', placeholder: 'rgba(46, 72, 144, 0.08)'}
   ];
 

@@ -27,8 +27,12 @@
       @for (field of themeFields; track field.key) {
         <mat-form-field appearance="outline">
           <mat-label>{{field.label}}</mat-label>
-          <input matInput [(ngModel)]="lightOverrides[field.key]" (ngModelChange)="onFieldChange()"
-                 [placeholder]="field.placeholder">
+          @if (field.isColor) {
+            <input matInput type="color" [(ngModel)]="lightOverrides[field.key]" (ngModelChange)="onFieldChange()">
+          } @else {
+            <input matInput [(ngModel)]="lightOverrides[field.key]" (ngModelChange)="onFieldChange()"
+                   [placeholder]="field.placeholder">
+          }
         </mat-form-field>
       }
     </div>
@@ -40,8 +44,12 @@
       @for (field of themeFields; track field.key) {
         <mat-form-field appearance="outline">
           <mat-label>{{field.label}}</mat-label>
-          <input matInput [(ngModel)]="darkOverrides[field.key]" (ngModelChange)="onFieldChange()"
-                 [placeholder]="field.placeholder">
+          @if (field.isColor) {
+            <input matInput type="color" [(ngModel)]="darkOverrides[field.key]" (ngModelChange)="onFieldChange()">
+          } @else {
+            <input matInput [(ngModel)]="darkOverrides[field.key]" (ngModelChange)="onFieldChange()"
+                   [placeholder]="field.placeholder">
+          }
         </mat-form-field>
       }
     </div>
