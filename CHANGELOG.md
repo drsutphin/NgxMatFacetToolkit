@@ -1,6 +1,8 @@
-# 1.0.20
+# 1.0.21
 * Fixed:
   * Guard ResizeObserver usage for test environments
+
+# 1.0.20
 
 # 1.0.19
 * Added:
