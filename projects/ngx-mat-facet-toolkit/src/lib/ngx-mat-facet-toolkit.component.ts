@@ -245,7 +245,7 @@ export class NgxMatFacetToolkitComponent implements AfterViewInit, OnDestroy {
         this.filterText.set(text || '');
       });
 
-    if (this.chipScrollContainer?.nativeElement) {
+    if (this.chipScrollContainer?.nativeElement && typeof ResizeObserver !== 'undefined') {
       this.chipRowResizeObserver = new ResizeObserver(() => {
         this.updateChipRowOverflow();
       });
