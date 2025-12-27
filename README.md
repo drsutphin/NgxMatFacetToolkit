@@ -190,6 +190,7 @@ provideFacetToolkitConfig({
 ## Repository Docs
 - `CODEBASE.md` for architecture, services, and data flow.
 - `V1_MIGRATION_PLAN.md` for upgrade notes and constraints.
+- `documentation/` for roadmap, release checklist, release notes, and session notes.
 
 ## Docs Map
 - Start here: `README.md` (usage, API reference, theming, cookbook, migration/FAQ).
