@@ -610,6 +610,19 @@ export class NgxMatFacetToolkitComponent implements AfterViewInit, OnDestroy {
       this.appliedRootVariables.add(key);
     });
 
+    const effectiveMode = this.getEffectiveThemeMode(themeMode);
+    Object.entries(variables).forEach(([key, value]) => {
+      if (!key || !value) {
+        return;
+      }
+      const suffix = `-${effectiveMode}`;
+      if (key.endsWith(suffix)) {
+        const baseKey = key.slice(0, -suffix.length);
+        rootStyle.setProperty(baseKey, value);
+        this.appliedRootVariables.add(baseKey);
+      }
+    });
+
     this.appliedRootClasses.forEach(className => root.classList.remove(className));
     this.appliedRootClasses.clear();
 
@@ -622,6 +635,14 @@ export class NgxMatFacetToolkitComponent implements AfterViewInit, OnDestroy {
       root.classList.add('facet-theme-light');
       this.appliedRootClasses.add('facet-theme-light');
     }
+  }
+
+  private getEffectiveThemeMode(themeMode: FacetToolkitThemeMode): 'light' | 'dark' {
+    if (themeMode !== 'auto') {
+      return themeMode;
+    }
+    const body = this.documentRef?.body;
+    return body?.classList.contains('dark-theme') ? 'dark' : 'light';
   }
 
   applyPreset(preset: FacetPreset): void {

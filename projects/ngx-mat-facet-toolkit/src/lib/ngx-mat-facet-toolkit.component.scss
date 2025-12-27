@@ -152,19 +152,19 @@
 
 ::ng-deep .facet-theme-panel .mat-mdc-menu-panel,
 ::ng-deep .facet-theme-panel .mat-mdc-autocomplete-panel {
-  background: var(--facet-toolkit-menu-surface);
-  color: var(--facet-toolkit-menu-text);
+  background: var(--facet-toolkit-menu-surface, var(--mat-menu-container-color, #ffffff));
+  color: var(--facet-toolkit-menu-text, var(--mat-menu-item-label-text-color, #1c2b46));
 }
 
 ::ng-deep .facet-theme-panel .mat-mdc-menu-item,
 ::ng-deep .facet-theme-panel .mat-mdc-option {
-  color: var(--facet-toolkit-menu-text);
+  color: var(--facet-toolkit-menu-text, var(--mat-menu-item-label-text-color, #1c2b46));
 }
 
 ::ng-deep .facet-theme-panel .mat-mdc-menu-item:hover,
 ::ng-deep .facet-theme-panel .mat-mdc-option:hover,
 ::ng-deep .facet-theme-panel .mat-mdc-option.mdc-list-item--selected {
-  background: var(--facet-toolkit-menu-hover-bg);
+  background: var(--facet-toolkit-menu-hover-bg, var(--mat-menu-item-hover-state-layer-color, rgba(0, 0, 0, 0.04)));
 }
 
 * {

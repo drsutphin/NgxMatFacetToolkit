@@ -6,8 +6,8 @@
 }
 
 mat-toolbar {
-  background: var(--facet-toolkit-modal-header-bg, #3f51b5) !important;
-  color: var(--facet-toolkit-modal-header-text, #ffffff) !important;
+  background: var(--facet-toolkit-modal-header-bg, var(--mat-toolbar-container-background-color, #3f51b5)) !important;
+  color: var(--facet-toolkit-modal-header-text, var(--mat-toolbar-container-text-color, #ffffff)) !important;
 }
 
 .spacer {
