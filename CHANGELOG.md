@@ -1,3 +1,7 @@
+# 1.0.20
+* Fixed:
+  * Guard ResizeObserver usage for test environments
+
 # 1.0.19
 * Added:
   * Preset system with save/load/manage flows and storage callbacks
