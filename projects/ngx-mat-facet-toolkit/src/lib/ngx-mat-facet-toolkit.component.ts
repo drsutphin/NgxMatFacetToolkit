@@ -93,6 +93,35 @@ const mergeThemeVariables = (
   ...(override || {})
 });
 
+const mapThemeVariables = (
+  variables: FacetToolkitThemeVariables | null | undefined,
+  suffix: 'light' | 'dark'
+): FacetToolkitThemeVariables => {
+  if (!variables) {
+    return {};
+  }
+
+  return Object.entries(variables).reduce((acc, [key, value]) => {
+    if (!value) {
+      return acc;
+    }
+    const trimmedKey = key.trim();
+    if (!trimmedKey) {
+      return acc;
+    }
+    if (trimmedKey.endsWith('-light') || trimmedKey.endsWith('-dark')) {
+      acc[trimmedKey] = value;
+      return acc;
+    }
+    if (trimmedKey.startsWith('--facet-toolkit-')) {
+      acc[`${trimmedKey}-${suffix}`] = value;
+      return acc;
+    }
+    acc[trimmedKey] = value;
+    return acc;
+  }, {} as FacetToolkitThemeVariables);
+};
+
 const mapThemeOverrides = (
   overrides: FacetToolkitThemeOverrides | null | undefined,
   suffix: 'light' | 'dark'
@@ -506,8 +535,8 @@ export class NgxMatFacetToolkitComponent implements AfterViewInit, OnDestroy {
     const mergedVariables: FacetToolkitThemeVariables = {
       ...mapThemeOverrides(resolvedOverrides, 'light'),
       ...mapThemeOverrides(resolvedDarkOverrides, 'dark'),
-      ...resolvedThemeVars,
-      ...resolvedDarkThemeVars
+      ...mapThemeVariables(resolvedThemeVars, 'light'),
+      ...mapThemeVariables(resolvedDarkThemeVars, 'dark')
     };
 
     this.resolvedThemeVariables.set(mergedVariables);

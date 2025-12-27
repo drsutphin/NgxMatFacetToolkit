@@ -154,7 +154,7 @@ Provider config (`provideFacetToolkitConfig`):
 - `themeVariables`: `Record<string, string>`
 - `darkThemeVariables`: `Record<string, string>`
 
-Theme overrides can be supplied via provider config or the component `config` input. Dark overrides apply when the theme mode is `dark` or the `dark-theme` body class is active.
+Theme overrides can be supplied via provider config or the component `config` input. Dark overrides apply when the theme mode is `dark` or the `dark-theme` body class is active, and `themeMode: 'dark'` forces the toolkit into dark styling even if the Material theme is light.
 
 ## Outputs
 - `facetChange`: emits `FacetSelection[]` whenever the selection state changes.
