@@ -54,6 +54,696 @@ const lotsOfValuesTypeAhead = text => (0,rxjs__WEBPACK_IMPORTED_MODULE_0__.of)(r
 
 /***/ }),
 
+/***/ 1989:
+/*!*************************************************************************************************!*\
+  !*** ./projects/demo-application/src/app/components/theme-settings/theme-settings.component.ts ***!
+  \*************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   ThemeSettingsComponent: () => (/* binding */ ThemeSettingsComponent)
+/* harmony export */ });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 7580);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ 4460);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ 4456);
+/* harmony import */ var _angular_material_card__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/material/card */ 3777);
+/* harmony import */ var _angular_material_divider__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/material/divider */ 4102);
+/* harmony import */ var _angular_material_form_field__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/material/form-field */ 6755);
+/* harmony import */ var _angular_material_input__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/material/input */ 5541);
+/* harmony import */ var _angular_material_select__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/material/select */ 211);
+/* harmony import */ var _angular_material_form_field__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/material/form-field */ 9902);
+/* harmony import */ var _angular_material_select__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/material/select */ 5255);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const _forTrack0 = ($index, $item) => $item.id;
+const _forTrack1 = ($index, $item) => $item.key;
+function ThemeSettingsComponent_For_21_Template(rf, ctx) {
+  if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-option", 8);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+  }
+  if (rf & 2) {
+    const preset_r1 = ctx.$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", preset_r1.id);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](preset_r1.label);
+  }
+}
+function ThemeSettingsComponent_For_27_Conditional_3_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r2 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "input", 12);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtwoWayListener"]("ngModelChange", function ThemeSettingsComponent_For_27_Conditional_3_Template_input_ngModelChange_0_listener($event) {
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r2);
+      const field_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]().$implicit;
+      const ctx_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtwoWayBindingSet"](ctx_r3.lightOverrides[field_r3.key], $event) || (ctx_r3.lightOverrides[field_r3.key] = $event);
+      return _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵresetView"]($event);
+    });
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("ngModelChange", function ThemeSettingsComponent_For_27_Conditional_3_Template_input_ngModelChange_0_listener() {
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r2);
+      const ctx_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
+      return _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵresetView"](ctx_r3.onFieldChange());
+    });
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+  }
+  if (rf & 2) {
+    const field_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]().$implicit;
+    const ctx_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtwoWayProperty"]("ngModel", ctx_r3.lightOverrides[field_r3.key]);
+  }
+}
+function ThemeSettingsComponent_For_27_Conditional_4_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r5 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "input", 13);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtwoWayListener"]("ngModelChange", function ThemeSettingsComponent_For_27_Conditional_4_Template_input_ngModelChange_0_listener($event) {
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r5);
+      const field_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]().$implicit;
+      const ctx_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtwoWayBindingSet"](ctx_r3.lightOverrides[field_r3.key], $event) || (ctx_r3.lightOverrides[field_r3.key] = $event);
+      return _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵresetView"]($event);
+    });
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("ngModelChange", function ThemeSettingsComponent_For_27_Conditional_4_Template_input_ngModelChange_0_listener() {
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r5);
+      const ctx_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
+      return _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵresetView"](ctx_r3.onFieldChange());
+    });
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+  }
+  if (rf & 2) {
+    const field_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]().$implicit;
+    const ctx_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtwoWayProperty"]("ngModel", ctx_r3.lightOverrides[field_r3.key]);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("placeholder", field_r3.placeholder);
+  }
+}
+function ThemeSettingsComponent_For_27_Template(rf, ctx) {
+  if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-form-field", 2)(1, "mat-label");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](3, ThemeSettingsComponent_For_27_Conditional_3_Template, 1, 1, "input", 10)(4, ThemeSettingsComponent_For_27_Conditional_4_Template, 1, 2, "input", 11);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+  }
+  if (rf & 2) {
+    const field_r3 = ctx.$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](field_r3.label);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵconditional"](field_r3.isColor ? 3 : 4);
+  }
+}
+function ThemeSettingsComponent_For_33_Conditional_3_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r6 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "input", 12);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtwoWayListener"]("ngModelChange", function ThemeSettingsComponent_For_33_Conditional_3_Template_input_ngModelChange_0_listener($event) {
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r6);
+      const field_r7 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]().$implicit;
+      const ctx_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtwoWayBindingSet"](ctx_r3.darkOverrides[field_r7.key], $event) || (ctx_r3.darkOverrides[field_r7.key] = $event);
+      return _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵresetView"]($event);
+    });
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("ngModelChange", function ThemeSettingsComponent_For_33_Conditional_3_Template_input_ngModelChange_0_listener() {
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r6);
+      const ctx_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
+      return _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵresetView"](ctx_r3.onFieldChange());
+    });
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+  }
+  if (rf & 2) {
+    const field_r7 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]().$implicit;
+    const ctx_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtwoWayProperty"]("ngModel", ctx_r3.darkOverrides[field_r7.key]);
+  }
+}
+function ThemeSettingsComponent_For_33_Conditional_4_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r8 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "input", 13);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtwoWayListener"]("ngModelChange", function ThemeSettingsComponent_For_33_Conditional_4_Template_input_ngModelChange_0_listener($event) {
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r8);
+      const field_r7 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]().$implicit;
+      const ctx_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtwoWayBindingSet"](ctx_r3.darkOverrides[field_r7.key], $event) || (ctx_r3.darkOverrides[field_r7.key] = $event);
+      return _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵresetView"]($event);
+    });
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("ngModelChange", function ThemeSettingsComponent_For_33_Conditional_4_Template_input_ngModelChange_0_listener() {
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r8);
+      const ctx_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
+      return _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵresetView"](ctx_r3.onFieldChange());
+    });
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+  }
+  if (rf & 2) {
+    const field_r7 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]().$implicit;
+    const ctx_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtwoWayProperty"]("ngModel", ctx_r3.darkOverrides[field_r7.key]);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("placeholder", field_r7.placeholder);
+  }
+}
+function ThemeSettingsComponent_For_33_Template(rf, ctx) {
+  if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-form-field", 2)(1, "mat-label");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](3, ThemeSettingsComponent_For_33_Conditional_3_Template, 1, 1, "input", 10)(4, ThemeSettingsComponent_For_33_Conditional_4_Template, 1, 2, "input", 11);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+  }
+  if (rf & 2) {
+    const field_r7 = ctx.$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](field_r7.label);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵconditional"](field_r7.isColor ? 3 : 4);
+  }
+}
+const hexToRgb = hex => {
+  const normalized = hex.replace('#', '').trim();
+  const value = normalized.length === 3 ? normalized.split('').map(char => char + char).join('') : normalized;
+  if (value.length !== 6) {
+    return null;
+  }
+  const r = Number.parseInt(value.slice(0, 2), 16);
+  const g = Number.parseInt(value.slice(2, 4), 16);
+  const b = Number.parseInt(value.slice(4, 6), 16);
+  return Number.isNaN(r) || Number.isNaN(g) || Number.isNaN(b) ? null : {
+    r,
+    g,
+    b
+  };
+};
+const rgbaFromHex = (hex, alpha) => {
+  const rgb = hexToRgb(hex);
+  if (!rgb) {
+    return hex;
+  }
+  return `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, ${alpha})`;
+};
+const buildOverrides = (primaryHex, textHex, surfaceHex, headerTextHex, clearButtonBg, clearButtonText) => ({
+  inputBg: rgbaFromHex(primaryHex, 0.08),
+  inputShadow: `0 0 0 1px ${rgbaFromHex(primaryHex, 0.35)}`,
+  inputHoverBg: rgbaFromHex(primaryHex, 0.12),
+  inputHoverShadow: `0 0 0 1px ${rgbaFromHex(primaryHex, 0.55)}`,
+  inputFocusShadow: `0 0 0 2px ${rgbaFromHex(primaryHex, 0.35)}`,
+  inputText: textHex,
+  inputPlaceholder: textHex,
+  addIcon: textHex,
+  presetTrigger: textHex,
+  countDivider: `linear-gradient(180deg, ${rgbaFromHex(primaryHex, 0.1)}, ${rgbaFromHex(primaryHex, 0.7)}, ${rgbaFromHex(primaryHex, 0.1)})`,
+  countBg: rgbaFromHex(primaryHex, 0.16),
+  countText: textHex,
+  scrollbarThumb: rgbaFromHex(primaryHex, 0.35),
+  presetRowBg: rgbaFromHex(primaryHex, 0.08),
+  modalSurface: surfaceHex,
+  modalText: textHex,
+  modalHeaderBg: primaryHex,
+  modalHeaderText: headerTextHex,
+  menuSurface: surfaceHex,
+  menuText: textHex,
+  menuHoverBg: rgbaFromHex(primaryHex, 0.12),
+  clearButtonBg,
+  clearButtonText
+});
+class ThemeSettingsComponent {
+  themeConfigUpdated = new _angular_core__WEBPACK_IMPORTED_MODULE_0__.EventEmitter(true);
+  themeMode = 'auto';
+  themePresetId = 'material-indigo-pink';
+  themeFields = [{
+    key: 'inputBg',
+    label: 'Input background',
+    placeholder: 'rgba(46, 72, 144, 0.08)'
+  }, {
+    key: 'inputShadow',
+    label: 'Input shadow',
+    placeholder: '0 0 0 1px rgba(46, 72, 144, 0.35)'
+  }, {
+    key: 'inputHoverBg',
+    label: 'Input hover background',
+    placeholder: 'rgba(46, 72, 144, 0.12)'
+  }, {
+    key: 'inputHoverShadow',
+    label: 'Input hover shadow',
+    placeholder: '0 0 0 1px rgba(46, 72, 144, 0.55)'
+  }, {
+    key: 'inputFocusShadow',
+    label: 'Input focus shadow',
+    placeholder: '0 0 0 2px rgba(70, 110, 200, 0.35)'
+  }, {
+    key: 'inputText',
+    label: 'Input text',
+    placeholder: '#1c2b46',
+    isColor: true
+  }, {
+    key: 'inputPlaceholder',
+    label: 'Input placeholder',
+    placeholder: '#1c2b46',
+    isColor: true
+  }, {
+    key: 'addIcon',
+    label: 'Add icon',
+    placeholder: '#1c2b46',
+    isColor: true
+  }, {
+    key: 'presetTrigger',
+    label: 'Preset trigger',
+    placeholder: '#1c2b46',
+    isColor: true
+  }, {
+    key: 'countDivider',
+    label: 'Count divider',
+    placeholder: 'linear-gradient(...)'
+  }, {
+    key: 'countBg',
+    label: 'Count background',
+    placeholder: 'rgba(46, 72, 144, 0.16)'
+  }, {
+    key: 'countText',
+    label: 'Count text',
+    placeholder: '#1c2b46',
+    isColor: true
+  }, {
+    key: 'scrollbarThumb',
+    label: 'Scrollbar thumb',
+    placeholder: 'rgba(46, 72, 144, 0.35)'
+  }, {
+    key: 'presetRowBg',
+    label: 'Preset row background',
+    placeholder: 'rgba(46, 72, 144, 0.08)'
+  }, {
+    key: 'modalSurface',
+    label: 'Modal surface',
+    placeholder: '#ffffff',
+    isColor: true
+  }, {
+    key: 'modalText',
+    label: 'Modal text',
+    placeholder: '#1c2b46',
+    isColor: true
+  }, {
+    key: 'modalHeaderBg',
+    label: 'Modal header background',
+    placeholder: '#3f51b5',
+    isColor: true
+  }, {
+    key: 'modalHeaderText',
+    label: 'Modal header text',
+    placeholder: '#ffffff',
+    isColor: true
+  }, {
+    key: 'menuSurface',
+    label: 'Menu surface',
+    placeholder: '#ffffff',
+    isColor: true
+  }, {
+    key: 'menuText',
+    label: 'Menu text',
+    placeholder: '#1c2b46',
+    isColor: true
+  }, {
+    key: 'menuHoverBg',
+    label: 'Menu hover background',
+    placeholder: 'rgba(46, 72, 144, 0.08)'
+  }, {
+    key: 'clearButtonBg',
+    label: 'Clear button background',
+    placeholder: '#e91e63',
+    isColor: true
+  }, {
+    key: 'clearButtonText',
+    label: 'Clear button text',
+    placeholder: '#ffffff',
+    isColor: true
+  }, {
+    key: 'modalActionPrimaryBg',
+    label: 'Modal action primary background',
+    placeholder: '#3f51b5',
+    isColor: true
+  }, {
+    key: 'modalActionPrimaryText',
+    label: 'Modal action primary text',
+    placeholder: '#ffffff',
+    isColor: true
+  }, {
+    key: 'modalActionSecondaryBg',
+    label: 'Modal action secondary background',
+    placeholder: 'transparent'
+  }, {
+    key: 'modalActionSecondaryText',
+    label: 'Modal action secondary text',
+    placeholder: '#1c2b46',
+    isColor: true
+  }, {
+    key: 'modalActionWarnBg',
+    label: 'Modal action warn background',
+    placeholder: '#f44336',
+    isColor: true
+  }, {
+    key: 'modalActionWarnText',
+    label: 'Modal action warn text',
+    placeholder: '#ffffff',
+    isColor: true
+  }, {
+    key: 'modalActionBorder',
+    label: 'Modal action border',
+    placeholder: 'rgba(28, 43, 70, 0.2)'
+  }, {
+    key: 'modalInputFocusOutline',
+    label: 'Modal input focus outline',
+    placeholder: '#3f51b5',
+    isColor: true
+  }, {
+    key: 'modalInputFocusLabel',
+    label: 'Modal input focus label',
+    placeholder: '#3f51b5',
+    isColor: true
+  }, {
+    key: 'modalInputCaret',
+    label: 'Modal input caret',
+    placeholder: '#3f51b5',
+    isColor: true
+  }, {
+    key: 'chipSelectedBg',
+    label: 'Chip selected background',
+    placeholder: 'rgba(63, 81, 181, 0.12)'
+  }, {
+    key: 'chipSelectedText',
+    label: 'Chip selected text',
+    placeholder: '#1c2b46',
+    isColor: true
+  }];
+  themePresets = [{
+    id: 'material-indigo-pink',
+    label: 'Material Indigo/Pink (Light) + Blue Gray/Amber (Dark)',
+    light: {
+      ...buildOverrides('#3f51b5', '#1c2b46', '#ffffff', '#ffffff', '#e91e63', '#ffffff'),
+      modalActionPrimaryBg: '#3f51b5',
+      modalActionPrimaryText: '#ffffff',
+      modalActionSecondaryBg: 'transparent',
+      modalActionSecondaryText: '#1c2b46',
+      modalActionWarnBg: '#f44336',
+      modalActionWarnText: '#ffffff',
+      modalActionBorder: 'rgba(28, 43, 70, 0.2)',
+      modalInputFocusOutline: '#3f51b5',
+      modalInputFocusLabel: '#3f51b5',
+      modalInputCaret: '#3f51b5',
+      chipSelectedBg: 'rgba(63, 81, 181, 0.12)',
+      chipSelectedText: '#1c2b46'
+    },
+    dark: {
+      ...buildOverrides('#607d8b', '#e2e8f0', '#111827', '#e2e8f0', '#f59e0b', '#111827'),
+      modalActionPrimaryBg: '#1f2937',
+      modalActionPrimaryText: '#e2e8f0',
+      modalActionSecondaryBg: 'transparent',
+      modalActionSecondaryText: '#e2e8f0',
+      modalActionWarnBg: '#f97316',
+      modalActionWarnText: '#111827',
+      modalActionBorder: 'rgba(226, 232, 240, 0.25)',
+      modalInputFocusOutline: '#93c5fd',
+      modalInputFocusLabel: '#93c5fd',
+      modalInputCaret: '#93c5fd',
+      chipSelectedBg: 'rgba(148, 163, 184, 0.2)',
+      chipSelectedText: '#e2e8f0'
+    }
+  }, {
+    id: 'material-teal-amber',
+    label: 'Material Teal/Amber (Light) + Blue Gray/Amber (Dark)',
+    light: {
+      ...buildOverrides('#009688', '#0f172a', '#ffffff', '#ffffff', '#ffc107', '#111827'),
+      modalActionPrimaryBg: '#009688',
+      modalActionPrimaryText: '#ffffff',
+      modalActionSecondaryBg: 'transparent',
+      modalActionSecondaryText: '#0f172a',
+      modalActionWarnBg: '#ef4444',
+      modalActionWarnText: '#ffffff',
+      modalActionBorder: 'rgba(15, 23, 42, 0.2)',
+      modalInputFocusOutline: '#009688',
+      modalInputFocusLabel: '#009688',
+      modalInputCaret: '#009688',
+      chipSelectedBg: 'rgba(0, 150, 136, 0.12)',
+      chipSelectedText: '#0f172a'
+    },
+    dark: {
+      ...buildOverrides('#455a64', '#e2e8f0', '#0f172a', '#e2e8f0', '#f59e0b', '#111827'),
+      modalActionPrimaryBg: '#1f2937',
+      modalActionPrimaryText: '#e2e8f0',
+      modalActionSecondaryBg: 'transparent',
+      modalActionSecondaryText: '#e2e8f0',
+      modalActionWarnBg: '#f97316',
+      modalActionWarnText: '#111827',
+      modalActionBorder: 'rgba(226, 232, 240, 0.25)',
+      modalInputFocusOutline: '#93c5fd',
+      modalInputFocusLabel: '#93c5fd',
+      modalInputCaret: '#93c5fd',
+      chipSelectedBg: 'rgba(148, 163, 184, 0.2)',
+      chipSelectedText: '#e2e8f0'
+    }
+  }, {
+    id: 'material-deep-purple-amber',
+    label: 'Material Deep Purple/Amber (Light) + Blue Gray/Amber (Dark)',
+    light: {
+      ...buildOverrides('#673ab7', '#1e1b4b', '#ffffff', '#ffffff', '#ffc107', '#111827'),
+      modalActionPrimaryBg: '#673ab7',
+      modalActionPrimaryText: '#ffffff',
+      modalActionSecondaryBg: 'transparent',
+      modalActionSecondaryText: '#1e1b4b',
+      modalActionWarnBg: '#ef4444',
+      modalActionWarnText: '#ffffff',
+      modalActionBorder: 'rgba(30, 27, 75, 0.2)',
+      modalInputFocusOutline: '#673ab7',
+      modalInputFocusLabel: '#673ab7',
+      modalInputCaret: '#673ab7',
+      chipSelectedBg: 'rgba(103, 58, 183, 0.12)',
+      chipSelectedText: '#1e1b4b'
+    },
+    dark: {
+      ...buildOverrides('#546e7a', '#e2e8f0', '#0f172a', '#e2e8f0', '#f59e0b', '#111827'),
+      modalActionPrimaryBg: '#1f2937',
+      modalActionPrimaryText: '#e2e8f0',
+      modalActionSecondaryBg: 'transparent',
+      modalActionSecondaryText: '#e2e8f0',
+      modalActionWarnBg: '#f97316',
+      modalActionWarnText: '#111827',
+      modalActionBorder: 'rgba(226, 232, 240, 0.25)',
+      modalInputFocusOutline: '#93c5fd',
+      modalInputFocusLabel: '#93c5fd',
+      modalInputCaret: '#93c5fd',
+      chipSelectedBg: 'rgba(148, 163, 184, 0.2)',
+      chipSelectedText: '#e2e8f0'
+    }
+  }];
+  lightOverrides = {
+    inputBg: 'rgba(46, 72, 144, 0.08)',
+    inputShadow: '0 0 0 1px rgba(46, 72, 144, 0.35)',
+    inputHoverBg: 'rgba(46, 72, 144, 0.12)',
+    inputHoverShadow: '0 0 0 1px rgba(46, 72, 144, 0.55)',
+    inputFocusShadow: '0 0 0 2px rgba(70, 110, 200, 0.35)',
+    inputText: '#1c2b46',
+    inputPlaceholder: '#1c2b46',
+    addIcon: '#1c2b46',
+    presetTrigger: '#1c2b46',
+    countDivider: 'linear-gradient(180deg, rgba(46, 72, 144, 0.1), rgba(46, 72, 144, 0.7), rgba(46, 72, 144, 0.1))',
+    countBg: 'rgba(46, 72, 144, 0.16)',
+    countText: '#1c2b46',
+    scrollbarThumb: 'rgba(46, 72, 144, 0.35)',
+    presetRowBg: 'rgba(46, 72, 144, 0.08)',
+    modalSurface: '#ffffff',
+    modalText: '#1c2b46',
+    modalHeaderBg: '#3f51b5',
+    modalHeaderText: '#ffffff',
+    menuSurface: '#ffffff',
+    menuText: '#1c2b46',
+    menuHoverBg: 'rgba(46, 72, 144, 0.08)',
+    clearButtonBg: '#e91e63',
+    clearButtonText: '#ffffff',
+    modalActionPrimaryBg: '#3f51b5',
+    modalActionPrimaryText: '#ffffff',
+    modalActionSecondaryBg: 'transparent',
+    modalActionSecondaryText: '#1c2b46',
+    modalActionWarnBg: '#f44336',
+    modalActionWarnText: '#ffffff',
+    modalActionBorder: 'rgba(28, 43, 70, 0.2)',
+    modalInputFocusOutline: '#3f51b5',
+    modalInputFocusLabel: '#3f51b5',
+    modalInputCaret: '#3f51b5',
+    chipSelectedBg: 'rgba(63, 81, 181, 0.12)',
+    chipSelectedText: '#1c2b46'
+  };
+  darkOverrides = {
+    inputBg: 'rgba(148, 163, 184, 0.12)',
+    inputShadow: '0 0 0 1px rgba(148, 163, 184, 0.4)',
+    inputHoverBg: 'rgba(148, 163, 184, 0.18)',
+    inputHoverShadow: '0 0 0 1px rgba(226, 232, 240, 0.45)',
+    inputFocusShadow: '0 0 0 2px rgba(125, 166, 255, 0.35)',
+    inputText: '#e2e8f0',
+    inputPlaceholder: '#e2e8f0',
+    addIcon: '#e2e8f0',
+    presetTrigger: '#e2e8f0',
+    countDivider: 'linear-gradient(180deg, rgba(226, 232, 240, 0.1), rgba(226, 232, 240, 0.7), rgba(226, 232, 240, 0.1))',
+    countBg: 'rgba(226, 232, 240, 0.16)',
+    countText: '#e2e8f0',
+    scrollbarThumb: 'rgba(148, 163, 184, 0.45)',
+    presetRowBg: 'rgba(148, 163, 184, 0.12)',
+    modalSurface: '#111827',
+    modalText: '#e2e8f0',
+    modalHeaderBg: '#111827',
+    modalHeaderText: '#e2e8f0',
+    menuSurface: '#111827',
+    menuText: '#e2e8f0',
+    menuHoverBg: 'rgba(148, 163, 184, 0.18)',
+    clearButtonBg: '#f59e0b',
+    clearButtonText: '#111827',
+    modalActionPrimaryBg: '#1f2937',
+    modalActionPrimaryText: '#e2e8f0',
+    modalActionSecondaryBg: 'transparent',
+    modalActionSecondaryText: '#e2e8f0',
+    modalActionWarnBg: '#f97316',
+    modalActionWarnText: '#111827',
+    modalActionBorder: 'rgba(226, 232, 240, 0.25)',
+    modalInputFocusOutline: '#93c5fd',
+    modalInputFocusLabel: '#93c5fd',
+    modalInputCaret: '#93c5fd',
+    chipSelectedBg: 'rgba(148, 163, 184, 0.2)',
+    chipSelectedText: '#e2e8f0'
+  };
+  ngOnInit() {
+    this.applyPreset(this.themePresetId);
+    this.emitConfig();
+  }
+  applyPreset(presetId) {
+    const preset = this.themePresets.find(item => item.id === presetId);
+    if (!preset) {
+      return;
+    }
+    this.themePresetId = preset.id;
+    this.lightOverrides = {
+      ...preset.light
+    };
+    this.darkOverrides = {
+      ...preset.dark
+    };
+    this.emitConfig();
+  }
+  onFieldChange() {
+    this.themePresetId = 'custom';
+    this.emitConfig();
+  }
+  emitConfig() {
+    this.themeConfigUpdated.emit({
+      themeMode: this.themeMode,
+      themeOverrides: {
+        ...this.lightOverrides
+      },
+      darkThemeOverrides: {
+        ...this.darkOverrides
+      },
+      applyThemeToRoot: true
+    });
+  }
+  static ɵfac = function ThemeSettingsComponent_Factory(__ngFactoryType__) {
+    return new (__ngFactoryType__ || ThemeSettingsComponent)();
+  };
+  static ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
+    type: ThemeSettingsComponent,
+    selectors: [["app-theme-settings"]],
+    outputs: {
+      themeConfigUpdated: "themeConfigUpdated"
+    },
+    decls: 34,
+    vars: 2,
+    consts: [["appearance", "outlined", 1, "settings-card"], [1, "settings-content"], ["appearance", "outline"], [3, "valueChange", "selectionChange", "value"], ["value", "auto"], ["value", "light"], ["value", "dark"], ["value", "custom"], [3, "value"], [1, "field-grid"], ["matInput", "", "type", "color", 3, "ngModel"], ["matInput", "", 3, "ngModel", "placeholder"], ["matInput", "", "type", "color", 3, "ngModelChange", "ngModel"], ["matInput", "", 3, "ngModelChange", "ngModel", "placeholder"]],
+    template: function ThemeSettingsComponent_Template(rf, ctx) {
+      if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-card", 0)(1, "mat-card-title");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, "Theme Settings");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "mat-card-content", 1)(4, "mat-form-field", 2)(5, "mat-label");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](6, "Facet theme mode");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "mat-select", 3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtwoWayListener"]("valueChange", function ThemeSettingsComponent_Template_mat_select_valueChange_7_listener($event) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtwoWayBindingSet"](ctx.themeMode, $event) || (ctx.themeMode = $event);
+          return $event;
+        });
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("selectionChange", function ThemeSettingsComponent_Template_mat_select_selectionChange_7_listener() {
+          return ctx.emitConfig();
+        });
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "mat-option", 4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](9, "Auto (follow body)");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](10, "mat-option", 5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](11, "Light");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](12, "mat-option", 6);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](13, "Dark");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()()();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](14, "mat-form-field", 2)(15, "mat-label");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](16, "Theme preset");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](17, "mat-select", 3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtwoWayListener"]("valueChange", function ThemeSettingsComponent_Template_mat_select_valueChange_17_listener($event) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtwoWayBindingSet"](ctx.themePresetId, $event) || (ctx.themePresetId = $event);
+          return $event;
+        });
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("selectionChange", function ThemeSettingsComponent_Template_mat_select_selectionChange_17_listener($event) {
+          return ctx.applyPreset($event.value);
+        });
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](18, "mat-option", 7);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](19, "Custom");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrepeaterCreate"](20, ThemeSettingsComponent_For_21_Template, 2, 2, "mat-option", 8, _forTrack0);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](22, "mat-divider");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](23, "h3");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](24, "Light overrides");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](25, "div", 9);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrepeaterCreate"](26, ThemeSettingsComponent_For_27_Template, 5, 2, "mat-form-field", 2, _forTrack1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](28, "mat-divider");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](29, "h3");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](30, "Dark overrides");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](31, "div", 9);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrepeaterCreate"](32, ThemeSettingsComponent_For_33_Template, 5, 2, "mat-form-field", 2, _forTrack1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()()();
+      }
+      if (rf & 2) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](7);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtwoWayProperty"]("value", ctx.themeMode);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](10);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtwoWayProperty"]("value", ctx.themePresetId);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrepeater"](ctx.themePresets);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](6);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrepeater"](ctx.themeFields);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](6);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrepeater"](ctx.themeFields);
+      }
+    },
+    dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_1__.CommonModule, _angular_forms__WEBPACK_IMPORTED_MODULE_2__.FormsModule, _angular_forms__WEBPACK_IMPORTED_MODULE_2__.DefaultValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_2__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_2__.NgModel, _angular_material_card__WEBPACK_IMPORTED_MODULE_3__.MatCardModule, _angular_material_card__WEBPACK_IMPORTED_MODULE_3__.MatCard, _angular_material_card__WEBPACK_IMPORTED_MODULE_3__.MatCardContent, _angular_material_card__WEBPACK_IMPORTED_MODULE_3__.MatCardTitle, _angular_material_divider__WEBPACK_IMPORTED_MODULE_4__.MatDividerModule, _angular_material_divider__WEBPACK_IMPORTED_MODULE_4__.MatDivider, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_5__.M, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_6__.j, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_6__.M, _angular_material_input__WEBPACK_IMPORTED_MODULE_7__.MatInputModule, _angular_material_input__WEBPACK_IMPORTED_MODULE_7__.MatInput, _angular_material_select__WEBPACK_IMPORTED_MODULE_8__.M, _angular_material_select__WEBPACK_IMPORTED_MODULE_8__.g, _angular_material_select__WEBPACK_IMPORTED_MODULE_9__.M],
+    styles: ["[_nghost-%COMP%] {\n  flex: 1;\n}\n\n.settings-content[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  gap: 12px;\n}\n\n.field-grid[_ngcontent-%COMP%] {\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));\n  gap: 12px;\n}\n\ninput[type=color][_ngcontent-%COMP%] {\n  height: 40px;\n  padding: 0;\n}\n\n.mat-mdc-card-title[_ngcontent-%COMP%] {\n  font-size: 1.2em;\n  margin-bottom: 0.5em;\n}\n\nh3[_ngcontent-%COMP%] {\n  font-size: 12px;\n  letter-spacing: 0.08em;\n  text-transform: uppercase;\n  margin: 0;\n}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3Byb2plY3RzL2RlbW8tYXBwbGljYXRpb24vc3JjL2FwcC9jb21wb25lbnRzL3RoZW1lLXNldHRpbmdzL3RoZW1lLXNldHRpbmdzLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsT0FBQTtBQUNGOztBQUVBO0VBQ0UsYUFBQTtFQUNBLHNCQUFBO0VBQ0EsU0FBQTtBQUNGOztBQUVBO0VBQ0UsYUFBQTtFQUNBLDJEQUFBO0VBQ0EsU0FBQTtBQUNGOztBQUVBO0VBQ0UsWUFBQTtFQUNBLFVBQUE7QUFDRjs7QUFFQTtFQUNFLGdCQUFBO0VBQ0Esb0JBQUE7QUFDRjs7QUFFQTtFQUNFLGVBQUE7RUFDQSxzQkFBQTtFQUNBLHlCQUFBO0VBQ0EsU0FBQTtBQUNGIiwic291cmNlc0NvbnRlbnQiOlsiOmhvc3Qge1xuICBmbGV4OiAxO1xufVxuXG4uc2V0dGluZ3MtY29udGVudCB7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XG4gIGdhcDogMTJweDtcbn1cblxuLmZpZWxkLWdyaWQge1xuICBkaXNwbGF5OiBncmlkO1xuICBncmlkLXRlbXBsYXRlLWNvbHVtbnM6IHJlcGVhdChhdXRvLWZpdCwgbWlubWF4KDIyMHB4LCAxZnIpKTtcbiAgZ2FwOiAxMnB4O1xufVxuXG5pbnB1dFt0eXBlPSdjb2xvciddIHtcbiAgaGVpZ2h0OiA0MHB4O1xuICBwYWRkaW5nOiAwO1xufVxuXG4ubWF0LW1kYy1jYXJkLXRpdGxlIHtcbiAgZm9udC1zaXplOiAxLjJlbTtcbiAgbWFyZ2luLWJvdHRvbTogMC41ZW07XG59XG5cbmgzIHtcbiAgZm9udC1zaXplOiAxMnB4O1xuICBsZXR0ZXItc3BhY2luZzogMC4wOGVtO1xuICB0ZXh0LXRyYW5zZm9ybTogdXBwZXJjYXNlO1xuICBtYXJnaW46IDA7XG59XG4iXSwic291cmNlUm9vdCI6IiJ9 */"]
+  });
+}
+
+/***/ }),
+
 /***/ 2004:
 /*!************************************************************!*\
   !*** ./projects/demo-application/src/app/app.component.ts ***!
@@ -86,8 +776,7 @@ __webpack_require__.r(__webpack_exports__);
 class AppComponent {
   router;
   document;
-  showPageOne = true;
-  showPageTwo = true;
+  activePage = 'one';
   isDarkMode = false;
   version = _ngx_mat_facet_toolkit_package_json__WEBPACK_IMPORTED_MODULE_0__.version;
   repo = typeof _ngx_mat_facet_toolkit_package_json__WEBPACK_IMPORTED_MODULE_0__.repository === 'string' ? _ngx_mat_facet_toolkit_package_json__WEBPACK_IMPORTED_MODULE_0__.repository : _ngx_mat_facet_toolkit_package_json__WEBPACK_IMPORTED_MODULE_0__.repository?.url;
@@ -98,13 +787,13 @@ class AppComponent {
   ngOnInit() {
     this.router.events.subscribe(event => {
       if (event instanceof _angular_router__WEBPACK_IMPORTED_MODULE_1__.NavigationEnd) {
-        const currentURL = event.url;
-        if (currentURL.includes('two')) {
-          this.showPageTwo = false;
-          this.showPageOne = true;
+        const currentURL = event.urlAfterRedirects;
+        if (currentURL.includes('/theme')) {
+          this.activePage = 'three';
+        } else if (currentURL.includes('/two')) {
+          this.activePage = 'two';
         } else {
-          this.showPageOne = false;
-          this.showPageTwo = true;
+          this.activePage = 'one';
         }
       }
     });
@@ -119,9 +808,9 @@ class AppComponent {
   static ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineComponent"]({
     type: AppComponent,
     selectors: [["app-root"]],
-    decls: 17,
-    vars: 6,
-    consts: [[1, "spacer"], ["mat-button", "", "routerLink", "", 3, "color"], ["mat-button", "", "routerLink", "/two", 3, "color"], ["mat-button", "", 3, "click"], ["target", "_blank", "mat-stroked-button", "", 3, "href"], ["fxLayout", "column", 1, "container"]],
+    decls: 19,
+    vars: 7,
+    consts: [[1, "spacer"], ["mat-button", "", "routerLink", "", 3, "color"], ["mat-button", "", "routerLink", "/two", 3, "color"], ["mat-button", "", "routerLink", "/theme", 3, "color"], ["mat-button", "", 3, "click"], ["target", "_blank", "mat-stroked-button", "", 3, "href"], ["fxLayout", "column", 1, "container"]],
     template: function AppComponent_Template(rf, ctx) {
       if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "mat-toolbar")(1, "span");
@@ -134,30 +823,35 @@ class AppComponent {
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](6, "a", 2);
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](7, " Page Two ");
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](8, "button", 3);
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("click", function AppComponent_Template_button_click_8_listener() {
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](8, "a", 3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](9, " Theme Lab ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](10, "button", 4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("click", function AppComponent_Template_button_click_10_listener() {
           return ctx.toggleTheme();
         });
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](9, "mat-icon");
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](10);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](11, "mat-icon");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](12);
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](11);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](13);
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](12, "span", 0);
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](13, "a", 4);
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](14, "View on GitHub");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](14, "span", 0);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](15, "a", 5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](16, "View on GitHub");
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]()();
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](15, "div", 5);
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](16, "router-outlet");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](17, "div", 6);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](18, "router-outlet");
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
       }
       if (rf & 2) {
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate1"]("Angular Material Facet Toolkit: v", ctx.version, "");
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("color", ctx.showPageTwo ? "primary" : "");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("color", ctx.activePage === "one" ? "primary" : "");
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("color", ctx.showPageOne ? "primary" : "");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("color", ctx.activePage === "two" ? "primary" : "");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("color", ctx.activePage === "three" ? "primary" : "");
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](4);
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate"](ctx.isDarkMode ? "light_mode" : "dark_mode");
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"]();
@@ -186,6 +880,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _pages_page_one_page_one_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./pages/page-one/page-one.component */ 8857);
 /* harmony import */ var _pages_page_two_page_two_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./pages/page-two/page-two.component */ 3453);
+/* harmony import */ var _pages_page_three_page_three_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./pages/page-three/page-three.component */ 9441);
+
 
 
 const APP_ROUTES = [{
@@ -194,6 +890,9 @@ const APP_ROUTES = [{
 }, {
   path: 'two',
   component: _pages_page_two_page_two_component__WEBPACK_IMPORTED_MODULE_1__.PageTwoComponent
+}, {
+  path: 'theme',
+  component: _pages_page_three_page_three_component__WEBPACK_IMPORTED_MODULE_2__.PageThreeComponent
 }, {
   path: '**',
   redirectTo: ''
@@ -714,12 +1413,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 7580);
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/common */ 4460);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! @angular/common */ 9770);
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/forms */ 4456);
-/* harmony import */ var _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! @angular/material/autocomplete */ 9771);
+/* harmony import */ var _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! @angular/material/autocomplete */ 9771);
 /* harmony import */ var _angular_material_button__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/material/button */ 4175);
 /* harmony import */ var _angular_material_button__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/material/button */ 1391);
 /* harmony import */ var _angular_material_checkbox__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! @angular/material/checkbox */ 7024);
-/* harmony import */ var _angular_material_chips__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! @angular/material/chips */ 2772);
+/* harmony import */ var _angular_material_chips__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! @angular/material/chips */ 2772);
 /* harmony import */ var _angular_material_core__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @angular/material/core */ 4646);
 /* harmony import */ var _angular_material_core__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! @angular/material/core */ 3268);
 /* harmony import */ var _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @angular/material/datepicker */ 1977);
@@ -730,27 +1430,27 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_material_input__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @angular/material/input */ 5541);
 /* harmony import */ var _angular_material_list__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @angular/material/list */ 943);
 /* harmony import */ var _angular_material_menu__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! @angular/material/menu */ 1034);
-/* harmony import */ var _angular_material_progress_bar__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! @angular/material/progress-bar */ 6354);
+/* harmony import */ var _angular_material_progress_bar__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! @angular/material/progress-bar */ 6354);
 /* harmony import */ var _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @angular/material/progress-spinner */ 1134);
 /* harmony import */ var _angular_material_select__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! @angular/material/select */ 211);
 /* harmony import */ var _angular_material_select__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! @angular/material/select */ 5255);
 /* harmony import */ var _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/material/toolbar */ 9552);
 /* harmony import */ var _angular_material_tooltip__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @angular/material/tooltip */ 2281);
-/* harmony import */ var _angular_cdk_a11y__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! @angular/cdk/a11y */ 9211);
+/* harmony import */ var _angular_cdk_a11y__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! @angular/cdk/a11y */ 9211);
 /* harmony import */ var _angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! @angular/cdk/overlay */ 6895);
 /* harmony import */ var _angular_cdk_portal__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! @angular/cdk/portal */ 7480);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs */ 819);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs */ 5797);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! rxjs */ 9452);
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! rxjs */ 8537);
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! rxjs */ 2551);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! rxjs */ 8537);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! rxjs */ 2551);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs/operators */ 1567);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs/operators */ 8764);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! rxjs/operators */ 2575);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! rxjs/operators */ 1817);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! rxjs/operators */ 271);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! rxjs/operators */ 1817);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! rxjs/operators */ 271);
 /* harmony import */ var _angular_animations__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! @angular/animations */ 2394);
-/* harmony import */ var uuid__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! uuid */ 2550);
+/* harmony import */ var uuid__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! uuid */ 2550);
 
 
 
@@ -2061,7 +2761,13 @@ const DEFAULT_FACET_TOOLKIT_CONFIG = {
   loggingCallback: () => {},
   presetStorage: DEFAULT_FACET_PRESET_STORAGE_CONFIG,
   showFilterCount: false,
-  storage: 'session'
+  storage: 'session',
+  themeMode: 'auto',
+  themeOverrides: {},
+  darkThemeOverrides: {},
+  themeVariables: {},
+  darkThemeVariables: {},
+  applyThemeToRoot: false
 };
 const FACET_MODAL_DATA = new _angular_core__WEBPACK_IMPORTED_MODULE_0__.InjectionToken('facet.data');
 var FacetResultType;
@@ -2372,7 +3078,15 @@ class FacetDetailsModalComponent {
     }];
   }
   selectionChange(selection, facet, options) {
-    selection.options.map(selectedOption => (options || []).find(option => option.value === selectedOption.value)).filter(option => !!option).filter(facetOption => !(facet.values || []).find(v => v.value === facetOption.value)).forEach(selectedOption => this.addOptionToSelected(facet, selectedOption));
+    const selectedOptions = selection.source.selectedOptions.selected;
+    const nextValues = selectedOptions.map(listOption => (options || []).find(option => option.value === listOption.value)).filter(option => !!option);
+    facet.values = nextValues;
+    if (options) {
+      const selectedSet = new Set(nextValues.map(value => value.value));
+      options.forEach(option => {
+        option.selected = selectedSet.has(option.value);
+      });
+    }
   }
   static ɵfac = function FacetDetailsModalComponent_Factory(__ngFactoryType__) {
     return new (__ngFactoryType__ || FacetDetailsModalComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](FACET_MODAL_DATA), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](FacetModalRef));
@@ -2391,7 +3105,7 @@ class FacetDetailsModalComponent {
     },
     decls: 24,
     vars: 7,
-    consts: [["loading", ""], ["noResults", ""], ["typeAheadInput", ""], ["picker", ""], ["startDatePicker", ""], ["endDatePicker", ""], [1, "mat-typography", "details"], ["color", "primary", 1, "modal-header"], [1, "modal-title"], ["mat-icon-button", "", 1, "modal-close", 3, "click"], [1, "content"], [1, "description"], [1, "category-wrapper"], [1, "typeahead-wrapper"], [1, "date-wrapper"], [1, "date-range-wrapper"], [1, "text-wrapper"], [1, "numeric-wrapper"], [1, "boolean-wrapper"], [1, "actions"], ["mat-flat-button", "", 1, "add-update-button", 3, "click", "color", "disabled"], ["mat-icon-button", "", "color", "warn", "matTooltip", "Delete Filter", "matTooltipPosition", "after", 1, "remove-button"], ["diameter", "20"], [1, "facet-no-results"], [3, "selectionChange", "keydown.enter"], ["focusOnShow", "", 3, "value", "selected", "firstElement"], [4, "ngTemplateOutlet"], ["appearance", "outline", "floatLabel", "auto", 1, "typeahead-form-field"], ["matInput", "", "autocomplete", "off", "focusOnShow", "100", 3, "ngModelChange", "keydown.enter", "ngModel", "placeholder"], ["matSuffix", "", "mat-icon-button", "", "aria-label", "Clear"], ["matSuffix", "", "mat-icon-button", "", "aria-label", "Clear", 3, "click"], ["focusOnShow", "", 3, "value", "firstElement", "selected"], ["appearance", "outline", "floatLabel", "always", 1, "date-field"], ["matInput", "", "autocomplete", "off", "focusOnShow", "100", "placeholder", "Choose a date", 3, "ngModelChange", "focus", "keydown.enter", "matDatepicker", "ngModel"], ["matSuffix", "", 3, "click", "for"], ["appearance", "outline", "floatLabel", "always"], ["matInput", "", "focusOnShow", "100", "autocomplete", "off", "placeholder", "Choose a starting date", 3, "ngModelChange", "focus", "keydown.enter", "matDatepicker", "ngModel"], ["matInput", "", "autocomplete", "off", "placeholder", "Choose an end date", 3, "ngModelChange", "keydown.enter", "matDatepicker", "ngModel"], ["appearance", "outline", 1, "criteria-field"], ["placeholder", "Criteria Type", 3, "valueChange", "value"], [3, "value"], ["appearance", "outline", 1, "search-field"], ["matInput", "", "focusOnShow", "", "autocomplete", "off", "autofocus", "", 3, "keydown.enter", "ngModelChange", "ngModel", "placeholder"], ["matInput", "", "type", "number", "focusOnShow", "", "autocomplete", "off", 3, "ngModelChange", "keydown.enter", "ngModel", "placeholder"], ["matInput", "", "type", "number", "autocomplete", "off", 3, "ngModelChange", "keydown.enter", "ngModel", "placeholder"], [3, "ngModelChange", "keydown.enter", "ngModel"], ["mat-icon-button", "", "color", "warn", "matTooltip", "Delete Filter", "matTooltipPosition", "after", 1, "remove-button", 3, "click"]],
+    consts: [["loading", ""], ["noResults", ""], ["typeAheadInput", ""], ["picker", ""], ["startDatePicker", ""], ["endDatePicker", ""], [1, "mat-typography", "details"], [1, "modal-header"], [1, "modal-title"], ["mat-icon-button", "", 1, "modal-close", 3, "click"], [1, "content"], [1, "description"], [1, "category-wrapper"], [1, "typeahead-wrapper"], [1, "date-wrapper"], [1, "date-range-wrapper"], [1, "text-wrapper"], [1, "numeric-wrapper"], [1, "boolean-wrapper"], [1, "actions"], ["mat-flat-button", "", 1, "add-update-button", 3, "click", "color", "disabled"], ["mat-icon-button", "", "color", "warn", "matTooltip", "Delete Filter", "matTooltipPosition", "after", 1, "remove-button"], ["diameter", "20"], [1, "facet-no-results"], [3, "selectionChange", "keydown.enter"], ["focusOnShow", "", 3, "value", "selected", "firstElement"], [4, "ngTemplateOutlet"], ["appearance", "outline", "floatLabel", "auto", 1, "typeahead-form-field"], ["matInput", "", "autocomplete", "off", "focusOnShow", "100", 3, "ngModelChange", "keydown.enter", "ngModel", "placeholder"], ["matSuffix", "", "mat-icon-button", "", "aria-label", "Clear"], ["matSuffix", "", "mat-icon-button", "", "aria-label", "Clear", 3, "click"], ["focusOnShow", "", 3, "value", "firstElement", "selected"], ["appearance", "outline", "floatLabel", "always", 1, "date-field"], ["matInput", "", "autocomplete", "off", "focusOnShow", "100", "placeholder", "Choose a date", 3, "ngModelChange", "focus", "keydown.enter", "matDatepicker", "ngModel"], ["matSuffix", "", 3, "click", "for"], ["appearance", "outline", "floatLabel", "always"], ["matInput", "", "focusOnShow", "100", "autocomplete", "off", "placeholder", "Choose a starting date", 3, "ngModelChange", "focus", "keydown.enter", "matDatepicker", "ngModel"], ["matInput", "", "autocomplete", "off", "placeholder", "Choose an end date", 3, "ngModelChange", "keydown.enter", "matDatepicker", "ngModel"], ["appearance", "outline", 1, "criteria-field"], ["placeholder", "Criteria Type", 3, "valueChange", "value"], [3, "value"], ["appearance", "outline", 1, "search-field"], ["matInput", "", "focusOnShow", "", "autocomplete", "off", "autofocus", "", 3, "keydown.enter", "ngModelChange", "ngModel", "placeholder"], ["matInput", "", "type", "number", "focusOnShow", "", "autocomplete", "off", 3, "ngModelChange", "keydown.enter", "ngModel", "placeholder"], ["matInput", "", "type", "number", "autocomplete", "off", 3, "ngModelChange", "keydown.enter", "ngModel", "placeholder"], [3, "ngModelChange", "keydown.enter", "ngModel"], ["mat-icon-button", "", "color", "warn", "matTooltip", "Delete Filter", "matTooltipPosition", "after", 1, "remove-button", 3, "click"]],
     template: function FacetDetailsModalComponent_Template(rf, ctx) {
       if (rf & 1) {
         const _r1 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
@@ -2436,7 +3150,7 @@ class FacetDetailsModalComponent {
       }
     },
     dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_7__.CommonModule, _angular_common__WEBPACK_IMPORTED_MODULE_7__.NgTemplateOutlet, _angular_common__WEBPACK_IMPORTED_MODULE_7__.AsyncPipe, _angular_forms__WEBPACK_IMPORTED_MODULE_8__.FormsModule, _angular_forms__WEBPACK_IMPORTED_MODULE_8__.DefaultValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_8__.NumberValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_8__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_8__.NgModel, _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_9__.MatToolbarModule, _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_9__.MatToolbar, _angular_material_icon__WEBPACK_IMPORTED_MODULE_10__.MatIconModule, _angular_material_icon__WEBPACK_IMPORTED_MODULE_10__.MatIcon, _angular_material_button__WEBPACK_IMPORTED_MODULE_11__.MatButtonModule, _angular_material_button__WEBPACK_IMPORTED_MODULE_11__.MatButton, _angular_material_button__WEBPACK_IMPORTED_MODULE_12__.M, _angular_material_tooltip__WEBPACK_IMPORTED_MODULE_13__.h, _angular_material_tooltip__WEBPACK_IMPORTED_MODULE_13__.e, _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_14__.MatProgressSpinnerModule, _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_14__.MatProgressSpinner, _angular_material_divider__WEBPACK_IMPORTED_MODULE_15__.MatDividerModule, _angular_material_divider__WEBPACK_IMPORTED_MODULE_15__.MatDivider, _angular_material_list__WEBPACK_IMPORTED_MODULE_16__.MatListModule, _angular_material_list__WEBPACK_IMPORTED_MODULE_16__.MatSelectionList, _angular_material_list__WEBPACK_IMPORTED_MODULE_16__.MatListOption, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_17__.M, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_18__.j, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_18__.M, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_18__.g, _angular_material_input__WEBPACK_IMPORTED_MODULE_19__.MatInputModule, _angular_material_input__WEBPACK_IMPORTED_MODULE_19__.MatInput, _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_20__.MatDatepickerModule, _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_20__.MatDatepicker, _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_20__.MatDatepickerInput, _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_20__.MatDatepickerToggle, _angular_material_core__WEBPACK_IMPORTED_MODULE_21__.MatNativeDateModule, _angular_material_checkbox__WEBPACK_IMPORTED_MODULE_22__.MatCheckboxModule, _angular_material_checkbox__WEBPACK_IMPORTED_MODULE_22__.MatCheckbox, _angular_material_select__WEBPACK_IMPORTED_MODULE_23__.M, _angular_material_select__WEBPACK_IMPORTED_MODULE_23__.g, _angular_material_select__WEBPACK_IMPORTED_MODULE_24__.M, _angular_material_core__WEBPACK_IMPORTED_MODULE_25__.M, FocusOnShowDirective],
-    styles: ["mat-spinner[_ngcontent-%COMP%]{margin:1em auto}.details[_ngcontent-%COMP%]{display:flex;flex-direction:column;align-items:stretch}.content[_ngcontent-%COMP%]{min-height:120px;padding-top:22px;display:flex;flex-direction:column;align-items:normal}.content[_ngcontent-%COMP%]   mat-selection-list[_ngcontent-%COMP%]{flex:1;max-height:30vh;overflow-y:auto}.actions[_ngcontent-%COMP%]{padding:16px;display:flex;justify-content:space-between;flex-direction:row-reverse}span.facet-no-results[_ngcontent-%COMP%]{text-align:center;color:gray;margin-top:1em;margin-bottom:1em}.mat-selection-list[_ngcontent-%COMP%]{margin-top:0;padding-top:0}.mat-form-field[_ngcontent-%COMP%]{margin:0!important;padding-left:15px;padding-right:15px}.mat-dialog-actions[_ngcontent-%COMP%]{padding:0 15px 15px}.modal-header[_ngcontent-%COMP%]{display:flex;justify-content:space-between;align-items:center!important;border-top-left-radius:8px;border-top-right-radius:8px}.modal-header[_ngcontent-%COMP%]   .modal-title[_ngcontent-%COMP%]{height:40px!important;margin:0!important;line-height:45px}p.description[_ngcontent-%COMP%]{padding-left:15px;padding-right:15px;margin-bottom:0;color:gray;flex:1}.date-range-wrapper[_ngcontent-%COMP%]{padding-left:15px;padding-right:15px;display:flex;flex-direction:column;align-items:stretch;justify-content:space-between}.date-range-wrapper[_ngcontent-%COMP%], .category-wrapper[_ngcontent-%COMP%]{margin-top:1em}.boolean-wrapper[_ngcontent-%COMP%]{padding-left:15px;padding-right:15px;flex:4;display:flex;justify-content:flex-start;align-items:center}.text-wrapper[_ngcontent-%COMP%], .numeric-wrapper[_ngcontent-%COMP%]{padding-left:15px;padding-right:15px;display:flex;flex-direction:column;flex:2;margin-top:1rem}.date-wrapper[_ngcontent-%COMP%]{padding-left:15px;padding-right:15px;display:flex;justify-content:center;align-items:center}.date-wrapper[_ngcontent-%COMP%]   .date-field[_ngcontent-%COMP%]{flex:1}.typeahead-wrapper[_ngcontent-%COMP%]{padding-left:15px;padding-right:15px;display:flex;flex-direction:column;align-items:stretch;margin-top:1em}.typeahead-wrapper[_ngcontent-%COMP%]   .typeahead-form-field[_ngcontent-%COMP%]{flex:1}"],
+    styles: ["mat-spinner[_ngcontent-%COMP%]{margin:1em auto}.details[_ngcontent-%COMP%]{display:flex;flex-direction:column;align-items:stretch}.content[_ngcontent-%COMP%]{min-height:120px;padding-top:22px;display:flex;flex-direction:column;align-items:normal}.content[_ngcontent-%COMP%]   mat-selection-list[_ngcontent-%COMP%]{flex:1;max-height:30vh;overflow-y:auto}.actions[_ngcontent-%COMP%]{padding:16px;display:flex;justify-content:space-between;flex-direction:row-reverse}.actions[_ngcontent-%COMP%]   .mat-mdc-unelevated-button[_ngcontent-%COMP%]:not(.mat-mdc-button-disabled):not(:disabled){background:var(--facet-toolkit-modal-action-primary-bg, #3f51b5)!important;color:var(--facet-toolkit-modal-action-primary-text, #ffffff)!important}.actions[_ngcontent-%COMP%]   .mat-mdc-unelevated-button.mat-mdc-button-disabled[_ngcontent-%COMP%], .actions[_ngcontent-%COMP%]   .mat-mdc-unelevated-button[_ngcontent-%COMP%]:disabled{background:var(--mdc-filled-button-disabled-container-color, rgba(0, 0, 0, .12))!important;color:var(--mdc-filled-button-disabled-label-text-color, rgba(0, 0, 0, .38))!important;cursor:not-allowed}.actions[_ngcontent-%COMP%]   .mat-mdc-stroked-button[_ngcontent-%COMP%]{background:var(--facet-toolkit-modal-action-secondary-bg, transparent)!important;color:var(--facet-toolkit-modal-action-secondary-text, #1c2b46)!important;border-color:var(--facet-toolkit-modal-action-border, rgba(28, 43, 70, .2))!important}.actions[_ngcontent-%COMP%]   .remove-button[_ngcontent-%COMP%], .actions[_ngcontent-%COMP%]   .mat-mdc-icon-button.color-warn[_ngcontent-%COMP%], .actions[_ngcontent-%COMP%]   .mat-mdc-unelevated-button.mat-warn[_ngcontent-%COMP%]{background:var(--facet-toolkit-modal-action-warn-bg, #f44336)!important;color:var(--facet-toolkit-modal-action-warn-text, #ffffff)!important}span.facet-no-results[_ngcontent-%COMP%]{text-align:center;color:gray;margin-top:1em;margin-bottom:1em}.mat-selection-list[_ngcontent-%COMP%]{margin-top:0;padding-top:0}.mat-form-field[_ngcontent-%COMP%]{margin:0!important;padding-left:15px;padding-right:15px}mat-form-field[_ngcontent-%COMP%]{--mdc-outlined-text-field-focus-outline-color: var(--facet-toolkit-modal-input-focus-outline, #3f51b5);--mdc-outlined-text-field-focus-label-text-color: var(--facet-toolkit-modal-input-focus-label, #3f51b5);caret-color:var(--facet-toolkit-modal-input-caret, #3f51b5)}.mat-dialog-actions[_ngcontent-%COMP%]{padding:0 15px 15px}.modal-header[_ngcontent-%COMP%]{display:flex;justify-content:space-between;align-items:center!important;border-top-left-radius:8px;border-top-right-radius:8px;background:var(--facet-toolkit-modal-header-bg, var(--facet-toolkit-modal-header-bg-light, var(--mat-toolbar-container-background-color, #3f51b5)))!important;color:var(--facet-toolkit-modal-header-text, var(--facet-toolkit-modal-header-text-light, var(--mat-toolbar-container-text-color, #ffffff)))!important}.modal-header[_ngcontent-%COMP%]   .modal-title[_ngcontent-%COMP%]{height:40px!important;margin:0!important;line-height:45px}p.description[_ngcontent-%COMP%]{padding-left:15px;padding-right:15px;margin-bottom:0;color:gray;flex:1}.date-range-wrapper[_ngcontent-%COMP%]{padding-left:15px;padding-right:15px;display:flex;flex-direction:column;align-items:stretch;justify-content:space-between}.date-range-wrapper[_ngcontent-%COMP%], .category-wrapper[_ngcontent-%COMP%]{margin-top:1em}.boolean-wrapper[_ngcontent-%COMP%]{padding-left:15px;padding-right:15px;flex:4;display:flex;justify-content:flex-start;align-items:center}.text-wrapper[_ngcontent-%COMP%], .numeric-wrapper[_ngcontent-%COMP%]{padding-left:15px;padding-right:15px;display:flex;flex-direction:column;flex:2;margin-top:1rem}.date-wrapper[_ngcontent-%COMP%]{padding-left:15px;padding-right:15px;display:flex;justify-content:center;align-items:center}.date-wrapper[_ngcontent-%COMP%]   .date-field[_ngcontent-%COMP%]{flex:1}.typeahead-wrapper[_ngcontent-%COMP%]{padding-left:15px;padding-right:15px;display:flex;flex-direction:column;align-items:stretch;margin-top:1em}.typeahead-wrapper[_ngcontent-%COMP%]   .typeahead-form-field[_ngcontent-%COMP%]{flex:1}"],
     data: {
       animation: [(0,_angular_animations__WEBPACK_IMPORTED_MODULE_26__.trigger)('fadeIn', [(0,_angular_animations__WEBPACK_IMPORTED_MODULE_26__.transition)(':enter', [(0,_angular_animations__WEBPACK_IMPORTED_MODULE_26__.style)({
         opacity: '0',
@@ -2462,8 +3176,8 @@ class FacetDetailsModalComponent {
         opacity: '1',
         height: '*'
       }))])])],
-      template: "<div class=\"mat-typography details\">\n\n  <mat-toolbar color=\"primary\" class=\"modal-header\">\n    <h2 class=\"modal-title\">{{data.label}}</h2>\n    <button class=\"modal-close\" mat-icon-button (click)=\"onCancel()\">\n      <mat-icon>clear</mat-icon>\n    </button>\n  </mat-toolbar>\n\n  <div class=\"content\">\n\n    @if (data.description) {\n      <p class=\"description\">{{data.description}}</p>\n    }\n\n    <ng-template #loading>\n      <mat-spinner diameter=\"20\"></mat-spinner>\n    </ng-template>\n\n    <ng-template #noResults>\n      <span class=\"facet-no-results\" @fadeIn>No Results</span>\n    </ng-template>\n\n    @switch (true) {\n      @case (data.type === FacetDataType.Category || data.type === FacetDataType.CategorySingle) {\n        <div class=\"category-wrapper\">\n          @if (resolvedOptions$ | async; as options) {\n            <mat-divider></mat-divider>\n            @if (options.length > 0) {\n              <mat-selection-list (selectionChange)=\"selectionChange($event, data, options)\"\n                                  (keydown.enter)=\"validateAndSubmit()\">\n                @for (item of options; track item.value) {\n                  <mat-list-option [value]=\"item.value\" [selected]=\"isItemSelected(item)\"\n                                   @fadeIn\n                                   focusOnShow\n                                   [firstElement]=\"$first\">\n                    <span>\n                      {{ item.label ? truncateText(item.label) : \"- empty -\" }}\n                      @if (item.count) {\n                        <small><i>({{item.count}})</i></small>\n                      }\n                    </span>\n                  </mat-list-option>\n                }\n              </mat-selection-list>\n            } @else {\n              <ng-container *ngTemplateOutlet=\"noResults\"></ng-container>\n            }\n            <mat-divider></mat-divider>\n          } @else {\n            <ng-container *ngTemplateOutlet=\"loading\"></ng-container>\n          }\n        </div>\n      }\n      @case (data.type === FacetDataType.Typeahead || data.type === FacetDataType.TypeaheadSingle) {\n        <div class=\"typeahead-wrapper\">\n\n          <mat-form-field class=\"typeahead-form-field\" appearance=\"outline\" floatLabel=\"auto\">\n            <mat-label>Search...</mat-label>\n            <input matInput #typeAheadInput\n                   autocomplete=\"off\"\n                   focusOnShow=\"100\"\n                   [(ngModel)]=\"typeaheadText\"\n                   placeholder=\"{{(data.typeahead || {placeholder: ''}).placeholder}}\"\n                   (ngModelChange)=\"typeaheadValueChanged($event)\"\n                   (keydown.enter)=\"validateAndSubmit()\"/>\n\n            @if (!clearButtonDisabled) {\n              <button matSuffix mat-icon-button aria-label=\"Clear\" (click)=\"clearInput()\">\n                <mat-icon>clear</mat-icon>\n              </button>\n            }\n          </mat-form-field>\n\n          @if (resolvedOptions$ | async; as options) {\n            <mat-divider></mat-divider>\n            @if (options.length > 0) {\n              <mat-selection-list (selectionChange)=\"selectionChange($event, data, options)\"\n                                  (keydown.enter)=\"validateAndSubmit()\">\n                @for (item of options; track item.value) {\n                  <mat-list-option [value]=\"item.value\"\n                                   @fadeIn\n                                   focusOnShow\n                                   [firstElement]=\"$first\"\n                                   [selected]=\"isItemSelected(item)\">\n                    <span>\n                      {{ item.label ? truncateText(item.label) : \"- empty -\" }}\n                      @if (item.count) {\n                        <small><i>({{item.count}})</i></small>\n                      }\n                    </span>\n                  </mat-list-option>\n                }\n              </mat-selection-list>\n            } @else {\n              <ng-container *ngTemplateOutlet=\"noResults\"></ng-container>\n            }\n            <mat-divider></mat-divider>\n          } @else {\n            <ng-container *ngTemplateOutlet=\"loading\"></ng-container>\n          }\n\n        </div>\n      }\n      @case (data.type === FacetDataType.Date) {\n        <div class=\"date-wrapper\">\n\n          <mat-form-field appearance=\"outline\" floatLabel=\"always\" class=\"date-field\">\n            <mat-label>{{data.label}}</mat-label>\n            <input matInput autocomplete=\"off\" focusOnShow=\"100\" [matDatepicker]=\"picker\" [ngModel]=\"getRawValue(data)\" (ngModelChange)=\"setValue(data, $event)\"\n                   placeholder=\"Choose a date\" (focus)=\"isUpdate ? emptyFunction() : picker.open()\"\n                   (keydown.enter)=\"validateAndSubmit()\"/>\n            <mat-datepicker-toggle matSuffix [for]=\"picker\" (click)=\"picker.open()\"></mat-datepicker-toggle>\n          </mat-form-field>\n          <mat-datepicker #picker></mat-datepicker>\n\n        </div>\n      }\n      @case (data.type === FacetDataType.DateRange) {\n        <div class=\"date-range-wrapper\">\n\n          <mat-form-field appearance=\"outline\" floatLabel=\"always\">\n            <mat-label>{{data.label}} - Start</mat-label>\n            <input matInput focusOnShow=\"100\" autocomplete=\"off\" [matDatepicker]=\"startDatePicker\"\n                   [ngModel]=\"getRawValue(data)\" (ngModelChange)=\"setValue(data, $event)\" placeholder=\"Choose a starting date\"\n                   (focus)=\"isUpdate ? emptyFunction() : startDatePicker.open()\"\n                   (keydown.enter)=\"validateAndSubmit()\"/>\n            <mat-datepicker-toggle matSuffix [for]=\"startDatePicker\" (click)=\"startDatePicker.open()\"></mat-datepicker-toggle>\n          </mat-form-field>\n          <mat-datepicker #startDatePicker></mat-datepicker>\n\n          <mat-form-field appearance=\"outline\" floatLabel=\"always\">\n            <mat-label>{{data.label}} - End</mat-label>\n            <input matInput autocomplete=\"off\" [matDatepicker]=\"endDatePicker\"\n                   [ngModel]=\"getRawValue(data, 1)\" (ngModelChange)=\"setValue(data, $event, 1)\" placeholder=\"Choose an end date\"\n                   (keydown.enter)=\"validateAndSubmit()\"/>\n            <mat-datepicker-toggle matSuffix [for]=\"endDatePicker\" (click)=\"endDatePicker.open()\"></mat-datepicker-toggle>\n          </mat-form-field>\n          <mat-datepicker #endDatePicker></mat-datepicker>\n\n        </div>\n      }\n      @case (data.type === FacetDataType.Text) {\n        <div class=\"text-wrapper\">\n\n          <mat-form-field class=\"criteria-field\" appearance=\"outline\">\n            <mat-label>Criteria Type</mat-label>\n            <mat-select [value]=\"data.fixedFilterType || data.filterType\"\n                        (valueChange)=\"setType($event)\" placeholder=\"Criteria Type\">\n              <mat-option [value]=\"FacetFilterType.contains\">Contains</mat-option>\n              <mat-option [value]=\"FacetFilterType.endsWith\">Ends With</mat-option>\n              <mat-option [value]=\"FacetFilterType.equal\">Equals</mat-option>\n              <mat-option [value]=\"FacetFilterType.startsWith\">Starts With</mat-option>\n            </mat-select>\n          </mat-form-field>\n\n          <mat-form-field class=\"search-field\" appearance=\"outline\">\n            <mat-label>Search Text</mat-label>\n            <input matInput focusOnShow (keydown.enter)=\"validateAndSubmit()\" autocomplete=\"off\"\n                   [ngModel]=\"getRawValue(data)\" (ngModelChange)=\"setValue(data, $event)\"\n                   placeholder=\"{{data.placeholder || data.label }}\" autofocus/>\n            @if (data.values) {\n              <button matSuffix mat-icon-button aria-label=\"Clear\" (click)=\"data.values = []\">\n                <mat-icon>close</mat-icon>\n              </button>\n            }\n          </mat-form-field>\n\n        </div>\n      }\n      @case (data.type === FacetDataType.Numeric) {\n        <div class=\"numeric-wrapper\">\n\n          <mat-form-field class=\"criteria-field\" appearance=\"outline\">\n            <mat-label>Criteria Type</mat-label>\n            <mat-select [value]=\"data.fixedFilterType || data.filterType\"\n                        (valueChange)=\"setType($event)\" placeholder=\"Criteria Type\">\n              <mat-option [value]=\"FacetFilterType.equal\">Equals</mat-option>\n              <mat-option [value]=\"FacetFilterType.greaterThan\">Greater Than</mat-option>\n              <mat-option [value]=\"FacetFilterType.greaterThanOrEqual\">Greater Than Or Equal</mat-option>\n              <mat-option [value]=\"FacetFilterType.lessThan\">Less Than</mat-option>\n              <mat-option [value]=\"FacetFilterType.lessThanOrEqual\">Less Than Or Equal</mat-option>\n              <mat-option [value]=\"FacetFilterType.between\">Between</mat-option>\n            </mat-select>\n          </mat-form-field>\n\n          @if (data.filterType === FacetFilterType.between) {\n            <mat-form-field class=\"search-field\" appearance=\"outline\">\n              <mat-label>Minimum</mat-label>\n              <input matInput type=\"number\" focusOnShow autocomplete=\"off\"\n                     [ngModel]=\"getRawValue(data)\" (ngModelChange)=\"setValue(data, $event)\"\n                     placeholder=\"{{data.placeholder || data.label }}\"\n                     (keydown.enter)=\"validateAndSubmit()\"/>\n            </mat-form-field>\n\n            <mat-form-field class=\"search-field\" appearance=\"outline\">\n              <mat-label>Maximum</mat-label>\n              <input matInput type=\"number\" autocomplete=\"off\"\n                     [ngModel]=\"getRawValue(data, 1)\" (ngModelChange)=\"setValue(data, $event, 1)\"\n                     placeholder=\"{{data.placeholder || data.label }}\"\n                     (keydown.enter)=\"validateAndSubmit()\"/>\n            </mat-form-field>\n          } @else {\n            <mat-form-field class=\"search-field\" appearance=\"outline\">\n              <mat-label>Value</mat-label>\n              <input matInput type=\"number\" focusOnShow autocomplete=\"off\"\n                     [ngModel]=\"getRawValue(data)\" (ngModelChange)=\"setValue(data, $event)\"\n                     placeholder=\"{{data.placeholder || data.label }}\"\n                     (keydown.enter)=\"validateAndSubmit()\"/>\n            </mat-form-field>\n          }\n\n        </div>\n      }\n      @case (data.type === FacetDataType.Boolean) {\n        <div class=\"boolean-wrapper\">\n          <mat-checkbox [ngModel]=\"getRawValue(data)\" (ngModelChange)=\"setValue(data, $event)\"\n                        (keydown.enter)=\"validateAndSubmit()\">{{data.placeholder || data.label}}</mat-checkbox>\n        </div>\n      }\n    }\n\n  </div>\n\n  <div class=\"actions\">\n\n    <button mat-flat-button class=\"add-update-button\" [color]=\"isUpdate ? 'accent' : 'primary'\" (click)=\"onOk()\"\n            [disabled]=\"isUpdateButtonDisabled()\">{{isUpdate ? 'Update' : 'Add'}}</button>\n\n    @if (isUpdate) {\n      <button mat-icon-button class=\"remove-button\" color=\"warn\" (click)=\"onRemove()\" matTooltip=\"Delete Filter\" matTooltipPosition=\"after\">\n        <mat-icon>delete</mat-icon>\n      </button>\n    }\n\n  </div>\n</div>\n",
-      styles: ["mat-spinner{margin:1em auto}.details{display:flex;flex-direction:column;align-items:stretch}.content{min-height:120px;padding-top:22px;display:flex;flex-direction:column;align-items:normal}.content mat-selection-list{flex:1;max-height:30vh;overflow-y:auto}.actions{padding:16px;display:flex;justify-content:space-between;flex-direction:row-reverse}span.facet-no-results{text-align:center;color:gray;margin-top:1em;margin-bottom:1em}.mat-selection-list{margin-top:0;padding-top:0}.mat-form-field{margin:0!important;padding-left:15px;padding-right:15px}.mat-dialog-actions{padding:0 15px 15px}.modal-header{display:flex;justify-content:space-between;align-items:center!important;border-top-left-radius:8px;border-top-right-radius:8px}.modal-header .modal-title{height:40px!important;margin:0!important;line-height:45px}p.description{padding-left:15px;padding-right:15px;margin-bottom:0;color:gray;flex:1}.date-range-wrapper{padding-left:15px;padding-right:15px;display:flex;flex-direction:column;align-items:stretch;justify-content:space-between}.date-range-wrapper,.category-wrapper{margin-top:1em}.boolean-wrapper{padding-left:15px;padding-right:15px;flex:4;display:flex;justify-content:flex-start;align-items:center}.text-wrapper,.numeric-wrapper{padding-left:15px;padding-right:15px;display:flex;flex-direction:column;flex:2;margin-top:1rem}.date-wrapper{padding-left:15px;padding-right:15px;display:flex;justify-content:center;align-items:center}.date-wrapper .date-field{flex:1}.typeahead-wrapper{padding-left:15px;padding-right:15px;display:flex;flex-direction:column;align-items:stretch;margin-top:1em}.typeahead-wrapper .typeahead-form-field{flex:1}\n"]
+      template: "<div class=\"mat-typography details\">\n\n<mat-toolbar class=\"modal-header\">\n    <h2 class=\"modal-title\">{{data.label}}</h2>\n    <button class=\"modal-close\" mat-icon-button (click)=\"onCancel()\">\n      <mat-icon>clear</mat-icon>\n    </button>\n  </mat-toolbar>\n\n  <div class=\"content\">\n\n    @if (data.description) {\n      <p class=\"description\">{{data.description}}</p>\n    }\n\n    <ng-template #loading>\n      <mat-spinner diameter=\"20\"></mat-spinner>\n    </ng-template>\n\n    <ng-template #noResults>\n      <span class=\"facet-no-results\" @fadeIn>No Results</span>\n    </ng-template>\n\n    @switch (true) {\n      @case (data.type === FacetDataType.Category || data.type === FacetDataType.CategorySingle) {\n        <div class=\"category-wrapper\">\n          @if (resolvedOptions$ | async; as options) {\n            <mat-divider></mat-divider>\n            @if (options.length > 0) {\n              <mat-selection-list (selectionChange)=\"selectionChange($event, data, options)\"\n                                  (keydown.enter)=\"validateAndSubmit()\">\n                @for (item of options; track item.value) {\n                  <mat-list-option [value]=\"item.value\" [selected]=\"isItemSelected(item)\"\n                                   @fadeIn\n                                   focusOnShow\n                                   [firstElement]=\"$first\">\n                    <span>\n                      {{ item.label ? truncateText(item.label) : \"- empty -\" }}\n                      @if (item.count) {\n                        <small><i>({{item.count}})</i></small>\n                      }\n                    </span>\n                  </mat-list-option>\n                }\n              </mat-selection-list>\n            } @else {\n              <ng-container *ngTemplateOutlet=\"noResults\"></ng-container>\n            }\n            <mat-divider></mat-divider>\n          } @else {\n            <ng-container *ngTemplateOutlet=\"loading\"></ng-container>\n          }\n        </div>\n      }\n      @case (data.type === FacetDataType.Typeahead || data.type === FacetDataType.TypeaheadSingle) {\n        <div class=\"typeahead-wrapper\">\n\n          <mat-form-field class=\"typeahead-form-field\" appearance=\"outline\" floatLabel=\"auto\">\n            <mat-label>Search...</mat-label>\n            <input matInput #typeAheadInput\n                   autocomplete=\"off\"\n                   focusOnShow=\"100\"\n                   [(ngModel)]=\"typeaheadText\"\n                   placeholder=\"{{(data.typeahead || {placeholder: ''}).placeholder}}\"\n                   (ngModelChange)=\"typeaheadValueChanged($event)\"\n                   (keydown.enter)=\"validateAndSubmit()\"/>\n\n            @if (!clearButtonDisabled) {\n              <button matSuffix mat-icon-button aria-label=\"Clear\" (click)=\"clearInput()\">\n                <mat-icon>clear</mat-icon>\n              </button>\n            }\n          </mat-form-field>\n\n          @if (resolvedOptions$ | async; as options) {\n            <mat-divider></mat-divider>\n            @if (options.length > 0) {\n              <mat-selection-list (selectionChange)=\"selectionChange($event, data, options)\"\n                                  (keydown.enter)=\"validateAndSubmit()\">\n                @for (item of options; track item.value) {\n                  <mat-list-option [value]=\"item.value\"\n                                   @fadeIn\n                                   focusOnShow\n                                   [firstElement]=\"$first\"\n                                   [selected]=\"isItemSelected(item)\">\n                    <span>\n                      {{ item.label ? truncateText(item.label) : \"- empty -\" }}\n                      @if (item.count) {\n                        <small><i>({{item.count}})</i></small>\n                      }\n                    </span>\n                  </mat-list-option>\n                }\n              </mat-selection-list>\n            } @else {\n              <ng-container *ngTemplateOutlet=\"noResults\"></ng-container>\n            }\n            <mat-divider></mat-divider>\n          } @else {\n            <ng-container *ngTemplateOutlet=\"loading\"></ng-container>\n          }\n\n        </div>\n      }\n      @case (data.type === FacetDataType.Date) {\n        <div class=\"date-wrapper\">\n\n          <mat-form-field appearance=\"outline\" floatLabel=\"always\" class=\"date-field\">\n            <mat-label>{{data.label}}</mat-label>\n            <input matInput autocomplete=\"off\" focusOnShow=\"100\" [matDatepicker]=\"picker\" [ngModel]=\"getRawValue(data)\" (ngModelChange)=\"setValue(data, $event)\"\n                   placeholder=\"Choose a date\" (focus)=\"isUpdate ? emptyFunction() : picker.open()\"\n                   (keydown.enter)=\"validateAndSubmit()\"/>\n            <mat-datepicker-toggle matSuffix [for]=\"picker\" (click)=\"picker.open()\"></mat-datepicker-toggle>\n          </mat-form-field>\n          <mat-datepicker #picker></mat-datepicker>\n\n        </div>\n      }\n      @case (data.type === FacetDataType.DateRange) {\n        <div class=\"date-range-wrapper\">\n\n          <mat-form-field appearance=\"outline\" floatLabel=\"always\">\n            <mat-label>{{data.label}} - Start</mat-label>\n            <input matInput focusOnShow=\"100\" autocomplete=\"off\" [matDatepicker]=\"startDatePicker\"\n                   [ngModel]=\"getRawValue(data)\" (ngModelChange)=\"setValue(data, $event)\" placeholder=\"Choose a starting date\"\n                   (focus)=\"isUpdate ? emptyFunction() : startDatePicker.open()\"\n                   (keydown.enter)=\"validateAndSubmit()\"/>\n            <mat-datepicker-toggle matSuffix [for]=\"startDatePicker\" (click)=\"startDatePicker.open()\"></mat-datepicker-toggle>\n          </mat-form-field>\n          <mat-datepicker #startDatePicker></mat-datepicker>\n\n          <mat-form-field appearance=\"outline\" floatLabel=\"always\">\n            <mat-label>{{data.label}} - End</mat-label>\n            <input matInput autocomplete=\"off\" [matDatepicker]=\"endDatePicker\"\n                   [ngModel]=\"getRawValue(data, 1)\" (ngModelChange)=\"setValue(data, $event, 1)\" placeholder=\"Choose an end date\"\n                   (keydown.enter)=\"validateAndSubmit()\"/>\n            <mat-datepicker-toggle matSuffix [for]=\"endDatePicker\" (click)=\"endDatePicker.open()\"></mat-datepicker-toggle>\n          </mat-form-field>\n          <mat-datepicker #endDatePicker></mat-datepicker>\n\n        </div>\n      }\n      @case (data.type === FacetDataType.Text) {\n        <div class=\"text-wrapper\">\n\n          <mat-form-field class=\"criteria-field\" appearance=\"outline\">\n            <mat-label>Criteria Type</mat-label>\n            <mat-select [value]=\"data.fixedFilterType || data.filterType\"\n                        (valueChange)=\"setType($event)\" placeholder=\"Criteria Type\">\n              <mat-option [value]=\"FacetFilterType.contains\">Contains</mat-option>\n              <mat-option [value]=\"FacetFilterType.endsWith\">Ends With</mat-option>\n              <mat-option [value]=\"FacetFilterType.equal\">Equals</mat-option>\n              <mat-option [value]=\"FacetFilterType.startsWith\">Starts With</mat-option>\n            </mat-select>\n          </mat-form-field>\n\n          <mat-form-field class=\"search-field\" appearance=\"outline\">\n            <mat-label>Search Text</mat-label>\n            <input matInput focusOnShow (keydown.enter)=\"validateAndSubmit()\" autocomplete=\"off\"\n                   [ngModel]=\"getRawValue(data)\" (ngModelChange)=\"setValue(data, $event)\"\n                   placeholder=\"{{data.placeholder || data.label }}\" autofocus/>\n            @if (data.values) {\n              <button matSuffix mat-icon-button aria-label=\"Clear\" (click)=\"data.values = []\">\n                <mat-icon>close</mat-icon>\n              </button>\n            }\n          </mat-form-field>\n\n        </div>\n      }\n      @case (data.type === FacetDataType.Numeric) {\n        <div class=\"numeric-wrapper\">\n\n          <mat-form-field class=\"criteria-field\" appearance=\"outline\">\n            <mat-label>Criteria Type</mat-label>\n            <mat-select [value]=\"data.fixedFilterType || data.filterType\"\n                        (valueChange)=\"setType($event)\" placeholder=\"Criteria Type\">\n              <mat-option [value]=\"FacetFilterType.equal\">Equals</mat-option>\n              <mat-option [value]=\"FacetFilterType.greaterThan\">Greater Than</mat-option>\n              <mat-option [value]=\"FacetFilterType.greaterThanOrEqual\">Greater Than Or Equal</mat-option>\n              <mat-option [value]=\"FacetFilterType.lessThan\">Less Than</mat-option>\n              <mat-option [value]=\"FacetFilterType.lessThanOrEqual\">Less Than Or Equal</mat-option>\n              <mat-option [value]=\"FacetFilterType.between\">Between</mat-option>\n            </mat-select>\n          </mat-form-field>\n\n          @if (data.filterType === FacetFilterType.between) {\n            <mat-form-field class=\"search-field\" appearance=\"outline\">\n              <mat-label>Minimum</mat-label>\n              <input matInput type=\"number\" focusOnShow autocomplete=\"off\"\n                     [ngModel]=\"getRawValue(data)\" (ngModelChange)=\"setValue(data, $event)\"\n                     placeholder=\"{{data.placeholder || data.label }}\"\n                     (keydown.enter)=\"validateAndSubmit()\"/>\n            </mat-form-field>\n\n            <mat-form-field class=\"search-field\" appearance=\"outline\">\n              <mat-label>Maximum</mat-label>\n              <input matInput type=\"number\" autocomplete=\"off\"\n                     [ngModel]=\"getRawValue(data, 1)\" (ngModelChange)=\"setValue(data, $event, 1)\"\n                     placeholder=\"{{data.placeholder || data.label }}\"\n                     (keydown.enter)=\"validateAndSubmit()\"/>\n            </mat-form-field>\n          } @else {\n            <mat-form-field class=\"search-field\" appearance=\"outline\">\n              <mat-label>Value</mat-label>\n              <input matInput type=\"number\" focusOnShow autocomplete=\"off\"\n                     [ngModel]=\"getRawValue(data)\" (ngModelChange)=\"setValue(data, $event)\"\n                     placeholder=\"{{data.placeholder || data.label }}\"\n                     (keydown.enter)=\"validateAndSubmit()\"/>\n            </mat-form-field>\n          }\n\n        </div>\n      }\n      @case (data.type === FacetDataType.Boolean) {\n        <div class=\"boolean-wrapper\">\n          <mat-checkbox [ngModel]=\"getRawValue(data)\" (ngModelChange)=\"setValue(data, $event)\"\n                        (keydown.enter)=\"validateAndSubmit()\">{{data.placeholder || data.label}}</mat-checkbox>\n        </div>\n      }\n    }\n\n  </div>\n\n  <div class=\"actions\">\n\n    <button mat-flat-button class=\"add-update-button\" [color]=\"isUpdate ? 'accent' : 'primary'\" (click)=\"onOk()\"\n            [disabled]=\"isUpdateButtonDisabled()\">{{isUpdate ? 'Update' : 'Add'}}</button>\n\n    @if (isUpdate) {\n      <button mat-icon-button class=\"remove-button\" color=\"warn\" (click)=\"onRemove()\" matTooltip=\"Delete Filter\" matTooltipPosition=\"after\">\n        <mat-icon>delete</mat-icon>\n      </button>\n    }\n\n  </div>\n</div>\n",
+      styles: ["mat-spinner{margin:1em auto}.details{display:flex;flex-direction:column;align-items:stretch}.content{min-height:120px;padding-top:22px;display:flex;flex-direction:column;align-items:normal}.content mat-selection-list{flex:1;max-height:30vh;overflow-y:auto}.actions{padding:16px;display:flex;justify-content:space-between;flex-direction:row-reverse}.actions .mat-mdc-unelevated-button:not(.mat-mdc-button-disabled):not(:disabled){background:var(--facet-toolkit-modal-action-primary-bg, #3f51b5)!important;color:var(--facet-toolkit-modal-action-primary-text, #ffffff)!important}.actions .mat-mdc-unelevated-button.mat-mdc-button-disabled,.actions .mat-mdc-unelevated-button:disabled{background:var(--mdc-filled-button-disabled-container-color, rgba(0, 0, 0, .12))!important;color:var(--mdc-filled-button-disabled-label-text-color, rgba(0, 0, 0, .38))!important;cursor:not-allowed}.actions .mat-mdc-stroked-button{background:var(--facet-toolkit-modal-action-secondary-bg, transparent)!important;color:var(--facet-toolkit-modal-action-secondary-text, #1c2b46)!important;border-color:var(--facet-toolkit-modal-action-border, rgba(28, 43, 70, .2))!important}.actions .remove-button,.actions .mat-mdc-icon-button.color-warn,.actions .mat-mdc-unelevated-button.mat-warn{background:var(--facet-toolkit-modal-action-warn-bg, #f44336)!important;color:var(--facet-toolkit-modal-action-warn-text, #ffffff)!important}span.facet-no-results{text-align:center;color:gray;margin-top:1em;margin-bottom:1em}.mat-selection-list{margin-top:0;padding-top:0}.mat-form-field{margin:0!important;padding-left:15px;padding-right:15px}mat-form-field{--mdc-outlined-text-field-focus-outline-color: var(--facet-toolkit-modal-input-focus-outline, #3f51b5);--mdc-outlined-text-field-focus-label-text-color: var(--facet-toolkit-modal-input-focus-label, #3f51b5);caret-color:var(--facet-toolkit-modal-input-caret, #3f51b5)}.mat-dialog-actions{padding:0 15px 15px}.modal-header{display:flex;justify-content:space-between;align-items:center!important;border-top-left-radius:8px;border-top-right-radius:8px;background:var(--facet-toolkit-modal-header-bg, var(--facet-toolkit-modal-header-bg-light, var(--mat-toolbar-container-background-color, #3f51b5)))!important;color:var(--facet-toolkit-modal-header-text, var(--facet-toolkit-modal-header-text-light, var(--mat-toolbar-container-text-color, #ffffff)))!important}.modal-header .modal-title{height:40px!important;margin:0!important;line-height:45px}p.description{padding-left:15px;padding-right:15px;margin-bottom:0;color:gray;flex:1}.date-range-wrapper{padding-left:15px;padding-right:15px;display:flex;flex-direction:column;align-items:stretch;justify-content:space-between}.date-range-wrapper,.category-wrapper{margin-top:1em}.boolean-wrapper{padding-left:15px;padding-right:15px;flex:4;display:flex;justify-content:flex-start;align-items:center}.text-wrapper,.numeric-wrapper{padding-left:15px;padding-right:15px;display:flex;flex-direction:column;flex:2;margin-top:1rem}.date-wrapper{padding-left:15px;padding-right:15px;display:flex;justify-content:center;align-items:center}.date-wrapper .date-field{flex:1}.typeahead-wrapper{padding-left:15px;padding-right:15px;display:flex;flex-direction:column;align-items:stretch;margin-top:1em}.typeahead-wrapper .typeahead-form-field{flex:1}\n"]
     }]
   }], () => [{
     type: undefined,
@@ -2597,7 +3311,7 @@ class FacetModalComponent extends _angular_cdk_portal__WEBPACK_IMPORTED_MODULE_2
       }
     },
     dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_7__.CommonModule, _angular_cdk_portal__WEBPACK_IMPORTED_MODULE_27__.h, _angular_cdk_portal__WEBPACK_IMPORTED_MODULE_27__.f],
-    styles: ["[_nghost-%COMP%]{position:relative;background:#fff;border-radius:8px;min-width:300px}.arrow[_ngcontent-%COMP%]{position:absolute;z-index:-1;width:20px;height:20px;top:-10px;left:24px;border-radius:4px;transform-origin:top left;transform:rotate(45deg)}"],
+    styles: ["[_nghost-%COMP%]{position:relative;background:var(--facet-toolkit-modal-surface, var(--facet-toolkit-modal-surface-light, #ffffff))!important;color:var(--facet-toolkit-modal-text, #1c2b46);border-radius:8px;min-width:300px;--facet-toolkit-preset-row-bg-light: rgba(46, 72, 144, .08);--facet-toolkit-preset-row-bg-dark: rgba(148, 163, 184, .12);--facet-toolkit-preset-row-bg: var(--facet-toolkit-preset-row-bg-light);--facet-toolkit-modal-surface-light: #ffffff;--facet-toolkit-modal-surface-dark: #1f2937;--facet-toolkit-modal-text-light: #1c2b46;--facet-toolkit-modal-text-dark: #e2e8f0;--facet-toolkit-modal-header-bg-light: #3f51b5;--facet-toolkit-modal-header-bg-dark: #111827;--facet-toolkit-modal-header-text-light: #ffffff;--facet-toolkit-modal-header-text-dark: #e2e8f0}.dark-theme[_nghost-%COMP%], .dark-theme   [_nghost-%COMP%]{--facet-toolkit-preset-row-bg: var(--facet-toolkit-preset-row-bg-dark);--facet-toolkit-modal-surface: var(--facet-toolkit-modal-surface-dark);--facet-toolkit-modal-text: var(--facet-toolkit-modal-text-dark)}.facet-theme-light[_nghost-%COMP%], .facet-theme-light   [_nghost-%COMP%]{--facet-toolkit-preset-row-bg: var(--facet-toolkit-preset-row-bg-light);--facet-toolkit-modal-surface: var(--facet-toolkit-modal-surface-light);--facet-toolkit-modal-text: var(--facet-toolkit-modal-text-light)}.facet-theme-dark[_nghost-%COMP%], .facet-theme-dark   [_nghost-%COMP%]{--facet-toolkit-preset-row-bg: var(--facet-toolkit-preset-row-bg-dark);--facet-toolkit-modal-surface: var(--facet-toolkit-modal-surface-dark);--facet-toolkit-modal-text: var(--facet-toolkit-modal-text-dark)}.arrow[_ngcontent-%COMP%]{position:absolute;z-index:-1;width:20px;height:20px;top:-10px;left:24px;border-radius:4px;transform-origin:top left;transform:rotate(45deg);background:var(--facet-toolkit-modal-header-bg, var(--facet-toolkit-modal-header-bg-light, #3f51b5))}"],
     data: {
       animation: [facetModalAnimations.modalContainer]
     }
@@ -2612,7 +3326,7 @@ class FacetModalComponent extends _angular_cdk_portal__WEBPACK_IMPORTED_MODULE_2
       imports: [_angular_common__WEBPACK_IMPORTED_MODULE_7__.CommonModule, _angular_cdk_portal__WEBPACK_IMPORTED_MODULE_27__.h],
       animations: [facetModalAnimations.modalContainer],
       template: "<ng-template cdkPortalOutlet></ng-template>\n@if (!modalRef.config.centered) {\n  <div class=\"arrow\"></div>\n}\n",
-      styles: [":host{position:relative;background:#fff;border-radius:8px;min-width:300px}.arrow{position:absolute;z-index:-1;width:20px;height:20px;top:-10px;left:24px;border-radius:4px;transform-origin:top left;transform:rotate(45deg)}\n"]
+      styles: [":host{position:relative;background:var(--facet-toolkit-modal-surface, var(--facet-toolkit-modal-surface-light, #ffffff))!important;color:var(--facet-toolkit-modal-text, #1c2b46);border-radius:8px;min-width:300px;--facet-toolkit-preset-row-bg-light: rgba(46, 72, 144, .08);--facet-toolkit-preset-row-bg-dark: rgba(148, 163, 184, .12);--facet-toolkit-preset-row-bg: var(--facet-toolkit-preset-row-bg-light);--facet-toolkit-modal-surface-light: #ffffff;--facet-toolkit-modal-surface-dark: #1f2937;--facet-toolkit-modal-text-light: #1c2b46;--facet-toolkit-modal-text-dark: #e2e8f0;--facet-toolkit-modal-header-bg-light: #3f51b5;--facet-toolkit-modal-header-bg-dark: #111827;--facet-toolkit-modal-header-text-light: #ffffff;--facet-toolkit-modal-header-text-dark: #e2e8f0}:host-context(.dark-theme){--facet-toolkit-preset-row-bg: var(--facet-toolkit-preset-row-bg-dark);--facet-toolkit-modal-surface: var(--facet-toolkit-modal-surface-dark);--facet-toolkit-modal-text: var(--facet-toolkit-modal-text-dark)}:host-context(.facet-theme-light){--facet-toolkit-preset-row-bg: var(--facet-toolkit-preset-row-bg-light);--facet-toolkit-modal-surface: var(--facet-toolkit-modal-surface-light);--facet-toolkit-modal-text: var(--facet-toolkit-modal-text-light)}:host-context(.facet-theme-dark){--facet-toolkit-preset-row-bg: var(--facet-toolkit-preset-row-bg-dark);--facet-toolkit-modal-surface: var(--facet-toolkit-modal-surface-dark);--facet-toolkit-modal-text: var(--facet-toolkit-modal-text-dark)}.arrow{position:absolute;z-index:-1;width:20px;height:20px;top:-10px;left:24px;border-radius:4px;transform-origin:top left;transform:rotate(45deg);background:var(--facet-toolkit-modal-header-bg, var(--facet-toolkit-modal-header-bg-light, #3f51b5))}\n"]
     }]
   }], () => [{
     type: FacetModalRef
@@ -2667,6 +3381,11 @@ class FacetModalService {
       positionStrategy,
       scrollStrategy: this.overlay.scrollStrategies.block()
     });
+    if (facetModalConfig.themeVariables) {
+      Object.entries(facetModalConfig.themeVariables).forEach(([key, value]) => {
+        overlayRef.overlayElement.style.setProperty(key, value);
+      });
+    }
     if (facetModalConfig.width) {
       overlayRef.updateSize({
         width: facetModalConfig.width
@@ -2770,7 +3489,7 @@ class FacetRemoveConfirmModalComponent {
       }
     },
     dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_7__.CommonModule, _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_9__.MatToolbarModule, _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_9__.MatToolbar, _angular_material_icon__WEBPACK_IMPORTED_MODULE_10__.MatIconModule, _angular_material_icon__WEBPACK_IMPORTED_MODULE_10__.MatIcon, _angular_material_button__WEBPACK_IMPORTED_MODULE_11__.MatButtonModule, _angular_material_button__WEBPACK_IMPORTED_MODULE_11__.MatButton, _angular_material_button__WEBPACK_IMPORTED_MODULE_12__.M],
-    styles: [".facet-remove-confirm-modal[_ngcontent-%COMP%]{display:flex;flex-direction:column;gap:12px;min-width:320px}.spacer[_ngcontent-%COMP%]{flex:1}.content[_ngcontent-%COMP%]{padding:0 16px}.actions[_ngcontent-%COMP%]{display:flex;justify-content:flex-end;gap:8px;padding:0 16px 16px}"]
+    styles: [".facet-remove-confirm-modal[_ngcontent-%COMP%]{display:flex;flex-direction:column;gap:12px;min-width:320px}mat-toolbar[_ngcontent-%COMP%]{background:var(--facet-toolkit-modal-header-bg, var(--facet-toolkit-modal-header-bg-light, var(--mat-toolbar-container-background-color, #3f51b5)))!important;color:var(--facet-toolkit-modal-header-text, var(--facet-toolkit-modal-header-text-light, var(--mat-toolbar-container-text-color, #ffffff)))!important}.spacer[_ngcontent-%COMP%]{flex:1}.content[_ngcontent-%COMP%]{padding:0 16px}.actions[_ngcontent-%COMP%]{display:flex;justify-content:flex-end;gap:8px;padding:0 16px 16px}.actions[_ngcontent-%COMP%]   .mat-mdc-unelevated-button.mat-warn[_ngcontent-%COMP%]{background:var(--facet-toolkit-modal-action-warn-bg, #f44336)!important;color:var(--facet-toolkit-modal-action-warn-text, #ffffff)!important}.actions[_ngcontent-%COMP%]   .mat-mdc-stroked-button[_ngcontent-%COMP%]{background:var(--facet-toolkit-modal-action-secondary-bg, transparent)!important;color:var(--facet-toolkit-modal-action-secondary-text, #1c2b46)!important;border-color:var(--facet-toolkit-modal-action-border, rgba(28, 43, 70, .2))!important}"]
   });
 }
 (() => {
@@ -2781,7 +3500,7 @@ class FacetRemoveConfirmModalComponent {
       standalone: true,
       imports: [_angular_common__WEBPACK_IMPORTED_MODULE_7__.CommonModule, _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_9__.MatToolbarModule, _angular_material_icon__WEBPACK_IMPORTED_MODULE_10__.MatIconModule, _angular_material_button__WEBPACK_IMPORTED_MODULE_11__.MatButtonModule],
       template: "<div class=\"facet-remove-confirm-modal\">\n  <mat-toolbar>\n    <span>Remove filter</span>\n    <span class=\"spacer\"></span>\n    <button mat-icon-button (click)=\"close()\" aria-label=\"Close remove filter dialog\">\n      <mat-icon>close</mat-icon>\n    </button>\n  </mat-toolbar>\n\n  <div class=\"content\">\n    <p>Remove the \"{{data.label}}\" filter?</p>\n  </div>\n\n  <div class=\"actions\">\n    <button mat-stroked-button (click)=\"close()\">Cancel</button>\n    <button mat-flat-button color=\"warn\" (click)=\"confirm()\">Remove</button>\n  </div>\n</div>\n",
-      styles: [".facet-remove-confirm-modal{display:flex;flex-direction:column;gap:12px;min-width:320px}.spacer{flex:1}.content{padding:0 16px}.actions{display:flex;justify-content:flex-end;gap:8px;padding:0 16px 16px}\n"]
+      styles: [".facet-remove-confirm-modal{display:flex;flex-direction:column;gap:12px;min-width:320px}mat-toolbar{background:var(--facet-toolkit-modal-header-bg, var(--facet-toolkit-modal-header-bg-light, var(--mat-toolbar-container-background-color, #3f51b5)))!important;color:var(--facet-toolkit-modal-header-text, var(--facet-toolkit-modal-header-text-light, var(--mat-toolbar-container-text-color, #ffffff)))!important}.spacer{flex:1}.content{padding:0 16px}.actions{display:flex;justify-content:flex-end;gap:8px;padding:0 16px 16px}.actions .mat-mdc-unelevated-button.mat-warn{background:var(--facet-toolkit-modal-action-warn-bg, #f44336)!important;color:var(--facet-toolkit-modal-action-warn-text, #ffffff)!important}.actions .mat-mdc-stroked-button{background:var(--facet-toolkit-modal-action-secondary-bg, transparent)!important;color:var(--facet-toolkit-modal-action-secondary-text, #1c2b46)!important;border-color:var(--facet-toolkit-modal-action-border, rgba(28, 43, 70, .2))!important}\n"]
     }]
   }], () => [{
     type: undefined,
@@ -2858,7 +3577,7 @@ class PresetDeleteModalComponent {
       }
     },
     dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_7__.CommonModule, _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_9__.MatToolbarModule, _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_9__.MatToolbar, _angular_material_icon__WEBPACK_IMPORTED_MODULE_10__.MatIconModule, _angular_material_icon__WEBPACK_IMPORTED_MODULE_10__.MatIcon, _angular_material_button__WEBPACK_IMPORTED_MODULE_11__.MatButtonModule, _angular_material_button__WEBPACK_IMPORTED_MODULE_11__.MatButton, _angular_material_button__WEBPACK_IMPORTED_MODULE_12__.M],
-    styles: [".preset-delete-modal[_ngcontent-%COMP%]{display:flex;flex-direction:column;gap:12px;min-width:320px}.spacer[_ngcontent-%COMP%]{flex:1}.content[_ngcontent-%COMP%]{padding:0 16px}.warning[_ngcontent-%COMP%]{font-size:12px;opacity:.7}.actions[_ngcontent-%COMP%]{display:flex;justify-content:flex-end;gap:8px;padding:0 16px 16px}"]
+    styles: [".preset-delete-modal[_ngcontent-%COMP%]{display:flex;flex-direction:column;gap:12px;min-width:320px}mat-toolbar[_ngcontent-%COMP%]{background:var(--facet-toolkit-modal-header-bg, var(--facet-toolkit-modal-header-bg-light, var(--mat-toolbar-container-background-color, #3f51b5)))!important;color:var(--facet-toolkit-modal-header-text, var(--facet-toolkit-modal-header-text-light, var(--mat-toolbar-container-text-color, #ffffff)))!important}.spacer[_ngcontent-%COMP%]{flex:1}.content[_ngcontent-%COMP%]{padding:0 16px}.warning[_ngcontent-%COMP%]{font-size:12px;opacity:.7}.actions[_ngcontent-%COMP%]{display:flex;justify-content:flex-end;gap:8px;padding:0 16px 16px}.actions[_ngcontent-%COMP%]   .mat-mdc-unelevated-button.mat-warn[_ngcontent-%COMP%]{background:var(--facet-toolkit-modal-action-warn-bg, #f44336)!important;color:var(--facet-toolkit-modal-action-warn-text, #ffffff)!important}.actions[_ngcontent-%COMP%]   .mat-mdc-stroked-button[_ngcontent-%COMP%]{background:var(--facet-toolkit-modal-action-secondary-bg, transparent)!important;color:var(--facet-toolkit-modal-action-secondary-text, #1c2b46)!important;border-color:var(--facet-toolkit-modal-action-border, rgba(28, 43, 70, .2))!important}"]
   });
 }
 (() => {
@@ -2869,7 +3588,7 @@ class PresetDeleteModalComponent {
       standalone: true,
       imports: [_angular_common__WEBPACK_IMPORTED_MODULE_7__.CommonModule, _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_9__.MatToolbarModule, _angular_material_icon__WEBPACK_IMPORTED_MODULE_10__.MatIconModule, _angular_material_button__WEBPACK_IMPORTED_MODULE_11__.MatButtonModule],
       template: "<div class=\"preset-delete-modal\">\n  <mat-toolbar>\n    <span>Delete preset</span>\n    <span class=\"spacer\"></span>\n    <button mat-icon-button (click)=\"close()\" aria-label=\"Close delete preset dialog\">\n      <mat-icon>close</mat-icon>\n    </button>\n  </mat-toolbar>\n\n  <div class=\"content\">\n    <p>Delete the preset \"{{data.name}}\"?</p>\n    <p class=\"warning\">This action cannot be undone.</p>\n  </div>\n\n  <div class=\"actions\">\n    <button mat-stroked-button (click)=\"close()\">Cancel</button>\n    <button mat-flat-button color=\"warn\" (click)=\"confirm()\">Delete</button>\n  </div>\n</div>\n",
-      styles: [".preset-delete-modal{display:flex;flex-direction:column;gap:12px;min-width:320px}.spacer{flex:1}.content{padding:0 16px}.warning{font-size:12px;opacity:.7}.actions{display:flex;justify-content:flex-end;gap:8px;padding:0 16px 16px}\n"]
+      styles: [".preset-delete-modal{display:flex;flex-direction:column;gap:12px;min-width:320px}mat-toolbar{background:var(--facet-toolkit-modal-header-bg, var(--facet-toolkit-modal-header-bg-light, var(--mat-toolbar-container-background-color, #3f51b5)))!important;color:var(--facet-toolkit-modal-header-text, var(--facet-toolkit-modal-header-text-light, var(--mat-toolbar-container-text-color, #ffffff)))!important}.spacer{flex:1}.content{padding:0 16px}.warning{font-size:12px;opacity:.7}.actions{display:flex;justify-content:flex-end;gap:8px;padding:0 16px 16px}.actions .mat-mdc-unelevated-button.mat-warn{background:var(--facet-toolkit-modal-action-warn-bg, #f44336)!important;color:var(--facet-toolkit-modal-action-warn-text, #ffffff)!important}.actions .mat-mdc-stroked-button{background:var(--facet-toolkit-modal-action-secondary-bg, transparent)!important;color:var(--facet-toolkit-modal-action-secondary-text, #1c2b46)!important;border-color:var(--facet-toolkit-modal-action-border, rgba(28, 43, 70, .2))!important}\n"]
     }]
   }], () => [{
     type: undefined,
@@ -2943,6 +3662,8 @@ class PresetManagerModalComponent {
       data: {
         name: preset.name
       },
+      panelClass: this.modalRef.config.panelClass,
+      themeVariables: this.modalRef.config.themeVariables,
       width: '320px'
     });
     modalRef.afterClosed().subscribe(result => {
@@ -3003,7 +3724,7 @@ class PresetManagerModalComponent {
       }
     },
     dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_7__.CommonModule, _angular_common__WEBPACK_IMPORTED_MODULE_7__.NgIf, _angular_forms__WEBPACK_IMPORTED_MODULE_8__.FormsModule, _angular_forms__WEBPACK_IMPORTED_MODULE_8__.DefaultValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_8__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_8__.NgModel, _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_9__.MatToolbarModule, _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_9__.MatToolbar, _angular_material_icon__WEBPACK_IMPORTED_MODULE_10__.MatIconModule, _angular_material_icon__WEBPACK_IMPORTED_MODULE_10__.MatIcon, _angular_material_button__WEBPACK_IMPORTED_MODULE_11__.MatButtonModule, _angular_material_button__WEBPACK_IMPORTED_MODULE_12__.M, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_17__.M, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_18__.j, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_18__.M, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_18__.g, _angular_material_input__WEBPACK_IMPORTED_MODULE_19__.MatInputModule, _angular_material_input__WEBPACK_IMPORTED_MODULE_19__.MatInput, _angular_material_menu__WEBPACK_IMPORTED_MODULE_29__.MatMenuModule, _angular_material_menu__WEBPACK_IMPORTED_MODULE_29__.MatMenu, _angular_material_menu__WEBPACK_IMPORTED_MODULE_29__.MatMenuItem, _angular_material_menu__WEBPACK_IMPORTED_MODULE_29__.MatMenuTrigger],
-    styles: [".preset-manager-modal[_ngcontent-%COMP%]{display:flex;flex-direction:column;gap:12px;min-width:360px}.spacer[_ngcontent-%COMP%]{flex:1}.search-row[_ngcontent-%COMP%]{padding:0 16px}.preset-list[_ngcontent-%COMP%]{display:flex;flex-direction:column;gap:12px;padding:0 16px 16px;max-height:320px;overflow:auto}.preset-row[_ngcontent-%COMP%]{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px 10px;border-radius:10px;background:#2e489014}.preset-info[_ngcontent-%COMP%]{display:flex;flex-direction:column;gap:2px}.preset-name[_ngcontent-%COMP%]{font-weight:600}.preset-meta[_ngcontent-%COMP%]{font-size:12px;opacity:.7}.preset-actions[_ngcontent-%COMP%]{display:flex;align-items:center}.rename-row[_ngcontent-%COMP%]{display:flex;align-items:center;gap:8px}.rename-row[_ngcontent-%COMP%]   mat-form-field[_ngcontent-%COMP%]{flex:1}.empty-state[_ngcontent-%COMP%]{text-align:center;padding:16px;opacity:.7}.dark-theme[_nghost-%COMP%]   .preset-row[_ngcontent-%COMP%], .dark-theme   [_nghost-%COMP%]   .preset-row[_ngcontent-%COMP%]{background:#94a3b81f}.dark-theme[_nghost-%COMP%]   .preset-meta[_ngcontent-%COMP%], .dark-theme   [_nghost-%COMP%]   .preset-meta[_ngcontent-%COMP%], .dark-theme[_nghost-%COMP%]   .empty-state[_ngcontent-%COMP%], .dark-theme   [_nghost-%COMP%]   .empty-state[_ngcontent-%COMP%]{opacity:.8}"]
+    styles: [".preset-manager-modal[_ngcontent-%COMP%]{display:flex;flex-direction:column;gap:12px;min-width:360px}mat-toolbar[_ngcontent-%COMP%]{background:var(--facet-toolkit-modal-header-bg, var(--facet-toolkit-modal-header-bg-light, var(--mat-toolbar-container-background-color, #3f51b5)))!important;color:var(--facet-toolkit-modal-header-text, var(--facet-toolkit-modal-header-text-light, var(--mat-toolbar-container-text-color, #ffffff)))!important}.spacer[_ngcontent-%COMP%]{flex:1}.search-row[_ngcontent-%COMP%]{padding:0 16px}.preset-list[_ngcontent-%COMP%]{display:flex;flex-direction:column;gap:12px;padding:0 16px 16px;max-height:320px;overflow:auto}.preset-row[_ngcontent-%COMP%]{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px 10px;border-radius:10px;background:var(--facet-toolkit-preset-row-bg, rgba(46, 72, 144, .08))}.preset-info[_ngcontent-%COMP%]{display:flex;flex-direction:column;gap:2px}.preset-name[_ngcontent-%COMP%]{font-weight:600}.preset-meta[_ngcontent-%COMP%]{font-size:12px;opacity:.7}.preset-actions[_ngcontent-%COMP%]{display:flex;align-items:center}.preset-actions[_ngcontent-%COMP%]   .mat-mdc-icon-button[_ngcontent-%COMP%]{color:var(--facet-toolkit-modal-action-secondary-text, #1c2b46)!important}.rename-row[_ngcontent-%COMP%]{display:flex;align-items:center;gap:8px}.rename-row[_ngcontent-%COMP%]   mat-form-field[_ngcontent-%COMP%]{flex:1}.rename-row[_ngcontent-%COMP%]   mat-form-field[_ngcontent-%COMP%]{--mdc-outlined-text-field-focus-outline-color: var(--facet-toolkit-modal-input-focus-outline, #3f51b5);--mdc-outlined-text-field-focus-label-text-color: var(--facet-toolkit-modal-input-focus-label, #3f51b5);caret-color:var(--facet-toolkit-modal-input-caret, #3f51b5)}.empty-state[_ngcontent-%COMP%]{text-align:center;padding:16px;opacity:.7}.rename-row[_ngcontent-%COMP%]   .mat-mdc-unelevated-button[_ngcontent-%COMP%]{background:var(--facet-toolkit-modal-action-primary-bg, #3f51b5)!important;color:var(--facet-toolkit-modal-action-primary-text, #ffffff)!important}.rename-row[_ngcontent-%COMP%]   .mat-mdc-stroked-button[_ngcontent-%COMP%]{background:var(--facet-toolkit-modal-action-secondary-bg, transparent)!important;color:var(--facet-toolkit-modal-action-secondary-text, #1c2b46)!important;border-color:var(--facet-toolkit-modal-action-border, rgba(28, 43, 70, .2))!important}.dark-theme[_nghost-%COMP%]   .preset-meta[_ngcontent-%COMP%], .dark-theme   [_nghost-%COMP%]   .preset-meta[_ngcontent-%COMP%], .facet-theme-dark[_nghost-%COMP%]   .preset-meta[_ngcontent-%COMP%], .facet-theme-dark   [_nghost-%COMP%]   .preset-meta[_ngcontent-%COMP%], .dark-theme[_nghost-%COMP%]   .empty-state[_ngcontent-%COMP%], .dark-theme   [_nghost-%COMP%]   .empty-state[_ngcontent-%COMP%], .facet-theme-dark[_nghost-%COMP%]   .empty-state[_ngcontent-%COMP%], .facet-theme-dark   [_nghost-%COMP%]   .empty-state[_ngcontent-%COMP%]{opacity:.8}"]
   });
 }
 (() => {
@@ -3014,7 +3735,7 @@ class PresetManagerModalComponent {
       standalone: true,
       imports: [_angular_common__WEBPACK_IMPORTED_MODULE_7__.CommonModule, _angular_forms__WEBPACK_IMPORTED_MODULE_8__.FormsModule, _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_9__.MatToolbarModule, _angular_material_icon__WEBPACK_IMPORTED_MODULE_10__.MatIconModule, _angular_material_button__WEBPACK_IMPORTED_MODULE_11__.MatButtonModule, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_17__.M, _angular_material_input__WEBPACK_IMPORTED_MODULE_19__.MatInputModule, _angular_material_menu__WEBPACK_IMPORTED_MODULE_29__.MatMenuModule],
       template: "<div class=\"preset-manager-modal\">\n  <mat-toolbar>\n    <span>Manage Presets</span>\n    <span class=\"spacer\"></span>\n    <button mat-icon-button (click)=\"close()\" aria-label=\"Close preset manager\">\n      <mat-icon>close</mat-icon>\n    </button>\n  </mat-toolbar>\n\n  <div class=\"search-row\">\n    <mat-form-field appearance=\"outline\">\n      <mat-label>Search presets</mat-label>\n      <input matInput [(ngModel)]=\"filterText\">\n      <button matSuffix mat-icon-button aria-label=\"Clear search\" *ngIf=\"filterText\" (click)=\"filterText = ''\">\n        <mat-icon>close</mat-icon>\n      </button>\n    </mat-form-field>\n  </div>\n\n  <div class=\"preset-list\">\n    @if (filteredPresets.length === 0) {\n      <div class=\"empty-state\">No presets found.</div>\n    }\n\n    @for (preset of filteredPresets; track preset.id) {\n      <div class=\"preset-row\">\n        <div class=\"preset-info\">\n          <div class=\"preset-name\">{{preset.name}}</div>\n          <div class=\"preset-meta\">{{preset.selections.length}} filters</div>\n        </div>\n        <div class=\"preset-actions\">\n          <button mat-icon-button [matMenuTriggerFor]=\"presetMenu\" aria-label=\"Preset actions\">\n            <mat-icon>more_vert</mat-icon>\n          </button>\n          <mat-menu #presetMenu=\"matMenu\">\n            <button mat-menu-item (click)=\"loadPreset(preset)\">\n              <mat-icon>upload</mat-icon>\n              <span>Load</span>\n            </button>\n            <button mat-menu-item (click)=\"startRename(preset)\">\n              <mat-icon>edit</mat-icon>\n              <span>Rename</span>\n            </button>\n            <button mat-menu-item (click)=\"deletePreset(preset)\">\n              <mat-icon>delete</mat-icon>\n              <span>Delete</span>\n            </button>\n          </mat-menu>\n        </div>\n      </div>\n\n      @if (editingPresetId === preset.id) {\n        <div class=\"rename-row\">\n          <mat-form-field appearance=\"outline\">\n            <mat-label>Preset name</mat-label>\n            <input matInput [(ngModel)]=\"editingName\" (keydown.enter)=\"confirmRename(preset)\">\n          </mat-form-field>\n          <button mat-icon-button (click)=\"confirmRename(preset)\" [disabled]=\"!editingName.trim()\" aria-label=\"Confirm rename\">\n            <mat-icon>check</mat-icon>\n          </button>\n          <button mat-icon-button (click)=\"cancelRename()\" aria-label=\"Cancel rename\">\n            <mat-icon>close</mat-icon>\n          </button>\n        </div>\n      }\n    }\n  </div>\n</div>\n",
-      styles: [".preset-manager-modal{display:flex;flex-direction:column;gap:12px;min-width:360px}.spacer{flex:1}.search-row{padding:0 16px}.preset-list{display:flex;flex-direction:column;gap:12px;padding:0 16px 16px;max-height:320px;overflow:auto}.preset-row{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px 10px;border-radius:10px;background:#2e489014}.preset-info{display:flex;flex-direction:column;gap:2px}.preset-name{font-weight:600}.preset-meta{font-size:12px;opacity:.7}.preset-actions{display:flex;align-items:center}.rename-row{display:flex;align-items:center;gap:8px}.rename-row mat-form-field{flex:1}.empty-state{text-align:center;padding:16px;opacity:.7}:host-context(.dark-theme) .preset-row{background:#94a3b81f}:host-context(.dark-theme) .preset-meta,:host-context(.dark-theme) .empty-state{opacity:.8}\n"]
+      styles: [".preset-manager-modal{display:flex;flex-direction:column;gap:12px;min-width:360px}mat-toolbar{background:var(--facet-toolkit-modal-header-bg, var(--facet-toolkit-modal-header-bg-light, var(--mat-toolbar-container-background-color, #3f51b5)))!important;color:var(--facet-toolkit-modal-header-text, var(--facet-toolkit-modal-header-text-light, var(--mat-toolbar-container-text-color, #ffffff)))!important}.spacer{flex:1}.search-row{padding:0 16px}.preset-list{display:flex;flex-direction:column;gap:12px;padding:0 16px 16px;max-height:320px;overflow:auto}.preset-row{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px 10px;border-radius:10px;background:var(--facet-toolkit-preset-row-bg, rgba(46, 72, 144, .08))}.preset-info{display:flex;flex-direction:column;gap:2px}.preset-name{font-weight:600}.preset-meta{font-size:12px;opacity:.7}.preset-actions{display:flex;align-items:center}.preset-actions .mat-mdc-icon-button{color:var(--facet-toolkit-modal-action-secondary-text, #1c2b46)!important}.rename-row{display:flex;align-items:center;gap:8px}.rename-row mat-form-field{flex:1}.rename-row mat-form-field{--mdc-outlined-text-field-focus-outline-color: var(--facet-toolkit-modal-input-focus-outline, #3f51b5);--mdc-outlined-text-field-focus-label-text-color: var(--facet-toolkit-modal-input-focus-label, #3f51b5);caret-color:var(--facet-toolkit-modal-input-caret, #3f51b5)}.empty-state{text-align:center;padding:16px;opacity:.7}.rename-row .mat-mdc-unelevated-button{background:var(--facet-toolkit-modal-action-primary-bg, #3f51b5)!important;color:var(--facet-toolkit-modal-action-primary-text, #ffffff)!important}.rename-row .mat-mdc-stroked-button{background:var(--facet-toolkit-modal-action-secondary-bg, transparent)!important;color:var(--facet-toolkit-modal-action-secondary-text, #1c2b46)!important;border-color:var(--facet-toolkit-modal-action-border, rgba(28, 43, 70, .2))!important}:host-context(.dark-theme) .preset-meta,:host-context(.facet-theme-dark) .preset-meta,:host-context(.dark-theme) .empty-state,:host-context(.facet-theme-dark) .empty-state{opacity:.8}\n"]
     }]
   }], () => [{
     type: undefined,
@@ -3115,7 +3836,7 @@ class PresetNameModalComponent {
       }
     },
     dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_7__.CommonModule, _angular_forms__WEBPACK_IMPORTED_MODULE_8__.FormsModule, _angular_forms__WEBPACK_IMPORTED_MODULE_8__.DefaultValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_8__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_8__.NgModel, _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_9__.MatToolbarModule, _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_9__.MatToolbar, _angular_material_icon__WEBPACK_IMPORTED_MODULE_10__.MatIconModule, _angular_material_icon__WEBPACK_IMPORTED_MODULE_10__.MatIcon, _angular_material_button__WEBPACK_IMPORTED_MODULE_11__.MatButtonModule, _angular_material_button__WEBPACK_IMPORTED_MODULE_11__.MatButton, _angular_material_button__WEBPACK_IMPORTED_MODULE_12__.M, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_17__.M, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_18__.j, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_18__.M, _angular_material_input__WEBPACK_IMPORTED_MODULE_19__.MatInputModule, _angular_material_input__WEBPACK_IMPORTED_MODULE_19__.MatInput, FocusOnShowDirective],
-    styles: [".preset-name-modal[_ngcontent-%COMP%]{display:flex;flex-direction:column;gap:12px;min-width:300px}.spacer[_ngcontent-%COMP%]{flex:1}.content[_ngcontent-%COMP%]{padding:0 16px}mat-form-field[_ngcontent-%COMP%]{width:100%}.actions[_ngcontent-%COMP%]{display:flex;justify-content:flex-end;gap:8px;padding:0 16px 16px}"]
+    styles: [".preset-name-modal[_ngcontent-%COMP%]{display:flex;flex-direction:column;gap:12px;min-width:300px}mat-toolbar[_ngcontent-%COMP%]{background:var(--facet-toolkit-modal-header-bg, var(--facet-toolkit-modal-header-bg-light, var(--mat-toolbar-container-background-color, #3f51b5)))!important;color:var(--facet-toolkit-modal-header-text, var(--facet-toolkit-modal-header-text-light, var(--mat-toolbar-container-text-color, #ffffff)))!important}.spacer[_ngcontent-%COMP%]{flex:1}.content[_ngcontent-%COMP%]{padding:0 16px}mat-form-field[_ngcontent-%COMP%]{width:100%}mat-form-field[_ngcontent-%COMP%]{--mdc-outlined-text-field-focus-outline-color: var(--facet-toolkit-modal-input-focus-outline, #3f51b5);--mdc-outlined-text-field-focus-label-text-color: var(--facet-toolkit-modal-input-focus-label, #3f51b5);caret-color:var(--facet-toolkit-modal-input-caret, #3f51b5)}.actions[_ngcontent-%COMP%]{display:flex;justify-content:flex-end;gap:8px;padding:0 16px 16px}.actions[_ngcontent-%COMP%]   .mat-mdc-unelevated-button[_ngcontent-%COMP%]{background:var(--facet-toolkit-modal-action-primary-bg, #3f51b5)!important;color:var(--facet-toolkit-modal-action-primary-text, #ffffff)!important}.actions[_ngcontent-%COMP%]   .mat-mdc-stroked-button[_ngcontent-%COMP%]{background:var(--facet-toolkit-modal-action-secondary-bg, transparent)!important;color:var(--facet-toolkit-modal-action-secondary-text, #1c2b46)!important;border-color:var(--facet-toolkit-modal-action-border, rgba(28, 43, 70, .2))!important}"]
   });
 }
 (() => {
@@ -3126,7 +3847,7 @@ class PresetNameModalComponent {
       standalone: true,
       imports: [_angular_common__WEBPACK_IMPORTED_MODULE_7__.CommonModule, _angular_forms__WEBPACK_IMPORTED_MODULE_8__.FormsModule, _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_9__.MatToolbarModule, _angular_material_icon__WEBPACK_IMPORTED_MODULE_10__.MatIconModule, _angular_material_button__WEBPACK_IMPORTED_MODULE_11__.MatButtonModule, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_17__.M, _angular_material_input__WEBPACK_IMPORTED_MODULE_19__.MatInputModule, FocusOnShowDirective],
       template: "<div class=\"preset-name-modal\">\n  <mat-toolbar>\n    <span>{{data.title}}</span>\n    <span class=\"spacer\"></span>\n    <button mat-icon-button (click)=\"close()\" aria-label=\"Close preset name dialog\">\n      <mat-icon>close</mat-icon>\n    </button>\n  </mat-toolbar>\n\n  <div class=\"content\">\n    <mat-form-field appearance=\"outline\">\n      <mat-label>{{data.placeholder || 'Preset name'}}</mat-label>\n      <input matInput [(ngModel)]=\"name\" (keydown.enter)=\"save()\" focusOnShow>\n    </mat-form-field>\n  </div>\n\n  <div class=\"actions\">\n    <button mat-stroked-button (click)=\"close()\">Cancel</button>\n    <button mat-flat-button color=\"primary\" [disabled]=\"!name.trim()\" (click)=\"save()\">\n      {{data.confirmLabel || 'Save'}}\n    </button>\n  </div>\n</div>\n",
-      styles: [".preset-name-modal{display:flex;flex-direction:column;gap:12px;min-width:300px}.spacer{flex:1}.content{padding:0 16px}mat-form-field{width:100%}.actions{display:flex;justify-content:flex-end;gap:8px;padding:0 16px 16px}\n"]
+      styles: [".preset-name-modal{display:flex;flex-direction:column;gap:12px;min-width:300px}mat-toolbar{background:var(--facet-toolkit-modal-header-bg, var(--facet-toolkit-modal-header-bg-light, var(--mat-toolbar-container-background-color, #3f51b5)))!important;color:var(--facet-toolkit-modal-header-text, var(--facet-toolkit-modal-header-text-light, var(--mat-toolbar-container-text-color, #ffffff)))!important}.spacer{flex:1}.content{padding:0 16px}mat-form-field{width:100%}mat-form-field{--mdc-outlined-text-field-focus-outline-color: var(--facet-toolkit-modal-input-focus-outline, #3f51b5);--mdc-outlined-text-field-focus-label-text-color: var(--facet-toolkit-modal-input-focus-label, #3f51b5);caret-color:var(--facet-toolkit-modal-input-caret, #3f51b5)}.actions{display:flex;justify-content:flex-end;gap:8px;padding:0 16px 16px}.actions .mat-mdc-unelevated-button{background:var(--facet-toolkit-modal-action-primary-bg, #3f51b5)!important;color:var(--facet-toolkit-modal-action-primary-text, #ffffff)!important}.actions .mat-mdc-stroked-button{background:var(--facet-toolkit-modal-action-secondary-bg, transparent)!important;color:var(--facet-toolkit-modal-action-secondary-text, #1c2b46)!important;border-color:var(--facet-toolkit-modal-action-border, rgba(28, 43, 70, .2))!important}\n"]
     }]
   }], () => [{
     type: undefined,
@@ -3458,6 +4179,87 @@ class KeysPipe {
     }]
   }], null, null);
 })();
+const THEME_VAR_MAP = {
+  inputBg: '--facet-toolkit-input-bg',
+  inputShadow: '--facet-toolkit-input-shadow',
+  inputHoverBg: '--facet-toolkit-input-hover-bg',
+  inputHoverShadow: '--facet-toolkit-input-hover-shadow',
+  inputFocusShadow: '--facet-toolkit-input-focus-shadow',
+  inputText: '--facet-toolkit-input-text',
+  inputPlaceholder: '--facet-toolkit-input-placeholder',
+  addIcon: '--facet-toolkit-add-icon',
+  presetTrigger: '--facet-toolkit-preset-trigger',
+  countDivider: '--facet-toolkit-count-divider',
+  countBg: '--facet-toolkit-count-bg',
+  countText: '--facet-toolkit-count-text',
+  scrollbarThumb: '--facet-toolkit-scrollbar-thumb',
+  presetRowBg: '--facet-toolkit-preset-row-bg',
+  modalSurface: '--facet-toolkit-modal-surface',
+  modalText: '--facet-toolkit-modal-text',
+  modalHeaderBg: '--facet-toolkit-modal-header-bg',
+  modalHeaderText: '--facet-toolkit-modal-header-text',
+  menuSurface: '--facet-toolkit-menu-surface',
+  menuText: '--facet-toolkit-menu-text',
+  menuHoverBg: '--facet-toolkit-menu-hover-bg',
+  clearButtonBg: '--facet-toolkit-clear-button-bg',
+  clearButtonText: '--facet-toolkit-clear-button-text',
+  modalActionPrimaryBg: '--facet-toolkit-modal-action-primary-bg',
+  modalActionPrimaryText: '--facet-toolkit-modal-action-primary-text',
+  modalActionSecondaryBg: '--facet-toolkit-modal-action-secondary-bg',
+  modalActionSecondaryText: '--facet-toolkit-modal-action-secondary-text',
+  modalActionWarnBg: '--facet-toolkit-modal-action-warn-bg',
+  modalActionWarnText: '--facet-toolkit-modal-action-warn-text',
+  modalActionBorder: '--facet-toolkit-modal-action-border',
+  modalInputFocusOutline: '--facet-toolkit-modal-input-focus-outline',
+  modalInputFocusLabel: '--facet-toolkit-modal-input-focus-label',
+  modalInputCaret: '--facet-toolkit-modal-input-caret',
+  chipSelectedBg: '--facet-toolkit-chip-selected-bg',
+  chipSelectedText: '--facet-toolkit-chip-selected-text'
+};
+const mergeThemeVariables = (base, override) => ({
+  ...(base || {}),
+  ...(override || {})
+});
+const mapThemeVariables = (variables, suffix) => {
+  if (!variables) {
+    return {};
+  }
+  return Object.entries(variables).reduce((acc, [key, value]) => {
+    if (!value) {
+      return acc;
+    }
+    const trimmedKey = key.trim();
+    if (!trimmedKey) {
+      return acc;
+    }
+    if (trimmedKey.endsWith('-light') || trimmedKey.endsWith('-dark')) {
+      acc[trimmedKey] = value;
+      return acc;
+    }
+    if (trimmedKey.startsWith('--facet-toolkit-')) {
+      acc[`${trimmedKey}-${suffix}`] = value;
+      return acc;
+    }
+    acc[trimmedKey] = value;
+    return acc;
+  }, {});
+};
+const mapThemeOverrides = (overrides, suffix) => {
+  if (!overrides) {
+    return {};
+  }
+  return Object.entries(overrides).reduce((acc, [key, value]) => {
+    if (!value) {
+      return acc;
+    }
+    const varName = THEME_VAR_MAP[key];
+    if (!varName) {
+      return acc;
+    }
+    acc[`${varName}-${suffix}`] = value;
+    return acc;
+  }, {});
+};
 class NgxMatFacetToolkitComponent {
   facets = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.input)([]);
   config = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.input)({});
@@ -3472,6 +4274,15 @@ class NgxMatFacetToolkitComponent {
   confirmOnRemove = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.input)(true);
   chipLabelsEnabled = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.input)(true);
   identifier = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.input)(null);
+  themeMode = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.input)(null);
+  themeOverrides = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.input)(null);
+  darkThemeOverrides = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.input)(null);
+  themeVariables = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.input)(null);
+  darkThemeVariables = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.input)(null);
+  applyThemeToRoot = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.input)(null);
+  hostStyles = {};
+  isThemeDark = false;
+  isThemeLight = false;
   facetChange = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.output)();
   facetRemoved = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.output)();
   facetReset = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.output)();
@@ -3488,12 +4299,17 @@ class NgxMatFacetToolkitComponent {
   presetStorageService = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(FacetPresetStorageService);
   modal = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(FacetModalService);
   vcRef = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_0__.ViewContainerRef);
+  documentRef = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_common__WEBPACK_IMPORTED_MODULE_30__.DOCUMENT);
   identifierStrategy = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.signal)(FacetIdentifierStrategy.ParentID);
   resolvedIdentifier = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.signal)(null);
   allowDebugClick = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.signal)(false);
   chipRowScrollable = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.signal)(false);
   loggingCallback = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.signal)(() => {});
   showFilterCount = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.signal)(false);
+  resolvedThemeMode = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.signal)('auto');
+  resolvedThemeVariables = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.signal)({});
+  appliedRootVariables = new Set();
+  appliedRootClasses = new Set();
   timeoutHandler = null;
   chipRowResizeObserver = null;
   chipRowUpdateHandle = null;
@@ -3521,6 +4337,12 @@ class NgxMatFacetToolkitComponent {
   constructor() {
     (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.effect)(() => {
       this.identifier();
+      this.themeMode();
+      this.themeOverrides();
+      this.darkThemeOverrides();
+      this.themeVariables();
+      this.darkThemeVariables();
+      this.applyThemeToRoot();
       const config = {
         ...DEFAULT_FACET_TOOLKIT_CONFIG,
         ...this.injectedConfig,
@@ -3535,6 +4357,7 @@ class NgxMatFacetToolkitComponent {
       this.storageService.updateStorageStrategy(config.storage);
       this.presetStorageService.updateLoggingCallback(config.loggingCallback);
       this.presetStorageService.updateStorageConfig(config.presetStorage);
+      this.applyThemeConfig(config);
       this.resolveIdentity();
     });
     (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.effect)(() => {
@@ -3560,7 +4383,7 @@ class NgxMatFacetToolkitComponent {
     return window.location.pathname.toString().replace(/\s+/g, '-').replace(/\//g, '-').replace(/^-/g, '').replace(/--/g, '-');
   }
   ngAfterViewInit() {
-    (0,rxjs__WEBPACK_IMPORTED_MODULE_30__.fromEvent)(this.filterInput.nativeElement, 'keyup').pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_2__.filter)(Boolean), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_5__.debounceTime)(150), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_31__.distinctUntilChanged)(), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_32__.map)(() => this.filterInput.nativeElement.value)).subscribe(text => {
+    (0,rxjs__WEBPACK_IMPORTED_MODULE_31__.fromEvent)(this.filterInput.nativeElement, 'keyup').pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_2__.filter)(Boolean), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_5__.debounceTime)(150), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_32__.distinctUntilChanged)(), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_33__.map)(() => this.filterInput.nativeElement.value)).subscribe(text => {
       this.filterText.set(text || '');
     });
     if (this.chipScrollContainer?.nativeElement && typeof ResizeObserver !== 'undefined') {
@@ -3580,6 +4403,7 @@ class NgxMatFacetToolkitComponent {
       cancelAnimationFrame(this.chipRowUpdateHandle);
       this.chipRowUpdateHandle = null;
     }
+    this.clearRootThemeVariables();
   }
   chipSelected(event, facet) {
     if (event.selected && !facet.readonly) {
@@ -3649,13 +4473,13 @@ class NgxMatFacetToolkitComponent {
       return this.commitFacetRemoval(facet);
     }
     const target = this.filterInput?.nativeElement;
-    const modalRef = this.modal.open(FacetRemoveConfirmModalComponent, target, {
+    const modalRef = this.modal.open(FacetRemoveConfirmModalComponent, target, this.applyModalThemeConfig({
       centered: true,
       data: {
         label: facet.label
       },
       width: '320px'
-    });
+    }));
     modalRef.afterClosed().subscribe(result => {
       if (result.type !== FacetResultType.ADD) {
         return;
@@ -3672,7 +4496,7 @@ class NgxMatFacetToolkitComponent {
   }
   promptSavePreset() {
     const target = this.presetMenuButton?.nativeElement || this.filterInput?.nativeElement;
-    const modalRef = this.modal.open(PresetNameModalComponent, target, {
+    const modalRef = this.modal.open(PresetNameModalComponent, target, this.applyModalThemeConfig({
       data: {
         title: 'Save current filters',
         confirmLabel: 'Save preset',
@@ -3681,7 +4505,7 @@ class NgxMatFacetToolkitComponent {
       offsetY: 20,
       offsetX: -10,
       width: '320px'
-    });
+    }));
     modalRef.afterClosed().subscribe(result => {
       if (result.type !== FacetResultType.ADD || !result.data) {
         return;
@@ -3691,7 +4515,7 @@ class NgxMatFacetToolkitComponent {
   }
   openPresetManager() {
     const target = this.presetMenuButton?.nativeElement || this.filterInput?.nativeElement;
-    this.modal.open(PresetManagerModalComponent, target, {
+    this.modal.open(PresetManagerModalComponent, target, this.applyModalThemeConfig({
       data: {
         presets: this.presetsForMenu(),
         onLoad: preset => this.applyPreset(preset),
@@ -3700,7 +4524,117 @@ class NgxMatFacetToolkitComponent {
       },
       centered: true,
       width: '380px'
+    }));
+  }
+  applyThemeConfig(config) {
+    const resolvedMode = this.themeMode() ?? config.themeMode;
+    const resolvedOverrides = {
+      ...(config.themeOverrides || {}),
+      ...(this.themeOverrides() || {})
+    };
+    const resolvedDarkOverrides = {
+      ...(config.darkThemeOverrides || {}),
+      ...(this.darkThemeOverrides() || {})
+    };
+    const resolvedThemeVars = mergeThemeVariables(config.themeVariables, this.themeVariables());
+    const resolvedDarkThemeVars = mergeThemeVariables(config.darkThemeVariables, this.darkThemeVariables());
+    const resolvedApplyToRoot = this.applyThemeToRoot() ?? config.applyThemeToRoot;
+    this.resolvedThemeMode.set(resolvedMode);
+    this.isThemeDark = resolvedMode === 'dark';
+    this.isThemeLight = resolvedMode === 'light';
+    const mergedVariables = {
+      ...mapThemeOverrides(resolvedOverrides, 'light'),
+      ...mapThemeOverrides(resolvedDarkOverrides, 'dark'),
+      ...mapThemeVariables(resolvedThemeVars, 'light'),
+      ...mapThemeVariables(resolvedDarkThemeVars, 'dark')
+    };
+    this.resolvedThemeVariables.set(mergedVariables);
+    this.hostStyles = mergedVariables;
+    if (resolvedApplyToRoot) {
+      this.applyRootThemeVariables(mergedVariables, resolvedMode);
+    } else {
+      this.clearRootThemeVariables();
+    }
+  }
+  applyModalThemeConfig(config) {
+    const themeMode = this.resolvedThemeMode();
+    const themeVariables = this.resolvedThemeVariables();
+    const themeClass = themeMode === 'dark' ? 'facet-theme-dark' : themeMode === 'light' ? 'facet-theme-light' : null;
+    const panelClass = this.mergePanelClass(config.panelClass, themeClass);
+    return {
+      ...config,
+      panelClass,
+      themeVariables
+    };
+  }
+  mergePanelClass(panelClass, themeClass) {
+    if (!themeClass) {
+      return panelClass;
+    }
+    if (!panelClass) {
+      return themeClass;
+    }
+    if (Array.isArray(panelClass)) {
+      return [...panelClass, themeClass];
+    }
+    return [panelClass, themeClass];
+  }
+  applyRootThemeVariables(variables, themeMode) {
+    const root = this.documentRef?.documentElement;
+    const rootStyle = root?.style;
+    if (!rootStyle || !root) {
+      return;
+    }
+    this.appliedRootVariables.forEach(key => rootStyle.removeProperty(key));
+    this.appliedRootVariables.clear();
+    Object.entries(variables).forEach(([key, value]) => {
+      if (!key || !value) {
+        return;
+      }
+      rootStyle.setProperty(key, value);
+      this.appliedRootVariables.add(key);
     });
+    const effectiveMode = this.getEffectiveThemeMode(themeMode);
+    Object.entries(variables).forEach(([key, value]) => {
+      if (!key || !value) {
+        return;
+      }
+      const suffix = `-${effectiveMode}`;
+      if (key.endsWith(suffix)) {
+        const baseKey = key.slice(0, -suffix.length);
+        rootStyle.setProperty(baseKey, value);
+        this.appliedRootVariables.add(baseKey);
+      }
+    });
+    this.appliedRootClasses.forEach(className => root.classList.remove(className));
+    this.appliedRootClasses.clear();
+    root.classList.add('facet-theme-panel');
+    this.appliedRootClasses.add('facet-theme-panel');
+    if (themeMode === 'dark') {
+      root.classList.add('facet-theme-dark');
+      this.appliedRootClasses.add('facet-theme-dark');
+    } else if (themeMode === 'light') {
+      root.classList.add('facet-theme-light');
+      this.appliedRootClasses.add('facet-theme-light');
+    }
+  }
+  getEffectiveThemeMode(themeMode) {
+    if (themeMode !== 'auto') {
+      return themeMode;
+    }
+    const body = this.documentRef?.body;
+    return body?.classList.contains('dark-theme') ? 'dark' : 'light';
+  }
+  clearRootThemeVariables() {
+    const root = this.documentRef?.documentElement;
+    const rootStyle = root?.style;
+    if (!rootStyle || !root) {
+      return;
+    }
+    this.appliedRootVariables.forEach(key => rootStyle.removeProperty(key));
+    this.appliedRootVariables.clear();
+    this.appliedRootClasses.forEach(className => root.classList.remove(className));
+    this.appliedRootClasses.clear();
   }
   applyPreset(preset) {
     const facetDefinitions = this.facetDefinitions();
@@ -3726,7 +4660,7 @@ class NgxMatFacetToolkitComponent {
     }
     const selections = this.cloneSelections(this.selectedFacets());
     const preset = {
-      id: (0,uuid__WEBPACK_IMPORTED_MODULE_33__["default"])(),
+      id: (0,uuid__WEBPACK_IMPORTED_MODULE_34__["default"])(),
       name,
       identifier,
       selections,
@@ -3862,7 +4796,7 @@ class NgxMatFacetToolkitComponent {
         identity = this.injectorRef.parentIdentifier;
         break;
       case FacetIdentifierStrategy.Random:
-        identity = (0,uuid__WEBPACK_IMPORTED_MODULE_33__["default"])();
+        identity = (0,uuid__WEBPACK_IMPORTED_MODULE_34__["default"])();
         break;
       default:
         identity = identifierInput;
@@ -3937,7 +4871,7 @@ class NgxMatFacetToolkitComponent {
     if (!options) {
       return undefined;
     }
-    return (0,rxjs__WEBPACK_IMPORTED_MODULE_34__.isObservable)(options) ? options : (0,rxjs__WEBPACK_IMPORTED_MODULE_6__.of)(options);
+    return (0,rxjs__WEBPACK_IMPORTED_MODULE_35__.isObservable)(options) ? options : (0,rxjs__WEBPACK_IMPORTED_MODULE_6__.of)(options);
   }
   static ɵfac = function NgxMatFacetToolkitComponent_Factory(__ngFactoryType__) {
     return new (__ngFactoryType__ || NgxMatFacetToolkitComponent)();
@@ -3948,7 +4882,7 @@ class NgxMatFacetToolkitComponent {
     viewQuery: function NgxMatFacetToolkitComponent_Query(rf, ctx) {
       if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵviewQuery"](_c2, 5);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵviewQuery"](_angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_35__.MatAutocompleteTrigger, 5, _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_35__.MatAutocompleteTrigger);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵviewQuery"](_angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_36__.MatAutocompleteTrigger, 5, _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_36__.MatAutocompleteTrigger);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵviewQuery"](_c3, 5, _angular_core__WEBPACK_IMPORTED_MODULE_0__.ElementRef);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵviewQuery"](_c4, 5, _angular_core__WEBPACK_IMPORTED_MODULE_0__.ElementRef);
       }
@@ -3958,6 +4892,13 @@ class NgxMatFacetToolkitComponent {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵloadQuery"]()) && (ctx.inputAutoComplete = _t.first);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵloadQuery"]()) && (ctx.presetMenuButton = _t.first);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵloadQuery"]()) && (ctx.chipScrollContainer = _t.first);
+      }
+    },
+    hostVars: 6,
+    hostBindings: function NgxMatFacetToolkitComponent_HostBindings(rf, ctx) {
+      if (rf & 2) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵstyleMap"](ctx.hostStyles);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassProp"]("facet-theme-dark", ctx.isThemeDark)("facet-theme-light", ctx.isThemeLight);
       }
     },
     inputs: {
@@ -3973,7 +4914,13 @@ class NgxMatFacetToolkitComponent {
       facetHasBackdrop: [1, "facetHasBackdrop"],
       confirmOnRemove: [1, "confirmOnRemove"],
       chipLabelsEnabled: [1, "chipLabelsEnabled"],
-      identifier: [1, "identifier"]
+      identifier: [1, "identifier"],
+      themeMode: [1, "themeMode"],
+      themeOverrides: [1, "themeOverrides"],
+      darkThemeOverrides: [1, "darkThemeOverrides"],
+      themeVariables: [1, "themeVariables"],
+      darkThemeVariables: [1, "darkThemeVariables"],
+      applyThemeToRoot: [1, "applyThemeToRoot"]
     },
     outputs: {
       facetChange: "facetChange",
@@ -3982,7 +4929,7 @@ class NgxMatFacetToolkitComponent {
     },
     decls: 22,
     vars: 12,
-    consts: [["filterInput", ""], ["auto", "matAutocomplete"], ["chipScrollContainer", ""], ["chipList", ""], ["presetMenuButton", ""], ["presetMenu", "matMenu"], [1, "main-facet-wrapper"], [1, "icon-wrapper"], [1, "content-wrapper"], [1, "chip-row"], [1, "filter-input-container"], [1, "flex-facet-autocomplete"], [1, "add-icon", 3, "click"], [1, "filter-input", 3, "keydown.backspace", "keydown.delete", "matChipInputFor", "placeholder", "matChipInputAddOnBlur", "matAutocomplete"], ["panelWidth", "250px", 1, "mat-facet-autocomplete", 3, "optionSelected", "displayWith"], [3, "value"], [1, "chip-scroll-container"], ["matTooltipShowDelay", "1000", 1, "facet-chip", 3, "color", "selected", "matTooltip"], ["mat-flat-button", "", "color", "accent"], ["mat-icon-button", "", 1, "preset-menu-trigger", 3, "mousedown", "mouseup", "mouseleave", "matMenuTriggerFor", "matTooltip", "matTooltipDisabled"], [1, "preset-menu"], ["mat-menu-item", "", 3, "click", "disabled"], ["mat-menu-item", "", 3, "click"], ["mat-menu-item", "", "disabled", ""], ["mat-menu-item", ""], ["aria-hidden", "true", 1, "filter-count-divider"], [1, "filter-count"], ["matTooltipShowDelay", "1000", 1, "facet-chip", 3, "selectionChange", "click", "color", "selected", "matTooltip"], [1, "flex-facet"], [1, "inline-chip-icon"], [1, "inline-chip-checkbox", 3, "disabled", "ngModel"], ["matChipRemove", ""], [1, "inline-chip-checkbox", 3, "ngModelChange", "disabled", "ngModel"], ["matChipRemove", "", 3, "click"], ["mat-flat-button", "", "color", "accent", 3, "click"]],
+    consts: [["filterInput", ""], ["auto", "matAutocomplete"], ["chipScrollContainer", ""], ["chipList", ""], ["presetMenuButton", ""], ["presetMenu", "matMenu"], [1, "main-facet-wrapper"], [1, "icon-wrapper"], [1, "content-wrapper"], [1, "chip-row"], [1, "filter-input-container"], [1, "flex-facet-autocomplete"], [1, "add-icon", 3, "click"], [1, "filter-input", 3, "keydown.backspace", "keydown.delete", "matChipInputFor", "placeholder", "matChipInputAddOnBlur", "matAutocomplete"], ["panelWidth", "250px", 1, "mat-facet-autocomplete", 3, "optionSelected", "displayWith"], [3, "value"], [1, "chip-scroll-container"], ["matTooltipShowDelay", "1000", 1, "facet-chip", 3, "color", "selected", "matTooltip"], ["mat-flat-button", "", "color", "accent", 1, "facet-clear-button"], ["mat-icon-button", "", 1, "preset-menu-trigger", 3, "mousedown", "mouseup", "mouseleave", "matMenuTriggerFor", "matTooltip", "matTooltipDisabled"], [1, "preset-menu"], ["mat-menu-item", "", 3, "click", "disabled"], ["mat-menu-item", "", 3, "click"], ["mat-menu-item", "", "disabled", ""], ["mat-menu-item", ""], ["aria-hidden", "true", 1, "filter-count-divider"], [1, "filter-count"], ["matTooltipShowDelay", "1000", 1, "facet-chip", 3, "selectionChange", "click", "color", "selected", "matTooltip"], [1, "flex-facet"], [1, "inline-chip-icon"], [1, "inline-chip-checkbox", 3, "disabled", "ngModel"], ["matChipRemove", ""], [1, "inline-chip-checkbox", 3, "ngModelChange", "disabled", "ngModel"], ["matChipRemove", "", 3, "click"], ["mat-flat-button", "", "color", "accent", 1, "facet-clear-button", 3, "click"]],
     template: function NgxMatFacetToolkitComponent_Template(rf, ctx) {
       if (rf & 1) {
         const _r1 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
@@ -4041,8 +4988,8 @@ class NgxMatFacetToolkitComponent {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵconditional"](ctx.clearButtonEnabled() && ctx.selectedFacets().length > 0 ? 21 : -1);
       }
     },
-    dependencies: [_angular_cdk_a11y__WEBPACK_IMPORTED_MODULE_36__.A, _angular_common__WEBPACK_IMPORTED_MODULE_7__.CommonModule, _angular_common__WEBPACK_IMPORTED_MODULE_7__.DatePipe, _angular_forms__WEBPACK_IMPORTED_MODULE_8__.FormsModule, _angular_forms__WEBPACK_IMPORTED_MODULE_8__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_8__.NgModel, _angular_forms__WEBPACK_IMPORTED_MODULE_8__.ReactiveFormsModule, _angular_material_icon__WEBPACK_IMPORTED_MODULE_10__.MatIconModule, _angular_material_icon__WEBPACK_IMPORTED_MODULE_10__.MatIcon, _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_9__.MatToolbarModule, _angular_material_progress_bar__WEBPACK_IMPORTED_MODULE_37__.MatProgressBarModule, _angular_material_list__WEBPACK_IMPORTED_MODULE_16__.MatListModule, _angular_material_divider__WEBPACK_IMPORTED_MODULE_15__.MatDivider, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_17__.M, _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_20__.MatDatepickerModule, _angular_material_divider__WEBPACK_IMPORTED_MODULE_15__.MatDividerModule, _angular_material_core__WEBPACK_IMPORTED_MODULE_25__.M, _angular_material_select__WEBPACK_IMPORTED_MODULE_24__.M, _angular_material_select__WEBPACK_IMPORTED_MODULE_23__.M, _angular_material_button__WEBPACK_IMPORTED_MODULE_11__.MatButtonModule, _angular_material_button__WEBPACK_IMPORTED_MODULE_11__.MatButton, _angular_material_button__WEBPACK_IMPORTED_MODULE_12__.M, _angular_material_checkbox__WEBPACK_IMPORTED_MODULE_22__.MatCheckboxModule, _angular_material_checkbox__WEBPACK_IMPORTED_MODULE_22__.MatCheckbox, _angular_material_input__WEBPACK_IMPORTED_MODULE_19__.MatInputModule, _angular_material_chips__WEBPACK_IMPORTED_MODULE_38__.MatChipsModule, _angular_material_chips__WEBPACK_IMPORTED_MODULE_38__.MatChipGrid, _angular_material_chips__WEBPACK_IMPORTED_MODULE_38__.MatChipInput, _angular_material_chips__WEBPACK_IMPORTED_MODULE_38__.MatChipOption, _angular_material_chips__WEBPACK_IMPORTED_MODULE_38__.MatChipRemove, _angular_material_tooltip__WEBPACK_IMPORTED_MODULE_13__.h, _angular_material_tooltip__WEBPACK_IMPORTED_MODULE_13__.e, _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_35__.MatAutocompleteModule, _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_35__.MatAutocomplete, _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_35__.MatAutocompleteTrigger, _angular_material_core__WEBPACK_IMPORTED_MODULE_21__.MatNativeDateModule, _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_14__.MatProgressSpinnerModule, _angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_28__.m, _angular_cdk_portal__WEBPACK_IMPORTED_MODULE_27__.h, _angular_material_menu__WEBPACK_IMPORTED_MODULE_29__.MatMenuModule, _angular_material_menu__WEBPACK_IMPORTED_MODULE_29__.MatMenu, _angular_material_menu__WEBPACK_IMPORTED_MODULE_29__.MatMenuItem, _angular_material_menu__WEBPACK_IMPORTED_MODULE_29__.MatMenuTrigger, CSVPipe],
-    styles: ["*[_ngcontent-%COMP%]{outline:0}.filter-input-container[_ngcontent-%COMP%]{background-color:transparent!important;opacity:1!important;box-shadow:none!important;background-color:#2e489014!important;box-shadow:0 0 0 1px #2e489059!important;color:#1c2b46;transition:box-shadow .12s ease,background-color .12s ease;height:28px;display:inline-flex;align-items:center;gap:2px;flex:0 0 auto;padding:0 4px;margin-bottom:10px;border-radius:999px}.filter-input-container[_ngcontent-%COMP%]   .filter-input[_ngcontent-%COMP%]{border:none!important;background:none!important;width:56px;font-size:14px!important;font-weight:400;height:28px;line-height:28px;padding:0;text-align:left;color:inherit;position:relative;top:0;margin-left:2px;vertical-align:middle}.filter-input[_ngcontent-%COMP%]::placeholder{color:#1c2b46;opacity:.9}.inline-chip-icon[_ngcontent-%COMP%]{width:18px;height:18px;font-size:18px;margin-right:7px;margin-left:0}[_nghost-%COMP%]   .mat-checkbox-inner-container[_ngcontent-%COMP%]{transform:scale(.7)}.inlineChipCheckbox[_nghost-%COMP%]   label.mat-checkbox-layout[_ngcontent-%COMP%]   div.mat-checkbox-inner-container[_ngcontent-%COMP%], .inlineChipCheckbox   [_nghost-%COMP%]   label.mat-checkbox-layout[_ngcontent-%COMP%]   div.mat-checkbox-inner-container[_ngcontent-%COMP%]{transform:scale(.7)}.add-icon[_ngcontent-%COMP%]{margin-top:0;color:#1c2b46}.add-icon[_ngcontent-%COMP%]:hover, .filter-input-container[_ngcontent-%COMP%]:hover{cursor:pointer}.filter-input-container[_ngcontent-%COMP%]:hover{background-color:#2e48901f!important;box-shadow:0 0 0 1px #2e48908c!important}.filter-input-container[_ngcontent-%COMP%]:focus-within{box-shadow:0 0 0 2px #466ec859!important}.filter-count-divider[_ngcontent-%COMP%]{display:inline-block;width:1px;height:18px;margin:0 3px;background:linear-gradient(180deg,#2e48901a,#2e4890b3,#2e48901a);align-self:center}.filter-count[_ngcontent-%COMP%]{font-size:11px;font-weight:700;line-height:16px;padding:2px 6px;border-radius:999px;background:#2e489029;color:#1c2b46;letter-spacing:.02em;align-self:center}.main-facet-wrapper[_ngcontent-%COMP%]{min-height:36px;display:flex;align-items:center}.main-facet-wrapper[_ngcontent-%COMP%]   .icon-wrapper[_ngcontent-%COMP%]{height:100%;display:flex;justify-content:center;align-items:center;margin-right:20px}.preset-menu-trigger[_ngcontent-%COMP%]{margin-bottom:10px;color:#1c2b46}.dark-theme[_nghost-%COMP%]   .preset-menu-trigger[_ngcontent-%COMP%], .dark-theme   [_nghost-%COMP%]   .preset-menu-trigger[_ngcontent-%COMP%]{color:#e2e8f0}  .mat-autocomplete-panel.mat-autocomplete-visible{left:-40px!important;top:15px!important}  .mat-chip-list-wrapper{display:flex;flex-wrap:wrap;align-items:center;gap:8px;transition:width .3s ease-in-out}.facet-chip[_ngcontent-%COMP%]{order:1}.dark-theme[_nghost-%COMP%]   .filter-input-container[_ngcontent-%COMP%], .dark-theme   [_nghost-%COMP%]   .filter-input-container[_ngcontent-%COMP%]{background-color:#94a3b81f!important;box-shadow:0 0 0 1px #94a3b866!important;color:#e2e8f0}.dark-theme[_nghost-%COMP%]   .filter-input-container[_ngcontent-%COMP%]:hover, .dark-theme   [_nghost-%COMP%]   .filter-input-container[_ngcontent-%COMP%]:hover{background-color:#94a3b82e!important;box-shadow:0 0 0 1px #e2e8f073!important}.dark-theme[_nghost-%COMP%]   .filter-input-container[_ngcontent-%COMP%]:focus-within, .dark-theme   [_nghost-%COMP%]   .filter-input-container[_ngcontent-%COMP%]:focus-within{box-shadow:0 0 0 2px #7da6ff59!important}.dark-theme[_nghost-%COMP%]   .filter-input[_ngcontent-%COMP%]::placeholder, .dark-theme   [_nghost-%COMP%]   .filter-input[_ngcontent-%COMP%]::placeholder{color:#e2e8f0;opacity:.8}.dark-theme[_nghost-%COMP%]   .add-icon[_ngcontent-%COMP%], .dark-theme   [_nghost-%COMP%]   .add-icon[_ngcontent-%COMP%]{color:#e2e8f0}.dark-theme[_nghost-%COMP%]   .filter-count-divider[_ngcontent-%COMP%], .dark-theme   [_nghost-%COMP%]   .filter-count-divider[_ngcontent-%COMP%]{background:linear-gradient(180deg,#e2e8f01a,#e2e8f0b3,#e2e8f01a)}.dark-theme[_nghost-%COMP%]   .filter-count[_ngcontent-%COMP%], .dark-theme   [_nghost-%COMP%]   .filter-count[_ngcontent-%COMP%]{color:#e2e8f0;background:#e2e8f029}.content-wrapper[_ngcontent-%COMP%]{flex:1;min-width:0}.chip-row[_ngcontent-%COMP%]{display:flex;align-items:center;gap:8px;min-width:0}.chip-scroll-container[_ngcontent-%COMP%]{display:flex;align-items:center;overflow-x:auto;overflow-y:hidden;height:40px;margin-bottom:10px;width:100%;flex:1 1 auto;min-width:0;white-space:nowrap;scrollbar-width:thin}.chip-scroll-container.has-scroll[_ngcontent-%COMP%]{margin-bottom:0}.content-wrapper.chip-scrollable[_ngcontent-%COMP%]     .mat-chip-list-wrapper{display:inline-flex!important;flex-wrap:nowrap!important;width:max-content;white-space:nowrap}.content-wrapper.chip-scrollable[_ngcontent-%COMP%]     .mat-chip-list-wrapper::-webkit-scrollbar, .chip-scroll-container[_ngcontent-%COMP%]::-webkit-scrollbar{height:6px}.content-wrapper.chip-scrollable[_ngcontent-%COMP%]     .mat-chip-list-wrapper::-webkit-scrollbar-thumb, .chip-scroll-container[_ngcontent-%COMP%]::-webkit-scrollbar-thumb{background-color:#2e489059;border-radius:999px}.content-wrapper.chip-scrollable[_ngcontent-%COMP%]     .mat-chip-list-wrapper::-webkit-scrollbar-track, .chip-scroll-container[_ngcontent-%COMP%]::-webkit-scrollbar-track{background:transparent}.dark-theme[_nghost-%COMP%]   .content-wrapper.chip-scrollable[_ngcontent-%COMP%]     .mat-chip-list-wrapper::-webkit-scrollbar-thumb, .dark-theme   [_nghost-%COMP%]   .content-wrapper.chip-scrollable[_ngcontent-%COMP%]     .mat-chip-list-wrapper::-webkit-scrollbar-thumb, .dark-theme[_nghost-%COMP%]   .chip-scroll-container[_ngcontent-%COMP%]::-webkit-scrollbar-thumb, .dark-theme   [_nghost-%COMP%]   .chip-scroll-container[_ngcontent-%COMP%]::-webkit-scrollbar-thumb{background-color:#94a3b873}.content-wrapper.chip-scrollable[_ngcontent-%COMP%]     .mat-chip-option, .content-wrapper.chip-scrollable[_ngcontent-%COMP%]     .mat-chip-row{flex:0 0 auto}.content-wrapper.chip-scrollable[_ngcontent-%COMP%]     .mat-chip-grid{display:inline-flex!important;flex-wrap:nowrap;align-items:center;width:max-content}.content-wrapper.chip-scrollable[_ngcontent-%COMP%]     .mat-mdc-chip-set, .content-wrapper.chip-scrollable[_ngcontent-%COMP%]     .mdc-evolution-chip-set__chips{display:inline-flex!important;flex-wrap:nowrap!important;width:max-content;white-space:nowrap}.content-wrapper.chip-scrollable[_ngcontent-%COMP%]     .mat-chip-list-wrapper{align-items:center;display:inline-flex!important;flex-wrap:nowrap!important}.content-wrapper.chip-scrollable[_ngcontent-%COMP%]     .mat-chip-row, .content-wrapper.chip-scrollable[_ngcontent-%COMP%]     .mat-chip-option{max-height:28px;white-space:nowrap}.content-wrapper.chip-scrollable[_ngcontent-%COMP%]     .mat-chip-option{white-space:nowrap}.flex-facet[_ngcontent-%COMP%]{display:flex;align-items:center}.flex-facet-autocomplete[_ngcontent-%COMP%]{display:inline-flex;align-items:center;justify-content:center;height:28px}"],
+    dependencies: [_angular_cdk_a11y__WEBPACK_IMPORTED_MODULE_37__.A, _angular_common__WEBPACK_IMPORTED_MODULE_7__.CommonModule, _angular_common__WEBPACK_IMPORTED_MODULE_7__.DatePipe, _angular_forms__WEBPACK_IMPORTED_MODULE_8__.FormsModule, _angular_forms__WEBPACK_IMPORTED_MODULE_8__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_8__.NgModel, _angular_forms__WEBPACK_IMPORTED_MODULE_8__.ReactiveFormsModule, _angular_material_icon__WEBPACK_IMPORTED_MODULE_10__.MatIconModule, _angular_material_icon__WEBPACK_IMPORTED_MODULE_10__.MatIcon, _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_9__.MatToolbarModule, _angular_material_progress_bar__WEBPACK_IMPORTED_MODULE_38__.MatProgressBarModule, _angular_material_list__WEBPACK_IMPORTED_MODULE_16__.MatListModule, _angular_material_divider__WEBPACK_IMPORTED_MODULE_15__.MatDivider, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_17__.M, _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_20__.MatDatepickerModule, _angular_material_divider__WEBPACK_IMPORTED_MODULE_15__.MatDividerModule, _angular_material_core__WEBPACK_IMPORTED_MODULE_25__.M, _angular_material_select__WEBPACK_IMPORTED_MODULE_24__.M, _angular_material_select__WEBPACK_IMPORTED_MODULE_23__.M, _angular_material_button__WEBPACK_IMPORTED_MODULE_11__.MatButtonModule, _angular_material_button__WEBPACK_IMPORTED_MODULE_11__.MatButton, _angular_material_button__WEBPACK_IMPORTED_MODULE_12__.M, _angular_material_checkbox__WEBPACK_IMPORTED_MODULE_22__.MatCheckboxModule, _angular_material_checkbox__WEBPACK_IMPORTED_MODULE_22__.MatCheckbox, _angular_material_input__WEBPACK_IMPORTED_MODULE_19__.MatInputModule, _angular_material_chips__WEBPACK_IMPORTED_MODULE_39__.MatChipsModule, _angular_material_chips__WEBPACK_IMPORTED_MODULE_39__.MatChipGrid, _angular_material_chips__WEBPACK_IMPORTED_MODULE_39__.MatChipInput, _angular_material_chips__WEBPACK_IMPORTED_MODULE_39__.MatChipOption, _angular_material_chips__WEBPACK_IMPORTED_MODULE_39__.MatChipRemove, _angular_material_tooltip__WEBPACK_IMPORTED_MODULE_13__.h, _angular_material_tooltip__WEBPACK_IMPORTED_MODULE_13__.e, _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_36__.MatAutocompleteModule, _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_36__.MatAutocomplete, _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_36__.MatAutocompleteTrigger, _angular_material_core__WEBPACK_IMPORTED_MODULE_21__.MatNativeDateModule, _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_14__.MatProgressSpinnerModule, _angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_28__.m, _angular_cdk_portal__WEBPACK_IMPORTED_MODULE_27__.h, _angular_material_menu__WEBPACK_IMPORTED_MODULE_29__.MatMenuModule, _angular_material_menu__WEBPACK_IMPORTED_MODULE_29__.MatMenu, _angular_material_menu__WEBPACK_IMPORTED_MODULE_29__.MatMenuItem, _angular_material_menu__WEBPACK_IMPORTED_MODULE_29__.MatMenuTrigger, CSVPipe],
+    styles: ["[_nghost-%COMP%]{--facet-toolkit-input-bg-light: rgba(46, 72, 144, .08);--facet-toolkit-input-shadow-light: 0 0 0 1px rgba(46, 72, 144, .35);--facet-toolkit-input-hover-bg-light: rgba(46, 72, 144, .12);--facet-toolkit-input-hover-shadow-light: 0 0 0 1px rgba(46, 72, 144, .55);--facet-toolkit-input-focus-shadow-light: 0 0 0 2px rgba(70, 110, 200, .35);--facet-toolkit-input-text-light: #1c2b46;--facet-toolkit-input-placeholder-light: #1c2b46;--facet-toolkit-add-icon-light: #1c2b46;--facet-toolkit-preset-trigger-light: #1c2b46;--facet-toolkit-count-divider-light: linear-gradient(180deg, rgba(46, 72, 144, .1), rgba(46, 72, 144, .7), rgba(46, 72, 144, .1));--facet-toolkit-count-bg-light: rgba(46, 72, 144, .16);--facet-toolkit-count-text-light: #1c2b46;--facet-toolkit-scrollbar-thumb-light: rgba(46, 72, 144, .35);--facet-toolkit-preset-row-bg-light: rgba(46, 72, 144, .08);--facet-toolkit-modal-surface-light: #ffffff;--facet-toolkit-modal-text-light: #1c2b46;--facet-toolkit-modal-header-bg-light: #3f51b5;--facet-toolkit-modal-header-text-light: #ffffff;--facet-toolkit-menu-surface-light: #ffffff;--facet-toolkit-menu-text-light: #1c2b46;--facet-toolkit-menu-hover-bg-light: rgba(46, 72, 144, .08);--facet-toolkit-clear-button-bg-light: #e91e63;--facet-toolkit-clear-button-text-light: #ffffff;--facet-toolkit-modal-action-primary-bg-light: #3f51b5;--facet-toolkit-modal-action-primary-text-light: #ffffff;--facet-toolkit-modal-action-secondary-bg-light: transparent;--facet-toolkit-modal-action-secondary-text-light: #1c2b46;--facet-toolkit-modal-action-warn-bg-light: #f44336;--facet-toolkit-modal-action-warn-text-light: #ffffff;--facet-toolkit-modal-action-border-light: rgba(28, 43, 70, .2);--facet-toolkit-modal-input-focus-outline-light: #3f51b5;--facet-toolkit-modal-input-focus-label-light: #3f51b5;--facet-toolkit-modal-input-caret-light: #3f51b5;--facet-toolkit-chip-selected-bg-light: rgba(63, 81, 181, .12);--facet-toolkit-chip-selected-text-light: #1c2b46;--facet-toolkit-input-bg-dark: rgba(148, 163, 184, .12);--facet-toolkit-input-shadow-dark: 0 0 0 1px rgba(148, 163, 184, .4);--facet-toolkit-input-hover-bg-dark: rgba(148, 163, 184, .18);--facet-toolkit-input-hover-shadow-dark: 0 0 0 1px rgba(226, 232, 240, .45);--facet-toolkit-input-focus-shadow-dark: 0 0 0 2px rgba(125, 166, 255, .35);--facet-toolkit-input-text-dark: #e2e8f0;--facet-toolkit-input-placeholder-dark: #e2e8f0;--facet-toolkit-add-icon-dark: #e2e8f0;--facet-toolkit-preset-trigger-dark: #e2e8f0;--facet-toolkit-count-divider-dark: linear-gradient(180deg, rgba(226, 232, 240, .1), rgba(226, 232, 240, .7), rgba(226, 232, 240, .1));--facet-toolkit-count-bg-dark: rgba(226, 232, 240, .16);--facet-toolkit-count-text-dark: #e2e8f0;--facet-toolkit-scrollbar-thumb-dark: rgba(148, 163, 184, .45);--facet-toolkit-preset-row-bg-dark: rgba(148, 163, 184, .12);--facet-toolkit-modal-surface-dark: #1f2937;--facet-toolkit-modal-text-dark: #e2e8f0;--facet-toolkit-modal-header-bg-dark: #111827;--facet-toolkit-modal-header-text-dark: #e2e8f0;--facet-toolkit-menu-surface-dark: #111827;--facet-toolkit-menu-text-dark: #e2e8f0;--facet-toolkit-menu-hover-bg-dark: rgba(148, 163, 184, .18);--facet-toolkit-clear-button-bg-dark: #f43f5e;--facet-toolkit-clear-button-text-dark: #111827;--facet-toolkit-modal-action-primary-bg-dark: #1f2937;--facet-toolkit-modal-action-primary-text-dark: #e2e8f0;--facet-toolkit-modal-action-secondary-bg-dark: transparent;--facet-toolkit-modal-action-secondary-text-dark: #e2e8f0;--facet-toolkit-modal-action-warn-bg-dark: #f97316;--facet-toolkit-modal-action-warn-text-dark: #111827;--facet-toolkit-modal-action-border-dark: rgba(226, 232, 240, .25);--facet-toolkit-modal-input-focus-outline-dark: #93c5fd;--facet-toolkit-modal-input-focus-label-dark: #93c5fd;--facet-toolkit-modal-input-caret-dark: #93c5fd;--facet-toolkit-chip-selected-bg-dark: rgba(148, 163, 184, .2);--facet-toolkit-chip-selected-text-dark: #e2e8f0;--facet-toolkit-input-bg: var(--facet-toolkit-input-bg-light);--facet-toolkit-input-shadow: var(--facet-toolkit-input-shadow-light);--facet-toolkit-input-hover-bg: var(--facet-toolkit-input-hover-bg-light);--facet-toolkit-input-hover-shadow: var(--facet-toolkit-input-hover-shadow-light);--facet-toolkit-input-focus-shadow: var(--facet-toolkit-input-focus-shadow-light);--facet-toolkit-input-text: var(--facet-toolkit-input-text-light);--facet-toolkit-input-placeholder: var(--facet-toolkit-input-placeholder-light);--facet-toolkit-add-icon: var(--facet-toolkit-add-icon-light);--facet-toolkit-preset-trigger: var(--facet-toolkit-preset-trigger-light);--facet-toolkit-count-divider: var(--facet-toolkit-count-divider-light);--facet-toolkit-count-bg: var(--facet-toolkit-count-bg-light);--facet-toolkit-count-text: var(--facet-toolkit-count-text-light);--facet-toolkit-scrollbar-thumb: var(--facet-toolkit-scrollbar-thumb-light);--facet-toolkit-preset-row-bg: var(--facet-toolkit-preset-row-bg-light);--facet-toolkit-modal-surface: var(--facet-toolkit-modal-surface-light);--facet-toolkit-modal-text: var(--facet-toolkit-modal-text-light);--facet-toolkit-modal-header-bg: var(--facet-toolkit-modal-header-bg-light);--facet-toolkit-modal-header-text: var(--facet-toolkit-modal-header-text-light);--facet-toolkit-menu-surface: var(--facet-toolkit-menu-surface-light);--facet-toolkit-menu-text: var(--facet-toolkit-menu-text-light);--facet-toolkit-menu-hover-bg: var(--facet-toolkit-menu-hover-bg-light);--facet-toolkit-clear-button-bg: var(--facet-toolkit-clear-button-bg-light);--facet-toolkit-clear-button-text: var(--facet-toolkit-clear-button-text-light);--facet-toolkit-modal-action-primary-bg: var(--facet-toolkit-modal-action-primary-bg-light);--facet-toolkit-modal-action-primary-text: var(--facet-toolkit-modal-action-primary-text-light);--facet-toolkit-modal-action-secondary-bg: var(--facet-toolkit-modal-action-secondary-bg-light);--facet-toolkit-modal-action-secondary-text: var(--facet-toolkit-modal-action-secondary-text-light);--facet-toolkit-modal-action-warn-bg: var(--facet-toolkit-modal-action-warn-bg-light);--facet-toolkit-modal-action-warn-text: var(--facet-toolkit-modal-action-warn-text-light);--facet-toolkit-modal-action-border: var(--facet-toolkit-modal-action-border-light);--facet-toolkit-modal-input-focus-outline: var(--facet-toolkit-modal-input-focus-outline-light);--facet-toolkit-modal-input-focus-label: var(--facet-toolkit-modal-input-focus-label-light);--facet-toolkit-modal-input-caret: var(--facet-toolkit-modal-input-caret-light);--facet-toolkit-chip-selected-bg: var(--facet-toolkit-chip-selected-bg-light);--facet-toolkit-chip-selected-text: var(--facet-toolkit-chip-selected-text-light)}.dark-theme[_nghost-%COMP%], .dark-theme   [_nghost-%COMP%]{--facet-toolkit-input-bg: var(--facet-toolkit-input-bg-dark);--facet-toolkit-input-shadow: var(--facet-toolkit-input-shadow-dark);--facet-toolkit-input-hover-bg: var(--facet-toolkit-input-hover-bg-dark);--facet-toolkit-input-hover-shadow: var(--facet-toolkit-input-hover-shadow-dark);--facet-toolkit-input-focus-shadow: var(--facet-toolkit-input-focus-shadow-dark);--facet-toolkit-input-text: var(--facet-toolkit-input-text-dark);--facet-toolkit-input-placeholder: var(--facet-toolkit-input-placeholder-dark);--facet-toolkit-add-icon: var(--facet-toolkit-add-icon-dark);--facet-toolkit-preset-trigger: var(--facet-toolkit-preset-trigger-dark);--facet-toolkit-count-divider: var(--facet-toolkit-count-divider-dark);--facet-toolkit-count-bg: var(--facet-toolkit-count-bg-dark);--facet-toolkit-count-text: var(--facet-toolkit-count-text-dark);--facet-toolkit-scrollbar-thumb: var(--facet-toolkit-scrollbar-thumb-dark);--facet-toolkit-preset-row-bg: var(--facet-toolkit-preset-row-bg-dark);--facet-toolkit-modal-surface: var(--facet-toolkit-modal-surface-dark);--facet-toolkit-modal-text: var(--facet-toolkit-modal-text-dark);--facet-toolkit-modal-header-bg: var(--facet-toolkit-modal-header-bg-dark);--facet-toolkit-modal-header-text: var(--facet-toolkit-modal-header-text-dark);--facet-toolkit-menu-surface: var(--facet-toolkit-menu-surface-dark);--facet-toolkit-menu-text: var(--facet-toolkit-menu-text-dark);--facet-toolkit-menu-hover-bg: var(--facet-toolkit-menu-hover-bg-dark);--facet-toolkit-clear-button-bg: var(--facet-toolkit-clear-button-bg-dark);--facet-toolkit-clear-button-text: var(--facet-toolkit-clear-button-text-dark);--facet-toolkit-modal-action-primary-bg: var(--facet-toolkit-modal-action-primary-bg-dark);--facet-toolkit-modal-action-primary-text: var(--facet-toolkit-modal-action-primary-text-dark);--facet-toolkit-modal-action-secondary-bg: var(--facet-toolkit-modal-action-secondary-bg-dark);--facet-toolkit-modal-action-secondary-text: var(--facet-toolkit-modal-action-secondary-text-dark);--facet-toolkit-modal-action-warn-bg: var(--facet-toolkit-modal-action-warn-bg-dark);--facet-toolkit-modal-action-warn-text: var(--facet-toolkit-modal-action-warn-text-dark);--facet-toolkit-modal-action-border: var(--facet-toolkit-modal-action-border-dark);--facet-toolkit-modal-input-focus-outline: var(--facet-toolkit-modal-input-focus-outline-dark);--facet-toolkit-modal-input-focus-label: var(--facet-toolkit-modal-input-focus-label-dark);--facet-toolkit-modal-input-caret: var(--facet-toolkit-modal-input-caret-dark);--facet-toolkit-chip-selected-bg: var(--facet-toolkit-chip-selected-bg-dark);--facet-toolkit-chip-selected-text: var(--facet-toolkit-chip-selected-text-dark)}.facet-theme-light[_nghost-%COMP%]{--facet-toolkit-input-bg: var(--facet-toolkit-input-bg-light);--facet-toolkit-input-shadow: var(--facet-toolkit-input-shadow-light);--facet-toolkit-input-hover-bg: var(--facet-toolkit-input-hover-bg-light);--facet-toolkit-input-hover-shadow: var(--facet-toolkit-input-hover-shadow-light);--facet-toolkit-input-focus-shadow: var(--facet-toolkit-input-focus-shadow-light);--facet-toolkit-input-text: var(--facet-toolkit-input-text-light);--facet-toolkit-input-placeholder: var(--facet-toolkit-input-placeholder-light);--facet-toolkit-add-icon: var(--facet-toolkit-add-icon-light);--facet-toolkit-preset-trigger: var(--facet-toolkit-preset-trigger-light);--facet-toolkit-count-divider: var(--facet-toolkit-count-divider-light);--facet-toolkit-count-bg: var(--facet-toolkit-count-bg-light);--facet-toolkit-count-text: var(--facet-toolkit-count-text-light);--facet-toolkit-scrollbar-thumb: var(--facet-toolkit-scrollbar-thumb-light);--facet-toolkit-preset-row-bg: var(--facet-toolkit-preset-row-bg-light);--facet-toolkit-modal-surface: var(--facet-toolkit-modal-surface-light);--facet-toolkit-modal-text: var(--facet-toolkit-modal-text-light);--facet-toolkit-modal-header-bg: var(--facet-toolkit-modal-header-bg-light);--facet-toolkit-modal-header-text: var(--facet-toolkit-modal-header-text-light);--facet-toolkit-menu-surface: var(--facet-toolkit-menu-surface-light);--facet-toolkit-menu-text: var(--facet-toolkit-menu-text-light);--facet-toolkit-menu-hover-bg: var(--facet-toolkit-menu-hover-bg-light);--facet-toolkit-clear-button-bg: var(--facet-toolkit-clear-button-bg-light);--facet-toolkit-clear-button-text: var(--facet-toolkit-clear-button-text-light);--facet-toolkit-modal-action-primary-bg: var(--facet-toolkit-modal-action-primary-bg-light);--facet-toolkit-modal-action-primary-text: var(--facet-toolkit-modal-action-primary-text-light);--facet-toolkit-modal-action-secondary-bg: var(--facet-toolkit-modal-action-secondary-bg-light);--facet-toolkit-modal-action-secondary-text: var(--facet-toolkit-modal-action-secondary-text-light);--facet-toolkit-modal-action-warn-bg: var(--facet-toolkit-modal-action-warn-bg-light);--facet-toolkit-modal-action-warn-text: var(--facet-toolkit-modal-action-warn-text-light);--facet-toolkit-modal-action-border: var(--facet-toolkit-modal-action-border-light);--facet-toolkit-modal-input-focus-outline: var(--facet-toolkit-modal-input-focus-outline-light);--facet-toolkit-modal-input-focus-label: var(--facet-toolkit-modal-input-focus-label-light);--facet-toolkit-modal-input-caret: var(--facet-toolkit-modal-input-caret-light);--facet-toolkit-chip-selected-bg: var(--facet-toolkit-chip-selected-bg-light);--facet-toolkit-chip-selected-text: var(--facet-toolkit-chip-selected-text-light)}.facet-theme-dark[_nghost-%COMP%]{--facet-toolkit-input-bg: var(--facet-toolkit-input-bg-dark);--facet-toolkit-input-shadow: var(--facet-toolkit-input-shadow-dark);--facet-toolkit-input-hover-bg: var(--facet-toolkit-input-hover-bg-dark);--facet-toolkit-input-hover-shadow: var(--facet-toolkit-input-hover-shadow-dark);--facet-toolkit-input-focus-shadow: var(--facet-toolkit-input-focus-shadow-dark);--facet-toolkit-input-text: var(--facet-toolkit-input-text-dark);--facet-toolkit-input-placeholder: var(--facet-toolkit-input-placeholder-dark);--facet-toolkit-add-icon: var(--facet-toolkit-add-icon-dark);--facet-toolkit-preset-trigger: var(--facet-toolkit-preset-trigger-dark);--facet-toolkit-count-divider: var(--facet-toolkit-count-divider-dark);--facet-toolkit-count-bg: var(--facet-toolkit-count-bg-dark);--facet-toolkit-count-text: var(--facet-toolkit-count-text-dark);--facet-toolkit-scrollbar-thumb: var(--facet-toolkit-scrollbar-thumb-dark);--facet-toolkit-preset-row-bg: var(--facet-toolkit-preset-row-bg-dark);--facet-toolkit-modal-surface: var(--facet-toolkit-modal-surface-dark);--facet-toolkit-modal-text: var(--facet-toolkit-modal-text-dark);--facet-toolkit-modal-header-bg: var(--facet-toolkit-modal-header-bg-dark);--facet-toolkit-modal-header-text: var(--facet-toolkit-modal-header-text-dark);--facet-toolkit-menu-surface: var(--facet-toolkit-menu-surface-dark);--facet-toolkit-menu-text: var(--facet-toolkit-menu-text-dark);--facet-toolkit-menu-hover-bg: var(--facet-toolkit-menu-hover-bg-dark);--facet-toolkit-clear-button-bg: var(--facet-toolkit-clear-button-bg-dark);--facet-toolkit-clear-button-text: var(--facet-toolkit-clear-button-text-dark);--facet-toolkit-modal-action-primary-bg: var(--facet-toolkit-modal-action-primary-bg-dark);--facet-toolkit-modal-action-primary-text: var(--facet-toolkit-modal-action-primary-text-dark);--facet-toolkit-modal-action-secondary-bg: var(--facet-toolkit-modal-action-secondary-bg-dark);--facet-toolkit-modal-action-secondary-text: var(--facet-toolkit-modal-action-secondary-text-dark);--facet-toolkit-modal-action-warn-bg: var(--facet-toolkit-modal-action-warn-bg-dark);--facet-toolkit-modal-action-warn-text: var(--facet-toolkit-modal-action-warn-text-dark);--facet-toolkit-modal-action-border: var(--facet-toolkit-modal-action-border-dark);--facet-toolkit-modal-input-focus-outline: var(--facet-toolkit-modal-input-focus-outline-dark);--facet-toolkit-modal-input-focus-label: var(--facet-toolkit-modal-input-focus-label-dark);--facet-toolkit-modal-input-caret: var(--facet-toolkit-modal-input-caret-dark);--facet-toolkit-chip-selected-bg: var(--facet-toolkit-chip-selected-bg-dark);--facet-toolkit-chip-selected-text: var(--facet-toolkit-chip-selected-text-dark)}  .facet-theme-panel .mat-mdc-menu-panel,   .facet-theme-panel .mat-mdc-autocomplete-panel{background:var(--facet-toolkit-menu-surface, var(--mat-menu-container-color, #ffffff));color:var(--facet-toolkit-menu-text, var(--mat-menu-item-label-text-color, #1c2b46))}  .facet-theme-panel .mat-mdc-menu-item,   .facet-theme-panel .mat-mdc-option{color:var(--facet-toolkit-menu-text, var(--mat-menu-item-label-text-color, #1c2b46))}  .facet-theme-panel .mat-mdc-menu-item:hover,   .facet-theme-panel .mat-mdc-option:hover,   .facet-theme-panel .mat-mdc-option.mdc-list-item--selected{background:var(--facet-toolkit-menu-hover-bg, var(--mat-menu-item-hover-state-layer-color, rgba(0, 0, 0, .04)))}*[_ngcontent-%COMP%]{outline:0}.filter-input-container[_ngcontent-%COMP%]{background-color:transparent!important;opacity:1!important;box-shadow:none!important;background-color:var(--facet-toolkit-input-bg)!important;box-shadow:var(--facet-toolkit-input-shadow)!important;color:var(--facet-toolkit-input-text);transition:box-shadow .12s ease,background-color .12s ease;height:28px;display:inline-flex;align-items:center;gap:2px;flex:0 0 auto;padding:0 4px;margin-bottom:10px;border-radius:999px}.filter-input-container[_ngcontent-%COMP%]   .filter-input[_ngcontent-%COMP%]{border:none!important;background:none!important;width:56px;font-size:14px!important;font-weight:400;height:28px;line-height:28px;padding:0;text-align:left;color:inherit;position:relative;top:0;margin-left:2px;vertical-align:middle}.filter-input[_ngcontent-%COMP%]::placeholder{color:var(--facet-toolkit-input-placeholder);opacity:.9}.inline-chip-icon[_ngcontent-%COMP%]{width:18px;height:18px;font-size:18px;margin-right:7px;margin-left:0}[_nghost-%COMP%]   .mat-checkbox-inner-container[_ngcontent-%COMP%]{transform:scale(.7)}.inlineChipCheckbox[_nghost-%COMP%]   label.mat-checkbox-layout[_ngcontent-%COMP%]   div.mat-checkbox-inner-container[_ngcontent-%COMP%], .inlineChipCheckbox   [_nghost-%COMP%]   label.mat-checkbox-layout[_ngcontent-%COMP%]   div.mat-checkbox-inner-container[_ngcontent-%COMP%]{transform:scale(.7)}.add-icon[_ngcontent-%COMP%]{margin-top:0;color:var(--facet-toolkit-add-icon)}.add-icon[_ngcontent-%COMP%]:hover, .filter-input-container[_ngcontent-%COMP%]:hover{cursor:pointer}.filter-input-container[_ngcontent-%COMP%]:hover{background-color:var(--facet-toolkit-input-hover-bg)!important;box-shadow:var(--facet-toolkit-input-hover-shadow)!important}.filter-input-container[_ngcontent-%COMP%]:focus-within{box-shadow:var(--facet-toolkit-input-focus-shadow)!important}.filter-count-divider[_ngcontent-%COMP%]{display:inline-block;width:1px;height:18px;margin:0 3px;background:var(--facet-toolkit-count-divider);align-self:center}.filter-count[_ngcontent-%COMP%]{font-size:11px;font-weight:700;line-height:16px;padding:2px 6px;border-radius:999px;background:var(--facet-toolkit-count-bg);color:var(--facet-toolkit-count-text);letter-spacing:.02em;align-self:center}.facet-clear-button[_ngcontent-%COMP%]{background:var(--facet-toolkit-clear-button-bg, var(--mdc-filled-button-container-color))!important;color:var(--facet-toolkit-clear-button-text, var(--mdc-filled-button-label-text-color))!important}  .facet-chip.mat-mdc-chip-selected{background:var(--facet-toolkit-chip-selected-bg)!important;color:var(--facet-toolkit-chip-selected-text)!important}.main-facet-wrapper[_ngcontent-%COMP%]{min-height:36px;display:flex;align-items:center}.main-facet-wrapper[_ngcontent-%COMP%]   .icon-wrapper[_ngcontent-%COMP%]{height:100%;display:flex;justify-content:center;align-items:center;margin-right:20px}.preset-menu-trigger[_ngcontent-%COMP%]{margin-bottom:10px;color:var(--facet-toolkit-preset-trigger)}  .mat-autocomplete-panel.mat-autocomplete-visible{left:-40px!important;top:15px!important}  .mat-chip-list-wrapper{display:flex;flex-wrap:wrap;align-items:center;gap:8px;transition:width .3s ease-in-out}.facet-chip[_ngcontent-%COMP%]{order:1}.content-wrapper[_ngcontent-%COMP%]{flex:1;min-width:0}.chip-row[_ngcontent-%COMP%]{display:flex;align-items:center;gap:8px;min-width:0}.chip-scroll-container[_ngcontent-%COMP%]{display:flex;align-items:center;overflow-x:auto;overflow-y:hidden;height:40px;margin-bottom:10px;width:100%;flex:1 1 auto;min-width:0;white-space:nowrap;scrollbar-width:thin}.chip-scroll-container.has-scroll[_ngcontent-%COMP%]{margin-bottom:0}.content-wrapper.chip-scrollable[_ngcontent-%COMP%]     .mat-chip-list-wrapper{display:inline-flex!important;flex-wrap:nowrap!important;width:max-content;white-space:nowrap}.content-wrapper.chip-scrollable[_ngcontent-%COMP%]     .mat-chip-list-wrapper::-webkit-scrollbar, .chip-scroll-container[_ngcontent-%COMP%]::-webkit-scrollbar{height:6px}.content-wrapper.chip-scrollable[_ngcontent-%COMP%]     .mat-chip-list-wrapper::-webkit-scrollbar-thumb, .chip-scroll-container[_ngcontent-%COMP%]::-webkit-scrollbar-thumb{background-color:var(--facet-toolkit-scrollbar-thumb);border-radius:999px}.content-wrapper.chip-scrollable[_ngcontent-%COMP%]     .mat-chip-list-wrapper::-webkit-scrollbar-track, .chip-scroll-container[_ngcontent-%COMP%]::-webkit-scrollbar-track{background:transparent}.content-wrapper.chip-scrollable[_ngcontent-%COMP%]     .mat-chip-option, .content-wrapper.chip-scrollable[_ngcontent-%COMP%]     .mat-chip-row{flex:0 0 auto}.content-wrapper.chip-scrollable[_ngcontent-%COMP%]     .mat-chip-grid{display:inline-flex!important;flex-wrap:nowrap;align-items:center;width:max-content}.content-wrapper.chip-scrollable[_ngcontent-%COMP%]     .mat-mdc-chip-set, .content-wrapper.chip-scrollable[_ngcontent-%COMP%]     .mdc-evolution-chip-set__chips{display:inline-flex!important;flex-wrap:nowrap!important;width:max-content;white-space:nowrap}.content-wrapper.chip-scrollable[_ngcontent-%COMP%]     .mat-chip-list-wrapper{align-items:center;display:inline-flex!important;flex-wrap:nowrap!important}.content-wrapper.chip-scrollable[_ngcontent-%COMP%]     .mat-chip-row, .content-wrapper.chip-scrollable[_ngcontent-%COMP%]     .mat-chip-option{max-height:28px;white-space:nowrap}.content-wrapper.chip-scrollable[_ngcontent-%COMP%]     .mat-chip-option{white-space:nowrap}.flex-facet[_ngcontent-%COMP%]{display:flex;align-items:center}.flex-facet-autocomplete[_ngcontent-%COMP%]{display:inline-flex;align-items:center;justify-content:center;height:28px}"],
     data: {
       animation: [chipAnimation]
     }
@@ -4054,20 +5001,32 @@ class NgxMatFacetToolkitComponent {
     args: [{
       selector: 'ngx-mat-facet-toolkit',
       standalone: true,
-      imports: [_angular_cdk_a11y__WEBPACK_IMPORTED_MODULE_36__.A, _angular_common__WEBPACK_IMPORTED_MODULE_7__.CommonModule, _angular_forms__WEBPACK_IMPORTED_MODULE_8__.FormsModule, _angular_forms__WEBPACK_IMPORTED_MODULE_8__.ReactiveFormsModule, _angular_material_icon__WEBPACK_IMPORTED_MODULE_10__.MatIconModule, _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_9__.MatToolbarModule, _angular_material_progress_bar__WEBPACK_IMPORTED_MODULE_37__.MatProgressBarModule, _angular_material_list__WEBPACK_IMPORTED_MODULE_16__.MatListModule, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_17__.M, _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_20__.MatDatepickerModule, _angular_material_divider__WEBPACK_IMPORTED_MODULE_15__.MatDividerModule, _angular_material_core__WEBPACK_IMPORTED_MODULE_25__.M, _angular_material_select__WEBPACK_IMPORTED_MODULE_23__.M, _angular_material_button__WEBPACK_IMPORTED_MODULE_11__.MatButtonModule, _angular_material_checkbox__WEBPACK_IMPORTED_MODULE_22__.MatCheckboxModule, _angular_material_input__WEBPACK_IMPORTED_MODULE_19__.MatInputModule, _angular_material_chips__WEBPACK_IMPORTED_MODULE_38__.MatChipsModule, _angular_material_tooltip__WEBPACK_IMPORTED_MODULE_13__.h, _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_35__.MatAutocompleteModule, _angular_material_core__WEBPACK_IMPORTED_MODULE_21__.MatNativeDateModule, _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_14__.MatProgressSpinnerModule, _angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_28__.m, _angular_cdk_portal__WEBPACK_IMPORTED_MODULE_27__.h, _angular_material_menu__WEBPACK_IMPORTED_MODULE_29__.MatMenuModule, CSVPipe, FilterPipe, KeysPipe, FocusOnShowDirective],
+      imports: [_angular_cdk_a11y__WEBPACK_IMPORTED_MODULE_37__.A, _angular_common__WEBPACK_IMPORTED_MODULE_7__.CommonModule, _angular_forms__WEBPACK_IMPORTED_MODULE_8__.FormsModule, _angular_forms__WEBPACK_IMPORTED_MODULE_8__.ReactiveFormsModule, _angular_material_icon__WEBPACK_IMPORTED_MODULE_10__.MatIconModule, _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_9__.MatToolbarModule, _angular_material_progress_bar__WEBPACK_IMPORTED_MODULE_38__.MatProgressBarModule, _angular_material_list__WEBPACK_IMPORTED_MODULE_16__.MatListModule, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_17__.M, _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_20__.MatDatepickerModule, _angular_material_divider__WEBPACK_IMPORTED_MODULE_15__.MatDividerModule, _angular_material_core__WEBPACK_IMPORTED_MODULE_25__.M, _angular_material_select__WEBPACK_IMPORTED_MODULE_23__.M, _angular_material_button__WEBPACK_IMPORTED_MODULE_11__.MatButtonModule, _angular_material_checkbox__WEBPACK_IMPORTED_MODULE_22__.MatCheckboxModule, _angular_material_input__WEBPACK_IMPORTED_MODULE_19__.MatInputModule, _angular_material_chips__WEBPACK_IMPORTED_MODULE_39__.MatChipsModule, _angular_material_tooltip__WEBPACK_IMPORTED_MODULE_13__.h, _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_36__.MatAutocompleteModule, _angular_material_core__WEBPACK_IMPORTED_MODULE_21__.MatNativeDateModule, _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_14__.MatProgressSpinnerModule, _angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_28__.m, _angular_cdk_portal__WEBPACK_IMPORTED_MODULE_27__.h, _angular_material_menu__WEBPACK_IMPORTED_MODULE_29__.MatMenuModule, CSVPipe, FilterPipe, KeysPipe, FocusOnShowDirective],
       animations: [chipAnimation],
-      template: "<div class=\"main-facet-wrapper\">\n\n  @if (displayFilterIcon()) {\n    <div class=\"icon-wrapper\">\n      <button #presetMenuButton mat-icon-button [matMenuTriggerFor]=\"presetMenu\"\n              class=\"preset-menu-trigger\"\n              (mousedown)=\"clickStarted()\" (mouseup)=\"clickEnded()\" (mouseleave)=\"clickEnded()\"\n              [matTooltip]=\"tooltip() !== null ? tooltip() : ''\"\n              [matTooltipDisabled]=\"tooltip() === null\">\n        <mat-icon>bookmark</mat-icon>\n      </button>\n      <mat-menu #presetMenu=\"matMenu\" class=\"preset-menu\">\n        <button mat-menu-item (click)=\"promptSavePreset()\" [disabled]=\"selectedFacets().length === 0\">\n          <mat-icon>bookmark_add</mat-icon>\n          <span>Save current filters</span>\n        </button>\n        <button mat-menu-item (click)=\"openPresetManager()\">\n          <mat-icon>tune</mat-icon>\n          <span>Manage presets</span>\n        </button>\n        <mat-divider></mat-divider>\n        @if (presetsForMenu().length > 0) {\n          @for (preset of presetsForMenu(); track preset.id) {\n            <button mat-menu-item (click)=\"applyPreset(preset)\">\n              <mat-icon>bookmark</mat-icon>\n              <span>{{preset.name}}</span>\n            </button>\n          }\n        } @else {\n          <button mat-menu-item disabled>\n            <mat-icon>bookmark_border</mat-icon>\n            <span>No presets yet</span>\n          </button>\n        }\n      </mat-menu>\n    </div>\n  }\n\n  <div class=\"content-wrapper\" [class.chip-scrollable]=\"chipRowScrollableEnabled()\">\n    <div class=\"chip-row\">\n      <div class=\"filter-input-container\">\n        <span class=\"flex-facet-autocomplete\">\n\n          <mat-icon class=\"add-icon\" (click)=\"focus($event)\">add</mat-icon>\n\n          <input #filterInput [matChipInputFor]=\"chipList\" class=\"filter-input\" [placeholder]=\"placeholder()\"\n                 [matChipInputAddOnBlur]=\"false\" [matAutocomplete]=\"auto\"\n                 (keydown.backspace)=\"$event.stopPropagation()\"\n                 (keydown.delete)=\"$event.stopPropagation()\">\n\n          @if (showFilterCountEnabled()) {\n            <span class=\"filter-count-divider\" aria-hidden=\"true\"></span>\n            <span class=\"filter-count\">{{activeFilterCount()}}</span>\n          }\n\n          <mat-autocomplete #auto=\"matAutocomplete\" class=\"mat-facet-autocomplete\" (optionSelected)=\"autoCompleteSelected($event)\"\n                            [displayWith]=\"autoCompleteDisplay\" panelWidth=\"250px\">\n            @for (facet of filteredFacets(); track facet.id) {\n              <mat-option [value]=\"facet\">\n                @if (facet.icon) {\n                  <mat-icon>{{facet.icon}}</mat-icon>\n                }\n                <span>{{ facet.label }}</span>\n              </mat-option>\n            }\n          </mat-autocomplete>\n\n        </span>\n      </div>\n\n      <div class=\"chip-scroll-container\" #chipScrollContainer [class.has-scroll]=\"chipRowHasOverflow()\">\n        <mat-chip-grid #chipList>\n          @for (facet of selectedFacetViews(); track facet.id) {\n            <mat-chip-option @chipAnimation [color]=\"facet.readonly ? 'accent' : undefined\"\n                             class=\"facet-chip\"\n                             (selectionChange)=\"chipSelected($event, facet)\" (click)=\"selectedFacetId.set(facet.id)\"\n                             [selected]=\"facet.id === selectedFacetId()\"\n                             matTooltip=\"{{facet.label + (facet.description ? ': ' + facet.description : '')}}\"\n                             matTooltipShowDelay=\"1000\">\n              <span class=\"flex-facet\">\n\n                @if (facet.icon) {\n                  <mat-icon class=\"inline-chip-icon\">{{facet.icon}}</mat-icon>\n                }\n\n                @if (chipLabelsEnabled()) {\n                  <span>{{ facet.label + ': &nbsp;'}}</span>\n                }\n\n                @switch (facet.type) {\n                  @case (FacetDataType.Category) {\n                    {{facet.values | csv:'label':' / '}}\n                  }\n                  @case (FacetDataType.CategorySingle) {\n                    {{facet.values | csv:'label':' / '}}\n                  }\n                  @case (FacetDataType.Typeahead) {\n                    {{facet.values | csv:'label':' / '}}\n                  }\n                  @case (FacetDataType.TypeaheadSingle) {\n                    {{facet.values | csv:'label':' / '}}\n                  }\n                  @case (FacetDataType.Date) {\n                    \u201C{{getDateValue(facet) | date:dateFormat()}}\u201D\n                  }\n                  @case (FacetDataType.DateRange) {\n                    \u201C{{getDateValue(facet) | date:dateFormat()}}\u201D ~ \u201C{{getDateValue(facet, 1) | date:dateFormat()}}\u201D\n                  }\n                  @case (FacetDataType.Boolean) {\n                    <mat-checkbox [disabled]=\"true\" class=\"inline-chip-checkbox\" [ngModel]=\"getRawValue(facet)\" (ngModelChange)=\"setValue(facet, $event)\">\n                      {{facet.label}}\n                    </mat-checkbox>\n                  }\n                  @case (FacetDataType.Text) {\n                    @switch (facet.filterType) {\n                      @case (FacetFilterType.contains) {\n                        \u201C..{{getRawValue(facet)}}..\u201D\n                      }\n                      @case (FacetFilterType.equal) {\n                        \u201C{{getRawValue(facet)}}\u201D\n                      }\n                      @case (FacetFilterType.startsWith) {\n                        \u201C{{getRawValue(facet)}}...\u201D\n                      }\n                      @case (FacetFilterType.endsWith) {\n                        \u201C...{{getRawValue(facet)}}\u201D\n                      }\n                    }\n                  }\n                  @case (FacetDataType.Numeric) {\n                    @switch (facet.filterType) {\n                      @case (FacetFilterType.equal) {\n                        \u201C={{getRawValue(facet)}}\u201D\n                      }\n                      @case (FacetFilterType.greaterThan) {\n                        \u201C>{{getRawValue(facet)}}\u201D\n                      }\n                      @case (FacetFilterType.greaterThanOrEqual) {\n                        \u201C\u2265{{getRawValue(facet)}}\u201D\n                      }\n                      @case (FacetFilterType.lessThan) {\n                        \u201C<{{getRawValue(facet)}}\u201D\n                      }\n                      @case (FacetFilterType.lessThanOrEqual) {\n                        \u201C\u2264{{getRawValue(facet)}}\u201D\n                      }\n                      @case (FacetFilterType.between) {\n                        \u201C{{getRawValue(facet)}} - {{getRawValue(facet, 1)}}\u201D\n                      }\n                    }\n                  }\n                }\n\n                @if (!facet.readonly) {\n                  <mat-icon matChipRemove (click)=\"removeFacet(facet)\">cancel</mat-icon>\n                }\n\n              </span>\n\n            </mat-chip-option>\n          }\n        </mat-chip-grid>\n      </div>\n    </div>\n  </div>\n\n\n  @if (clearButtonEnabled() && selectedFacets().length > 0) {\n    <button mat-flat-button (click)=\"reset()\" color=\"accent\">\n      {{clearButtonText()}}\n    </button>\n  }\n\n</div>\n",
-      styles: ["*{outline:0}.filter-input-container{background-color:transparent!important;opacity:1!important;box-shadow:none!important;background-color:#2e489014!important;box-shadow:0 0 0 1px #2e489059!important;color:#1c2b46;transition:box-shadow .12s ease,background-color .12s ease;height:28px;display:inline-flex;align-items:center;gap:2px;flex:0 0 auto;padding:0 4px;margin-bottom:10px;border-radius:999px}.filter-input-container .filter-input{border:none!important;background:none!important;width:56px;font-size:14px!important;font-weight:400;height:28px;line-height:28px;padding:0;text-align:left;color:inherit;position:relative;top:0;margin-left:2px;vertical-align:middle}.filter-input::placeholder{color:#1c2b46;opacity:.9}.inline-chip-icon{width:18px;height:18px;font-size:18px;margin-right:7px;margin-left:0}:host-context .mat-checkbox-inner-container{transform:scale(.7)}:host-context(.inlineChipCheckbox) label.mat-checkbox-layout div.mat-checkbox-inner-container{transform:scale(.7)}.add-icon{margin-top:0;color:#1c2b46}.add-icon:hover,.filter-input-container:hover{cursor:pointer}.filter-input-container:hover{background-color:#2e48901f!important;box-shadow:0 0 0 1px #2e48908c!important}.filter-input-container:focus-within{box-shadow:0 0 0 2px #466ec859!important}.filter-count-divider{display:inline-block;width:1px;height:18px;margin:0 3px;background:linear-gradient(180deg,#2e48901a,#2e4890b3,#2e48901a);align-self:center}.filter-count{font-size:11px;font-weight:700;line-height:16px;padding:2px 6px;border-radius:999px;background:#2e489029;color:#1c2b46;letter-spacing:.02em;align-self:center}.main-facet-wrapper{min-height:36px;display:flex;align-items:center}.main-facet-wrapper .icon-wrapper{height:100%;display:flex;justify-content:center;align-items:center;margin-right:20px}.preset-menu-trigger{margin-bottom:10px;color:#1c2b46}:host-context(.dark-theme) .preset-menu-trigger{color:#e2e8f0}::ng-deep .mat-autocomplete-panel.mat-autocomplete-visible{left:-40px!important;top:15px!important}::ng-deep .mat-chip-list-wrapper{display:flex;flex-wrap:wrap;align-items:center;gap:8px;transition:width .3s ease-in-out}.facet-chip{order:1}:host-context(.dark-theme) .filter-input-container{background-color:#94a3b81f!important;box-shadow:0 0 0 1px #94a3b866!important;color:#e2e8f0}:host-context(.dark-theme) .filter-input-container:hover{background-color:#94a3b82e!important;box-shadow:0 0 0 1px #e2e8f073!important}:host-context(.dark-theme) .filter-input-container:focus-within{box-shadow:0 0 0 2px #7da6ff59!important}:host-context(.dark-theme) .filter-input::placeholder{color:#e2e8f0;opacity:.8}:host-context(.dark-theme) .add-icon{color:#e2e8f0}:host-context(.dark-theme) .filter-count-divider{background:linear-gradient(180deg,#e2e8f01a,#e2e8f0b3,#e2e8f01a)}:host-context(.dark-theme) .filter-count{color:#e2e8f0;background:#e2e8f029}.content-wrapper{flex:1;min-width:0}.chip-row{display:flex;align-items:center;gap:8px;min-width:0}.chip-scroll-container{display:flex;align-items:center;overflow-x:auto;overflow-y:hidden;height:40px;margin-bottom:10px;width:100%;flex:1 1 auto;min-width:0;white-space:nowrap;scrollbar-width:thin}.chip-scroll-container.has-scroll{margin-bottom:0}.content-wrapper.chip-scrollable ::ng-deep .mat-chip-list-wrapper{display:inline-flex!important;flex-wrap:nowrap!important;width:max-content;white-space:nowrap}.content-wrapper.chip-scrollable ::ng-deep .mat-chip-list-wrapper::-webkit-scrollbar,.chip-scroll-container::-webkit-scrollbar{height:6px}.content-wrapper.chip-scrollable ::ng-deep .mat-chip-list-wrapper::-webkit-scrollbar-thumb,.chip-scroll-container::-webkit-scrollbar-thumb{background-color:#2e489059;border-radius:999px}.content-wrapper.chip-scrollable ::ng-deep .mat-chip-list-wrapper::-webkit-scrollbar-track,.chip-scroll-container::-webkit-scrollbar-track{background:transparent}:host-context(.dark-theme) .content-wrapper.chip-scrollable ::ng-deep .mat-chip-list-wrapper::-webkit-scrollbar-thumb,:host-context(.dark-theme) .chip-scroll-container::-webkit-scrollbar-thumb{background-color:#94a3b873}.content-wrapper.chip-scrollable ::ng-deep .mat-chip-option,.content-wrapper.chip-scrollable ::ng-deep .mat-chip-row{flex:0 0 auto}.content-wrapper.chip-scrollable ::ng-deep .mat-chip-grid{display:inline-flex!important;flex-wrap:nowrap;align-items:center;width:max-content}.content-wrapper.chip-scrollable ::ng-deep .mat-mdc-chip-set,.content-wrapper.chip-scrollable ::ng-deep .mdc-evolution-chip-set__chips{display:inline-flex!important;flex-wrap:nowrap!important;width:max-content;white-space:nowrap}.content-wrapper.chip-scrollable ::ng-deep .mat-chip-list-wrapper{align-items:center;display:inline-flex!important;flex-wrap:nowrap!important}.content-wrapper.chip-scrollable ::ng-deep .mat-chip-row,.content-wrapper.chip-scrollable ::ng-deep .mat-chip-option{max-height:28px;white-space:nowrap}.content-wrapper.chip-scrollable ::ng-deep .mat-chip-option{white-space:nowrap}.flex-facet{display:flex;align-items:center}.flex-facet-autocomplete{display:inline-flex;align-items:center;justify-content:center;height:28px}\n"]
+      template: "<div class=\"main-facet-wrapper\">\n\n  @if (displayFilterIcon()) {\n    <div class=\"icon-wrapper\">\n      <button #presetMenuButton mat-icon-button [matMenuTriggerFor]=\"presetMenu\"\n              class=\"preset-menu-trigger\"\n              (mousedown)=\"clickStarted()\" (mouseup)=\"clickEnded()\" (mouseleave)=\"clickEnded()\"\n              [matTooltip]=\"tooltip() !== null ? tooltip() : ''\"\n              [matTooltipDisabled]=\"tooltip() === null\">\n        <mat-icon>bookmark</mat-icon>\n      </button>\n      <mat-menu #presetMenu=\"matMenu\" class=\"preset-menu\">\n        <button mat-menu-item (click)=\"promptSavePreset()\" [disabled]=\"selectedFacets().length === 0\">\n          <mat-icon>bookmark_add</mat-icon>\n          <span>Save current filters</span>\n        </button>\n        <button mat-menu-item (click)=\"openPresetManager()\">\n          <mat-icon>tune</mat-icon>\n          <span>Manage presets</span>\n        </button>\n        <mat-divider></mat-divider>\n        @if (presetsForMenu().length > 0) {\n          @for (preset of presetsForMenu(); track preset.id) {\n            <button mat-menu-item (click)=\"applyPreset(preset)\">\n              <mat-icon>bookmark</mat-icon>\n              <span>{{preset.name}}</span>\n            </button>\n          }\n        } @else {\n          <button mat-menu-item disabled>\n            <mat-icon>bookmark_border</mat-icon>\n            <span>No presets yet</span>\n          </button>\n        }\n      </mat-menu>\n    </div>\n  }\n\n  <div class=\"content-wrapper\" [class.chip-scrollable]=\"chipRowScrollableEnabled()\">\n    <div class=\"chip-row\">\n      <div class=\"filter-input-container\">\n        <span class=\"flex-facet-autocomplete\">\n\n          <mat-icon class=\"add-icon\" (click)=\"focus($event)\">add</mat-icon>\n\n          <input #filterInput [matChipInputFor]=\"chipList\" class=\"filter-input\" [placeholder]=\"placeholder()\"\n                 [matChipInputAddOnBlur]=\"false\" [matAutocomplete]=\"auto\"\n                 (keydown.backspace)=\"$event.stopPropagation()\"\n                 (keydown.delete)=\"$event.stopPropagation()\">\n\n          @if (showFilterCountEnabled()) {\n            <span class=\"filter-count-divider\" aria-hidden=\"true\"></span>\n            <span class=\"filter-count\">{{activeFilterCount()}}</span>\n          }\n\n          <mat-autocomplete #auto=\"matAutocomplete\" class=\"mat-facet-autocomplete\" (optionSelected)=\"autoCompleteSelected($event)\"\n                            [displayWith]=\"autoCompleteDisplay\" panelWidth=\"250px\">\n            @for (facet of filteredFacets(); track facet.id) {\n              <mat-option [value]=\"facet\">\n                @if (facet.icon) {\n                  <mat-icon>{{facet.icon}}</mat-icon>\n                }\n                <span>{{ facet.label }}</span>\n              </mat-option>\n            }\n          </mat-autocomplete>\n\n        </span>\n      </div>\n\n      <div class=\"chip-scroll-container\" #chipScrollContainer [class.has-scroll]=\"chipRowHasOverflow()\">\n        <mat-chip-grid #chipList>\n          @for (facet of selectedFacetViews(); track facet.id) {\n            <mat-chip-option @chipAnimation [color]=\"facet.readonly ? 'accent' : undefined\"\n                             class=\"facet-chip\"\n                             (selectionChange)=\"chipSelected($event, facet)\" (click)=\"selectedFacetId.set(facet.id)\"\n                             [selected]=\"facet.id === selectedFacetId()\"\n                             matTooltip=\"{{facet.label + (facet.description ? ': ' + facet.description : '')}}\"\n                             matTooltipShowDelay=\"1000\">\n              <span class=\"flex-facet\">\n\n                @if (facet.icon) {\n                  <mat-icon class=\"inline-chip-icon\">{{facet.icon}}</mat-icon>\n                }\n\n                @if (chipLabelsEnabled()) {\n                  <span>{{ facet.label + ': &nbsp;'}}</span>\n                }\n\n                @switch (facet.type) {\n                  @case (FacetDataType.Category) {\n                    {{facet.values | csv:'label':' / '}}\n                  }\n                  @case (FacetDataType.CategorySingle) {\n                    {{facet.values | csv:'label':' / '}}\n                  }\n                  @case (FacetDataType.Typeahead) {\n                    {{facet.values | csv:'label':' / '}}\n                  }\n                  @case (FacetDataType.TypeaheadSingle) {\n                    {{facet.values | csv:'label':' / '}}\n                  }\n                  @case (FacetDataType.Date) {\n                    \u201C{{getDateValue(facet) | date:dateFormat()}}\u201D\n                  }\n                  @case (FacetDataType.DateRange) {\n                    \u201C{{getDateValue(facet) | date:dateFormat()}}\u201D ~ \u201C{{getDateValue(facet, 1) | date:dateFormat()}}\u201D\n                  }\n                  @case (FacetDataType.Boolean) {\n                    <mat-checkbox [disabled]=\"true\" class=\"inline-chip-checkbox\" [ngModel]=\"getRawValue(facet)\" (ngModelChange)=\"setValue(facet, $event)\">\n                      {{facet.label}}\n                    </mat-checkbox>\n                  }\n                  @case (FacetDataType.Text) {\n                    @switch (facet.filterType) {\n                      @case (FacetFilterType.contains) {\n                        \u201C..{{getRawValue(facet)}}..\u201D\n                      }\n                      @case (FacetFilterType.equal) {\n                        \u201C{{getRawValue(facet)}}\u201D\n                      }\n                      @case (FacetFilterType.startsWith) {\n                        \u201C{{getRawValue(facet)}}...\u201D\n                      }\n                      @case (FacetFilterType.endsWith) {\n                        \u201C...{{getRawValue(facet)}}\u201D\n                      }\n                    }\n                  }\n                  @case (FacetDataType.Numeric) {\n                    @switch (facet.filterType) {\n                      @case (FacetFilterType.equal) {\n                        \u201C={{getRawValue(facet)}}\u201D\n                      }\n                      @case (FacetFilterType.greaterThan) {\n                        \u201C>{{getRawValue(facet)}}\u201D\n                      }\n                      @case (FacetFilterType.greaterThanOrEqual) {\n                        \u201C\u2265{{getRawValue(facet)}}\u201D\n                      }\n                      @case (FacetFilterType.lessThan) {\n                        \u201C<{{getRawValue(facet)}}\u201D\n                      }\n                      @case (FacetFilterType.lessThanOrEqual) {\n                        \u201C\u2264{{getRawValue(facet)}}\u201D\n                      }\n                      @case (FacetFilterType.between) {\n                        \u201C{{getRawValue(facet)}} - {{getRawValue(facet, 1)}}\u201D\n                      }\n                    }\n                  }\n                }\n\n                @if (!facet.readonly) {\n                  <mat-icon matChipRemove (click)=\"removeFacet(facet)\">cancel</mat-icon>\n                }\n\n              </span>\n\n            </mat-chip-option>\n          }\n        </mat-chip-grid>\n      </div>\n    </div>\n  </div>\n\n\n  @if (clearButtonEnabled() && selectedFacets().length > 0) {\n    <button mat-flat-button (click)=\"reset()\" color=\"accent\" class=\"facet-clear-button\">\n      {{clearButtonText()}}\n    </button>\n  }\n\n</div>\n",
+      styles: [":host{--facet-toolkit-input-bg-light: rgba(46, 72, 144, .08);--facet-toolkit-input-shadow-light: 0 0 0 1px rgba(46, 72, 144, .35);--facet-toolkit-input-hover-bg-light: rgba(46, 72, 144, .12);--facet-toolkit-input-hover-shadow-light: 0 0 0 1px rgba(46, 72, 144, .55);--facet-toolkit-input-focus-shadow-light: 0 0 0 2px rgba(70, 110, 200, .35);--facet-toolkit-input-text-light: #1c2b46;--facet-toolkit-input-placeholder-light: #1c2b46;--facet-toolkit-add-icon-light: #1c2b46;--facet-toolkit-preset-trigger-light: #1c2b46;--facet-toolkit-count-divider-light: linear-gradient(180deg, rgba(46, 72, 144, .1), rgba(46, 72, 144, .7), rgba(46, 72, 144, .1));--facet-toolkit-count-bg-light: rgba(46, 72, 144, .16);--facet-toolkit-count-text-light: #1c2b46;--facet-toolkit-scrollbar-thumb-light: rgba(46, 72, 144, .35);--facet-toolkit-preset-row-bg-light: rgba(46, 72, 144, .08);--facet-toolkit-modal-surface-light: #ffffff;--facet-toolkit-modal-text-light: #1c2b46;--facet-toolkit-modal-header-bg-light: #3f51b5;--facet-toolkit-modal-header-text-light: #ffffff;--facet-toolkit-menu-surface-light: #ffffff;--facet-toolkit-menu-text-light: #1c2b46;--facet-toolkit-menu-hover-bg-light: rgba(46, 72, 144, .08);--facet-toolkit-clear-button-bg-light: #e91e63;--facet-toolkit-clear-button-text-light: #ffffff;--facet-toolkit-modal-action-primary-bg-light: #3f51b5;--facet-toolkit-modal-action-primary-text-light: #ffffff;--facet-toolkit-modal-action-secondary-bg-light: transparent;--facet-toolkit-modal-action-secondary-text-light: #1c2b46;--facet-toolkit-modal-action-warn-bg-light: #f44336;--facet-toolkit-modal-action-warn-text-light: #ffffff;--facet-toolkit-modal-action-border-light: rgba(28, 43, 70, .2);--facet-toolkit-modal-input-focus-outline-light: #3f51b5;--facet-toolkit-modal-input-focus-label-light: #3f51b5;--facet-toolkit-modal-input-caret-light: #3f51b5;--facet-toolkit-chip-selected-bg-light: rgba(63, 81, 181, .12);--facet-toolkit-chip-selected-text-light: #1c2b46;--facet-toolkit-input-bg-dark: rgba(148, 163, 184, .12);--facet-toolkit-input-shadow-dark: 0 0 0 1px rgba(148, 163, 184, .4);--facet-toolkit-input-hover-bg-dark: rgba(148, 163, 184, .18);--facet-toolkit-input-hover-shadow-dark: 0 0 0 1px rgba(226, 232, 240, .45);--facet-toolkit-input-focus-shadow-dark: 0 0 0 2px rgba(125, 166, 255, .35);--facet-toolkit-input-text-dark: #e2e8f0;--facet-toolkit-input-placeholder-dark: #e2e8f0;--facet-toolkit-add-icon-dark: #e2e8f0;--facet-toolkit-preset-trigger-dark: #e2e8f0;--facet-toolkit-count-divider-dark: linear-gradient(180deg, rgba(226, 232, 240, .1), rgba(226, 232, 240, .7), rgba(226, 232, 240, .1));--facet-toolkit-count-bg-dark: rgba(226, 232, 240, .16);--facet-toolkit-count-text-dark: #e2e8f0;--facet-toolkit-scrollbar-thumb-dark: rgba(148, 163, 184, .45);--facet-toolkit-preset-row-bg-dark: rgba(148, 163, 184, .12);--facet-toolkit-modal-surface-dark: #1f2937;--facet-toolkit-modal-text-dark: #e2e8f0;--facet-toolkit-modal-header-bg-dark: #111827;--facet-toolkit-modal-header-text-dark: #e2e8f0;--facet-toolkit-menu-surface-dark: #111827;--facet-toolkit-menu-text-dark: #e2e8f0;--facet-toolkit-menu-hover-bg-dark: rgba(148, 163, 184, .18);--facet-toolkit-clear-button-bg-dark: #f43f5e;--facet-toolkit-clear-button-text-dark: #111827;--facet-toolkit-modal-action-primary-bg-dark: #1f2937;--facet-toolkit-modal-action-primary-text-dark: #e2e8f0;--facet-toolkit-modal-action-secondary-bg-dark: transparent;--facet-toolkit-modal-action-secondary-text-dark: #e2e8f0;--facet-toolkit-modal-action-warn-bg-dark: #f97316;--facet-toolkit-modal-action-warn-text-dark: #111827;--facet-toolkit-modal-action-border-dark: rgba(226, 232, 240, .25);--facet-toolkit-modal-input-focus-outline-dark: #93c5fd;--facet-toolkit-modal-input-focus-label-dark: #93c5fd;--facet-toolkit-modal-input-caret-dark: #93c5fd;--facet-toolkit-chip-selected-bg-dark: rgba(148, 163, 184, .2);--facet-toolkit-chip-selected-text-dark: #e2e8f0;--facet-toolkit-input-bg: var(--facet-toolkit-input-bg-light);--facet-toolkit-input-shadow: var(--facet-toolkit-input-shadow-light);--facet-toolkit-input-hover-bg: var(--facet-toolkit-input-hover-bg-light);--facet-toolkit-input-hover-shadow: var(--facet-toolkit-input-hover-shadow-light);--facet-toolkit-input-focus-shadow: var(--facet-toolkit-input-focus-shadow-light);--facet-toolkit-input-text: var(--facet-toolkit-input-text-light);--facet-toolkit-input-placeholder: var(--facet-toolkit-input-placeholder-light);--facet-toolkit-add-icon: var(--facet-toolkit-add-icon-light);--facet-toolkit-preset-trigger: var(--facet-toolkit-preset-trigger-light);--facet-toolkit-count-divider: var(--facet-toolkit-count-divider-light);--facet-toolkit-count-bg: var(--facet-toolkit-count-bg-light);--facet-toolkit-count-text: var(--facet-toolkit-count-text-light);--facet-toolkit-scrollbar-thumb: var(--facet-toolkit-scrollbar-thumb-light);--facet-toolkit-preset-row-bg: var(--facet-toolkit-preset-row-bg-light);--facet-toolkit-modal-surface: var(--facet-toolkit-modal-surface-light);--facet-toolkit-modal-text: var(--facet-toolkit-modal-text-light);--facet-toolkit-modal-header-bg: var(--facet-toolkit-modal-header-bg-light);--facet-toolkit-modal-header-text: var(--facet-toolkit-modal-header-text-light);--facet-toolkit-menu-surface: var(--facet-toolkit-menu-surface-light);--facet-toolkit-menu-text: var(--facet-toolkit-menu-text-light);--facet-toolkit-menu-hover-bg: var(--facet-toolkit-menu-hover-bg-light);--facet-toolkit-clear-button-bg: var(--facet-toolkit-clear-button-bg-light);--facet-toolkit-clear-button-text: var(--facet-toolkit-clear-button-text-light);--facet-toolkit-modal-action-primary-bg: var(--facet-toolkit-modal-action-primary-bg-light);--facet-toolkit-modal-action-primary-text: var(--facet-toolkit-modal-action-primary-text-light);--facet-toolkit-modal-action-secondary-bg: var(--facet-toolkit-modal-action-secondary-bg-light);--facet-toolkit-modal-action-secondary-text: var(--facet-toolkit-modal-action-secondary-text-light);--facet-toolkit-modal-action-warn-bg: var(--facet-toolkit-modal-action-warn-bg-light);--facet-toolkit-modal-action-warn-text: var(--facet-toolkit-modal-action-warn-text-light);--facet-toolkit-modal-action-border: var(--facet-toolkit-modal-action-border-light);--facet-toolkit-modal-input-focus-outline: var(--facet-toolkit-modal-input-focus-outline-light);--facet-toolkit-modal-input-focus-label: var(--facet-toolkit-modal-input-focus-label-light);--facet-toolkit-modal-input-caret: var(--facet-toolkit-modal-input-caret-light);--facet-toolkit-chip-selected-bg: var(--facet-toolkit-chip-selected-bg-light);--facet-toolkit-chip-selected-text: var(--facet-toolkit-chip-selected-text-light)}:host-context(.dark-theme){--facet-toolkit-input-bg: var(--facet-toolkit-input-bg-dark);--facet-toolkit-input-shadow: var(--facet-toolkit-input-shadow-dark);--facet-toolkit-input-hover-bg: var(--facet-toolkit-input-hover-bg-dark);--facet-toolkit-input-hover-shadow: var(--facet-toolkit-input-hover-shadow-dark);--facet-toolkit-input-focus-shadow: var(--facet-toolkit-input-focus-shadow-dark);--facet-toolkit-input-text: var(--facet-toolkit-input-text-dark);--facet-toolkit-input-placeholder: var(--facet-toolkit-input-placeholder-dark);--facet-toolkit-add-icon: var(--facet-toolkit-add-icon-dark);--facet-toolkit-preset-trigger: var(--facet-toolkit-preset-trigger-dark);--facet-toolkit-count-divider: var(--facet-toolkit-count-divider-dark);--facet-toolkit-count-bg: var(--facet-toolkit-count-bg-dark);--facet-toolkit-count-text: var(--facet-toolkit-count-text-dark);--facet-toolkit-scrollbar-thumb: var(--facet-toolkit-scrollbar-thumb-dark);--facet-toolkit-preset-row-bg: var(--facet-toolkit-preset-row-bg-dark);--facet-toolkit-modal-surface: var(--facet-toolkit-modal-surface-dark);--facet-toolkit-modal-text: var(--facet-toolkit-modal-text-dark);--facet-toolkit-modal-header-bg: var(--facet-toolkit-modal-header-bg-dark);--facet-toolkit-modal-header-text: var(--facet-toolkit-modal-header-text-dark);--facet-toolkit-menu-surface: var(--facet-toolkit-menu-surface-dark);--facet-toolkit-menu-text: var(--facet-toolkit-menu-text-dark);--facet-toolkit-menu-hover-bg: var(--facet-toolkit-menu-hover-bg-dark);--facet-toolkit-clear-button-bg: var(--facet-toolkit-clear-button-bg-dark);--facet-toolkit-clear-button-text: var(--facet-toolkit-clear-button-text-dark);--facet-toolkit-modal-action-primary-bg: var(--facet-toolkit-modal-action-primary-bg-dark);--facet-toolkit-modal-action-primary-text: var(--facet-toolkit-modal-action-primary-text-dark);--facet-toolkit-modal-action-secondary-bg: var(--facet-toolkit-modal-action-secondary-bg-dark);--facet-toolkit-modal-action-secondary-text: var(--facet-toolkit-modal-action-secondary-text-dark);--facet-toolkit-modal-action-warn-bg: var(--facet-toolkit-modal-action-warn-bg-dark);--facet-toolkit-modal-action-warn-text: var(--facet-toolkit-modal-action-warn-text-dark);--facet-toolkit-modal-action-border: var(--facet-toolkit-modal-action-border-dark);--facet-toolkit-modal-input-focus-outline: var(--facet-toolkit-modal-input-focus-outline-dark);--facet-toolkit-modal-input-focus-label: var(--facet-toolkit-modal-input-focus-label-dark);--facet-toolkit-modal-input-caret: var(--facet-toolkit-modal-input-caret-dark);--facet-toolkit-chip-selected-bg: var(--facet-toolkit-chip-selected-bg-dark);--facet-toolkit-chip-selected-text: var(--facet-toolkit-chip-selected-text-dark)}:host(.facet-theme-light){--facet-toolkit-input-bg: var(--facet-toolkit-input-bg-light);--facet-toolkit-input-shadow: var(--facet-toolkit-input-shadow-light);--facet-toolkit-input-hover-bg: var(--facet-toolkit-input-hover-bg-light);--facet-toolkit-input-hover-shadow: var(--facet-toolkit-input-hover-shadow-light);--facet-toolkit-input-focus-shadow: var(--facet-toolkit-input-focus-shadow-light);--facet-toolkit-input-text: var(--facet-toolkit-input-text-light);--facet-toolkit-input-placeholder: var(--facet-toolkit-input-placeholder-light);--facet-toolkit-add-icon: var(--facet-toolkit-add-icon-light);--facet-toolkit-preset-trigger: var(--facet-toolkit-preset-trigger-light);--facet-toolkit-count-divider: var(--facet-toolkit-count-divider-light);--facet-toolkit-count-bg: var(--facet-toolkit-count-bg-light);--facet-toolkit-count-text: var(--facet-toolkit-count-text-light);--facet-toolkit-scrollbar-thumb: var(--facet-toolkit-scrollbar-thumb-light);--facet-toolkit-preset-row-bg: var(--facet-toolkit-preset-row-bg-light);--facet-toolkit-modal-surface: var(--facet-toolkit-modal-surface-light);--facet-toolkit-modal-text: var(--facet-toolkit-modal-text-light);--facet-toolkit-modal-header-bg: var(--facet-toolkit-modal-header-bg-light);--facet-toolkit-modal-header-text: var(--facet-toolkit-modal-header-text-light);--facet-toolkit-menu-surface: var(--facet-toolkit-menu-surface-light);--facet-toolkit-menu-text: var(--facet-toolkit-menu-text-light);--facet-toolkit-menu-hover-bg: var(--facet-toolkit-menu-hover-bg-light);--facet-toolkit-clear-button-bg: var(--facet-toolkit-clear-button-bg-light);--facet-toolkit-clear-button-text: var(--facet-toolkit-clear-button-text-light);--facet-toolkit-modal-action-primary-bg: var(--facet-toolkit-modal-action-primary-bg-light);--facet-toolkit-modal-action-primary-text: var(--facet-toolkit-modal-action-primary-text-light);--facet-toolkit-modal-action-secondary-bg: var(--facet-toolkit-modal-action-secondary-bg-light);--facet-toolkit-modal-action-secondary-text: var(--facet-toolkit-modal-action-secondary-text-light);--facet-toolkit-modal-action-warn-bg: var(--facet-toolkit-modal-action-warn-bg-light);--facet-toolkit-modal-action-warn-text: var(--facet-toolkit-modal-action-warn-text-light);--facet-toolkit-modal-action-border: var(--facet-toolkit-modal-action-border-light);--facet-toolkit-modal-input-focus-outline: var(--facet-toolkit-modal-input-focus-outline-light);--facet-toolkit-modal-input-focus-label: var(--facet-toolkit-modal-input-focus-label-light);--facet-toolkit-modal-input-caret: var(--facet-toolkit-modal-input-caret-light);--facet-toolkit-chip-selected-bg: var(--facet-toolkit-chip-selected-bg-light);--facet-toolkit-chip-selected-text: var(--facet-toolkit-chip-selected-text-light)}:host(.facet-theme-dark){--facet-toolkit-input-bg: var(--facet-toolkit-input-bg-dark);--facet-toolkit-input-shadow: var(--facet-toolkit-input-shadow-dark);--facet-toolkit-input-hover-bg: var(--facet-toolkit-input-hover-bg-dark);--facet-toolkit-input-hover-shadow: var(--facet-toolkit-input-hover-shadow-dark);--facet-toolkit-input-focus-shadow: var(--facet-toolkit-input-focus-shadow-dark);--facet-toolkit-input-text: var(--facet-toolkit-input-text-dark);--facet-toolkit-input-placeholder: var(--facet-toolkit-input-placeholder-dark);--facet-toolkit-add-icon: var(--facet-toolkit-add-icon-dark);--facet-toolkit-preset-trigger: var(--facet-toolkit-preset-trigger-dark);--facet-toolkit-count-divider: var(--facet-toolkit-count-divider-dark);--facet-toolkit-count-bg: var(--facet-toolkit-count-bg-dark);--facet-toolkit-count-text: var(--facet-toolkit-count-text-dark);--facet-toolkit-scrollbar-thumb: var(--facet-toolkit-scrollbar-thumb-dark);--facet-toolkit-preset-row-bg: var(--facet-toolkit-preset-row-bg-dark);--facet-toolkit-modal-surface: var(--facet-toolkit-modal-surface-dark);--facet-toolkit-modal-text: var(--facet-toolkit-modal-text-dark);--facet-toolkit-modal-header-bg: var(--facet-toolkit-modal-header-bg-dark);--facet-toolkit-modal-header-text: var(--facet-toolkit-modal-header-text-dark);--facet-toolkit-menu-surface: var(--facet-toolkit-menu-surface-dark);--facet-toolkit-menu-text: var(--facet-toolkit-menu-text-dark);--facet-toolkit-menu-hover-bg: var(--facet-toolkit-menu-hover-bg-dark);--facet-toolkit-clear-button-bg: var(--facet-toolkit-clear-button-bg-dark);--facet-toolkit-clear-button-text: var(--facet-toolkit-clear-button-text-dark);--facet-toolkit-modal-action-primary-bg: var(--facet-toolkit-modal-action-primary-bg-dark);--facet-toolkit-modal-action-primary-text: var(--facet-toolkit-modal-action-primary-text-dark);--facet-toolkit-modal-action-secondary-bg: var(--facet-toolkit-modal-action-secondary-bg-dark);--facet-toolkit-modal-action-secondary-text: var(--facet-toolkit-modal-action-secondary-text-dark);--facet-toolkit-modal-action-warn-bg: var(--facet-toolkit-modal-action-warn-bg-dark);--facet-toolkit-modal-action-warn-text: var(--facet-toolkit-modal-action-warn-text-dark);--facet-toolkit-modal-action-border: var(--facet-toolkit-modal-action-border-dark);--facet-toolkit-modal-input-focus-outline: var(--facet-toolkit-modal-input-focus-outline-dark);--facet-toolkit-modal-input-focus-label: var(--facet-toolkit-modal-input-focus-label-dark);--facet-toolkit-modal-input-caret: var(--facet-toolkit-modal-input-caret-dark);--facet-toolkit-chip-selected-bg: var(--facet-toolkit-chip-selected-bg-dark);--facet-toolkit-chip-selected-text: var(--facet-toolkit-chip-selected-text-dark)}::ng-deep .facet-theme-panel .mat-mdc-menu-panel,::ng-deep .facet-theme-panel .mat-mdc-autocomplete-panel{background:var(--facet-toolkit-menu-surface, var(--mat-menu-container-color, #ffffff));color:var(--facet-toolkit-menu-text, var(--mat-menu-item-label-text-color, #1c2b46))}::ng-deep .facet-theme-panel .mat-mdc-menu-item,::ng-deep .facet-theme-panel .mat-mdc-option{color:var(--facet-toolkit-menu-text, var(--mat-menu-item-label-text-color, #1c2b46))}::ng-deep .facet-theme-panel .mat-mdc-menu-item:hover,::ng-deep .facet-theme-panel .mat-mdc-option:hover,::ng-deep .facet-theme-panel .mat-mdc-option.mdc-list-item--selected{background:var(--facet-toolkit-menu-hover-bg, var(--mat-menu-item-hover-state-layer-color, rgba(0, 0, 0, .04)))}*{outline:0}.filter-input-container{background-color:transparent!important;opacity:1!important;box-shadow:none!important;background-color:var(--facet-toolkit-input-bg)!important;box-shadow:var(--facet-toolkit-input-shadow)!important;color:var(--facet-toolkit-input-text);transition:box-shadow .12s ease,background-color .12s ease;height:28px;display:inline-flex;align-items:center;gap:2px;flex:0 0 auto;padding:0 4px;margin-bottom:10px;border-radius:999px}.filter-input-container .filter-input{border:none!important;background:none!important;width:56px;font-size:14px!important;font-weight:400;height:28px;line-height:28px;padding:0;text-align:left;color:inherit;position:relative;top:0;margin-left:2px;vertical-align:middle}.filter-input::placeholder{color:var(--facet-toolkit-input-placeholder);opacity:.9}.inline-chip-icon{width:18px;height:18px;font-size:18px;margin-right:7px;margin-left:0}:host-context .mat-checkbox-inner-container{transform:scale(.7)}:host-context(.inlineChipCheckbox) label.mat-checkbox-layout div.mat-checkbox-inner-container{transform:scale(.7)}.add-icon{margin-top:0;color:var(--facet-toolkit-add-icon)}.add-icon:hover,.filter-input-container:hover{cursor:pointer}.filter-input-container:hover{background-color:var(--facet-toolkit-input-hover-bg)!important;box-shadow:var(--facet-toolkit-input-hover-shadow)!important}.filter-input-container:focus-within{box-shadow:var(--facet-toolkit-input-focus-shadow)!important}.filter-count-divider{display:inline-block;width:1px;height:18px;margin:0 3px;background:var(--facet-toolkit-count-divider);align-self:center}.filter-count{font-size:11px;font-weight:700;line-height:16px;padding:2px 6px;border-radius:999px;background:var(--facet-toolkit-count-bg);color:var(--facet-toolkit-count-text);letter-spacing:.02em;align-self:center}.facet-clear-button{background:var(--facet-toolkit-clear-button-bg, var(--mdc-filled-button-container-color))!important;color:var(--facet-toolkit-clear-button-text, var(--mdc-filled-button-label-text-color))!important}::ng-deep .facet-chip.mat-mdc-chip-selected{background:var(--facet-toolkit-chip-selected-bg)!important;color:var(--facet-toolkit-chip-selected-text)!important}.main-facet-wrapper{min-height:36px;display:flex;align-items:center}.main-facet-wrapper .icon-wrapper{height:100%;display:flex;justify-content:center;align-items:center;margin-right:20px}.preset-menu-trigger{margin-bottom:10px;color:var(--facet-toolkit-preset-trigger)}::ng-deep .mat-autocomplete-panel.mat-autocomplete-visible{left:-40px!important;top:15px!important}::ng-deep .mat-chip-list-wrapper{display:flex;flex-wrap:wrap;align-items:center;gap:8px;transition:width .3s ease-in-out}.facet-chip{order:1}.content-wrapper{flex:1;min-width:0}.chip-row{display:flex;align-items:center;gap:8px;min-width:0}.chip-scroll-container{display:flex;align-items:center;overflow-x:auto;overflow-y:hidden;height:40px;margin-bottom:10px;width:100%;flex:1 1 auto;min-width:0;white-space:nowrap;scrollbar-width:thin}.chip-scroll-container.has-scroll{margin-bottom:0}.content-wrapper.chip-scrollable ::ng-deep .mat-chip-list-wrapper{display:inline-flex!important;flex-wrap:nowrap!important;width:max-content;white-space:nowrap}.content-wrapper.chip-scrollable ::ng-deep .mat-chip-list-wrapper::-webkit-scrollbar,.chip-scroll-container::-webkit-scrollbar{height:6px}.content-wrapper.chip-scrollable ::ng-deep .mat-chip-list-wrapper::-webkit-scrollbar-thumb,.chip-scroll-container::-webkit-scrollbar-thumb{background-color:var(--facet-toolkit-scrollbar-thumb);border-radius:999px}.content-wrapper.chip-scrollable ::ng-deep .mat-chip-list-wrapper::-webkit-scrollbar-track,.chip-scroll-container::-webkit-scrollbar-track{background:transparent}.content-wrapper.chip-scrollable ::ng-deep .mat-chip-option,.content-wrapper.chip-scrollable ::ng-deep .mat-chip-row{flex:0 0 auto}.content-wrapper.chip-scrollable ::ng-deep .mat-chip-grid{display:inline-flex!important;flex-wrap:nowrap;align-items:center;width:max-content}.content-wrapper.chip-scrollable ::ng-deep .mat-mdc-chip-set,.content-wrapper.chip-scrollable ::ng-deep .mdc-evolution-chip-set__chips{display:inline-flex!important;flex-wrap:nowrap!important;width:max-content;white-space:nowrap}.content-wrapper.chip-scrollable ::ng-deep .mat-chip-list-wrapper{align-items:center;display:inline-flex!important;flex-wrap:nowrap!important}.content-wrapper.chip-scrollable ::ng-deep .mat-chip-row,.content-wrapper.chip-scrollable ::ng-deep .mat-chip-option{max-height:28px;white-space:nowrap}.content-wrapper.chip-scrollable ::ng-deep .mat-chip-option{white-space:nowrap}.flex-facet{display:flex;align-items:center}.flex-facet-autocomplete{display:inline-flex;align-items:center;justify-content:center;height:28px}\n"]
     }]
   }], () => [], {
+    hostStyles: [{
+      type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.HostBinding,
+      args: ['style']
+    }],
+    isThemeDark: [{
+      type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.HostBinding,
+      args: ['class.facet-theme-dark']
+    }],
+    isThemeLight: [{
+      type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.HostBinding,
+      args: ['class.facet-theme-light']
+    }],
     filterInput: [{
       type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.ViewChild,
       args: ['filterInput']
     }],
     inputAutoComplete: [{
       type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.ViewChild,
-      args: [_angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_35__.MatAutocompleteTrigger, {
-        read: _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_35__.MatAutocompleteTrigger
+      args: [_angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_36__.MatAutocompleteTrigger, {
+        read: _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_36__.MatAutocompleteTrigger
       }]
     }],
     presetMenuButton: [{
@@ -4103,7 +5062,7 @@ class NgxMatFacetToolkitComponent {
   \*****************************************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"name":"@drsutphin/ngx-mat-facet-toolkit","version":"1.0.23","description":"Angular 19 standalone facet filtering toolkit built on Angular Material.","keywords":["angular","angular-material","material","facet","facet-search","filters","filtering","chips","autocomplete","standalone","ui"],"author":"Derek Sutphin","repository":{"type":"git","url":"git+https://github.com/drsutphin/NgxMatFacetToolkit.git"},"peerDependencies":{"@angular/common":"^19.0.0","@angular/core":"^19.0.0","@angular/forms":"^19.0.0","@angular/material":"^19.0.0","uuid":"^9.0.1"},"dependencies":{"tslib":"^2.6.2"}}');
+module.exports = /*#__PURE__*/JSON.parse('{"name":"@drsutphin/ngx-mat-facet-toolkit","version":"1.0.24","description":"Angular 19 standalone facet filtering toolkit built on Angular Material.","keywords":["angular","angular-material","material","facet","facet-search","filters","filtering","chips","autocomplete","standalone","ui"],"author":"Derek Sutphin","repository":{"type":"git","url":"git+https://github.com/drsutphin/NgxMatFacetToolkit.git"},"peerDependencies":{"@angular/common":"^19.0.0","@angular/core":"^19.0.0","@angular/forms":"^19.0.0","@angular/material":"^19.0.0","uuid":"^9.0.1"},"dependencies":{"tslib":"^2.6.2"}}');
 
 /***/ }),
 
@@ -4283,6 +5242,136 @@ class PageOneComponent {
     },
     dependencies: [_angular_material_card__WEBPACK_IMPORTED_MODULE_4__.MatCardModule, _angular_material_card__WEBPACK_IMPORTED_MODULE_4__.MatCard, _angular_material_card__WEBPACK_IMPORTED_MODULE_4__.MatCardContent, _angular_material_divider__WEBPACK_IMPORTED_MODULE_5__.MatDividerModule, _angular_material_divider__WEBPACK_IMPORTED_MODULE_5__.MatDivider, _drsutphin_ngx_mat_facet_toolkit__WEBPACK_IMPORTED_MODULE_2__.NgxMatFacetToolkitComponent, _components_settings_settings_component__WEBPACK_IMPORTED_MODULE_0__.SettingsComponent, _components_output_output_component__WEBPACK_IMPORTED_MODULE_1__.OutputComponent],
     styles: ["[_nghost-%COMP%] {\n  flex: 1 1 auto;\n  display: flex;\n  flex-direction: column;\n}\n\n.content[_ngcontent-%COMP%] {\n  flex: 1 1 auto;\n  display: flex;\n  align-items: flex-start;\n  gap: 15px;\n}\n.content[_ngcontent-%COMP%]   .mat-divider[_ngcontent-%COMP%] {\n  height: 100%;\n}\n\n@media (max-width: 900px) {\n  .content[_ngcontent-%COMP%] {\n    flex-direction: column;\n  }\n  .content[_ngcontent-%COMP%]   .mat-divider[_ngcontent-%COMP%] {\n    display: none;\n  }\n}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3Byb2plY3RzL2RlbW8tYXBwbGljYXRpb24vc3JjL2FwcC9wYWdlcy9wYWdlLW9uZS9wYWdlLW9uZS5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGNBQUE7RUFDQSxhQUFBO0VBQ0Esc0JBQUE7QUFDRjs7QUFFQTtFQUNFLGNBQUE7RUFDQSxhQUFBO0VBQ0EsdUJBQUE7RUFDQSxTQUFBO0FBQ0Y7QUFDRTtFQUNFLFlBQUE7QUFDSjs7QUFHQTtFQUNFO0lBQ0Usc0JBQUE7RUFBRjtFQUVFO0lBQ0UsYUFBQTtFQUFKO0FBQ0YiLCJzb3VyY2VzQ29udGVudCI6WyI6aG9zdCB7XG4gIGZsZXg6IDEgMSBhdXRvO1xuICBkaXNwbGF5OiBmbGV4O1xuICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xufVxuXG4uY29udGVudCB7XG4gIGZsZXg6IDEgMSBhdXRvO1xuICBkaXNwbGF5OiBmbGV4O1xuICBhbGlnbi1pdGVtczogZmxleC1zdGFydDtcbiAgZ2FwOiAxNXB4O1xuXG4gIC5tYXQtZGl2aWRlciB7XG4gICAgaGVpZ2h0OiAxMDAlO1xuICB9XG59XG5cbkBtZWRpYSAobWF4LXdpZHRoOiA5MDBweCkge1xuICAuY29udGVudCB7XG4gICAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcblxuICAgIC5tYXQtZGl2aWRlciB7XG4gICAgICBkaXNwbGF5OiBub25lO1xuICAgIH1cbiAgfVxufVxuIl0sInNvdXJjZVJvb3QiOiIifQ== */"]
+  });
+}
+
+/***/ }),
+
+/***/ 9441:
+/*!************************************************************************************!*\
+  !*** ./projects/demo-application/src/app/pages/page-three/page-three.component.ts ***!
+  \************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   PageThreeComponent: () => (/* binding */ PageThreeComponent)
+/* harmony export */ });
+/* harmony import */ var _angular_material_card__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/material/card */ 3777);
+/* harmony import */ var _angular_material_divider__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/material/divider */ 4102);
+/* harmony import */ var _drsutphin_ngx_mat_facet_toolkit__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @drsutphin/ngx-mat-facet-toolkit */ 4511);
+/* harmony import */ var _components_output_output_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../components/output/output.component */ 8649);
+/* harmony import */ var _components_theme_settings_theme_settings_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../components/theme-settings/theme-settings.component */ 1989);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs */ 9452);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ 7580);
+
+
+
+
+
+
+
+
+
+
+class PageThreeComponent {
+  facets = [{
+    id: 'owner',
+    label: 'Owner',
+    type: _drsutphin_ngx_mat_facet_toolkit__WEBPACK_IMPORTED_MODULE_2__.FacetDataType.Text,
+    description: 'Text filter example'
+  }, {
+    id: 'team',
+    label: 'Team',
+    type: _drsutphin_ngx_mat_facet_toolkit__WEBPACK_IMPORTED_MODULE_2__.FacetDataType.CategorySingle,
+    options: (0,rxjs__WEBPACK_IMPORTED_MODULE_3__.of)([{
+      value: 'design',
+      label: 'Design'
+    }, {
+      value: 'engineering',
+      label: 'Engineering'
+    }, {
+      value: 'product',
+      label: 'Product'
+    }])
+  }, {
+    id: 'status',
+    label: 'Status',
+    type: _drsutphin_ngx_mat_facet_toolkit__WEBPACK_IMPORTED_MODULE_2__.FacetDataType.Category,
+    options: (0,rxjs__WEBPACK_IMPORTED_MODULE_3__.of)([{
+      value: 'open',
+      label: 'Open'
+    }, {
+      value: 'blocked',
+      label: 'Blocked'
+    }, {
+      value: 'done',
+      label: 'Done'
+    }])
+  }, {
+    id: 'score',
+    label: 'Score',
+    type: _drsutphin_ngx_mat_facet_toolkit__WEBPACK_IMPORTED_MODULE_2__.FacetDataType.Numeric,
+    dataType: 'number',
+    placeholder: 'Enter score'
+  }, {
+    id: 'created',
+    label: 'Created',
+    type: _drsutphin_ngx_mat_facet_toolkit__WEBPACK_IMPORTED_MODULE_2__.FacetDataType.Date
+  }, {
+    id: 'active',
+    label: 'Active',
+    type: _drsutphin_ngx_mat_facet_toolkit__WEBPACK_IMPORTED_MODULE_2__.FacetDataType.Boolean
+  }];
+  config = {
+    identifierStrategy: _drsutphin_ngx_mat_facet_toolkit__WEBPACK_IMPORTED_MODULE_2__.FacetIdentifierStrategy.ParentID,
+    chipRowScrollable: true,
+    showFilterCount: true
+  };
+  themeConfigUpdated(config) {
+    this.config = {
+      ...this.config,
+      ...config
+    };
+  }
+  static ɵfac = function PageThreeComponent_Factory(__ngFactoryType__) {
+    return new (__ngFactoryType__ || PageThreeComponent)();
+  };
+  static ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineComponent"]({
+    type: PageThreeComponent,
+    selectors: [["app-page-three"]],
+    decls: 9,
+    vars: 3,
+    consts: [["output", ""], ["appearance", "outlined"], ["placeholder", "Add a filter...", "clearButtonText", "CLEAR FILTERS", 3, "facetChange", "facets", "config"], [1, "content"], [3, "themeConfigUpdated"], [3, "vertical"]],
+    template: function PageThreeComponent_Template(rf, ctx) {
+      if (rf & 1) {
+        const _r1 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵgetCurrentView"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "mat-card", 1)(1, "mat-card-content")(2, "ngx-mat-facet-toolkit", 2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("facetChange", function PageThreeComponent_Template_ngx_mat_facet_toolkit_facetChange_2_listener($event) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵrestoreView"](_r1);
+          const output_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵreference"](8);
+          return _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵresetView"](output_r2.filterUpdated($event));
+        });
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]()()();
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](3, "mat-divider");
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](4, "div", 3)(5, "app-theme-settings", 4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("themeConfigUpdated", function PageThreeComponent_Template_app_theme_settings_themeConfigUpdated_5_listener($event) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵrestoreView"](_r1);
+          return _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵresetView"](ctx.themeConfigUpdated($event));
+        });
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](6, "mat-divider", 5)(7, "app-output", null, 0);
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+      }
+      if (rf & 2) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("facets", ctx.facets)("config", ctx.config);
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("vertical", true);
+      }
+    },
+    dependencies: [_angular_material_card__WEBPACK_IMPORTED_MODULE_5__.MatCardModule, _angular_material_card__WEBPACK_IMPORTED_MODULE_5__.MatCard, _angular_material_card__WEBPACK_IMPORTED_MODULE_5__.MatCardContent, _angular_material_divider__WEBPACK_IMPORTED_MODULE_6__.MatDividerModule, _angular_material_divider__WEBPACK_IMPORTED_MODULE_6__.MatDivider, _drsutphin_ngx_mat_facet_toolkit__WEBPACK_IMPORTED_MODULE_2__.NgxMatFacetToolkitComponent, _components_output_output_component__WEBPACK_IMPORTED_MODULE_0__.OutputComponent, _components_theme_settings_theme_settings_component__WEBPACK_IMPORTED_MODULE_1__.ThemeSettingsComponent],
+    styles: ["[_nghost-%COMP%] {\n  flex: 1 1 auto;\n  display: flex;\n  flex-direction: column;\n}\n\n.content[_ngcontent-%COMP%] {\n  flex: 1 1 auto;\n  display: flex;\n  align-items: flex-start;\n  gap: 15px;\n}\n.content[_ngcontent-%COMP%]   .mat-divider[_ngcontent-%COMP%] {\n  height: 100%;\n}\n\n@media (max-width: 900px) {\n  .content[_ngcontent-%COMP%] {\n    flex-direction: column;\n  }\n  .content[_ngcontent-%COMP%]   .mat-divider[_ngcontent-%COMP%] {\n    display: none;\n  }\n}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3Byb2plY3RzL2RlbW8tYXBwbGljYXRpb24vc3JjL2FwcC9wYWdlcy9wYWdlLXRocmVlL3BhZ2UtdGhyZWUuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxjQUFBO0VBQ0EsYUFBQTtFQUNBLHNCQUFBO0FBQ0Y7O0FBRUE7RUFDRSxjQUFBO0VBQ0EsYUFBQTtFQUNBLHVCQUFBO0VBQ0EsU0FBQTtBQUNGO0FBQ0U7RUFDRSxZQUFBO0FBQ0o7O0FBR0E7RUFDRTtJQUNFLHNCQUFBO0VBQUY7RUFFRTtJQUNFLGFBQUE7RUFBSjtBQUNGIiwic291cmNlc0NvbnRlbnQiOlsiOmhvc3Qge1xuICBmbGV4OiAxIDEgYXV0bztcbiAgZGlzcGxheTogZmxleDtcbiAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcbn1cblxuLmNvbnRlbnQge1xuICBmbGV4OiAxIDEgYXV0bztcbiAgZGlzcGxheTogZmxleDtcbiAgYWxpZ24taXRlbXM6IGZsZXgtc3RhcnQ7XG4gIGdhcDogMTVweDtcblxuICAubWF0LWRpdmlkZXIge1xuICAgIGhlaWdodDogMTAwJTtcbiAgfVxufVxuXG5AbWVkaWEgKG1heC13aWR0aDogOTAwcHgpIHtcbiAgLmNvbnRlbnQge1xuICAgIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XG5cbiAgICAubWF0LWRpdmlkZXIge1xuICAgICAgZGlzcGxheTogbm9uZTtcbiAgICB9XG4gIH1cbn1cbiJdLCJzb3VyY2VSb290IjoiIn0= */"]
   });
 }
 

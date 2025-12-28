@@ -2304,6 +2304,44 @@ html {
   color: rgba(0, 0, 0, 0.87) !important;
 }
 
+ngx-mat-facet-toolkit {
+  --facet-toolkit-input-bg-light: rgba(63, 81, 181, 0.08);
+  --facet-toolkit-input-shadow-light: 0 0 0 1px rgba(63, 81, 181, 0.35);
+  --facet-toolkit-input-hover-bg-light: rgba(63, 81, 181, 0.12);
+  --facet-toolkit-input-hover-shadow-light: 0 0 0 1px rgba(63, 81, 181, 0.55);
+  --facet-toolkit-input-focus-shadow-light: 0 0 0 2px rgba(57, 73, 171, 0.35);
+  --facet-toolkit-input-text-light: rgba(0, 0, 0, 0.87);
+  --facet-toolkit-input-placeholder-light: rgba(0, 0, 0, 0.87);
+  --facet-toolkit-add-icon-light: rgba(0, 0, 0, 0.87);
+  --facet-toolkit-preset-trigger-light: rgba(0, 0, 0, 0.87);
+  --facet-toolkit-count-divider-light: linear-gradient(180deg, rgba(63, 81, 181, 0.1), rgba(63, 81, 181, 0.7), rgba(63, 81, 181, 0.1));
+  --facet-toolkit-count-bg-light: rgba(63, 81, 181, 0.16);
+  --facet-toolkit-count-text-light: rgba(0, 0, 0, 0.87);
+  --facet-toolkit-scrollbar-thumb-light: rgba(63, 81, 181, 0.35);
+  --facet-toolkit-preset-row-bg-light: rgba(63, 81, 181, 0.08);
+  --facet-toolkit-modal-surface-light: white;
+  --facet-toolkit-modal-text-light: rgba(0, 0, 0, 0.87);
+  --facet-toolkit-modal-header-bg-light: #3f51b5;
+  --facet-toolkit-modal-header-text-light: white;
+  --facet-toolkit-menu-surface-light: white;
+  --facet-toolkit-menu-text-light: rgba(0, 0, 0, 0.87);
+  --facet-toolkit-menu-hover-bg-light: rgba(0, 0, 0, 0.04);
+  --facet-toolkit-clear-button-bg-light: #ff4081;
+  --facet-toolkit-clear-button-text-light: white;
+  --facet-toolkit-modal-action-primary-bg-light: #3f51b5;
+  --facet-toolkit-modal-action-primary-text-light: white;
+  --facet-toolkit-modal-action-secondary-bg-light: transparent;
+  --facet-toolkit-modal-action-secondary-text-light: rgba(0, 0, 0, 0.87);
+  --facet-toolkit-modal-action-warn-bg-light: #f44336;
+  --facet-toolkit-modal-action-warn-text-light: white;
+  --facet-toolkit-modal-action-border-light: rgba(0, 0, 0, 0.2);
+  --facet-toolkit-modal-input-focus-outline-light: #3f51b5;
+  --facet-toolkit-modal-input-focus-label-light: #3f51b5;
+  --facet-toolkit-modal-input-caret-light: #3f51b5;
+  --facet-toolkit-chip-selected-bg-light: rgba(63, 81, 181, 0.12);
+  --facet-toolkit-chip-selected-text-light: rgba(0, 0, 0, 0.87);
+}
+
 .dark-theme {
   --mat-ripple-color: rgba(255, 255, 255, 0.1);
 }
@@ -3921,6 +3959,43 @@ html {
 .dark-theme .facet-modal-component {
   background: #424242 !important;
   color: white !important;
+}
+.dark-theme ngx-mat-facet-toolkit {
+  --facet-toolkit-input-bg-dark: rgba(96, 125, 139, 0.08);
+  --facet-toolkit-input-shadow-dark: 0 0 0 1px rgba(96, 125, 139, 0.35);
+  --facet-toolkit-input-hover-bg-dark: rgba(96, 125, 139, 0.12);
+  --facet-toolkit-input-hover-shadow-dark: 0 0 0 1px rgba(96, 125, 139, 0.55);
+  --facet-toolkit-input-focus-shadow-dark: 0 0 0 2px rgba(84, 110, 122, 0.35);
+  --facet-toolkit-input-text-dark: white;
+  --facet-toolkit-input-placeholder-dark: white;
+  --facet-toolkit-add-icon-dark: white;
+  --facet-toolkit-preset-trigger-dark: white;
+  --facet-toolkit-count-divider-dark: linear-gradient(180deg, rgba(96, 125, 139, 0.1), rgba(96, 125, 139, 0.7), rgba(96, 125, 139, 0.1));
+  --facet-toolkit-count-bg-dark: rgba(96, 125, 139, 0.16);
+  --facet-toolkit-count-text-dark: white;
+  --facet-toolkit-scrollbar-thumb-dark: rgba(96, 125, 139, 0.35);
+  --facet-toolkit-preset-row-bg-dark: rgba(96, 125, 139, 0.08);
+  --facet-toolkit-modal-surface-dark: #424242;
+  --facet-toolkit-modal-text-dark: white;
+  --facet-toolkit-modal-header-bg-dark: #607d8b;
+  --facet-toolkit-modal-header-text-dark: white;
+  --facet-toolkit-menu-surface-dark: #424242;
+  --facet-toolkit-menu-text-dark: white;
+  --facet-toolkit-menu-hover-bg-dark: rgba(255, 255, 255, 0.04);
+  --facet-toolkit-clear-button-bg-dark: #ffd740;
+  --facet-toolkit-clear-button-text-dark: rgba(0, 0, 0, 0.87);
+  --facet-toolkit-modal-action-primary-bg-dark: #607d8b;
+  --facet-toolkit-modal-action-primary-text-dark: white;
+  --facet-toolkit-modal-action-secondary-bg-dark: transparent;
+  --facet-toolkit-modal-action-secondary-text-dark: white;
+  --facet-toolkit-modal-action-warn-bg-dark: #ff5722;
+  --facet-toolkit-modal-action-warn-text-dark: white;
+  --facet-toolkit-modal-action-border-dark: rgba(255, 255, 255, 0.2);
+  --facet-toolkit-modal-input-focus-outline-dark: #607d8b;
+  --facet-toolkit-modal-input-focus-label-dark: #607d8b;
+  --facet-toolkit-modal-input-caret-dark: #607d8b;
+  --facet-toolkit-chip-selected-bg-dark: rgba(96, 125, 139, 0.12);
+  --facet-toolkit-chip-selected-text-dark: white;
 }
 
 /*# sourceMappingURL=styles.css.map*/
