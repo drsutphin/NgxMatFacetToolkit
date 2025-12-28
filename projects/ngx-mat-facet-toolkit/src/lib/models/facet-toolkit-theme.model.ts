@@ -24,6 +24,19 @@ export interface FacetToolkitThemeOverrides {
   menuHoverBg?: string;
   clearButtonBg?: string;
   clearButtonText?: string;
+  modalHeaderArrow?: string;
+  modalActionPrimaryBg?: string;
+  modalActionPrimaryText?: string;
+  modalActionSecondaryBg?: string;
+  modalActionSecondaryText?: string;
+  modalActionWarnBg?: string;
+  modalActionWarnText?: string;
+  modalActionBorder?: string;
+  modalInputFocusOutline?: string;
+  modalInputFocusLabel?: string;
+  modalInputCaret?: string;
+  chipSelectedBg?: string;
+  chipSelectedText?: string;
 }
 
 export type FacetToolkitThemeVariables = Record<string, string>;

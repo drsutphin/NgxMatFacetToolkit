@@ -126,27 +126,130 @@ export class ThemeSettingsComponent implements OnInit {
     {key: 'menuText', label: 'Menu text', placeholder: '#1c2b46', isColor: true},
     {key: 'menuHoverBg', label: 'Menu hover background', placeholder: 'rgba(46, 72, 144, 0.08)'},
     {key: 'clearButtonBg', label: 'Clear button background', placeholder: '#e91e63', isColor: true},
-    {key: 'clearButtonText', label: 'Clear button text', placeholder: '#ffffff', isColor: true}
+    {key: 'clearButtonText', label: 'Clear button text', placeholder: '#ffffff', isColor: true},
+    {key: 'modalHeaderArrow', label: 'Modal header arrow', placeholder: '#3f51b5', isColor: true},
+    {key: 'modalActionPrimaryBg', label: 'Modal action primary background', placeholder: '#3f51b5', isColor: true},
+    {key: 'modalActionPrimaryText', label: 'Modal action primary text', placeholder: '#ffffff', isColor: true},
+    {key: 'modalActionSecondaryBg', label: 'Modal action secondary background', placeholder: 'transparent'},
+    {key: 'modalActionSecondaryText', label: 'Modal action secondary text', placeholder: '#1c2b46', isColor: true},
+    {key: 'modalActionWarnBg', label: 'Modal action warn background', placeholder: '#f44336', isColor: true},
+    {key: 'modalActionWarnText', label: 'Modal action warn text', placeholder: '#ffffff', isColor: true},
+    {key: 'modalActionBorder', label: 'Modal action border', placeholder: 'rgba(28, 43, 70, 0.2)'},
+    {key: 'modalInputFocusOutline', label: 'Modal input focus outline', placeholder: '#3f51b5', isColor: true},
+    {key: 'modalInputFocusLabel', label: 'Modal input focus label', placeholder: '#3f51b5', isColor: true},
+    {key: 'modalInputCaret', label: 'Modal input caret', placeholder: '#3f51b5', isColor: true},
+    {key: 'chipSelectedBg', label: 'Chip selected background', placeholder: 'rgba(63, 81, 181, 0.12)'},
+    {key: 'chipSelectedText', label: 'Chip selected text', placeholder: '#1c2b46', isColor: true}
   ];
 
   themePresets: ThemePreset[] = [
     {
       id: 'material-indigo-pink',
       label: 'Material Indigo/Pink (Light) + Blue Gray/Amber (Dark)',
-      light: buildOverrides('#3f51b5', '#1c2b46', '#ffffff', '#ffffff', '#e91e63', '#ffffff'),
-      dark: buildOverrides('#607d8b', '#e2e8f0', '#111827', '#e2e8f0', '#f59e0b', '#111827')
+      light: {
+        ...buildOverrides('#3f51b5', '#1c2b46', '#ffffff', '#ffffff', '#e91e63', '#ffffff'),
+        modalHeaderArrow: '#3f51b5',
+        modalActionPrimaryBg: '#3f51b5',
+        modalActionPrimaryText: '#ffffff',
+        modalActionSecondaryBg: 'transparent',
+        modalActionSecondaryText: '#1c2b46',
+        modalActionWarnBg: '#f44336',
+        modalActionWarnText: '#ffffff',
+        modalActionBorder: 'rgba(28, 43, 70, 0.2)',
+        modalInputFocusOutline: '#3f51b5',
+        modalInputFocusLabel: '#3f51b5',
+        modalInputCaret: '#3f51b5',
+        chipSelectedBg: 'rgba(63, 81, 181, 0.12)',
+        chipSelectedText: '#1c2b46'
+      },
+      dark: {
+        ...buildOverrides('#607d8b', '#e2e8f0', '#111827', '#e2e8f0', '#f59e0b', '#111827'),
+        modalHeaderArrow: '#111827',
+        modalActionPrimaryBg: '#1f2937',
+        modalActionPrimaryText: '#e2e8f0',
+        modalActionSecondaryBg: 'transparent',
+        modalActionSecondaryText: '#e2e8f0',
+        modalActionWarnBg: '#f97316',
+        modalActionWarnText: '#111827',
+        modalActionBorder: 'rgba(226, 232, 240, 0.25)',
+        modalInputFocusOutline: '#93c5fd',
+        modalInputFocusLabel: '#93c5fd',
+        modalInputCaret: '#93c5fd',
+        chipSelectedBg: 'rgba(148, 163, 184, 0.2)',
+        chipSelectedText: '#e2e8f0'
+      }
     },
     {
       id: 'material-teal-amber',
       label: 'Material Teal/Amber (Light) + Blue Gray/Amber (Dark)',
-      light: buildOverrides('#009688', '#0f172a', '#ffffff', '#ffffff', '#ffc107', '#111827'),
-      dark: buildOverrides('#455a64', '#e2e8f0', '#0f172a', '#e2e8f0', '#f59e0b', '#111827')
+      light: {
+        ...buildOverrides('#009688', '#0f172a', '#ffffff', '#ffffff', '#ffc107', '#111827'),
+        modalHeaderArrow: '#009688',
+        modalActionPrimaryBg: '#009688',
+        modalActionPrimaryText: '#ffffff',
+        modalActionSecondaryBg: 'transparent',
+        modalActionSecondaryText: '#0f172a',
+        modalActionWarnBg: '#ef4444',
+        modalActionWarnText: '#ffffff',
+        modalActionBorder: 'rgba(15, 23, 42, 0.2)',
+        modalInputFocusOutline: '#009688',
+        modalInputFocusLabel: '#009688',
+        modalInputCaret: '#009688',
+        chipSelectedBg: 'rgba(0, 150, 136, 0.12)',
+        chipSelectedText: '#0f172a'
+      },
+      dark: {
+        ...buildOverrides('#455a64', '#e2e8f0', '#0f172a', '#e2e8f0', '#f59e0b', '#111827'),
+        modalHeaderArrow: '#0f172a',
+        modalActionPrimaryBg: '#1f2937',
+        modalActionPrimaryText: '#e2e8f0',
+        modalActionSecondaryBg: 'transparent',
+        modalActionSecondaryText: '#e2e8f0',
+        modalActionWarnBg: '#f97316',
+        modalActionWarnText: '#111827',
+        modalActionBorder: 'rgba(226, 232, 240, 0.25)',
+        modalInputFocusOutline: '#93c5fd',
+        modalInputFocusLabel: '#93c5fd',
+        modalInputCaret: '#93c5fd',
+        chipSelectedBg: 'rgba(148, 163, 184, 0.2)',
+        chipSelectedText: '#e2e8f0'
+      }
     },
     {
       id: 'material-deep-purple-amber',
       label: 'Material Deep Purple/Amber (Light) + Blue Gray/Amber (Dark)',
-      light: buildOverrides('#673ab7', '#1e1b4b', '#ffffff', '#ffffff', '#ffc107', '#111827'),
-      dark: buildOverrides('#546e7a', '#e2e8f0', '#0f172a', '#e2e8f0', '#f59e0b', '#111827')
+      light: {
+        ...buildOverrides('#673ab7', '#1e1b4b', '#ffffff', '#ffffff', '#ffc107', '#111827'),
+        modalHeaderArrow: '#673ab7',
+        modalActionPrimaryBg: '#673ab7',
+        modalActionPrimaryText: '#ffffff',
+        modalActionSecondaryBg: 'transparent',
+        modalActionSecondaryText: '#1e1b4b',
+        modalActionWarnBg: '#ef4444',
+        modalActionWarnText: '#ffffff',
+        modalActionBorder: 'rgba(30, 27, 75, 0.2)',
+        modalInputFocusOutline: '#673ab7',
+        modalInputFocusLabel: '#673ab7',
+        modalInputCaret: '#673ab7',
+        chipSelectedBg: 'rgba(103, 58, 183, 0.12)',
+        chipSelectedText: '#1e1b4b'
+      },
+      dark: {
+        ...buildOverrides('#546e7a', '#e2e8f0', '#0f172a', '#e2e8f0', '#f59e0b', '#111827'),
+        modalHeaderArrow: '#0f172a',
+        modalActionPrimaryBg: '#1f2937',
+        modalActionPrimaryText: '#e2e8f0',
+        modalActionSecondaryBg: 'transparent',
+        modalActionSecondaryText: '#e2e8f0',
+        modalActionWarnBg: '#f97316',
+        modalActionWarnText: '#111827',
+        modalActionBorder: 'rgba(226, 232, 240, 0.25)',
+        modalInputFocusOutline: '#93c5fd',
+        modalInputFocusLabel: '#93c5fd',
+        modalInputCaret: '#93c5fd',
+        chipSelectedBg: 'rgba(148, 163, 184, 0.2)',
+        chipSelectedText: '#e2e8f0'
+      }
     }
   ];
 
@@ -173,7 +276,20 @@ export class ThemeSettingsComponent implements OnInit {
     menuText: '#1c2b46',
     menuHoverBg: 'rgba(46, 72, 144, 0.08)',
     clearButtonBg: '#e91e63',
-    clearButtonText: '#ffffff'
+    clearButtonText: '#ffffff',
+    modalHeaderArrow: '#3f51b5',
+    modalActionPrimaryBg: '#3f51b5',
+    modalActionPrimaryText: '#ffffff',
+    modalActionSecondaryBg: 'transparent',
+    modalActionSecondaryText: '#1c2b46',
+    modalActionWarnBg: '#f44336',
+    modalActionWarnText: '#ffffff',
+    modalActionBorder: 'rgba(28, 43, 70, 0.2)',
+    modalInputFocusOutline: '#3f51b5',
+    modalInputFocusLabel: '#3f51b5',
+    modalInputCaret: '#3f51b5',
+    chipSelectedBg: 'rgba(63, 81, 181, 0.12)',
+    chipSelectedText: '#1c2b46'
   };
 
   darkOverrides: FacetToolkitThemeOverrides = {
@@ -199,7 +315,20 @@ export class ThemeSettingsComponent implements OnInit {
     menuText: '#e2e8f0',
     menuHoverBg: 'rgba(148, 163, 184, 0.18)',
     clearButtonBg: '#f59e0b',
-    clearButtonText: '#111827'
+    clearButtonText: '#111827',
+    modalHeaderArrow: '#111827',
+    modalActionPrimaryBg: '#1f2937',
+    modalActionPrimaryText: '#e2e8f0',
+    modalActionSecondaryBg: 'transparent',
+    modalActionSecondaryText: '#e2e8f0',
+    modalActionWarnBg: '#f97316',
+    modalActionWarnText: '#111827',
+    modalActionBorder: 'rgba(226, 232, 240, 0.25)',
+    modalInputFocusOutline: '#93c5fd',
+    modalInputFocusLabel: '#93c5fd',
+    modalInputCaret: '#93c5fd',
+    chipSelectedBg: 'rgba(148, 163, 184, 0.2)',
+    chipSelectedText: '#e2e8f0'
   };
 
   ngOnInit(): void {

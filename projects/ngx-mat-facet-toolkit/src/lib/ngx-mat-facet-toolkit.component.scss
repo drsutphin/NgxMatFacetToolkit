@@ -22,6 +22,19 @@
   --facet-toolkit-menu-hover-bg-light: rgba(46, 72, 144, 0.08);
   --facet-toolkit-clear-button-bg-light: #e91e63;
   --facet-toolkit-clear-button-text-light: #ffffff;
+  --facet-toolkit-modal-header-arrow-light: #3f51b5;
+  --facet-toolkit-modal-action-primary-bg-light: #3f51b5;
+  --facet-toolkit-modal-action-primary-text-light: #ffffff;
+  --facet-toolkit-modal-action-secondary-bg-light: transparent;
+  --facet-toolkit-modal-action-secondary-text-light: #1c2b46;
+  --facet-toolkit-modal-action-warn-bg-light: #f44336;
+  --facet-toolkit-modal-action-warn-text-light: #ffffff;
+  --facet-toolkit-modal-action-border-light: rgba(28, 43, 70, 0.2);
+  --facet-toolkit-modal-input-focus-outline-light: #3f51b5;
+  --facet-toolkit-modal-input-focus-label-light: #3f51b5;
+  --facet-toolkit-modal-input-caret-light: #3f51b5;
+  --facet-toolkit-chip-selected-bg-light: rgba(63, 81, 181, 0.12);
+  --facet-toolkit-chip-selected-text-light: #1c2b46;
 
   --facet-toolkit-input-bg-dark: rgba(148, 163, 184, 0.12);
   --facet-toolkit-input-shadow-dark: 0 0 0 1px rgba(148, 163, 184, 0.4);
@@ -46,6 +59,19 @@
   --facet-toolkit-menu-hover-bg-dark: rgba(148, 163, 184, 0.18);
   --facet-toolkit-clear-button-bg-dark: #f43f5e;
   --facet-toolkit-clear-button-text-dark: #111827;
+  --facet-toolkit-modal-header-arrow-dark: #111827;
+  --facet-toolkit-modal-action-primary-bg-dark: #1f2937;
+  --facet-toolkit-modal-action-primary-text-dark: #e2e8f0;
+  --facet-toolkit-modal-action-secondary-bg-dark: transparent;
+  --facet-toolkit-modal-action-secondary-text-dark: #e2e8f0;
+  --facet-toolkit-modal-action-warn-bg-dark: #f97316;
+  --facet-toolkit-modal-action-warn-text-dark: #111827;
+  --facet-toolkit-modal-action-border-dark: rgba(226, 232, 240, 0.25);
+  --facet-toolkit-modal-input-focus-outline-dark: #93c5fd;
+  --facet-toolkit-modal-input-focus-label-dark: #93c5fd;
+  --facet-toolkit-modal-input-caret-dark: #93c5fd;
+  --facet-toolkit-chip-selected-bg-dark: rgba(148, 163, 184, 0.2);
+  --facet-toolkit-chip-selected-text-dark: #e2e8f0;
 
   --facet-toolkit-input-bg: var(--facet-toolkit-input-bg-light);
   --facet-toolkit-input-shadow: var(--facet-toolkit-input-shadow-light);
@@ -70,6 +96,19 @@
   --facet-toolkit-menu-hover-bg: var(--facet-toolkit-menu-hover-bg-light);
   --facet-toolkit-clear-button-bg: var(--facet-toolkit-clear-button-bg-light);
   --facet-toolkit-clear-button-text: var(--facet-toolkit-clear-button-text-light);
+  --facet-toolkit-modal-header-arrow: var(--facet-toolkit-modal-header-arrow-light);
+  --facet-toolkit-modal-action-primary-bg: var(--facet-toolkit-modal-action-primary-bg-light);
+  --facet-toolkit-modal-action-primary-text: var(--facet-toolkit-modal-action-primary-text-light);
+  --facet-toolkit-modal-action-secondary-bg: var(--facet-toolkit-modal-action-secondary-bg-light);
+  --facet-toolkit-modal-action-secondary-text: var(--facet-toolkit-modal-action-secondary-text-light);
+  --facet-toolkit-modal-action-warn-bg: var(--facet-toolkit-modal-action-warn-bg-light);
+  --facet-toolkit-modal-action-warn-text: var(--facet-toolkit-modal-action-warn-text-light);
+  --facet-toolkit-modal-action-border: var(--facet-toolkit-modal-action-border-light);
+  --facet-toolkit-modal-input-focus-outline: var(--facet-toolkit-modal-input-focus-outline-light);
+  --facet-toolkit-modal-input-focus-label: var(--facet-toolkit-modal-input-focus-label-light);
+  --facet-toolkit-modal-input-caret: var(--facet-toolkit-modal-input-caret-light);
+  --facet-toolkit-chip-selected-bg: var(--facet-toolkit-chip-selected-bg-light);
+  --facet-toolkit-chip-selected-text: var(--facet-toolkit-chip-selected-text-light);
 }
 
 :host-context(.dark-theme) {
@@ -96,6 +135,19 @@
   --facet-toolkit-menu-hover-bg: var(--facet-toolkit-menu-hover-bg-dark);
   --facet-toolkit-clear-button-bg: var(--facet-toolkit-clear-button-bg-dark);
   --facet-toolkit-clear-button-text: var(--facet-toolkit-clear-button-text-dark);
+  --facet-toolkit-modal-header-arrow: var(--facet-toolkit-modal-header-arrow-dark);
+  --facet-toolkit-modal-action-primary-bg: var(--facet-toolkit-modal-action-primary-bg-dark);
+  --facet-toolkit-modal-action-primary-text: var(--facet-toolkit-modal-action-primary-text-dark);
+  --facet-toolkit-modal-action-secondary-bg: var(--facet-toolkit-modal-action-secondary-bg-dark);
+  --facet-toolkit-modal-action-secondary-text: var(--facet-toolkit-modal-action-secondary-text-dark);
+  --facet-toolkit-modal-action-warn-bg: var(--facet-toolkit-modal-action-warn-bg-dark);
+  --facet-toolkit-modal-action-warn-text: var(--facet-toolkit-modal-action-warn-text-dark);
+  --facet-toolkit-modal-action-border: var(--facet-toolkit-modal-action-border-dark);
+  --facet-toolkit-modal-input-focus-outline: var(--facet-toolkit-modal-input-focus-outline-dark);
+  --facet-toolkit-modal-input-focus-label: var(--facet-toolkit-modal-input-focus-label-dark);
+  --facet-toolkit-modal-input-caret: var(--facet-toolkit-modal-input-caret-dark);
+  --facet-toolkit-chip-selected-bg: var(--facet-toolkit-chip-selected-bg-dark);
+  --facet-toolkit-chip-selected-text: var(--facet-toolkit-chip-selected-text-dark);
 }
 
 :host(.facet-theme-light) {
@@ -122,6 +174,19 @@
   --facet-toolkit-menu-hover-bg: var(--facet-toolkit-menu-hover-bg-light);
   --facet-toolkit-clear-button-bg: var(--facet-toolkit-clear-button-bg-light);
   --facet-toolkit-clear-button-text: var(--facet-toolkit-clear-button-text-light);
+  --facet-toolkit-modal-header-arrow: var(--facet-toolkit-modal-header-arrow-light);
+  --facet-toolkit-modal-action-primary-bg: var(--facet-toolkit-modal-action-primary-bg-light);
+  --facet-toolkit-modal-action-primary-text: var(--facet-toolkit-modal-action-primary-text-light);
+  --facet-toolkit-modal-action-secondary-bg: var(--facet-toolkit-modal-action-secondary-bg-light);
+  --facet-toolkit-modal-action-secondary-text: var(--facet-toolkit-modal-action-secondary-text-light);
+  --facet-toolkit-modal-action-warn-bg: var(--facet-toolkit-modal-action-warn-bg-light);
+  --facet-toolkit-modal-action-warn-text: var(--facet-toolkit-modal-action-warn-text-light);
+  --facet-toolkit-modal-action-border: var(--facet-toolkit-modal-action-border-light);
+  --facet-toolkit-modal-input-focus-outline: var(--facet-toolkit-modal-input-focus-outline-light);
+  --facet-toolkit-modal-input-focus-label: var(--facet-toolkit-modal-input-focus-label-light);
+  --facet-toolkit-modal-input-caret: var(--facet-toolkit-modal-input-caret-light);
+  --facet-toolkit-chip-selected-bg: var(--facet-toolkit-chip-selected-bg-light);
+  --facet-toolkit-chip-selected-text: var(--facet-toolkit-chip-selected-text-light);
 }
 
 :host(.facet-theme-dark) {
@@ -148,6 +213,19 @@
   --facet-toolkit-menu-hover-bg: var(--facet-toolkit-menu-hover-bg-dark);
   --facet-toolkit-clear-button-bg: var(--facet-toolkit-clear-button-bg-dark);
   --facet-toolkit-clear-button-text: var(--facet-toolkit-clear-button-text-dark);
+  --facet-toolkit-modal-header-arrow: var(--facet-toolkit-modal-header-arrow-dark);
+  --facet-toolkit-modal-action-primary-bg: var(--facet-toolkit-modal-action-primary-bg-dark);
+  --facet-toolkit-modal-action-primary-text: var(--facet-toolkit-modal-action-primary-text-dark);
+  --facet-toolkit-modal-action-secondary-bg: var(--facet-toolkit-modal-action-secondary-bg-dark);
+  --facet-toolkit-modal-action-secondary-text: var(--facet-toolkit-modal-action-secondary-text-dark);
+  --facet-toolkit-modal-action-warn-bg: var(--facet-toolkit-modal-action-warn-bg-dark);
+  --facet-toolkit-modal-action-warn-text: var(--facet-toolkit-modal-action-warn-text-dark);
+  --facet-toolkit-modal-action-border: var(--facet-toolkit-modal-action-border-dark);
+  --facet-toolkit-modal-input-focus-outline: var(--facet-toolkit-modal-input-focus-outline-dark);
+  --facet-toolkit-modal-input-focus-label: var(--facet-toolkit-modal-input-focus-label-dark);
+  --facet-toolkit-modal-input-caret: var(--facet-toolkit-modal-input-caret-dark);
+  --facet-toolkit-chip-selected-bg: var(--facet-toolkit-chip-selected-bg-dark);
+  --facet-toolkit-chip-selected-text: var(--facet-toolkit-chip-selected-text-dark);
 }
 
 ::ng-deep .facet-theme-panel .mat-mdc-menu-panel,
@@ -273,6 +351,11 @@
 .facet-clear-button {
   background: var(--facet-toolkit-clear-button-bg, var(--mdc-filled-button-container-color)) !important;
   color: var(--facet-toolkit-clear-button-text, var(--mdc-filled-button-label-text-color)) !important;
+}
+
+::ng-deep .facet-chip.mat-mdc-chip-selected {
+  background: var(--facet-toolkit-chip-selected-bg) !important;
+  color: var(--facet-toolkit-chip-selected-text) !important;
 }
 
 .main-facet-wrapper {

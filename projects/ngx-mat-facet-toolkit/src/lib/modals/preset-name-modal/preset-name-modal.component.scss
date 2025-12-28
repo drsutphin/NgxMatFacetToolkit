@@ -22,9 +22,26 @@ mat-form-field {
   width: 100%;
 }
 
+mat-form-field {
+  --mdc-outlined-text-field-focus-outline-color: var(--facet-toolkit-modal-input-focus-outline, #3f51b5);
+  --mdc-outlined-text-field-focus-label-text-color: var(--facet-toolkit-modal-input-focus-label, #3f51b5);
+  caret-color: var(--facet-toolkit-modal-input-caret, #3f51b5);
+}
+
 .actions {
   display: flex;
   justify-content: flex-end;
   gap: 8px;
   padding: 0 16px 16px;
+}
+
+.actions .mat-mdc-unelevated-button {
+  background: var(--facet-toolkit-modal-action-primary-bg, #3f51b5) !important;
+  color: var(--facet-toolkit-modal-action-primary-text, #ffffff) !important;
+}
+
+.actions .mat-mdc-stroked-button {
+  background: var(--facet-toolkit-modal-action-secondary-bg, transparent) !important;
+  color: var(--facet-toolkit-modal-action-secondary-text, #1c2b46) !important;
+  border-color: var(--facet-toolkit-modal-action-border, rgba(28, 43, 70, 0.2)) !important;
 }

@@ -80,6 +80,19 @@
     --facet-toolkit-menu-hover-bg-#{$theme-suffix}: #{$menu-hover};
     --facet-toolkit-clear-button-bg-#{$theme-suffix}: #{$accent-color};
     --facet-toolkit-clear-button-text-#{$theme-suffix}: #{$accent-contrast};
+    --facet-toolkit-modal-header-arrow-#{$theme-suffix}: #{$primary-color};
+    --facet-toolkit-modal-action-primary-bg-#{$theme-suffix}: #{$primary-color};
+    --facet-toolkit-modal-action-primary-text-#{$theme-suffix}: #{$header-text};
+    --facet-toolkit-modal-action-secondary-bg-#{$theme-suffix}: transparent;
+    --facet-toolkit-modal-action-secondary-text-#{$theme-suffix}: #{$text-color};
+    --facet-toolkit-modal-action-warn-bg-#{$theme-suffix}: #{mat.m2-get-color-from-palette($warn-palette)};
+    --facet-toolkit-modal-action-warn-text-#{$theme-suffix}: #{mat.m2-get-color-from-palette($warn-palette, default-contrast)};
+    --facet-toolkit-modal-action-border-#{$theme-suffix}: #{rgba($text-color, 0.2)};
+    --facet-toolkit-modal-input-focus-outline-#{$theme-suffix}: #{$primary-color};
+    --facet-toolkit-modal-input-focus-label-#{$theme-suffix}: #{$primary-color};
+    --facet-toolkit-modal-input-caret-#{$theme-suffix}: #{$primary-color};
+    --facet-toolkit-chip-selected-bg-#{$theme-suffix}: #{rgba($primary-color, 0.12)};
+    --facet-toolkit-chip-selected-text-#{$theme-suffix}: #{$text-color};
   }
 }
 

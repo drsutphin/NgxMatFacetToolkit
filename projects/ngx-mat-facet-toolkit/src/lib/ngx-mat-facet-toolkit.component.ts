@@ -91,7 +91,20 @@ const THEME_VAR_MAP: Record<keyof FacetToolkitThemeOverrides, string> = {
   menuText: '--facet-toolkit-menu-text',
   menuHoverBg: '--facet-toolkit-menu-hover-bg',
   clearButtonBg: '--facet-toolkit-clear-button-bg',
-  clearButtonText: '--facet-toolkit-clear-button-text'
+  clearButtonText: '--facet-toolkit-clear-button-text',
+  modalHeaderArrow: '--facet-toolkit-modal-header-arrow',
+  modalActionPrimaryBg: '--facet-toolkit-modal-action-primary-bg',
+  modalActionPrimaryText: '--facet-toolkit-modal-action-primary-text',
+  modalActionSecondaryBg: '--facet-toolkit-modal-action-secondary-bg',
+  modalActionSecondaryText: '--facet-toolkit-modal-action-secondary-text',
+  modalActionWarnBg: '--facet-toolkit-modal-action-warn-bg',
+  modalActionWarnText: '--facet-toolkit-modal-action-warn-text',
+  modalActionBorder: '--facet-toolkit-modal-action-border',
+  modalInputFocusOutline: '--facet-toolkit-modal-input-focus-outline',
+  modalInputFocusLabel: '--facet-toolkit-modal-input-focus-label',
+  modalInputCaret: '--facet-toolkit-modal-input-caret',
+  chipSelectedBg: '--facet-toolkit-chip-selected-bg',
+  chipSelectedText: '--facet-toolkit-chip-selected-text'
 };
 
 const mergeThemeVariables = (

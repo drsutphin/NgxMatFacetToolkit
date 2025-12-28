@@ -29,3 +29,14 @@ mat-toolbar {
   gap: 8px;
   padding: 0 16px 16px;
 }
+
+.actions .mat-mdc-unelevated-button.mat-warn {
+  background: var(--facet-toolkit-modal-action-warn-bg, #f44336) !important;
+  color: var(--facet-toolkit-modal-action-warn-text, #ffffff) !important;
+}
+
+.actions .mat-mdc-stroked-button {
+  background: var(--facet-toolkit-modal-action-secondary-bg, transparent) !important;
+  color: var(--facet-toolkit-modal-action-secondary-text, #1c2b46) !important;
+  border-color: var(--facet-toolkit-modal-action-border, rgba(28, 43, 70, 0.2)) !important;
+}
