@@ -29,9 +29,16 @@ mat-spinner {
   flex-direction: row-reverse;
 }
 
-.actions .mat-mdc-unelevated-button {
+.actions .mat-mdc-unelevated-button:not(.mat-mdc-button-disabled):not(:disabled) {
   background: var(--facet-toolkit-modal-action-primary-bg, #3f51b5) !important;
   color: var(--facet-toolkit-modal-action-primary-text, #ffffff) !important;
+}
+
+.actions .mat-mdc-unelevated-button.mat-mdc-button-disabled,
+.actions .mat-mdc-unelevated-button:disabled {
+  background: var(--mdc-filled-button-disabled-container-color, rgba(0, 0, 0, 0.12)) !important;
+  color: var(--mdc-filled-button-disabled-label-text-color, rgba(0, 0, 0, 0.38)) !important;
+  cursor: not-allowed;
 }
 
 .actions .mat-mdc-stroked-button {
