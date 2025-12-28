@@ -1,3 +1,13 @@
+# 1.0.24
+* Added:
+  * Theme override system with light/dark modes and Theme Lab demo
+  * Modal/dialog theming controls (surface, header, buttons, inputs)
+  * Menu/autocomplete, chip selection, and clear button theming overrides
+* Fixed:
+  * Multi-select category updates now remove unchecked options
+  * Disabled modal action buttons now render disabled styles
+  * Theme overrides are opt-in (Page One/Two unaffected)
+
 # 1.0.23
 * Added:
   * Angular-styled remove filter confirmation modal

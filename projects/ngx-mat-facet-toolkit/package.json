@@ -1,6 +1,6 @@
 {
   "name": "@drsutphin/ngx-mat-facet-toolkit",
-  "version": "1.0.23",
+  "version": "1.0.24",
   "description": "Angular 19 standalone facet filtering toolkit built on Angular Material.",
   "keywords": [
     "angular",
