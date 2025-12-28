@@ -1,6 +1,9 @@
 :host {
   position: relative;
-  background: var(--facet-toolkit-modal-surface, #ffffff);
+  background: var(
+    --facet-toolkit-modal-surface,
+    var(--facet-toolkit-modal-surface-light, #ffffff)
+  ) !important;
   color: var(--facet-toolkit-modal-text, #1c2b46);
   border-radius: 8px;
   min-width: 300px;
