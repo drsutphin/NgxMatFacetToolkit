@@ -127,7 +127,6 @@ export class ThemeSettingsComponent implements OnInit {
     {key: 'menuHoverBg', label: 'Menu hover background', placeholder: 'rgba(46, 72, 144, 0.08)'},
     {key: 'clearButtonBg', label: 'Clear button background', placeholder: '#e91e63', isColor: true},
     {key: 'clearButtonText', label: 'Clear button text', placeholder: '#ffffff', isColor: true},
-    {key: 'modalHeaderArrow', label: 'Modal header arrow', placeholder: '#3f51b5', isColor: true},
     {key: 'modalActionPrimaryBg', label: 'Modal action primary background', placeholder: '#3f51b5', isColor: true},
     {key: 'modalActionPrimaryText', label: 'Modal action primary text', placeholder: '#ffffff', isColor: true},
     {key: 'modalActionSecondaryBg', label: 'Modal action secondary background', placeholder: 'transparent'},
@@ -148,7 +147,6 @@ export class ThemeSettingsComponent implements OnInit {
       label: 'Material Indigo/Pink (Light) + Blue Gray/Amber (Dark)',
       light: {
         ...buildOverrides('#3f51b5', '#1c2b46', '#ffffff', '#ffffff', '#e91e63', '#ffffff'),
-        modalHeaderArrow: '#3f51b5',
         modalActionPrimaryBg: '#3f51b5',
         modalActionPrimaryText: '#ffffff',
         modalActionSecondaryBg: 'transparent',
@@ -164,7 +162,6 @@ export class ThemeSettingsComponent implements OnInit {
       },
       dark: {
         ...buildOverrides('#607d8b', '#e2e8f0', '#111827', '#e2e8f0', '#f59e0b', '#111827'),
-        modalHeaderArrow: '#111827',
         modalActionPrimaryBg: '#1f2937',
         modalActionPrimaryText: '#e2e8f0',
         modalActionSecondaryBg: 'transparent',
@@ -184,7 +181,6 @@ export class ThemeSettingsComponent implements OnInit {
       label: 'Material Teal/Amber (Light) + Blue Gray/Amber (Dark)',
       light: {
         ...buildOverrides('#009688', '#0f172a', '#ffffff', '#ffffff', '#ffc107', '#111827'),
-        modalHeaderArrow: '#009688',
         modalActionPrimaryBg: '#009688',
         modalActionPrimaryText: '#ffffff',
         modalActionSecondaryBg: 'transparent',
@@ -200,7 +196,6 @@ export class ThemeSettingsComponent implements OnInit {
       },
       dark: {
         ...buildOverrides('#455a64', '#e2e8f0', '#0f172a', '#e2e8f0', '#f59e0b', '#111827'),
-        modalHeaderArrow: '#0f172a',
         modalActionPrimaryBg: '#1f2937',
         modalActionPrimaryText: '#e2e8f0',
         modalActionSecondaryBg: 'transparent',
@@ -220,7 +215,6 @@ export class ThemeSettingsComponent implements OnInit {
       label: 'Material Deep Purple/Amber (Light) + Blue Gray/Amber (Dark)',
       light: {
         ...buildOverrides('#673ab7', '#1e1b4b', '#ffffff', '#ffffff', '#ffc107', '#111827'),
-        modalHeaderArrow: '#673ab7',
         modalActionPrimaryBg: '#673ab7',
         modalActionPrimaryText: '#ffffff',
         modalActionSecondaryBg: 'transparent',
@@ -236,7 +230,6 @@ export class ThemeSettingsComponent implements OnInit {
       },
       dark: {
         ...buildOverrides('#546e7a', '#e2e8f0', '#0f172a', '#e2e8f0', '#f59e0b', '#111827'),
-        modalHeaderArrow: '#0f172a',
         modalActionPrimaryBg: '#1f2937',
         modalActionPrimaryText: '#e2e8f0',
         modalActionSecondaryBg: 'transparent',
@@ -277,7 +270,6 @@ export class ThemeSettingsComponent implements OnInit {
     menuHoverBg: 'rgba(46, 72, 144, 0.08)',
     clearButtonBg: '#e91e63',
     clearButtonText: '#ffffff',
-    modalHeaderArrow: '#3f51b5',
     modalActionPrimaryBg: '#3f51b5',
     modalActionPrimaryText: '#ffffff',
     modalActionSecondaryBg: 'transparent',
@@ -316,7 +308,6 @@ export class ThemeSettingsComponent implements OnInit {
     menuHoverBg: 'rgba(148, 163, 184, 0.18)',
     clearButtonBg: '#f59e0b',
     clearButtonText: '#111827',
-    modalHeaderArrow: '#111827',
     modalActionPrimaryBg: '#1f2937',
     modalActionPrimaryText: '#e2e8f0',
     modalActionSecondaryBg: 'transparent',

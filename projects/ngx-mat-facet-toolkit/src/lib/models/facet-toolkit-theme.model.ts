@@ -24,7 +24,6 @@ export interface FacetToolkitThemeOverrides {
   menuHoverBg?: string;
   clearButtonBg?: string;
   clearButtonText?: string;
-  modalHeaderArrow?: string;
   modalActionPrimaryBg?: string;
   modalActionPrimaryText?: string;
   modalActionSecondaryBg?: string;

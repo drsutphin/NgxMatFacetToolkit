@@ -92,7 +92,6 @@ const THEME_VAR_MAP: Record<keyof FacetToolkitThemeOverrides, string> = {
   menuHoverBg: '--facet-toolkit-menu-hover-bg',
   clearButtonBg: '--facet-toolkit-clear-button-bg',
   clearButtonText: '--facet-toolkit-clear-button-text',
-  modalHeaderArrow: '--facet-toolkit-modal-header-arrow',
   modalActionPrimaryBg: '--facet-toolkit-modal-action-primary-bg',
   modalActionPrimaryText: '--facet-toolkit-modal-action-primary-text',
   modalActionSecondaryBg: '--facet-toolkit-modal-action-secondary-bg',
