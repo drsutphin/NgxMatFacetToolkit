@@ -277,10 +277,17 @@ export class FacetDetailsModalComponent implements OnInit, AfterViewInit {
   }
 
   selectionChange(selection: MatSelectionListChange, facet: FacetEditorState, options?: FacetValue[]) {
-    selection.options
-      .map(selectedOption => (options || []).find(option => option.value === selectedOption.value))
-      .filter((option): option is FacetValue => !!option)
-      .filter(facetOption => !(facet.values || []).find(v => v.value === facetOption.value))
-      .forEach(selectedOption => this.addOptionToSelected(facet, selectedOption));
+    const selectedOptions = selection.source.selectedOptions.selected;
+    const nextValues = selectedOptions
+      .map(listOption => (options || []).find(option => option.value === listOption.value))
+      .filter((option): option is FacetValue => !!option);
+
+    facet.values = nextValues;
+    if (options) {
+      const selectedSet = new Set(nextValues.map(value => value.value));
+      options.forEach(option => {
+        option.selected = selectedSet.has(option.value);
+      });
+    }
   }
 }
