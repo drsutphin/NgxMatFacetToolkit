@@ -356,7 +356,8 @@ export class ThemeSettingsComponent implements OnInit {
     this.themeConfigUpdated.emit({
       themeMode: this.themeMode,
       themeOverrides: {...this.lightOverrides},
-      darkThemeOverrides: {...this.darkOverrides}
+      darkThemeOverrides: {...this.darkOverrides},
+      applyThemeToRoot: true
     });
   }
 }

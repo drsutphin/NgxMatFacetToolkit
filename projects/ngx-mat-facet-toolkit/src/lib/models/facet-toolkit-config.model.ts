@@ -27,6 +27,7 @@ export interface FacetToolkitConfig {
   darkThemeOverrides?: FacetToolkitThemeOverrides;
   themeVariables?: FacetToolkitThemeVariables;
   darkThemeVariables?: FacetToolkitThemeVariables;
+  applyThemeToRoot: boolean;
 }
 
 export const DEFAULT_FACET_TOOLKIT_CONFIG: FacetToolkitConfig = {
@@ -41,5 +42,6 @@ export const DEFAULT_FACET_TOOLKIT_CONFIG: FacetToolkitConfig = {
   themeOverrides: {},
   darkThemeOverrides: {},
   themeVariables: {},
-  darkThemeVariables: {}
+  darkThemeVariables: {},
+  applyThemeToRoot: false
 };

@@ -224,6 +224,7 @@ export class NgxMatFacetToolkitComponent implements AfterViewInit, OnDestroy {
   readonly darkThemeOverrides = input<FacetToolkitThemeOverrides | null>(null);
   readonly themeVariables = input<FacetToolkitThemeVariables | null>(null);
   readonly darkThemeVariables = input<FacetToolkitThemeVariables | null>(null);
+  readonly applyThemeToRoot = input<boolean | null>(null);
 
   @HostBinding('style') hostStyles: FacetToolkitThemeVariables = {};
   @HostBinding('class.facet-theme-dark') isThemeDark = false;
@@ -307,6 +308,7 @@ export class NgxMatFacetToolkitComponent implements AfterViewInit, OnDestroy {
       this.darkThemeOverrides();
       this.themeVariables();
       this.darkThemeVariables();
+      this.applyThemeToRoot();
       const config = {
         ...DEFAULT_FACET_TOOLKIT_CONFIG,
         ...this.injectedConfig,
@@ -386,6 +388,7 @@ export class NgxMatFacetToolkitComponent implements AfterViewInit, OnDestroy {
       cancelAnimationFrame(this.chipRowUpdateHandle);
       this.chipRowUpdateHandle = null;
     }
+    this.clearRootThemeVariables();
   }
 
   chipSelected(event: MatChipSelectionChange, facet: FacetEditorState): void {
@@ -552,6 +555,7 @@ export class NgxMatFacetToolkitComponent implements AfterViewInit, OnDestroy {
     };
     const resolvedThemeVars = mergeThemeVariables(config.themeVariables, this.themeVariables());
     const resolvedDarkThemeVars = mergeThemeVariables(config.darkThemeVariables, this.darkThemeVariables());
+    const resolvedApplyToRoot = this.applyThemeToRoot() ?? config.applyThemeToRoot;
 
     this.resolvedThemeMode.set(resolvedMode);
     this.isThemeDark = resolvedMode === 'dark';
@@ -566,7 +570,11 @@ export class NgxMatFacetToolkitComponent implements AfterViewInit, OnDestroy {
 
     this.resolvedThemeVariables.set(mergedVariables);
     this.hostStyles = mergedVariables;
-    this.applyRootThemeVariables(mergedVariables, resolvedMode);
+    if (resolvedApplyToRoot) {
+      this.applyRootThemeVariables(mergedVariables, resolvedMode);
+    } else {
+      this.clearRootThemeVariables();
+    }
   }
 
   private applyModalThemeConfig(config: Partial<FacetModalConfig>): Partial<FacetModalConfig> {
@@ -656,6 +664,18 @@ export class NgxMatFacetToolkitComponent implements AfterViewInit, OnDestroy {
     }
     const body = this.documentRef?.body;
     return body?.classList.contains('dark-theme') ? 'dark' : 'light';
+  }
+
+  private clearRootThemeVariables(): void {
+    const root = this.documentRef?.documentElement;
+    const rootStyle = root?.style;
+    if (!rootStyle || !root) {
+      return;
+    }
+    this.appliedRootVariables.forEach(key => rootStyle.removeProperty(key));
+    this.appliedRootVariables.clear();
+    this.appliedRootClasses.forEach(className => root.classList.remove(className));
+    this.appliedRootClasses.clear();
   }
 
   applyPreset(preset: FacetPreset): void {
